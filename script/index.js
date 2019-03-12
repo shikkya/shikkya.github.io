@@ -17,9 +17,9 @@ var vm = new Vue({
     data: {
         list: [
             { imgName: 'index_11.png', text: '可可炸飞机', url: '' },
-            { imgName: 'index_05.png', text: '可可美记', url: '' },
+            { imgName: 'index_07.png', text: '可可美记', url: '' },
             { imgName: 'index_06.png', text: '倒计时', url: '' },
-            { imgName: 'index_07.png', text: '圆周率', url: '' }
+            { imgName: 'index_10.png', text: '圆周率', url: '' }
         ]
     },
     methods: {}
