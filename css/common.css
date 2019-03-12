@@ -1,9 +1,8 @@
 @charset "UTF-8";
+
 /**
- * 
- * @authors zhengy
- * @date    2019-02-25
- * @version $Id$
+ * @authors kk
+ * @date    2019-03-12
  */
 
 * {
@@ -18,7 +17,7 @@ body {
     height: 100%;
     font-family: '微软雅黑 Light', '微软雅黑 Regular', '微软雅黑';
     font-size: 14px;
-    min-width: 1200px;
+    min-width: 1100px;
 }
 
 ul,
@@ -54,17 +53,11 @@ a {
 
 /*************** common ***************/
 
-.wid-120 {
-    width: 1200px;
-    margin: 0px auto;
-}
-
-
 .flr {
     float: right;
 }
 
-.btn {
+/*.btn {
     background: #0078df;
     color: #fff;
     font-size: 15px;
@@ -73,48 +66,4 @@ a {
     height: 36px;
     line-height: 36px;
     border: 0px;
-}
-
-/*************** page ***************/
-
-.page {
-    padding: 20px 0px;
-    text-align: right;
-    cursor: default;
-}
-
-.page li {
-    display: inline-block;
-    border: 1px solid #bbb;
-    width: 40px;
-    text-align: center;
-    vertical-align: middle;
-    padding: 6px 0px;
-    color: #555;
-    cursor: pointer;
-    margin-left: 3px;
-    font-size: 13px;
-}
-
-.page li:first-child,
-.page li:last-child {
-    width: 60px;
-}
-
-.page li:hover,
-.page li.active {
-    background: #0078df;
-    color: #fff;
-    border: 1px solid #0078df;
-}
-
-.page li.active,
-.page li.more {
-    cursor: default;
-}
-
-.page li.more:hover {
-    border: 1px solid #bbb;
-    color: #555;
-    background: #fff;
-}
+}*/
