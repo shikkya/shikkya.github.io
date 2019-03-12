@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+/**
+ * @authors kk
+ * @date    2019-03-12
+ */
+
+body {
+    background: url('../images/index_01.jpg') no-repeat;
+    background-size: 100% auto;
+}
+
+.bg_black {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.type_out {
+    width: 920px;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -460px;
+    margin-top: -225px;
+}
+
+.type_out img {
+    width: 206px;
+    height: 206px;
+    border-radius: 50%;
+    cursor: default;
+}
+
+.type_out a {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: 3px solid #fff;
+    font-size: 26px;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+    transition: all 0.6s;
+    opacity: 0;
+}
+
+.type_out a:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: rgba(255, 255, 255, 0);
+    opacity: 1;
+}
+
+.type_out .type_05 a {
+    opacity: 1;
+}
+
+.type_out .type {
+    position: absolute;
+}
+
+.type_out .type_01 {
+    top: 0px;
+    left: 0px;
+    transition: padding-top 1s;
+}
+
+.type_out .type_02 {
+    top: 236px;
+    left: 236px;
+    transition: padding-left 1s;
+}
+
+.type_out .type_03 {
+    top: 0px;
+    left: 472px;
+    transition: padding-top 1s;
+}
+
+.type_out .type_04 {
+    top: 0px;
+    left: 708px;
+    transition: padding-left 1s;
+}
+
+.type_out .type_05 {
+    top: 236px;
+    left: 708px;
+}
+
+.type_out .type_01:hover,
+.type_out .type_03:hover {
+    padding-top: 236px;
+}
+
+.type_out .type_02:hover,
+.type_out .type_04:hover {
+    padding-left: 236px;
+}
