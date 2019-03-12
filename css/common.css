@@ -17,7 +17,8 @@ body {
     height: 100%;
     font-family: '微软雅黑 Light', '微软雅黑 Regular', '微软雅黑';
     font-size: 14px;
-    min-width: 1100px;
+    min-width: 1170px;
+    cursor: default;
 }
 
 ul,
@@ -26,7 +27,8 @@ li {
     list-style: none;
 }
 
-button {
+button,
+a {
     cursor: pointer;
 }
 

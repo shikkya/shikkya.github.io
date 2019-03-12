@@ -10,11 +10,12 @@ var TypeItem = {
 }
 
 var vm = new Vue({
-    el: '#typeOut',
+    el: '#content',
     components: {
         TypeItem: TypeItem
     },
     data: {
+        titVal: 'Welcome To Know About Shikkya',
         list: [
             { imgName: 'index_11.png', text: '可可炸飞机', url: '' },
             { imgName: 'index_07.png', text: '可可美记', url: '' },

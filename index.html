@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <div class="bg_black">
-        <div class="type_out" id="typeOut">
+    <div class="content" id="content">
+        <div class="main">
+            <div class="tit">{{titVal}}</div>
             <type-item :content="item" :index="index" v-for="(item,index) in list"></type-item>
             <div class="type type_more">
                 <a href="">敬请期待</a>
