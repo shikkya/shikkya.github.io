@@ -5,11 +5,16 @@
  * @date    2019-03-16
  */
 
- .header .logo img{
-    height:30px;
-    vertical-align:middle;
+.header {
+    padding: 10px 0px;
 }
 
- .header li{
-     margin:0px 10px;
- }
+.header .logo img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.header li {
+    display: inline-block;
+    margin: 0px 10px;
+}
