@@ -42,7 +42,7 @@ function drawAndShareImage() {
     myImage.crossOrigin = 'Anonymous';
 
     myImage.onload = function() {
-        context.drawImage(myImage, 0, 0, 700, 700);
+        context.drawImage(myImage, 0, 0, 1920, 1080);
 
         context.font = "60px Courier New";
         context.fillText("我是文字", 350, 450);
@@ -52,7 +52,7 @@ function drawAndShareImage() {
         myImage2.crossOrigin = 'Anonymous';
 
         myImage2.onload = function() {
-            context.drawImage(myImage2, 175, 175, 225, 225);
+            context.drawImage(myImage2, 0, 0, 1920, 1080);
             var base64 = canvas.toDataURL("image/png"); //"image/png" 这里注意一下
             var img = document.getElementById('avatar');
 
