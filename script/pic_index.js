@@ -48,7 +48,7 @@ function drawAndShareImage() {
         context.fillText("我是文字", 350, 450);
 
         var myImage2 = new Image();
-        myImage2.src = "../../images/pic_index_01.jpg"; //你自己本地的图片或者在线图片
+        myImage2.src = "../../images/pic_index_01.png"; //你自己本地的图片或者在线图片
         myImage2.crossOrigin = 'Anonymous';
 
         myImage2.onload = function() {
