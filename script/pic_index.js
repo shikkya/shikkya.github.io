@@ -43,10 +43,6 @@ function drawAndShareImage() {
 
     myImage.onload = function() {
         context.drawImage(myImage, 0, 0, 1920, 1080);
-
-        context.font = "60px Courier New";
-        context.fillText("我是文字", 350, 450);
-
         var myImage2 = new Image();
         myImage2.src = "../../images/pic_index_01.png"; //你自己本地的图片或者在线图片
         myImage2.crossOrigin = 'Anonymous';
