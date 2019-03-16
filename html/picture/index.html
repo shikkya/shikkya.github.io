@@ -13,10 +13,20 @@
 </head>
 
 <body>
+    <div id="header" class="header wid-1170" v-cloak>
+        <a href="../../index.hmtl" class="logo">
+            <img :src="'../../images/' + logoImg"/>
+        </a>
+        <ul class="flr">
+            <li v-for="item in list">
+                <a :href="item.url">{{item.text}}</a>
+            </li>
+        </ul>
+    </div>
     <div class="content" id="content">
-        <canvas id="myCanvas" class="myCanvas" width="1920" height="1080" crossorigin="anonymous">
+        <!--  <canvas id="myCanvas" class="myCanvas" width="1920" height="1080" crossorigin="anonymous">
         </canvas>
-        <div id="avatar"></div>
+        <div id="avatar"></div> -->
         <!-- <a href="./images/index_01.jpg" download="">dddddddd<a/> -->
     </div>
     <script src="../../plugins/vue/vue.min.js"></script>

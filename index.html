@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="content" id="content">
+    <div class="content" id="content" v-cloak>
         <div class="main">
             <div class="tit">{{titVal}}</div>
             <type-item :content="item" :index="index" v-for="(item,index) in list"></type-item>

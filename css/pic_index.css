@@ -4,3 +4,12 @@
  * @authors kk
  * @date    2019-03-16
  */
+
+ .header .logo img{
+    height:30px;
+    vertical-align:middle;
+}
+
+ .header li{
+     margin:0px 10px;
+ }

@@ -53,7 +53,20 @@ a {
     text-decoration: none;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 /*************** common ***************/
+
+.wid-1170 {
+    width: 1170px;
+    margin: 0px auto;
+}
+
+.fll {
+    float: left;
+}
 
 .flr {
     float: right;
