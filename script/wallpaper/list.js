@@ -4,7 +4,7 @@
  */
 
 var PicItem = {
-    props: ['item', 'index', 'size'],
+    props: ['item', 'size'],
     template: '<li><img :src="\'../../images/wallpaper/\' + item.img"/><b>{{item.tit}}</b><a :href="\'../../images/wallpaper_\' + size + \'/\' + item.img" class="flr" download=""><i class="fa fa-download"></i>下载</a></li>'
 }
 

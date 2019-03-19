@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>模板壁纸在线制作</title>
+    <link rel="stylesheet" type="text/css" href="../../plugins/font-awesome-4.5.0/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/wallpaper/list.css" />
+</head>
+
+<body>
+    <div id="header" class="header" v-cloak>
+        <div class="wid_size">
+            <a :href="homeUrl" class="logo">
+                <img :src="logoImg"/>
+            </a>
+            <div class="search flr">
+                <input type="text" placeholder="请输入要搜索的关键字" />
+                <button class="btn">搜索</button>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="content">
+        <div class="bg_img">
+            <img :src="bgImg"/>
+        </div>
+            <div class="top wid_size">
+                <ul class="type fll">
+                    <li v-for="item in typeList">
+                        <span>{{item}}</span>
+                    </li>
+                </ul>
+                <div class="size flr">
+                    默认下载尺寸：<span>{{curSize}}</span>
+                    <ul>
+                        <li v-for="(item,index) in sizeList" @click="changeSize(item)">
+                            <span>{{item}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="picture wid_size">
+                <ul>
+                    <pic-item :size="curSize" :item="item" v-for="item in picList"></pic-item>
+                </ul>
+            </div>
+        </div>
+        <div id="footer" class="footer" v-cloak>
+        </div>
+        <script src="../../plugins/vue/vue.min.js"></script>
+        <script src="../../script/common.js"></script>
+        <script src="../../script/wallpaper/list.js"></script>
+</body>
+
+</html>

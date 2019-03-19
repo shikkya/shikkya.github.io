@@ -3,6 +3,11 @@
  * @date    2019-03-16
  */
 
+var PicItem = {
+    props: ['item'],
+    template: '<li><img :src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
+}
+
 var vmHeader = new Vue({
     el: '#header',
     data: {
@@ -21,6 +26,9 @@ var vmHeader = new Vue({
 
 var vmContent = new Vue({
     el: '#content',
+    components: {
+        PicItem: PicItem
+    },
     data: {
         topObj: {
             img: '../../images/wallpaper_02.png',
@@ -31,12 +39,15 @@ var vmContent = new Vue({
             tit: '壁纸图库',
             moreUrl: './list.html',
             list: [
-                { tit: '浪花一朵朵', size: '1920 x 1080', url: '../../images/wallpaper/01.png' },
-                { tit: '浪花一朵朵', size: '1920 x 1080', url: '../../images/wallpaper/02.png' },
-                { tit: '浪花一朵朵', size: '1920 x 1080', url: '../../images/wallpaper/03.png' },
-                { tit: '浪花一朵朵', size: '1920 x 1080', url: '../../images/wallpaper/04.png' },
-                { tit: '浪花一朵朵', size: '1920 x 1080', url: '../../images/wallpaper/05.png' },
-                { tit: '浪花一朵朵', size: '1920 x 1080', url: '../../images/wallpaper/06.png' }
+                { img: '017.png', tit: '你和我的倾城时光' },
+                { img: '030.png', tit: '夏至未至' },
+                { img: '018.png', tit: '三生三世十里桃花' },
+                { img: '029.png', tit: '无心法师' },
+                { img: '025.png', tit: '微微一笑很倾城' },
+                { img: '012.png', tit: '高能少年团' },
+                { img: '014.png', tit: '美人为馅' },
+                { img: '001.png', tit: 'By2《成人礼》' },
+                { img: '011.png', tit: '浪花一朵朵' }
             ]
         }
     },

@@ -123,23 +123,22 @@
 
 
 .picture {
-    background: rgba(226, 234, 239, 0.8);
+    
     border-radius: 3px;
 }
 
 .picture ul {
-    padding: 35px 25px 20px;
     font-size: 0px;
 }
 
 .picture li {
     display: inline-block;
-    width: calc(33.3% - 16.4px);
+    width: calc(33.3% - 20px);
     font-size: 14px;
-    margin: 0px 0px 35px 25px;
+    margin: 0px 0px 40px 30px;
     color: #506a85;
     position: relative;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(226, 234, 239, 0.8);
     padding-bottom: 12px;
     overflow: hidden;
     border-radius: 3px;
