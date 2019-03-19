@@ -1,0 +1,176 @@
+﻿@charset "UTF-8";
+
+/**
+ * @authors kk
+ * @date    2019-03-18
+ */
+
+/*************** header ***************/
+
+.header {
+    background: #fff;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    padding: 20px 0px;
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+}
+
+.header .logo img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.header .search {
+    margin-top: -3px;
+}
+
+.header input {
+    padding: 6px 10px;
+    font-size: 14px;
+    color: #666;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    width: 210px;
+}
+
+.header .btn {
+    background: #00bc9c;
+    font-size: 14px;
+    padding: 5px 0px;
+    width: 60px;
+    margin-left: 5px;
+}
+
+
+/*************** content ***************/
+
+.content {
+    padding-top: 60px;
+    position: relative;
+}
+
+.bg_img {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.bg_img img {
+    width: 100%;
+}
+
+.top {
+    color: #fff;
+    padding: 40px 0px;
+}
+
+.type li {
+    margin-right: 15px;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.size {
+    position: relative;
+    cursor: pointer;
+}
+
+.size ul {
+    color: #506a85;
+    border-radius: 3px;
+    padding: 5px 0px;
+    transition: all 0.4s;
+    display: none;
+    position: relative;
+}
+
+.size:hover ul,
+.size ul:hover {
+    display: block;
+    position: absolute;
+    right: 0px;
+    z-index: 998;
+}
+
+.size ul li {
+    padding: 8px 35px;
+    cursor: pointer;
+    transition: all 0.4s;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.size ul li:first-child {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.size ul li:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.size ul li:hover {
+    color: #00bc9c;
+    background: #e5f4f1;
+}
+
+
+
+
+
+.picture {
+    background: rgba(226, 234, 239, 0.8);
+    border-radius: 3px;
+}
+
+.picture ul {
+    padding: 35px 25px 20px;
+    font-size: 0px;
+}
+
+.picture li {
+    display: inline-block;
+    width: calc(33.3% - 16.4px);
+    font-size: 14px;
+    margin: 0px 0px 35px 25px;
+    color: #506a85;
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    padding-bottom: 12px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.picture ul li:nth-child(3n+1) {
+    margin-left: 0px;
+}
+
+.picture li img {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.picture li b {
+    margin-left: 10px;
+}
+
+.picture li a {
+    color: #00bc9c;
+    margin-right: 10px;
+}
+
+.picture li i {
+    margin-right: 5px;
+}
+
+/*************** footer ***************/
+
+.footer {
+    background: #2f4052;
+    border-bottom: 15px solid #283645;
+}

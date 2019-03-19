@@ -20,7 +20,7 @@ var vm = new Vue({
             { imgName: 'index_11.png', text: '可可炸飞机', url: '' },
             { imgName: 'index_07.png', text: '可可美记', url: '' },
             { imgName: 'index_06.png', text: '倒计时', url: '' },
-            { imgName: 'index_10.png', text: '壁纸设计', url: './html/picture/index.html' }
+            { imgName: 'index_10.png', text: '壁纸设计', url: './html/wallpaper/index.html' }
         ]
     },
     methods: {}

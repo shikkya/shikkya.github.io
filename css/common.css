@@ -17,7 +17,7 @@ body {
     height: 100%;
     font-family: '微软雅黑 Light', '微软雅黑 Regular', '微软雅黑';
     font-size: 14px;
-    min-width: 1170px;
+    min-width: 1100px;
     cursor: default;
 }
 
@@ -34,6 +34,11 @@ a {
 
 textarea {
     resize: none;
+}
+
+input,
+textarea {
+    background: #fff;
 }
 
 input::-ms-clear {
@@ -59,8 +64,8 @@ a {
 
 /*************** common ***************/
 
-.wid-1170 {
-    width: 1170px;
+.wid_size {
+    width: 1000px;
     margin: 0px auto;
 }
 
@@ -72,13 +77,49 @@ a {
     float: right;
 }
 
-/*.btn {
+.btn {
+    display: inline-block;
     background: #0078df;
     color: #fff;
     font-size: 15px;
     text-align: center;
-    width: 62px;
-    height: 36px;
-    line-height: 36px;
+    width: 80px;
+    padding: 8px;
     border: 0px;
-}*/
+    border-radius: 3px;
+    transition: all 0.4s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/*************** footer ***************/
+
+.footer {
+    padding: 15px 0px 10px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+
+.footer li {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    padding: 0px 30px;
+    line-height: 20px;
+}
+
+.footer ul li:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer img {
+    height: 20px;
+    padding: 8px 18px;
+    margin-right: 5px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+}
