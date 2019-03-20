@@ -15,7 +15,7 @@
     padding: 20px 0px;
     position: fixed;
     top: 0px;
-    z-index: 999;
+    z-index: 998;
 }
 
 .header .logo img {
@@ -48,30 +48,32 @@
 /*************** content ***************/
 
 .content {
-    padding-top: 60px;
-    position: relative;
-}
-
-.bg_img {
-    width: 100%;
-    position: absolute;
-    z-index: -1;
-}
-
-.bg_img img {
-    width: 100%;
+    padding: 140px 0px 20px;
 }
 
 .top {
     color: #fff;
-    padding: 40px 0px;
+    padding: 12px 0px;
+    background: #506a85;
+    border-bottom: 5px solid #fff;
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    z-index: 998;
 }
 
 .type li {
-    margin-right: 15px;
+    margin-right: 10px;
     display: inline-block;
-    font-size: 15px;
+    font-size: 14px;
     cursor: pointer;
+    border-radius: 3px;
+    padding: 1px 8px;
+}
+
+.type li.active,
+.type li:hover {
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .size {
@@ -79,28 +81,33 @@
     cursor: pointer;
 }
 
+.size .size_list {
+    position: relative;
+    display: none;
+    transition: all 0.4s;
+    padding: 8px 0px;
+}
+
 .size ul {
     color: #506a85;
     border-radius: 3px;
     padding: 5px 0px;
-    transition: all 0.4s;
-    display: none;
-    position: relative;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+    background: #fff;
 }
 
-.size:hover ul,
-.size ul:hover {
+.size:hover .size_list,
+.size .size_list:hover {
     display: block;
     position: absolute;
     right: 0px;
-    z-index: 998;
+    z-index: 999;
 }
 
 .size ul li {
-    padding: 8px 35px;
+    padding: 8px 30px;
     cursor: pointer;
     transition: all 0.4s;
-    background: rgba(255, 255, 255, 0.95);
 }
 
 .size ul li:first-child {
@@ -118,12 +125,8 @@
     background: #e5f4f1;
 }
 
-
-
-
-
 .picture {
-    
+
     border-radius: 3px;
 }
 
@@ -134,14 +137,10 @@
 .picture li {
     display: inline-block;
     width: calc(33.3% - 20px);
-    font-size: 14px;
+    font-size: 12px;
     margin: 0px 0px 40px 30px;
     color: #506a85;
     position: relative;
-    background: rgba(226, 234, 239, 0.8);
-    padding-bottom: 12px;
-    overflow: hidden;
-    border-radius: 3px;
 }
 
 .picture ul li:nth-child(3n+1) {
@@ -150,21 +149,19 @@
 
 .picture li img {
     width: 100%;
-    display: block;
-    margin-bottom: 10px;
 }
 
-.picture li b {
-    margin-left: 10px;
+.picture li h3 {
+    margin: 8px 0px 3px;
+    font-size: 15px;
 }
 
-.picture li a {
-    color: #00bc9c;
-    margin-right: 10px;
-}
-
-.picture li i {
-    margin-right: 5px;
+.picture li .btn {
+    position: absolute;
+    right: 0px;
+    bottom: 3px;
+    font-size: 13px;
+    background: #00bc9c;
 }
 
 /*************** footer ***************/

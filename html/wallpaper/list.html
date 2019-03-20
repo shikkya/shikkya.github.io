@@ -23,36 +23,38 @@
             </div>
         </div>
     </div>
-    <div id="content" class="content">
-        <div class="bg_img">
-            <img :src="bgImg"/>
-        </div>
-            <div class="top wid_size">
+    <div id="content" class="content" v-cloak>
+        <go-top-item></go-top-item>
+        <div class="top">
+            <div class="wid_size">
                 <ul class="type fll">
-                    <li v-for="item in typeList">
+                    <li v-for="(item,index) in typeList" :class="{active:index==curType}" @click="changeType(item,index)">
                         <span>{{item}}</span>
                     </li>
                 </ul>
                 <div class="size flr">
-                    默认下载尺寸：<span>{{curSize}}</span>
-                    <ul>
-                        <li v-for="(item,index) in sizeList" @click="changeSize(item)">
-                            <span>{{item}}</span>
-                        </li>
-                    </ul>
+                    分辨率：<span>{{curSize}}</span>
+                    <div class="size_list">
+                        <ul>
+                            <li v-for="(item,index) in sizeList" @click="changeSize(item)">
+                                <span>{{item}}</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="picture wid_size">
-                <ul>
-                    <pic-item :size="curSize" :item="item" v-for="item in picList"></pic-item>
-                </ul>
-            </div>
         </div>
-        <div id="footer" class="footer" v-cloak>
+        <div class="picture wid_size">
+            <ul>
+                <pic-item :size="curSize" :item="item" v-for="item in picShowList"></pic-item>
+            </ul>
         </div>
-        <script src="../../plugins/vue/vue.min.js"></script>
-        <script src="../../script/common.js"></script>
-        <script src="../../script/wallpaper/list.js"></script>
+        <no-info-item></no-info-item>
+    </div>
+    <div id="footer" class="footer" v-cloak></div>
+    <script src="../../plugins/vue/vue.min.js"></script>
+    <script src="../../script/common.js"></script>
+    <script src="../../script/wallpaper/list.js"></script>
 </body>
 
 </html>

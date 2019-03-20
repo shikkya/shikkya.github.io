@@ -3,11 +3,7 @@
  * @date    2019-03-16
  */
 
-var PicItem = {
-    props: ['item'],
-    template: '<li><img :src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
-}
-
+// 头部
 var vmHeader = new Vue({
     el: '#header',
     data: {
@@ -20,10 +16,16 @@ var vmHeader = new Vue({
             { text: '倒计时', url: '' },
             { text: '模板壁纸', url: './index.html' }
         ]
-    },
-    methods: {}
+    }
 })
 
+// 图片展示列表组件
+var PicItem = {
+    props: ['item'],
+    template: '<li><img :src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
+}
+
+// 主体
 var vmContent = new Vue({
     el: '#content',
     components: {
@@ -55,9 +57,14 @@ var vmContent = new Vue({
         picText: function() {
             return '点击下载获取模板壁纸 · 点击<a href="' + this.picObj.moreUrl + '">更多</a>浏览全部壁纸';
         }
-    },
-    methods: {}
+    }
 })
+
+
+
+
+
+
 
 
 
