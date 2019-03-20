@@ -5,7 +5,8 @@
 
 var PicItem = {
     props: ['item', 'size'],
-    template: '<li><img :src="\'../../images/wallpaper/\' + item.img"/><b>{{item.tit}}</b><a :href="\'../../images/wallpaper_\' + size + \'/\' + item.img" class="flr" download=""><i class="fa fa-download"></i>下载</a></li>'
+    // template: '<li><img :src="\'../../images/wallpaper/\' + item.img"/><b>{{item.tit}}</b><a :href="\'../../images/wallpaper_\' + size + \'/\' + item.img" class="flr" download=""><i class="fa fa-download"></i>下载</a></li>'
+    template: '<li><img :src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>{{size}}</p><a class="btn" :href="\'../../images/wallpaper_\' + size + \'/\' + item.img"  download="">下载</a></li>'
 }
 
 var vmHeader = new Vue({
