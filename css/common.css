@@ -105,9 +105,10 @@ a {
 .go_top {
     background: #506a85;
     position: fixed;
-    text-align: center;
     bottom: 130px;
     right: 0px;
+    z-index: 999;
+    text-align: center;
     font-size: 12px;
     color: #fff;
     cursor: pointer;
@@ -139,14 +140,16 @@ a {
 }
 
 .footer ul li:first-child {
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid #5a6774;
+    width: 158px;
+    height: 38px;
 }
 
 .footer img {
     height: 20px;
     padding: 8px 18px;
     margin-right: 5px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: #3f4f60;
+    border: 1px solid #5a6774;
     border-radius: 3px;
 }

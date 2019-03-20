@@ -3,15 +3,6 @@
  * @date    2019-03-18
  */
 
-// 头部
-var vmHeader = new Vue({
-    el: '#header',
-    data: {
-        homeUrl: './index.html',
-        logoImg: '../../images/wallpaper_01.png'
-    }
-})
-
 // 图片数据-全部
 var picList = [
     { img: '001.png', type: '明星', tit: 'By2《成人礼》', keyWord: '' },
@@ -60,6 +51,48 @@ var picList = [
 //     }
 // }
 
+// 初始化content最小高度
+document.getElementById('content').style.minHeight = (document.body.clientHeight - 240) + 'px';
+
+// 文本框获焦时回车触发检索
+document.onkeypress = function(e) {
+    if (e.which == 13 && document.getElementById('searchInput') == document.activeElement) {
+        vmHeader.search();
+    }
+}
+
+// 头部
+var vmHeader = new Vue({
+    el: '#header',
+    data: {
+        homeUrl: './index.html',
+        logoImg: '../../images/wallpaper_01.png',
+        searchVal: ''
+    },
+    methods: {
+        // 搜索
+        search: function() {
+            var noInfo = document.getElementById('noInfo');
+            noInfo.style.display = 'none';
+            vmContent.picShowList = [];
+            for (var i = 0; i < picList.length; i++) {
+                // if (picList[i].type.indexOf(this.searchVal) > -1 || picList[i].tit.indexOf(this.searchVal) > -1 || picList[i].keyWord.indexOf(this.searchVal) > -1) {
+                //     vmContent.picShowList.push(picList[i]);
+                // }
+                if (picList[i].type.indexOf(vmContent.typeList[vmContent.curType]) > -1 && (picList[i].type.indexOf(this.searchVal) > -1 || picList[i].tit.indexOf(this.searchVal) > -1 || picList[i].keyWord.indexOf(this.searchVal) > -1)) {
+                    vmContent.picShowList.push(picList[i]);
+                }
+            }
+            if (vmContent.picShowList.length == 0) {
+                noInfo.style.display = 'block';
+            }
+            goTop();
+            vmContent.curkeyWord = this.searchVal;
+            this.searchVal = '';
+        }
+    }
+})
+
 // 图片展示列表组件
 var PicItem = {
     props: ['item', 'size'],
@@ -77,6 +110,7 @@ var vmContent = new Vue({
         sizeList: ['1920x1080', '1440x900', '1366x768'],
         curType: '0',
         curSize: '1920x1080',
+        curkeyWord: '',
         picShowList: picList
     },
     methods: {
@@ -89,13 +123,12 @@ var vmContent = new Vue({
                 this.picShowList = picList;
             } else {
                 for (var i = 0; i < picList.length; i++) {
-                    if (picList[i].type.indexOf(item) > -1) {
+                    if (picList[i].type.indexOf(item) > -1 && (picList[i].type.indexOf(this.curkeyWord) > -1 || picList[i].tit.indexOf(this.curkeyWord) > -1 || picList[i].keyWord.indexOf(this.curkeyWord) > -1)) {
                         this.picShowList.push(picList[i]);
                     }
                 }
             }
             if (this.picShowList.length == 0) {
-                noInfo.style.padding = (document.body.clientHeight - 442) / 2 + 'px 0px';
                 noInfo.style.display = 'block';
             }
             goTop();
@@ -104,6 +137,11 @@ var vmContent = new Vue({
         // 选择分辨率
         changeSize: function(item) {
             this.curSize = item;
+        },
+        // 删除检索条件-回到全部
+        delSearch: function() {
+            this.curkeyWord = '';
+            this.changeType(this.typeList[this.curType], this.curType);
         }
     }
 })

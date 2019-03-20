@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>模板壁纸在线制作</title>
-    <link rel="stylesheet" type="text/css" href="../../plugins/font-awesome-4.5.0/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../plugins/font-awesome/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../../css/wallpaper/list.css" />
 </head>
@@ -18,8 +18,8 @@
                 <img :src="logoImg"/>
             </a>
             <div class="search flr">
-                <input type="text" placeholder="请输入要搜索的关键字" />
-                <button class="btn">搜索</button>
+                <input type="text" id="searchInput" v-model="searchVal" placeholder="请输入要搜索的关键字" />
+                <button class="btn" @click="search">搜索</button>
             </div>
         </div>
     </div>
@@ -32,6 +32,10 @@
                         <span>{{item}}</span>
                     </li>
                 </ul>
+                <div class="key_word fll" v-if="curkeyWord!=''">
+                    <span>搜索：{{curkeyWord}}</span>
+                    <i class="fa fa-times-circle" aria-hidden="true" @click="delSearch"></i>
+                </div>
                 <div class="size flr">
                     分辨率：<span>{{curSize}}</span>
                     <div class="size_list">
