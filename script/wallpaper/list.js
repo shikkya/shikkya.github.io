@@ -38,7 +38,11 @@ var picList = [
     { img: '031.png', type: '明星', tit: '邢昭林', keyWord: '' },
     { img: '032.png', type: '影视,明星', tit: '幸福 近在咫尺', keyWord: '幸福近在咫尺,蒋一依,陈意涵,方牧野,王子奇' },
     { img: '033.png', type: '影视,明星', tit: '旋风少女', keyWord: '若白,杨洋,戚百草,胡冰卿' },
-    { img: '034.png', type: '植物,风景', tit: '枫心', keyWord: '树,枫叶' }
+    { img: '034.png', type: '植物,风景', tit: '枫心', keyWord: '树,枫叶' },
+    { img: '035.png', type: '萌宠', tit: '不要看我', keyWord: '猫咪' },
+    { img: '036.png', type: '萌宠', tit: '爪爪', keyWord: '猫咪,猫爪,爪子' },
+    { img: '037.png', type: '动漫', tit: '僵小鱼', keyWord: '小僵尸' },
+    { img: '038.png', type: '动漫', tit: '僵小鱼', keyWord: '小僵尸' }
 ];
 
 // 图片数据-拷贝
@@ -73,10 +77,14 @@ var vmHeader = new Vue({
     methods: {
         // 搜索
         search: function() {
+            var tempType = '';
+            if (vmContent.curType != '0') {
+                tempType = vmContent.typeList[vmContent.curType];
+            }
             vmContent.isNoInfo = false;
             vmContent.picShowList = [];
             for (var i = 0; i < picList.length; i++) {
-                if (picList[i].type.indexOf(vmContent.typeList[vmContent.curType]) > -1 && (picList[i].type.indexOf(this.searchVal) > -1 || picList[i].tit.indexOf(this.searchVal) > -1 || picList[i].keyWord.indexOf(this.searchVal) > -1)) {
+                if (picList[i].type.indexOf(tempType) > -1 && (picList[i].type.indexOf(this.searchVal) > -1 || picList[i].tit.indexOf(this.searchVal) > -1 || picList[i].keyWord.indexOf(this.searchVal) > -1)) {
                     vmContent.picShowList.push(picList[i]);
                 }
             }
@@ -103,7 +111,7 @@ var vmContent = new Vue({
         PicItem: PicItem
     },
     data: {
-        typeList: ['全部', '萌宠', '植物', '风景', '卡通', '影视', '明星', '其他'],
+        typeList: ['全部', '萌宠', '植物', '风景', '动漫', '影视', '明星', '其他'],
         sizeList: ['1920x1080', '1440x900', '1366x768'],
         curType: '0',
         curSize: '1920x1080',
@@ -115,15 +123,15 @@ var vmContent = new Vue({
     methods: {
         // 选择分类
         changeType: function(item, index) {
+            var tempType = '';
+            if (item != '全部') {
+                tempType = item;
+            }
             this.isNoInfo = false;
             this.picShowList = [];
-            if (item == '全部') {
-                this.picShowList = picList;
-            } else {
-                for (var i = 0; i < picList.length; i++) {
-                    if (picList[i].type.indexOf(item) > -1 && (picList[i].type.indexOf(this.curkeyWord) > -1 || picList[i].tit.indexOf(this.curkeyWord) > -1 || picList[i].keyWord.indexOf(this.curkeyWord) > -1)) {
-                        this.picShowList.push(picList[i]);
-                    }
+            for (var i = 0; i < picList.length; i++) {
+                if (picList[i].type.indexOf(tempType) > -1 && (picList[i].type.indexOf(this.curkeyWord) > -1 || picList[i].tit.indexOf(this.curkeyWord) > -1 || picList[i].keyWord.indexOf(this.curkeyWord) > -1)) {
+                    this.picShowList.push(picList[i]);
                 }
             }
             if (this.picShowList.length == 0) {
@@ -140,6 +148,11 @@ var vmContent = new Vue({
         delSearch: function() {
             this.curkeyWord = '';
             this.changeType(this.typeList[this.curType], this.curType);
+        }
+    },
+    computed: {
+        resultNum: function() {
+            return this.picShowList.length;
         }
     },
     watch: {

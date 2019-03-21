@@ -32,8 +32,11 @@
                         <span>{{item}}</span>
                     </li>
                 </ul>
+                <div class="result_num fll">
+                    <span>共 {{resultNum}} 张</span>
+                </div>
                 <div class="key_word fll" v-if="curkeyWord!=''">
-                    <span>搜索：{{curkeyWord}}</span>
+                    <span :title="curkeyWord">搜索：{{curkeyWord}}</span>
                     <i class="fa fa-times-circle" aria-hidden="true" @click="delSearch"></i>
                 </div>
                 <div class="size flr">
