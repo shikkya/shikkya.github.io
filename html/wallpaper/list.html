@@ -53,7 +53,7 @@
                 <pic-item :size="curSize" :item="item" v-for="item in picShowList"></pic-item>
             </ul>
         </div>
-        <no-info-item></no-info-item>
+        <no-info-item v-if="isNoInfo"></no-info-item>
     </div>
     <div id="footer" class="footer" v-cloak></div>
     <script src="../../plugins/vue/vue.min.js"></script>

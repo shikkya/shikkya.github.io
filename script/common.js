@@ -35,25 +35,25 @@ function goTop() {
     }, 10);
 };
 
-// 图片加载中-判断浏览器  
+// 图片加载-判断浏览器  
 var Browser = new Object();
 Browser.userAgent = window.navigator.userAgent.toLowerCase();
 Browser.ie = /msie/.test(Browser.userAgent);
 Browser.Moz = /gecko/.test(Browser.userAgent);
 
-// 图片加载中-判断是否加载完成  
-function checkLoaded(url, imgId) {
+// 图片加载
+function checkLoad(url, imgId) {
     var img = new Image();
     if (Browser.ie) {
         img.onreadystatechange = function() {
             if (img.readyState == "complete" || img.readyState == "loaded") {
-                getImgSrc(img, imgId);
+                document.getElementById(imgId).src = img.src;
             }
         }
     } else if (Browser.Moz) {
         img.onload = function() {
             if (img.complete == true) {
-                getImgSrc(img, imgId);
+                document.getElementById(imgId).src = img.src;
             }
         }
     }
@@ -64,18 +64,17 @@ function checkLoaded(url, imgId) {
     img.src = url;
 }
 
-// 图片加载中-显示图片  
-function getImgSrc(obj, imgId) {
-    document.getElementById(imgId).src = obj.src;
-}
-
-// 图片加载中-初始化需要显示的图片并指定显示的位置  
-window.onload = function() {
+// 图片加载中
+function loadImg() {
     var imgList = document.getElementsByTagName('img');
     for (i = 0; i < imgList.length; i++) {
         if (imgList[i].getAttribute('data-src')) {
             imgList[i].id = "img_" + i;
-            checkLoaded(imgList[i].getAttribute("data-src"), imgList[i].id);
+            checkLoad(imgList[i].getAttribute("data-src"), imgList[i].id);
         }
     }
+}
+
+window.onload = function() {
+    loadImg();
 }

@@ -72,19 +72,15 @@ var vmHeader = new Vue({
     methods: {
         // 搜索
         search: function() {
-            var noInfo = document.getElementById('noInfo');
-            noInfo.style.display = 'none';
+            this.isNoInfo = false;
             vmContent.picShowList = [];
             for (var i = 0; i < picList.length; i++) {
-                // if (picList[i].type.indexOf(this.searchVal) > -1 || picList[i].tit.indexOf(this.searchVal) > -1 || picList[i].keyWord.indexOf(this.searchVal) > -1) {
-                //     vmContent.picShowList.push(picList[i]);
-                // }
                 if (picList[i].type.indexOf(vmContent.typeList[vmContent.curType]) > -1 && (picList[i].type.indexOf(this.searchVal) > -1 || picList[i].tit.indexOf(this.searchVal) > -1 || picList[i].keyWord.indexOf(this.searchVal) > -1)) {
                     vmContent.picShowList.push(picList[i]);
                 }
             }
             if (vmContent.picShowList.length == 0) {
-                noInfo.style.display = 'block';
+                this.isNoInfo = true;
             }
             goTop();
             vmContent.curkeyWord = this.searchVal;
@@ -111,13 +107,13 @@ var vmContent = new Vue({
         curType: '0',
         curSize: '1920x1080',
         curkeyWord: '',
+        isNoInfo: false,
         picShowList: picList
     },
     methods: {
         // 选择分类
         changeType: function(item, index) {
-            var noInfo = document.getElementById('noInfo');
-            noInfo.style.display = 'none';
+            this.isNoInfo = false;
             this.picShowList = [];
             if (item == '全部') {
                 this.picShowList = picList;
@@ -129,7 +125,7 @@ var vmContent = new Vue({
                 }
             }
             if (this.picShowList.length == 0) {
-                noInfo.style.display = 'block';
+                this.isNoInfo = true;
             }
             goTop();
             this.curType = index;
@@ -144,7 +140,9 @@ var vmContent = new Vue({
             this.changeType(this.typeList[this.curType], this.curType);
         }
     },
-    mounted: function() {
-        // getImg();
+    watch: {
+        picShowList: function() {
+            loadImg();
+        }
     }
 })
