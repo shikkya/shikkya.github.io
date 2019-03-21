@@ -35,12 +35,47 @@ function goTop() {
     }, 10);
 };
 
-// 图片加载
-function getImg() {
+// 图片加载中-判断浏览器  
+var Browser = new Object();
+Browser.userAgent = window.navigator.userAgent.toLowerCase();
+Browser.ie = /msie/.test(Browser.userAgent);
+Browser.Moz = /gecko/.test(Browser.userAgent);
+
+// 图片加载中-判断是否加载完成  
+function checkLoaded(url, imgId) {
+    var img = new Image();
+    if (Browser.ie) {
+        img.onreadystatechange = function() {
+            if (img.readyState == "complete" || img.readyState == "loaded") {
+                getImgSrc(img, imgId);
+            }
+        }
+    } else if (Browser.Moz) {
+        img.onload = function() {
+            if (img.complete == true) {
+                getImgSrc(img, imgId);
+            }
+        }
+    }
+    //如果因为网络或图片的原因发生异常，则显示该图片  
+    img.onerror = function() {
+        img.src = "../images/wallpaper_05.png"
+    }
+    img.src = url;
+}
+
+// 图片加载中-显示图片  
+function getImgSrc(obj, imgId) {
+    document.getElementById(imgId).src = obj.src;
+}
+
+// 图片加载中-初始化需要显示的图片并指定显示的位置  
+window.onload = function() {
     var imgList = document.getElementsByTagName('img');
-    for (var i = 0; i < imgList.length; i++) {
+    for (i = 0; i < imgList.length; i++) {
         if (imgList[i].getAttribute('data-src')) {
-            imgList[i].setAttribute('src', imgList[i].getAttribute('data-src'));
+            imgList[i].id = "img_" + i;
+            checkLoaded(imgList[i].getAttribute("data-src"), imgList[i].id);
         }
     }
 }

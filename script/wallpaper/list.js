@@ -145,6 +145,6 @@ var vmContent = new Vue({
         }
     },
     mounted: function() {
-        getImg();
+        // getImg();
     }
 })
