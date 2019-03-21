@@ -96,7 +96,7 @@ var vmHeader = new Vue({
 // 图片展示列表组件
 var PicItem = {
     props: ['item', 'size'],
-    template: '<li><img :src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>{{size}}</p><a class="btn" :href="\'../../images/wallpaper_\' + size + \'/\' + item.img"  download="">下载</a></li>'
+    template: '<li><img src="../../images/wallpaper_04.png" :data-src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>{{size}}</p><a class="btn" :href="\'../../images/wallpaper_\' + size + \'/\' + item.img"  download="">下载</a></li>'
 }
 
 // 主体
@@ -143,5 +143,8 @@ var vmContent = new Vue({
             this.curkeyWord = '';
             this.changeType(this.typeList[this.curType], this.curType);
         }
+    },
+    mounted: function() {
+        getImg();
     }
 })

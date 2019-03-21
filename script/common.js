@@ -34,3 +34,13 @@ function goTop() {
         }
     }, 10);
 };
+
+// 图片加载
+function getImg() {
+    var imgList = document.getElementsByTagName('img');
+    for (var i = 0; i < imgList.length; i++) {
+        if (imgList[i].getAttribute('data-src')) {
+            imgList[i].setAttribute('src', imgList[i].getAttribute('data-src'));
+        }
+    }
+}
