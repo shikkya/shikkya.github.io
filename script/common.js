@@ -71,7 +71,6 @@ function loadImg() {
     var imgList = document.getElementsByTagName('img');
     for (i = 0; i < imgList.length; i++) {
         if (imgList[i].getAttribute('data-src')) {
-            imgList[i].src = '';
             imgList[i].id = 'img_' + i;
             checkLoad(imgList[i].getAttribute("data-src"), imgList[i].id);
         }
