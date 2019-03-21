@@ -22,7 +22,7 @@ var vmHeader = new Vue({
 // 图片展示列表组件
 var PicItem = {
     props: ['item'],
-    template: '<li><img :src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
+    template: '<li><img src="../../images/wallpaper_04.png" :data-src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
 }
 
 // 主体
