@@ -37,7 +37,8 @@ var picList = [
     { img: '030.png', type: '影视,明星', tit: '夏至未至', keyWord: '陆之昂,白敬亭' },
     { img: '031.png', type: '明星', tit: '邢昭林', keyWord: '' },
     { img: '032.png', type: '影视,明星', tit: '幸福 近在咫尺', keyWord: '幸福近在咫尺,蒋一依,陈意涵,方牧野,王子奇' },
-    { img: '033.png', type: '影视,明星', tit: '旋风少女', keyWord: '若白,杨洋,戚百草,胡冰卿' }
+    { img: '033.png', type: '影视,明星', tit: '旋风少女', keyWord: '若白,杨洋,戚百草,胡冰卿' },
+    { img: '034.png', type: '植物,风景', tit: '枫心', keyWord: '树,枫叶' }
 ];
 
 // 图片数据-拷贝
@@ -72,7 +73,7 @@ var vmHeader = new Vue({
     methods: {
         // 搜索
         search: function() {
-            this.isNoInfo = false;
+            vmContent.isNoInfo = false;
             vmContent.picShowList = [];
             for (var i = 0; i < picList.length; i++) {
                 if (picList[i].type.indexOf(vmContent.typeList[vmContent.curType]) > -1 && (picList[i].type.indexOf(this.searchVal) > -1 || picList[i].tit.indexOf(this.searchVal) > -1 || picList[i].keyWord.indexOf(this.searchVal) > -1)) {
@@ -80,9 +81,7 @@ var vmHeader = new Vue({
                 }
             }
             if (vmContent.picShowList.length == 0) {
-                this.isNoInfo = true;
-            } else {
-                loadImg();
+                vmContent.isNoInfo = true;
             }
             goTop();
             vmContent.curkeyWord = this.searchVal;
@@ -93,8 +92,8 @@ var vmHeader = new Vue({
 
 // 图片展示列表组件
 var PicItem = {
-    props: ['item', 'size'],
-    template: '<li><img src="../../images/wallpaper_04.png" :data-src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>{{size}}</p><a class="btn" :href="\'../../images/wallpaper_\' + size + \'/\' + item.img"  download="">下载</a></li>'
+    props: ['item', 'size', 'loadimg'],
+    template: '<li><img :src="loadimg" :data-src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>{{size}}</p><a class="btn" :href="\'../../images/wallpaper_\' + size + \'/\' + item.img"  download="">下载</a></li>'
 }
 
 // 主体
@@ -110,6 +109,7 @@ var vmContent = new Vue({
         curSize: '1920x1080',
         curkeyWord: '',
         isNoInfo: false,
+        picLoadImg: '../../images/wallpaper_04.png',
         picShowList: picList
     },
     methods: {
@@ -128,8 +128,6 @@ var vmContent = new Vue({
             }
             if (this.picShowList.length == 0) {
                 this.isNoInfo = true;
-            } else {
-                loadImg();
             }
             goTop();
             this.curType = index;
@@ -142,6 +140,13 @@ var vmContent = new Vue({
         delSearch: function() {
             this.curkeyWord = '';
             this.changeType(this.typeList[this.curType], this.curType);
+        }
+    },
+    watch: {
+        picShowList: function() {
+            this.$nextTick(function() {
+                loadImg();
+            });
         }
     }
 })

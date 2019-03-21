@@ -49,8 +49,8 @@
             </div>
         </div>
         <div class="picture wid_size">
-            <ul>
-                <pic-item :size="curSize" :item="item" v-for="item in picShowList"></pic-item>
+            <ul id="picUl">
+                <pic-item :size="curSize" :loadimg="picLoadImg" :item="item" v-for="item in picShowList"></pic-item>
             </ul>
         </div>
         <no-info-item v-if="isNoInfo"></no-info-item>

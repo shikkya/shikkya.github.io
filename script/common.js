@@ -48,12 +48,14 @@ function checkLoad(url, imgId) {
         img.onreadystatechange = function() {
             if (img.readyState == "complete" || img.readyState == "loaded") {
                 document.getElementById(imgId).src = img.src;
+                document.getElementById(imgId).id = '';
             }
         }
     } else if (Browser.Moz) {
         img.onload = function() {
             if (img.complete == true) {
                 document.getElementById(imgId).src = img.src;
+                document.getElementById(imgId).id = '';
             }
         }
     }
@@ -69,7 +71,8 @@ function loadImg() {
     var imgList = document.getElementsByTagName('img');
     for (i = 0; i < imgList.length; i++) {
         if (imgList[i].getAttribute('data-src')) {
-            imgList[i].id = "img_" + i;
+            imgList[i].src = '';
+            imgList[i].id = 'img_' + i;
             checkLoad(imgList[i].getAttribute("data-src"), imgList[i].id);
         }
     }
