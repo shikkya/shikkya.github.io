@@ -81,6 +81,8 @@ var vmHeader = new Vue({
             }
             if (vmContent.picShowList.length == 0) {
                 this.isNoInfo = true;
+            } else {
+                loadImg();
             }
             goTop();
             vmContent.curkeyWord = this.searchVal;
@@ -126,6 +128,8 @@ var vmContent = new Vue({
             }
             if (this.picShowList.length == 0) {
                 this.isNoInfo = true;
+            } else {
+                loadImg();
             }
             goTop();
             this.curType = index;
@@ -138,11 +142,6 @@ var vmContent = new Vue({
         delSearch: function() {
             this.curkeyWord = '';
             this.changeType(this.typeList[this.curType], this.curType);
-        }
-    },
-    watch: {
-        picShowList: function() {
-            loadImg();
         }
     }
 })
