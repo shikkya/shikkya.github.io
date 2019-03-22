@@ -26,25 +26,14 @@
     </div>
     <div id="content" class="content" v-cloak>
         <go-top-item></go-top-item>
-        <div class="top">
-            <img src="../../images/wallpaper_06.png" :data-src="topObj.img"/>
-            <div>
-                <h1>{{topObj.tit}}</h1>
-                <p>{{topObj.text}}</p>
-                <a href="made.html" class="btn">开始制作</a>
-            </div>
-        </div>
-        <div class="picture wid_size">
-            <div class="tit">
-                <h1>{{picObj.tit}}</h1>
-                <p v-html="picText"></p>
-            </div>
-            <div class="info">
-                <ul>
-                    <pic-item :item="item" v-for="item in picObj.list"></pic-item>
-                </ul>
-            </div>
-        </div>
+
+
+
+        <canvas id="myCanvas" class="myCanvas" width="1920" height="1080" crossorigin="anonymous">
+        </canvas>
+        <div id="avatar"></div>
+
+
     </div>
     <div id="footer" class="footer" v-cloak></div>
     <script src="../../plugins/vue/vue.min.js"></script>

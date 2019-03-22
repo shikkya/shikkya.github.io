@@ -1,6 +1,6 @@
 ﻿/**
  * @authors kk
- * @date    2019-03-16
+ * @date    2019-03-22
  */
 
 // 头部
@@ -19,24 +19,12 @@ var vmHeader = new Vue({
     }
 })
 
-// 图片展示列表组件
-var PicItem = {
-    props: ['item'],
-    template: '<li><img src="../../images/wallpaper_04.png" :data-src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
-}
-
 // 主体
 var vmContent = new Vue({
     el: '#content',
     components: {
-        PicItem: PicItem
     },
     data: {
-        topObj: {
-            img: '../../images/wallpaper_02.png',
-            tit: '模板壁纸在线制作',
-            text: '浏览图库下载心仪壁纸 · 上传素材在线合成专属壁纸 · 让你的桌面更加方便实用'
-        },
         picObj: {
             tit: '壁纸图库',
             moreUrl: './list.html',
@@ -59,3 +47,48 @@ var vmContent = new Vue({
         }
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+drawAndShareImage();
+function drawAndShareImage() {
+    // var canvas = document.createElement("canvas");
+    var canvas = document.getElementById('myCanvas');
+    // canvas.width = 700;
+    // canvas.height = 700;
+    var context = canvas.getContext("2d");
+
+    context.rect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = "#fff";
+    context.fill();
+
+    var myImage = new Image();
+    myImage.src = "../../images/02.jpg"; //背景图片  你自己本地的图片或者在线图片
+    myImage.crossOrigin = 'Anonymous';
+
+    myImage.onload = function() {
+        context.drawImage(myImage, 0, 0, 1920, 1080);
+        var myImage2 = new Image();
+        myImage2.src = "../../images/01.png"; //你自己本地的图片或者在线图片
+        myImage2.crossOrigin = 'Anonymous';
+
+        myImage2.onload = function() {
+            context.drawImage(myImage2, 0, 0, 1920, 1080);
+            var base64 = canvas.toDataURL("image/png"); //"image/png" 这里注意一下
+            var img = document.getElementById('avatar');
+
+            // document.getElementById('avatar').src = base64;
+            img.setAttribute('src', base64);
+        }
+    }
+}
