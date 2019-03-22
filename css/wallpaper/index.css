@@ -39,6 +39,7 @@
     transition: all 0.4s;
 }
 
+.header li.active a,
 .header li a:hover {
     color: #00bc9c;
     border-bottom: 1px solid #00bc9c;

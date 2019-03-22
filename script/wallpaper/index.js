@@ -9,13 +9,7 @@ var vmHeader = new Vue({
     data: {
         homeUrl: './index.html',
         logoImg: '../../images/wallpaper_01.png',
-        list: [
-            { text: '可可导航', url: '../../index.html' },
-            { text: '可可炸飞机', url: '' },
-            { text: '可可美记', url: '' },
-            { text: '倒计时', url: '' },
-            { text: '模板壁纸', url: './index.html' }
-        ]
+        list: productList
     }
 })
 

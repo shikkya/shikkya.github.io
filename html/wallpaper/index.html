@@ -18,7 +18,7 @@
                 <img :src="logoImg"/>
             </a>
             <ul class="flr">
-                <li v-for="item in list">
+                <li v-for="(item,index) in list" :class="{active:index==4}">
                     <a :href="item.url" target="_blank">{{item.text}}</a>
                 </li>
             </ul>
@@ -49,6 +49,7 @@
     <div id="footer" class="footer" v-cloak></div>
     <script src="../../plugins/vue/vue.min.js"></script>
     <script src="../../script/common.js"></script>
+    <script src="../../script/wallpaper/common.js"></script>
     <script src="../../script/wallpaper/index.js"></script>
 </body>
 

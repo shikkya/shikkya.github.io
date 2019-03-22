@@ -3,10 +3,19 @@
  * @date    2019-03-18
  */
 
+// 产品分类
+var productList = [
+    { text: '可可导航', url: '../../index.html' },
+    { text: '可可炸飞机', url: '' },
+    { text: '可可美记', url: '' },
+    { text: '网页工具', url: '' },
+    { text: '模板壁纸', url: '../wallpaper/index.html' }
+];
+
 // 页脚
 var vmFooter = new Vue({
     el: '#footer',
-    template: '<div id="footer" class="footer" v-cloak><ul><li><img :src="logoImg"/></li><li><p>客服QQ：125048224</p><p>意见反馈：shikkya@qq.com</p></li></ul></div>',
+    template: '<div id="footer" class="footer" v-cloak><ul><li><img :src="logoImg"/></li><li><p>联系 QQ：125048224</p><p>意见反馈：shikkya@qq.com</p></li></ul></div>',
     data: {
         logoImg: '../../images/footer_01.png'
     }
@@ -17,9 +26,9 @@ Vue.component("NoInfoItem", {
     template: '<div id="noInfo" class="no_info"><img src="../../images/wallpaper_03.png"/><p>暂时没有哦 ~ 看看其他的吧</p></div>'
 })
 
-// 返回顶部
+// 右下悬浮功能按钮
 Vue.component("GoTopItem", {
-    template: '<div id="goTop" class="go_top" @click="goTop"><i class="fa fa-angle-up" aria-hidden="true"></i></div>'
+    template: '<div class="shortcut"><div class="go_top" @click="goTop"><i class="fa fa-angle-up" aria-hidden="true"></i></div><div class="go_home" @click="window.location.href=\'./index.html\'"><i class="fa fa-home" aria-hidden="true"></i></div></div>'
 })
 
 // 返回顶部

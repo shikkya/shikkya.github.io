@@ -219,3 +219,7 @@
 .fa-times-circle:before {
     content: "\f057";
 }
+
+.fa-home:before {
+    content: "\f015";
+}
