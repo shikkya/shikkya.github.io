@@ -101,6 +101,8 @@ a {
     padding: 15px 0px;
 }
 
+/*************** position btns ***************/
+
 .shortcut {
     position: fixed;
     bottom: 120px;

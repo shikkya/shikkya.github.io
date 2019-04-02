@@ -42,5 +42,7 @@ var picList = [
     { img: '035.png', type: '萌宠', tit: '不要看我', keyWord: '猫咪' },
     { img: '036.png', type: '萌宠', tit: '爪爪', keyWord: '猫咪,猫爪,爪子' },
     { img: '037.png', type: '动漫', tit: '僵小鱼', keyWord: '小僵尸' },
-    { img: '038.png', type: '动漫', tit: '僵小鱼', keyWord: '小僵尸' }
+    { img: '038.png', type: '动漫', tit: '僵小鱼', keyWord: '小僵尸' },
+    { img: '039.png', type: '动漫', tit: '僵小鱼', keyWord: '小僵尸' },
+    { img: '040.png', type: '动漫', tit: '僵小鱼', keyWord: '小僵尸' }
 ];

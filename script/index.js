@@ -17,10 +17,10 @@ var vm = new Vue({
     data: {
         titVal: 'Welcome To Know About Shikkya',
         list: [
-            { imgName: 'index_11.png', text: '可可炸飞机', url: '' },
-            { imgName: 'index_07.png', text: '可可美记', url: '' },
-            { imgName: 'index_06.png', text: '倒计时', url: '' },
-            { imgName: 'index_10.png', text: '壁纸设计', url: './html/wallpaper/index.html' }
+            { imgName: 'index_11.png', text: '模板壁纸', url: './html/wallpaper/index.html' },
+            { imgName: 'index_07.png', text: '便易工具', url: './html/tool/index.html' },
+            { imgName: 'index_06.png', text: '敬请期待', url: '' },
+            { imgName: 'index_10.png', text: '敬请期待', url: '' }
         ]
     },
     methods: {}

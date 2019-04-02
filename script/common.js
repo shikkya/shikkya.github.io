@@ -3,13 +3,11 @@
  * @date    2019-03-18
  */
 
-// 产品分类
+// 各产品首页右上角导航
 var productList = [
     { text: '可可导航', url: '../../index.html' },
-    { text: '可可炸飞机', url: '' },
-    { text: '可可美记', url: '' },
-    { text: '网页工具', url: '' },
-    { text: '模板壁纸', url: '../wallpaper/index.html' }
+    { text: '模板壁纸', url: '../wallpaper/index.html' },
+    { text: '便易工具', url: '../tool/index.html' }
 ];
 
 // 页脚
