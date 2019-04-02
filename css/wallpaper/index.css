@@ -26,7 +26,7 @@
 
 .header li {
     display: inline-block;
-    margin: 0px 0px 0px 22px;
+    margin: 0px 0px 0px 15px;
     height: 20px;
     line-height: 20px;
 }
@@ -35,14 +35,14 @@
     color: #506a85;
     font-size: 15px;
     border-bottom: 1px solid #fff;
-    padding: 0px 2px;
+    padding: 1px 5px;
     transition: all 0.4s;
 }
 
 .header li.active a,
 .header li a:hover {
     color: #00bc9c;
-    border-bottom: 1px solid #00bc9c;
+    border-bottom: 2px solid #00bc9c;
 }
 
 /*************** content ***************/
@@ -112,45 +112,4 @@
 
 .picture .tit a:hover {
     background: #dcf1ed;
-}
-
-.picture ul {
-    font-size: 0px;
-}
-
-.picture li {
-    display: inline-block;
-    width: calc(33.3% - 20px);
-    font-size: 12px;
-    margin: 0px 0px 40px 30px;
-    color: #506a85;
-    position: relative;
-}
-
-.picture ul li:nth-child(3n+1) {
-    margin-left: 0px;
-}
-
-.picture li img {
-    width: 100%;
-}
-
-.picture li h3 {
-    margin: 8px 0px 3px;
-    font-size: 15px;
-}
-
-.picture li .btn {
-    position: absolute;
-    right: 0px;
-    bottom: 3px;
-    font-size: 13px;
-    background: #00bc9c;
-}
-
-/*************** footer ***************/
-
-.footer {
-    background: #2f4052;
-    border-bottom: 15px solid #283645;
 }

@@ -77,9 +77,17 @@ a {
     float: right;
 }
 
+.no_info {
+    text-align: center;
+    color: #999;
+    font-size: 16px;
+    padding: 15px 0px;
+}
+
+/*************** btn ***************/
+
 .btn {
     display: inline-block;
-    background: #0078df;
     color: #fff;
     font-size: 15px;
     text-align: center;
@@ -94,14 +102,7 @@ a {
     opacity: 0.8;
 }
 
-.no_info {
-    text-align: center;
-    color: #999;
-    font-size: 16px;
-    padding: 15px 0px;
-}
-
-/*************** position btns ***************/
+/*************** position btn ***************/
 
 .shortcut {
     position: fixed;
@@ -120,8 +121,6 @@ a {
 }
 
 .go_top {
-    background: #506a85;
-    border: 1px solid #506a85;
     color: #fff;
     font-size: 32px;
 }
@@ -152,7 +151,6 @@ a {
 }
 
 .footer ul li:first-child {
-    border-right: 1px solid #5a6774;
     width: 158px;
     height: 38px;
 }
@@ -161,7 +159,5 @@ a {
     height: 20px;
     padding: 8px 18px;
     margin-right: 5px;
-    background: #3f4f60;
-    border: 1px solid #5a6774;
     border-radius: 3px;
 }

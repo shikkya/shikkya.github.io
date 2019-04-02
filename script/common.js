@@ -21,7 +21,7 @@ var vmFooter = new Vue({
 
 // 暂无信息组件
 Vue.component("NoInfoItem", {
-    template: '<div id="noInfo" class="no_info"><img src="../../images/wallpaper_03.png"/><p>暂时没有哦 ~ 看看其他的吧</p></div>'
+    template: '<div id="noInfo" class="no_info"><img src="../../images/common_01.png"/><p>暂时没有哦 ~ 看看其他的吧</p></div>'
 })
 
 // 右下悬浮功能按钮

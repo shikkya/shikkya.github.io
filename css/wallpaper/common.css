@@ -1,0 +1,73 @@
+﻿@charset "UTF-8";
+
+/**
+ * @authors kk
+ * @date    2019-03-18
+ */
+
+html,
+body {
+    background: #fff;
+}
+
+.btn {
+    background: #00bc9c;
+}
+
+/*************** picture list ***************/
+
+.picture ul {
+    font-size: 0px;
+}
+
+.picture li {
+    display: inline-block;
+    width: calc(33.3% - 20px);
+    font-size: 12px;
+    margin: 0px 0px 40px 30px;
+    color: #506a85;
+    position: relative;
+}
+
+.picture ul li:nth-child(3n+1) {
+    margin-left: 0px;
+}
+
+.picture li img {
+    width: 100%;
+}
+
+.picture li h3 {
+    margin: 8px 0px 3px;
+    font-size: 15px;
+}
+
+.picture li .btn {
+    position: absolute;
+    right: 0px;
+    bottom: 3px;
+    font-size: 13px;
+}
+
+/*************** position btn ***************/
+
+.go_top {
+    background: #506a85;
+    border: 1px solid #506a85;
+}
+
+/*************** footer ***************/
+
+.footer {
+    background: #2f4052;
+    border-bottom: 15px solid #283645;
+}
+
+.footer ul li:first-child {
+    border-right: 1px solid #5a6774;
+}
+
+.footer img {
+    background: #3f4f60;
+    border: 1px solid #5a6774;
+}
