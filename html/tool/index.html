@@ -5,9 +5,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>便易工具随用随到</title>
+    <title>便易工具-SHIKKYA</title>
     <link rel="stylesheet" type="text/css" href="../../plugins/font-awesome/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/tool/common.css" />
     <link rel="stylesheet" type="text/css" href="../../css/tool/index.css" />
 </head>
 
@@ -20,39 +21,36 @@
             </a>
                 <ul class="flr">
                     <li v-for="(item,index) in productList" :class="{active:index==2}">
-                        <template v-if="index==2">
-                            <a>{{item.text}}</a>
-                        </template>
-                        <template v-else>
-                            <a :href="item.url" target="_blank">{{item.text}}</a>
-                        </template>
+                        <a v-if="index==2">{{item.text}}</a>
+                        <a v-else :href="item.url" target="_blank">{{item.text}}</a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="content">
-            <go-top-item></go-top-item>
             <div class="top">
-                <img src="../../images/wallpaper_06.png" :data-src="topObj.img"/>
+                <img :src="topObj.bgImgInit" :data-src="topObj.bgImg"/>
                 <div>
                     <h1>{{topObj.tit}}</h1>
                     <p>{{topObj.text}}</p>
-                    <a href="list.html" class="btn">进入图库</a>
+                    <a :href="topObj.btnUrl" class="btn">{{topObj.btnText}}</a>
                 </div>
             </div>
-            <div class="picture wid_size">
+            <div class="out wid_size">
+                <div id="toolList" class="toolList"></div>
                 <div class="tit">
-                    <h1>{{picObj.tit}}</h1>
-                    <p v-html="picText"></p>
+                    <h1>{{toolObj.tit}}</h1>
+                    <p>{{toolObj.text}}</p>
                 </div>
                 <div class="info">
                     <ul>
-                        <pic-item :item="item" v-for="item in picObj.list"></pic-item>
+                        <tool-item :item="item" v-for="item in toolObj.list"></tool-item>
                     </ul>
                 </div>
             </div>
         </div>
-        <div id="footer" class="footer" v-cloak></div>
+        <go-top-item></go-top-item>
+        <footer-item></footer-item>
     </div>
     <script src="../../plugins/vue/vue.min.js"></script>
     <script src="../../script/common.js"></script>

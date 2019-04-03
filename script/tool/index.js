@@ -4,45 +4,40 @@
  */
 
 // 图片展示列表组件
-var PicItem = {
+var ToolItem = {
     props: ['item'],
-    template: '<li><img src="../../images/wallpaper_04.png" :data-src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
+    template: '<li @click="window.open(item.url)"><div><img src="../../images/tool_04.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3></div><p>{{item.text}}</p></li>'
 }
 
 var vm = new Vue({
     el: '#app',
     components: {
-        PicItem: PicItem
+        ToolItem: ToolItem
     },
     data: {
         homeUrl: './index.html',
         logoImg: '../../images/tool_01.png',
         productList: productList,
         topObj: {
-            img: '../../images/tool_02.png',
-            tit: '便易工具随用随到',
-            // text: '浏览图库下载心仪壁纸 · 上传素材在线合成专属壁纸 · 让你的桌面更加方便实用'
-            text: '浏览图库下载模板壁纸 · 搜索关键字寻找心仪壁纸 · 让你的桌面更加方便实用'
+            bgImgInit: '../../images/tool_03.png',
+            bgImg: '../../images/tool_02.png',
+            tit: '便易工具在线使用',
+            text: '网页在线随处可用 · 无需登录即开即用 · 无需下载省时省力 · 无需安装方便快捷',
+            btnText: '全部工具',
+            btnUrl: '#toolList'
         },
-        picObj: {
-            tit: '壁纸图库',
-            moreUrl: './list.html',
+        toolObj: {
+            tit: '工具列表',
+            text: '点击可进入工具使用页 · 返回首页查看全部工具',
             list: [
-                { img: '037.png', tit: '僵小鱼' },
-                { img: '017.png', tit: '你和我的倾城时光' },
-                { img: '035.png', tit: '夏至未至' },
-                { img: '018.png', tit: '三生三世十里桃花' },
-                { img: '029.png', tit: '无心法师' },
-                { img: '025.png', tit: '微微一笑很倾城' },
-                { img: '012.png', tit: '高能少年团' },
-                { img: '001.png', tit: 'By2《成人礼》' },
-                { img: '011.png', tit: '浪花一朵朵' }
+                { img: 'tool_05.png', tit: '在线尺子', text: '根据屏幕尺寸和分辨率生成度量尺，无实物精准便捷化测量', url: './ruler.html' },
+                { img: 'tool_05.png', tit: '圆周率速算', text: '我是简介我是简介', url: '' },
+                { img: 'tool_05.png', tit: '闹钟', text: '我是简介我是简介', url: '' },
+                { img: 'tool_05.png', tit: '计时器', text: '我是简介我是简介', url: '' },
+                { img: 'tool_05.png', tit: '秒表', text: '我是简介我是简介', url: '' },
+                { img: 'tool_05.png', tit: '日期计算', text: '我是简介我是简介', url: '' }
+
             ]
-        }
-    },
-    computed: {
-        picText: function() {
-            return '点击下载获取模板壁纸 · 点击<a href="' + this.picObj.moreUrl + '">更多</a>浏览全部壁纸';
         }
     }
 })

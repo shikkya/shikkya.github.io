@@ -11,20 +11,29 @@ var productList = [
 ];
 
 // 页脚
-var vmFooter = new Vue({
-    el: '#footer',
-    template: '<div id="footer" class="footer" v-cloak><ul><li><img :src="logoImg"/></li><li><p>联系 QQ：125048224</p><p>意见反馈：shikkya@qq.com</p></li></ul></div>',
-    data: {
-        logoImg: '../../images/footer_01.png'
+Vue.component("FooterItem", {
+    template: '<div class="footer" v-cloak><ul><li><img :src="logoImg"/></li><li><p>联系 QQ：{{QNum}}</p><p>意见反馈：{{email}}</p></li></ul></div>',
+    data: function() {
+        return {
+            logoImg: '../../images/footer_01.png',
+            QNum: '125048224',
+            email: 'shikkya@qq.com'
+        }
     }
 })
 
-// 暂无信息组件
+// 暂无信息
 Vue.component("NoInfoItem", {
-    template: '<div id="noInfo" class="no_info"><img src="../../images/common_01.png"/><p>暂时没有哦 ~ 看看其他的吧</p></div>'
+    template: '<div id="noInfo" class="no_info"><img :src="imgUrl"/><p>{{text}}</p></div>',
+    data: function() {
+        return {
+            text: '暂时没有哦 ~ 看看其他的吧',
+            imgUrl: '../../images/common_01.png'
+        }
+    }
 })
 
-// 右下悬浮功能按钮
+// 悬浮功能按钮
 Vue.component("GoTopItem", {
     template: '<div class="shortcut"><div class="go_top" @click="goTop"><i class="fa fa-angle-up" aria-hidden="true"></i></div><div class="go_home" @click="window.location.href=\'./index.html\'"><i class="fa fa-home" aria-hidden="true"></i></div></div>'
 })
@@ -87,3 +96,22 @@ function loadImg() {
 window.onload = function() {
     loadImg();
 }
+
+
+
+
+
+
+
+
+
+
+
+// 页脚
+var vmFooter = new Vue({
+    el: '#footer',
+    template: '<div id="footer" class="footer" v-cloak><ul><li><img :src="logoImg"/></li><li><p>联系 QQ：125048224</p><p>意见反馈：shikkya@qq.com</p></li></ul></div>',
+    data: {
+        logoImg: '../../images/footer_01.png'
+    }
+})

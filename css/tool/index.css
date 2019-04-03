@@ -41,8 +41,8 @@
 
 .header li.active a,
 .header li a:hover {
-    color: #00bc9c;
-    border-bottom: 1px solid #00bc9c;
+    color: #00cbdb;
+    border-bottom: 1px solid #00cbdb;
 }
 
 /*************** content ***************/
@@ -80,77 +80,66 @@
     letter-spacing: 2px;
 }
 
-.top a {
-    background: #00bc9c;
-    width: 180px;
-    padding: 15px 0px;
-    font-size: 16px;
-}
-
-.picture {
+.out {
     margin-bottom: 20px;
-}
-
-.picture .tit {
-    text-align: center;
-    color: #506a85;
-    margin: 40px 0px;
-}
-
-.picture .tit p {
-    margin: 15px 0px;
-    font-size: 16px;
-}
-
-.picture .tit a {
-    color: #00bc9c;
-    margin: 0px 2px;
-    padding: 0px 3px;
-    border-radius: 3px;
-    transition: all 0.4s;
-}
-
-.picture .tit a:hover {
-    background: #dcf1ed;
-}
-
-.picture ul {
-    font-size: 0px;
-}
-
-.picture li {
-    display: inline-block;
-    width: calc(33.3% - 20px);
-    font-size: 12px;
-    margin: 0px 0px 40px 30px;
-    color: #506a85;
     position: relative;
 }
 
-.picture ul li:nth-child(3n+1) {
+.out .toolList {
+    position: absolute;
+    top: -65px;
+}
+
+.out .tit {
+    text-align: center;
+    color: #403a6c;
+    margin: 40px 0px;
+}
+
+.out .tit p {
+    margin: 15px 0px;
+    font-size: 16px;
+    color: #888;
+}
+
+.out ul {
+    font-size: 0px;
+}
+
+.out li {
+    display: inline-block;
+    width: calc(33.3% - 42px);
+    height: 300px;
+    padding: 10px;
+    margin: 0px 0px 40px 30px;
+    color: #888;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: top;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.out li:hover {
+    background: #f4f3f9;
+}
+
+.out ul li:nth-child(3n+1) {
     margin-left: 0px;
 }
 
-.picture li img {
+.out li img {
     width: 100%;
+    border-top-right-radius: 30px;
+    /*     border-bottom-left-radius: 50px; */
 }
 
-.picture li h3 {
-    margin: 8px 0px 3px;
-    font-size: 15px;
+.out li h3 {
+    margin: 8px 0px;
+    font-size: 18px;
+    color: #403a6c;
 }
 
-.picture li .btn {
-    position: absolute;
-    right: 0px;
-    bottom: 3px;
-    font-size: 13px;
-    background: #00bc9c;
-}
-
-/*************** footer ***************/
-
-.footer {
-    background: #2f4052;
-    border-bottom: 15px solid #283645;
+.out li p {
+    line-height: 22px;
 }
