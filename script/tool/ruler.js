@@ -39,7 +39,7 @@ var vm = new Vue({
     },
     watch: {
         rulerLoadNum: function(num) {
-            if (num == this.rulerNum) {
+            if (num == this.rulerNum && num != 0) {
                 this.rulerHtml = this.rulerLoadHtml;
             }
         }
