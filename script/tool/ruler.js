@@ -23,7 +23,7 @@ var vm = new Vue({
     data: {
         headerObj: {
             homeUrl: './index.html',
-            logoImg: '../../images/tool_01.png',
+            logoImg: '../../images/footer_01.png',
             goListUrl: './index.html#toolList',
             goListBtn: '返回工具列表'
         },
@@ -102,8 +102,9 @@ var vm = new Vue({
             this.sizeHtml += '<p>若尺子长度有误，请您设置正确的电脑分辨率；若数据显示有误，请至本页末选择联系方式反馈</p>';
             // 初始化尺子
             this.createRuler(sDiagonal, sWidth, sHeight);
-            // 初始化content最小高度
-            document.getElementById('content').style.minHeight = (document.body.clientHeight - 160) + 'px';
+            // 初始化内容垂直居中
+            document.getElementById('content').style.paddingTop = (document.body.clientHeight / 2 - 368 + 75) + 'px';
+            document.getElementById('content').style.paddingBottom = (document.body.clientHeight / 2 - 315) + 'px';
         }
     }
 })
