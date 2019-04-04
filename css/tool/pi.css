@@ -1,0 +1,73 @@
+﻿@charset "UTF-8";
+
+/**
+ * @authors kk
+ * @date    2019-04-04
+ */
+
+
+/*************** header ***************/
+
+.header {
+    background: #58508D;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 998;
+    border-bottom: 15px solid #403a6c;
+    height: 20px;
+    padding: 20px 0px;
+    overflow: hidden;
+}
+
+.header .logo img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.header .btn {
+    font-size: 12px;
+    padding: 6px 0px;
+    margin-top: -1px;
+}
+
+/*************** content ***************/
+
+.content {
+    color: #666;
+    font-size: 15px;
+}
+
+.tit,
+.calculate {
+    margin: 30px 0px;
+}
+
+.tit,
+.calculate {
+    text-align: center;
+}
+
+.tit {
+    color: #403a6c;
+}
+
+.calculate {
+    line-height: 40px;
+    font-size: 16px;
+}
+
+.show {
+    line-height: 28px;
+}
+
+.content input[type="text"] {
+    width: 35px;
+    padding: 2px 0px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    vertical-align: middle;
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+}
