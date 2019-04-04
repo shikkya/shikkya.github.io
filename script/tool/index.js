@@ -6,7 +6,7 @@
 // 图片展示列表组件
 var ToolItem = {
     props: ['item'],
-    template: '<li @click="window.open(item.url)"><div><img src="../../images/tool_04.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3></div><p>{{item.text}}</p></li>'
+    template: '<li @click="window.open(item.url)"><div><img src="../../images/tool_04.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3></div><p v-html="item.text"></p></li>'
 }
 
 var vm = new Vue({
@@ -30,7 +30,7 @@ var vm = new Vue({
             tit: '工具列表',
             text: '点击可进入工具使用页 · 返回首页查看全部工具',
             list: [
-                { img: 'tool_05.png', tit: '在线尺子', text: '根据屏幕尺寸和分辨率生成度量尺，无实物精准便捷化测量', url: './ruler.html' },
+                { img: 'tool_07.png', tit: '在线尺子', text: '根据屏幕尺寸和分辨率生成度量尺<br/>无实物精准便捷化测量', url: './ruler.html' },
                 { img: 'tool_05.png', tit: '圆周率速算', text: '我是简介我是简介', url: '' },
                 { img: 'tool_05.png', tit: '闹钟', text: '我是简介我是简介', url: '' },
                 { img: 'tool_05.png', tit: '计时器', text: '我是简介我是简介', url: '' },
