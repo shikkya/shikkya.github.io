@@ -103,7 +103,7 @@ var vm = new Vue({
             // 初始化尺子
             this.createRuler(sDiagonal, sWidth, sHeight);
             // 初始化content最小高度
-            document.getElementById('content').style.minHeight = (document.body.clientHeight - 187) + 'px';
+            document.getElementById('content').style.minHeight = (document.body.clientHeight - 160) + 'px';
         }
     }
 })

@@ -91,8 +91,8 @@ a {
     color: #fff;
     font-size: 15px;
     text-align: center;
-    width: 80px;
-    padding: 8px;
+    width: 90px;
+    padding: 8px 0px;
     border: 0px;
     border-radius: 3px;
     transition: all 0.4s;

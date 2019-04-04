@@ -14,7 +14,7 @@
     position: fixed;
     top: 0px;
     z-index: 998;
-    border-bottom: 47px solid #403a6c;
+    border-bottom: 20px solid #403a6c;
     height: 20px;
     padding: 20px 0px;
     overflow: hidden;
@@ -27,12 +27,14 @@
 
 .header .btn {
     font-size: 12px;
+    padding: 6px 0px;
+    margin-top: -1px;
 }
 
 /*************** content ***************/
 
 .content {
-    padding-top: 107px;
+    padding-top: 80px;
 }
 
 .tit {
@@ -55,7 +57,7 @@
 
 .ruler img {
     vertical-align: top;
-    height:35mm;
+    height: 35mm;
 }
 
 .intro {
