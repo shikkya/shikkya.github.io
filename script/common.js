@@ -24,11 +24,12 @@ Vue.component("FooterItem", {
 
 // 暂无信息
 Vue.component("NoInfoItem", {
-    template: '<div id="noInfo" class="no_info"><img :src="imgUrl"/><p>{{text}}</p></div>',
+    template: '<div id="noInfo" class="no_info"><img :src="imgUrl" :data-src="dataImg"/><p>{{text}}</p></div>',
     data: function() {
         return {
             text: '暂时没有哦 ~ 看看其他的吧',
-            imgUrl: '../../images/common_01.png'
+            imgUrl: '../../images/common_01.png',
+            dataImg: '../../images/common_02.png'
         }
     }
 })
