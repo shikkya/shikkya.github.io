@@ -3,29 +3,21 @@
  * @date    2019-03-16
  */
 
-// 头部
-var vmHeader = new Vue({
-    el: '#header',
-    data: {
-        homeUrl: './index.html',
-        logoImg: '../../images/wallpaper_01.png',
-        list: productList
-    }
-})
-
 // 图片展示列表组件
 var PicItem = {
     props: ['item'],
     template: '<li><img src="../../images/wallpaper_04.png" :data-src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
 }
 
-// 主体
-var vmContent = new Vue({
-    el: '#content',
+var vm = new Vue({
+    el: '#app',
     components: {
         PicItem: PicItem
     },
     data: {
+        homeUrl: './index.html',
+        logoImg: '../../images/wallpaper_01.png',
+        productList: productList,
         topObj: {
             img: '../../images/wallpaper_02.png',
             tit: '模板壁纸高清下载',
@@ -52,5 +44,9 @@ var vmContent = new Vue({
         picText: function() {
             return '点击下载获取模板壁纸 · 点击<a href="' + this.picObj.moreUrl + '">更多</a>浏览全部壁纸';
         }
+    },
+    mounted: function() {
+        // 加载图片
+        loadImg();
     }
 })

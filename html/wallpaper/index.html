@@ -13,44 +13,46 @@
 </head>
 
 <body>
-    <div id="header" class="header" v-cloak>
-        <div class="wid_size">
-            <a :href="homeUrl" class="logo">
+    <div id="app" v-cloak>
+        <div class="header">
+            <div class="wid_size">
+                <a :href="homeUrl" class="logo">
                 <img :src="logoImg"/>
             </a>
-            <ul class="flr">
-                <li v-for="(item,index) in list" :class="{active:index==1}">
-                    <a :href="item.url" target="_blank">{{item.text}}</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div id="content" class="content" v-cloak>
-        <go-top-item></go-top-item>
-        <div class="top">
-            <img src="../../images/wallpaper_06.png" :data-src="topObj.img"/>
-            <div>
-                <h1>{{topObj.tit}}</h1>
-                <p>{{topObj.text}}</p>
-                <a href="list.html" class="btn">进入图库</a>
-            </div>
-        </div>
-        <div class="picture wid_size">
-            <div class="tit">
-                <h1>{{picObj.tit}}</h1>
-                <p v-html="picText"></p>
-            </div>
-            <div class="info">
-                <ul>
-                    <pic-item :item="item" v-for="item in picObj.list"></pic-item>
+                <ul class="flr">
+                    <li v-for="(item,index) in productList" :class="{active:index==1}">
+                        <a v-if="index==1">{{item.text}}</a>
+                        <a v-else :href="item.url" target="_blank">{{item.text}}</a>
+                    </li>
                 </ul>
             </div>
         </div>
+        <div class="content">
+            <div class="top">
+                <img src="../../images/wallpaper_06.png" :data-src="topObj.img"/>
+                <div>
+                    <h1>{{topObj.tit}}</h1>
+                    <p>{{topObj.text}}</p>
+                    <a href="list.html" class="btn">进入图库</a>
+                </div>
+            </div>
+            <div class="picture wid_size">
+                <div class="tit">
+                    <h1>{{picObj.tit}}</h1>
+                    <p v-html="picText"></p>
+                </div>
+                <div class="info">
+                    <ul>
+                        <pic-item :item="item" v-for="item in picObj.list"></pic-item>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <go-top-item></go-top-item>
+        <footer-item></footer-item>
     </div>
-    <div id="footer" class="footer" v-cloak></div>
     <script src="../../plugins/vue/vue.min.js"></script>
     <script src="../../script/common.js"></script>
-    <script src="../../script/wallpaper/common.js"></script>
     <script src="../../script/wallpaper/index.js"></script>
 </body>
 

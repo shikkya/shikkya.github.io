@@ -93,10 +93,6 @@ function loadImg() {
     }
 }
 
-window.onload = function() {
-    loadImg();
-}
-
 
 
 
