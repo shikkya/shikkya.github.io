@@ -81,12 +81,6 @@
     letter-spacing: 2px;
 }
 
-.top .btn {
-    width: 180px;
-    padding: 15px 0px;
-    font-size: 16px;
-}
-
 .out {
     margin-bottom: 20px;
     position: relative;
@@ -137,8 +131,6 @@
 
 .out li img {
     width: 100%;
-    border-top-right-radius: 30px;
-    /*     border-bottom-left-radius: 50px; */
 }
 
 .out li h3 {
