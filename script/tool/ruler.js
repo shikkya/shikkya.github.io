@@ -3,19 +3,18 @@
  * @date    2019-04-02
  */
 
-// 尺子分段数据 wid原图高为35mm时的宽度/英寸
+// 尺子分段数据 wid原图高为35.95mm时的宽度/英寸
 var rulerList = [
-    { img: '01.png', wid: 0.41 },
-    { img: '02.png', wid: 4.23 },
-    { img: '03.png', wid: 2 },
-    { img: '04.png', wid: 2 },
-    { img: '05.png', wid: 2 },
-    { img: '06.png', wid: 2 },
-    { img: '07.png', wid: 2 },
-    { img: '08.png', wid: 2 },
-    { img: '09.png', wid: 2 },
-    { img: '10.png', wid: 2 },
-    { img: '11.png', wid: 0.06 }
+    { img: '01.png', wid: 4.63 },
+    { img: '02.png', wid: 2.09 },
+    { img: '03.png', wid: 2.09 },
+    { img: '04.png', wid: 2.51 },
+    { img: '05.png', wid: 2.09 },
+    { img: '06.png', wid: 2.09 },
+    { img: '07.png', wid: 2.09 },
+    { img: '08.png', wid: 2.09 },
+    { img: '09.png', wid: 1.59 },
+    { img: '10.png', wid: 0.14 }
 ];
 
 var vm = new Vue({
@@ -57,7 +56,7 @@ var vm = new Vue({
             for (var i = 0; i < rulerList.length; i++) {
                 tempWid = rulerList[i].wid * screenWidth / (diagonal * aspectRatio / (Math.sqrt(aspectRatio * aspectRatio + 1)));
                 countWid += tempWid;
-                if (countWid >= window.innerWidth - 20 && i != rulerList.length - 1) {
+                if (countWid >= window.innerWidth - 35 && i != rulerList.length - 1) {
                     continue;
                 }
                 this.rulerNum++;
@@ -108,46 +107,3 @@ var vm = new Vue({
         }
     }
 })
-
-
-
-// 图片加载-判断浏览器  
-var Browser = new Object();
-Browser.userAgent = window.navigator.userAgent.toLowerCase();
-Browser.ie = /msie/.test(Browser.userAgent);
-Browser.Moz = /gecko/.test(Browser.userAgent);
-
-// 图片加载
-function checkLoad(url) {
-    var img = new Image();
-    if (Browser.ie) {
-        img.onreadystatechange = function() {
-            if (img.readyState == "complete" || img.readyState == "loaded") {
-                console.log(333);
-            }
-        }
-    } else if (Browser.Moz) {
-        img.onload = function() {
-            if (img.complete == true) {
-                console.log(444);
-            }
-        }
-    }
-    //如果因为网络或图片的原因发生异常，则显示该图片  
-    img.onerror = function() {
-        img.src = "../images/wallpaper_05.png"
-    }
-    img.src = url;
-}
-
-// checkLoad('../../images/ruler/01.png');
-// 图片加载中
-function loadImg() {
-    var imgList = document.getElementsByTagName('img');
-    for (i = 0; i < imgList.length; i++) {
-        if (imgList[i].getAttribute('data-src')) {
-            imgList[i].id = 'img_' + i;
-            checkLoad(imgList[i].getAttribute("data-src"), imgList[i].id);
-        }
-    }
-}
