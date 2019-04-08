@@ -25,7 +25,7 @@
                 <h1>{{tit}}</h1>
             </div>
             <div class="calculate">
-                <p>{{intro}}</p>
+                <p>快速计算圆周率小数点后指定位数的值，<font :class="{error:errorClass}">请输入小于等于1000的正整数</font></p>
                 <p>小数点后第 <input type="text" v-model="inputVal_1" /> 位是 <span>{{result_1}}</span></p>
                 <p>小数点后第 <input type="text" v-model="inputVal_2" /> 位 + 第 <input type="text" v-model="inputVal_3" /> 位 = <span>{{result_2}}</span></p>
             </div>
