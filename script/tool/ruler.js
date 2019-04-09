@@ -103,7 +103,7 @@ var vm = new Vue({
             this.createRuler(sDiagonal, sWidth, sHeight);
             // 初始化内容垂直居中
             document.getElementById('content').style.paddingTop = (document.body.clientHeight / 2 - 368 + 75) + 'px';
-            document.getElementById('content').style.paddingBottom = (document.body.clientHeight / 2 - 315) + 'px';
+            document.getElementById('content').style.paddingBottom = (document.body.clientHeight / 2 - 318) + 'px';
         }
     }
 })

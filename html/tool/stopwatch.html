@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>便易工具-SHIKKYA</title>
+    <link rel="stylesheet" type="text/css" href="../../plugins/font-awesome/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/tool/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/tool/stopwatch.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="header">
+            <div class="wid_size">
+                <a :href="headerObj.homeUrl" class="logo"><img :src="headerObj.logoImg"/></a>
+                <a :href="headerObj.goListUrl" class="btn flr">{{headerObj.goListBtn}}</a>
+            </div>
+        </div>
+        <div class="content" id="content">
+            <div class="tit">
+                <h1>{{tit}}</h1>
+                <p>{{intro}}</p>
+            </div>
+            <div class="out wid_size">
+                <div class="clock">
+                    <p>{{timeObj.hour_1}}:{{timeObj.minute_1}}:{{timeObj.second_1}}:{{timeObj.msec_1}}</p>
+                    <p>{{timeObj.hour_2}}:{{timeObj.minute_2}}:{{timeObj.second_2}}:{{timeObj.msec_2}}</p>
+                    <img src="../../images/tool_10.png" :style="styleObj"/>
+                </div>
+                    <button class="btn" :class="{disable:timeObj.clockState==0}" @click="start">开始</button>
+                    <button class="btn" :class="{disable:timeObj.clockState>0}" @click="pause">暂停</button>
+                    <button class="btn" :class="{disable:timeObj.clockState>0}" @click="record">计次</button>
+                    <button class="btn" :class="{disable:timeObj.clockState==2}" @click="reset">重置</button>
+                    <ul class="list" id="list">
+                        <list-item :item="item" v-for="(item,index) of timeObj.list"></list-item>
+                    </ul>
+                </div>
+            </div>
+            <go-top-item></go-top-item>
+            <footer-item></footer-item>
+        </div>
+        <script src="../../plugins/vue/vue.min.js"></script>
+        <script src="../../script/common.js"></script>
+        <script src="../../script/tool/stopwatch.js"></script>
+</body>
+
+</html>

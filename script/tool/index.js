@@ -34,7 +34,7 @@ var vm = new Vue({
                 { img: 'tool_08.png', tit: '圆周率速算', text: '快速计算圆周率小数点后指定位数的值<br/>展示1000位圆周率小数', url: './pi.html' },
                 { img: 'tool_05.png', tit: '闹钟', text: '努力开发中', url: './alarm.html' },
                 { img: 'tool_05.png', tit: '计时器', text: '努力开发中', url: './countdown.html' },
-                { img: 'tool_05.png', tit: '秒表', text: '努力开发中', url: './stopwatch.html' },
+                { img: 'tool_11.png', tit: '秒表', text: '支持快速分段计次<br/>精准计算间隔时长', url: './stopwatch.html' },
                 { img: 'tool_05.png', tit: '日期计算', text: '努力开发中', url: './date.html' }
             ]
         }

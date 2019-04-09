@@ -1,0 +1,126 @@
+﻿@charset "UTF-8";
+
+/**
+ * @authors kk
+ * @date    2019-04-08
+ */
+
+/*************** header ***************/
+
+.header {
+    background: #58508D;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 998;
+    border-bottom: 15px solid #403a6c;
+    height: 20px;
+    padding: 20px 0px;
+    overflow: hidden;
+}
+
+.header .logo img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.header .btn {
+    font-size: 12px;
+    padding: 6px 0px;
+    margin-top: -1px;
+}
+
+/*************** content ***************/
+
+.content {
+    font-size: 16px;
+    padding-top: 90px;
+    text-align: center;
+}
+
+.tit {
+    margin: 20px 0px;
+    color: #403a6c;
+}
+
+.tit p {
+    margin: 15px 0px;
+    color: #888;
+}
+
+.out .btn {
+    width: 52px;
+    margin: 0px 3px;
+    font-size: 14px;
+    padding: 5px 0px;
+}
+
+.out .disable {
+    background: #ddd;
+    color: #999;
+    cursor: default;
+}
+
+.clock {
+    width: 250px;
+    height: 250px;
+    margin: 15px auto;
+    background: url('../../images/tool_09.png') no-repeat;
+    position: relative;
+    color: #aaa;
+    line-height: 42px;
+}
+
+.clock p:first-child {
+    color: #333;
+    font-size: 26px;
+    padding-top: 94px;
+}
+
+.clock img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.list {
+    color: #333;
+    width: 338px;
+    margin: 15px auto 40px;
+    overflow: auto;
+}
+
+.list li {
+    padding: 12px 10px;
+    border-top: 1px dashed #e0e0e0;
+    text-align: left;
+}
+
+.list li:first-child {
+    border: 0px;
+}
+
+.list span {
+    color: #999;
+    margin-left: 25px;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
