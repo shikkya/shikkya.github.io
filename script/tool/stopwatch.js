@@ -23,7 +23,6 @@ var vm = new Vue({
             goListBtn: '返回工具列表'
         },
         tit: '秒表',
-        intro: '快速分段计次 · 精准计算间隔',
         timeObj: {
             hour_1: '00',
             minute_1: '00',
@@ -44,7 +43,7 @@ var vm = new Vue({
     },
     mounted: function() {
         // 初始化content最小高度
-        document.getElementById('list').style.height = (document.body.clientHeight - 635) + 'px';
+        document.getElementById('list').style.height = (document.body.clientHeight - 603) + 'px';
     },
     methods: {
         // 数字补全两位
