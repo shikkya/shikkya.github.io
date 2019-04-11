@@ -20,7 +20,7 @@
                 <a :href="headerObj.goListUrl" class="btn flr">{{headerObj.goListBtn}}</a>
             </div>
         </div>
-        <div class="content" id="content">
+        <div class="content">
             <div class="tit">
                 <h1>{{tit}}</h1>
             </div>
@@ -35,7 +35,7 @@
                     <button class="btn" :class="{disable:timeObj.clockState>0}" @click="record">计次</button>
                     <button class="btn" :class="{disable:timeObj.clockState==2}" @click="reset">重置</button>
                     <ul class="list" id="list">
-                        <list-item :item="item" v-for="(item,index) of timeObj.list"></list-item>
+                        <list-item :item="item" v-for="item of timeObj.list"></list-item>
                     </ul>
                 </div>
             </div>

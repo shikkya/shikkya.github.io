@@ -32,10 +32,10 @@ var vm = new Vue({
             list: [
                 { img: 'tool_07.png', tit: '在线尺子', text: '根据屏幕尺寸和分辨率生成度量尺<br/>无实物精准便捷化测量', url: './ruler.html' },
                 { img: 'tool_08.png', tit: '圆周率速算', text: '快速计算圆周率小数点后指定位数的值<br/>展示1000位圆周率小数', url: './pi.html' },
-                { img: 'tool_05.png', tit: '闹钟', text: '努力开发中', url: './alarm.html' },
-                { img: 'tool_05.png', tit: '计时器', text: '努力开发中', url: './countdown.html' },
-                { img: 'tool_11.png', tit: '秒表', text: '支持快速分段计次<br/>精准计算间隔时长', url: './stopwatch.html' },
-                { img: 'tool_05.png', tit: '日期计算', text: '努力开发中', url: './date.html' }
+                { img: 'tool_14.png', tit: '日期计算', text: '努力开发中', url: './date.html' },
+                { img: 'tool_12.png', tit: '闹钟', text: '努力开发中', url: './alarm.html' },
+                { img: 'tool_11.png', tit: '倒数计时器', text: '多事件同时倒数，不限个数，可加备注<br/>智能提示，有效提醒', url: './countdown.html' },
+                { img: 'tool_13.png', tit: '秒表', text: '支持一键分段计次，不限记录次数<br/>精准计算间隔时长', url: './stopwatch.html' }
             ]
         }
     },

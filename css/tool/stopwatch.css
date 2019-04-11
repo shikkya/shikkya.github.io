@@ -43,11 +43,6 @@
     color: #403a6c;
 }
 
-.tit p {
-    margin: 15px 0px;
-    color: #888;
-}
-
 .out .btn {
     width: 52px;
     margin: 0px 3px;
@@ -85,24 +80,23 @@
 
 .list {
     color: #333;
-    width: 338px;
-    margin: 15px auto 40px;
+    width: 352px;
+    margin: 25px auto 40px;
     overflow: auto;
 }
 
 .list li {
-    padding: 12px 10px;
-    border-top: 1px dashed #e0e0e0;
-    text-align: left;
+    padding: 10px 15px;
+    text-align: right;
 }
 
-.list li:first-child {
-    border: 0px;
+.list li:nth-child(odd) {
+    background: #E9F7F8;
 }
 
 .list span {
     color: #999;
-    margin-left: 25px;
+    margin-right: 25px;
 }
 
 @keyframes rotate {

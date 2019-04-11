@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>便易工具-SHIKKYA</title>
+    <link rel="stylesheet" type="text/css" href="../../plugins/font-awesome/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/tool/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/tool/countdown.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="header">
+            <div class="wid_size">
+                <a :href="headerObj.homeUrl" class="logo"><img :src="headerObj.logoImg"/></a>
+                <a :href="headerObj.goListUrl" class="btn flr">{{headerObj.goListBtn}}</a>
+            </div>
+        </div>
+        <div class="content" id="content">
+            <div class="tit">
+                <h1>{{tit}}</h1>
+                <p>事件进行时请勿刷新页面，<font :class="{error:errorClass}">时分秒请输入正整数，最多支持72小时</font>
+                </p>
+                <p>提示音试听<img src="../../images/tool_05.png" @click="play"/>（若无法播放请尽快反馈）</p>
+            </div>
+            <div class="wid_size">
+                <table class="tab">
+                    <tr>
+                        <td>距离现在：</td>
+                        <td>
+                            <input type="text" tabindex="2" placeholder="0" v-model="timeObj.hour" key="hour" />
+                            <font>时</font>
+                            <input type="text" tabindex="3" placeholder="0" v-model="timeObj.minute" key="minute" />
+                            <font>分</font>
+                            <input type="text" tabindex="4" placeholder="0" v-model="timeObj.second" key="second" />
+                            <font>秒</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="80">事件备注：</td>
+                        <td>
+                            <input type="text" class="title" tabindex="1" placeholder="请输入事件备注（选填）" v-model="timeObj.tit" key="title" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" class="btn" value="开始" @click="addList" />
+                            <input type="button" class="btn" value="重置" @click="reset" />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="wid_size">
+                <ul class="list" id="list">
+                    <list-item :item="item" v-for="item of timeObj.list"></list-item>
+                </ul>
+            </div>
+            <audio id="music" src="http://other.web.rc01.sycdn.kuwo.cn/resource/n1/97/58/2301690695.mp3" preload></audio>
+            <go-top-item></go-top-item>
+            <footer-item></footer-item>
+        </div>
+        <script src="../../plugins/vue/vue.min.js"></script>
+        <script src="../../script/common.js"></script>
+        <script src="../../script/tool/countdown.js"></script>
+</body>
+
+</html>

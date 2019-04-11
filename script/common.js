@@ -43,13 +43,13 @@ Vue.component("GoTopItem", {
 function goTop() {
     clearInterval(timer);
     var timer = setInterval(function() {
-        var target = document.documentElement.scrollTop;
+        var target = document.documentElement.scrollTop > document.body.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
         target -= Math.ceil(target / 10);
         window.scrollTo(0, target);
         if (target <= 0) {
             clearInterval(timer);
         }
-    }, 10);
+    }, 15);
 };
 
 // 图片加载-判断浏览器  

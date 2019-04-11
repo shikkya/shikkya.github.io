@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CoCoClock</title>
+    <style>
+        * {
+        padding: 0px;
+        margin: 0px;
+        vertical-align:middle;
+    }
+
+    html,body{
+        font-size: 16px;
+        color: #333;
+        background: #eee;
+    }
+
+    ul,li,ol{
+        list-style: none;
+    }
+
+    .btn{
+        background: #068be3;
+        color:#fff;
+        border:0px;
+        border-radius: 3px;
+        padding:5px 0px;
+        width:65px;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .btn:hover{
+        background: #249bea;
+    }
+
+    .out{
+        width:500px;
+        margin:80px auto;
+    }
+
+    .tab_out{
+        padding:20px 40px 17px;
+        background: #fff;
+        border:1px solid #e0e0e0;
+        box-shadow: 0px 0px 15px #ddd;
+        border-radius:3px;
+    }
+
+    .tab{
+        width: 100%;
+    }
+
+    .tab td{
+        padding:10px 8px;
+    }
+
+    .tab td[colspan="2"]{
+        text-align: center;
+    }
+
+    .tab .btn{
+        margin:0px 8px;
+    }
+
+    .tab input[type="text"]{
+        background: #fff;
+        border:1px solid #e0e0e0;
+        border-radius: 3px;
+        font-size: 14px;
+        color:#666;
+        width:32px;
+        text-align: center;
+        margin-right:5px;
+        padding:4px 0px;
+    }
+
+    .tab input[type="text"].tit{
+        width:200px;
+        text-align: left;
+        margin:0px;
+        padding:6px 10px;
+    }
+
+    .tab input[type="radio"]{
+        cursor: pointer;
+    }
+
+    .tab font{
+        margin:0px 3px;
+    }
+
+    .tab label{
+        margin-right:8px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    .list_out{
+        margin:35px 0px;
+    }
+
+    .list li{
+        padding:18px 55px;
+        margin:15px 0px;
+        background: #fff;
+        border:1px solid #e0e0e0;
+        box-shadow: 0px 0px 15px #ddd;
+        border-radius:3px;
+    }
+
+    .list span{
+        border-radius: 3px;
+        padding:0px 6px;
+    }
+
+    .list span.bg_o{
+        background: #feaa2c;
+        color:#fff;
+    }
+
+    .list span.bg_r{
+        background: #ff3535;
+        color:#fff;
+    }
+
+    .list span:first-child{
+        display: inline-block;
+        width:105px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        margin-right:25px;
+        padding:0px;
+    }
+
+    .list .btn{
+        float: right;
+        margin:-2px 0px 0px 0px;
+    }
+    </style>
+</head>
+
+<body>
+    <audio id="music" src="http://other.web.rc01.sycdn.kuwo.cn/resource/n1/97/58/2301690695.mp3" preload></audio>
+    <div class="out">
+        <div class="tab_out">
+            <form>
+                <table class="tab">
+                    <tr>
+                        <td width="80">事件标题：</td>
+                        <td>
+                            <input type="radio" name="checkTit" id="check_0" value="" checked="checked" />
+                            <input type="text" class="tit" id="tit" tabindex="1" placeholder="请输入事件标题" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>
+                            <input type="radio" name="checkTit" id="check_5" value="NL" />
+                            <label for="check_5">NL</label>
+                            <input type="radio" name="checkTit" id="check_1" value="Egg" />
+                            <label for="check_1">Egg</label>
+                            <input type="radio" name="checkTit" id="check_2" value="Box" />
+                            <label for="check_2">Box</label>
+                            <input type="radio" name="checkTit" id="check_3" value="GBox" />
+                            <label for="check_3">GBox</label>
+                            <input type="radio" name="checkTit" id="check_4" value="Give" />
+                            <label for="check_4">Give</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>距离现在：</td>
+                        <td>
+                            <input type="text" id="hour" placeholder="0" tabindex="2"/>
+                            <font>时</font>
+                            <input type="text" id="minute" placeholder="0" tabindex="3" />
+                            <font>分</font>
+                            <input type="text" id="second" placeholder="0" tabindex="4" />
+                            <font>秒</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" class="btn" id="startBtn" value="开始" tabindex="5" onclick="addList()" />
+                            <input type="reset" class="btn" id="resetBtn" value="重置" tabindex="6" />
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="list_out">
+            <ul class="list" id="list">
+                <!-- <li id="">
+                    <span title="标题">标题</span>
+                    <span>05:52:05</span>
+                    <input type="button" value="取消" class="btn" onclick="delList(this)" />
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var titleInit = document.title;
+    var isShine = false;
+
+    var timerShine = setInterval(function() {
+        var title = document.title;
+        if (isShine == true) {
+            if (/新/.test(title) == false) {
+                document.title = '【你有新消息】';
+            } else {
+                document.title = '【　　　　　】';
+            }
+        } else {
+            document.title = titleInit;
+        }
+    }, 500);
+
+    window.onfocus = function() {
+        isShine = false;
+    };
+
+    document.onfocusin = function() {
+        isShine = false;
+    };
+
+    // 回车触发检索
+    document.onkeypress = function(e) {
+        if (e.which == 13) {
+            document.getElementById('startBtn').click();
+        }
+    }
+
+    var liId = 0; // 单条数据id计数
+
+    // 点击开始新增数据
+    function addList() {
+        var h = document.getElementById('hour').value;
+        var m = document.getElementById('minute').value;
+        var s = document.getElementById('second').value;
+
+        var checkTit = document.getElementsByName('checkTit');
+        var tit = '';
+        for (var i = 0; i < checkTit.length; i++) {
+            if (checkTit[i].checked) {
+                tit = checkTit[i].value;
+            }
+        }
+        if (tit == '') {
+            tit = document.getElementById('tit').value;
+        }
+
+        // 校验时分秒不能同时为空
+        if (h == '' && m == '' && s == '') {
+            return;
+        }
+
+        // 空值置0处理
+        if (tit == '') {
+            tit = '暂无标题';
+        }
+        if (h == '') {
+            h = 0;
+        }
+        if (m == '') {
+            m = 0;
+        }
+        if (s == '') {
+            s = 0;
+        }
+
+        // 校验时分秒必须是非负整数
+        if (!(/(^[0-9]\d*$)/.test(h))) {
+            return;
+        }
+        if (!(/(^[0-9]\d*$)/.test(m))) {
+            return;
+        }
+        if (!(/(^[0-9]\d*$)/.test(s))) {
+            return;
+        }
+
+        // 时分秒转整
+        h = parseInt(h);
+        m = parseInt(m);
+        s = parseInt(s);
+
+        // 大于60的数据格式化
+        m += parseInt(s / 60);
+        s %= 60;
+        h += parseInt(m / 60);
+        m %= 60;
+
+        // 构造Dom
+        var list = document.getElementById('list');
+        var str = '<li id="li_' + liId + '"><span title="' + tit + '">' + tit + '</span><span>' + formatNum(h) + ':' + formatNum(m) + ':' + formatNum(s) + '</span><input type="button" value="取消" class="btn" onclick="delList(this)" /></li>';
+        list.innerHTML += str;
+
+        // 判断起始时间3分钟提示1分钟警告
+        if (h == 0 && m == 0) {
+            document.getElementById('li_' + liId).getElementsByTagName('span')[1].className = 'bg_r';
+        } else if (h == 0 && m == 1 && s == 0) {
+            document.getElementById('li_' + liId).getElementsByTagName('span')[1].className = 'bg_r';
+        } else if (h == 0 && m == 10 && s == 0) {
+            document.getElementById('li_' + liId).getElementsByTagName('span')[1].className = 'bg_o';
+        } else if (h == 0 && m < 10) {
+            document.getElementById('li_' + liId).getElementsByTagName('span')[1].className = 'bg_o';
+        }
+
+        // 开始倒计时
+        timeCount(h, m, s, liId, function(h, m, s, liId) {
+            var timeSpan = document.getElementById('li_' + liId).getElementsByTagName('span')[1];
+            if (h == 0 && m == 10 && s == 0) {
+                timeSpan.className = 'bg_o';
+            }
+            if (h == 0 && m == 1 && s == 0) {
+                timeSpan.className = 'bg_r';
+            }
+            timeSpan.innerHTML = formatNum(h) + ':' + formatNum(m) + ':' + formatNum(s);
+        })
+
+        // 表单填充重置
+        document.getElementById('resetBtn').click();
+
+        // 单条数据id累加
+        liId++;
+    }
+
+    // 点击取消删除数据
+    function delList(obj) {
+        if (obj.value == '关闭') {
+            obj.parentNode.remove();
+        } else {
+            obj.parentNode.style = 'display:none';
+        }
+    }
+
+    // 数字补全两位
+    function formatNum(num) {
+        num = parseInt(num);
+        if (num < 10) {
+            return '0' + num;
+        } else {
+            return num;
+        }
+    }
+
+    // 倒计时
+    function timeCount(h, m, s, liId, fn) {
+        h = parseInt(h);
+        m = parseInt(m);
+        s = parseInt(s);
+
+        var timer = setInterval(function() {
+            if (s > 0) {
+                s--;
+            } else if (m > 0) {
+                m--;
+                s = 59;
+            } else if (h > 0) {
+                h--;
+                m = 59;
+                s = 59;
+            }
+
+            if (document.getElementById('li_' + liId).style.display == 'none') {
+                clearInterval(timer);
+                document.getElementById('li_' + liId).remove();
+                return;
+            }
+            if (h == 0 && m == 0 && s == 0) {
+                document.getElementById('li_' + liId).getElementsByTagName('span')[1].innerHTML = '时间到';
+                document.getElementById('li_' + liId).getElementsByTagName('input')[0].value = '关闭';
+                // music.load();
+                music.play();
+                isShine = true;
+                clearInterval(timer);
+            } else {
+                fn(h, m, s, liId);
+            }
+        }, 1000);
+    }
+    </script>
+</body>
+
+</html>

@@ -6,8 +6,7 @@
 // 计次列表
 var ListItem = {
     props: ['item'],
-    template: '<li>计次{{item.id}}<span>间隔 {{item.interval}}</span><font class="flr">{{item.time}}</font></li>',
-    methods: {}
+    template: '<li><font class="fll">计次{{item.id}}</font><span>间隔 {{item.interval}}</span>{{item.time}}</li>'
 }
 
 var vm = new Vue({
@@ -34,7 +33,7 @@ var vm = new Vue({
             msec_2: '00',
             clockState: 2, // 0开始 1暂停 2重置
             recordFlag: false,
-            list: []
+            list: [] // {id:'',time:'',interval:''}
         },
         styleObj: {
             animation: 'rotate 15s infinite linear',
@@ -43,7 +42,7 @@ var vm = new Vue({
     },
     mounted: function() {
         // 初始化content最小高度
-        document.getElementById('list').style.height = (document.body.clientHeight - 603) + 'px';
+        document.getElementById('list').style.height = (document.body.clientHeight - 613) + 'px';
     },
     methods: {
         // 数字补全两位

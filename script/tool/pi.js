@@ -75,7 +75,7 @@ var vm = new Vue({
     },
     mounted: function() {
         // 初始化content最小高度
-        document.getElementById('content').style.minHeight = (document.body.clientHeight - 200) + 'px';
+        document.getElementById('content').style.minHeight = (document.body.clientHeight - 220) + 'px';
     },
     methods: {
         // 判断是否标记错误提示
