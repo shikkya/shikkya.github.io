@@ -43,6 +43,15 @@ var vm = new Vue({
     mounted: function() {
         // 初始化content最小高度
         document.getElementById('list').style.height = (document.body.clientHeight - 613) + 'px';
+
+        // 回车触发开始按钮
+        document.onkeypress = function(e) {
+            if (e.which == 13 && vm.timeObj.clockState == 0) {
+                vm.pause();
+            } else if (e.which == 13 && vm.timeObj.clockState > 0) {
+                vm.start();
+            }
+        };
     },
     methods: {
         // 数字补全两位

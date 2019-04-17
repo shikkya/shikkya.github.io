@@ -18,10 +18,22 @@ var ListItem = {
     }
 }
 
+// 预设时间列表
+var PreinstallItem = {
+    props: ['item', 'index', 'num'],
+    template: '<span @click="check" :class="{active:index==num}"><i></i><label>{{item.text}}</label></span>',
+    methods: {
+        check: function() {
+            vm.timeObj.pCheckNum = this.index;
+        }
+    }
+}
+
 var vm = new Vue({
     el: '#app',
     components: {
-        ListItem: ListItem
+        ListItem: ListItem,
+        PreinstallItem: PreinstallItem
     },
     data: {
         headerObj: {
@@ -38,6 +50,13 @@ var vm = new Vue({
             hour: '',
             minute: '',
             second: '',
+            pCheckNum: -1,
+            preinstall: [
+                { text: '1分', val: 1 },
+                { text: '5分', val: 5 },
+                { text: '10分', val: 10 },
+                { text: '1时', val: 60 },
+            ],
             list: [] // { tit:'', time:'', fontClass:'', btnText:'', isHide:false }
         }
     },
@@ -63,7 +82,7 @@ var vm = new Vue({
     },
     mounted: function() {
         // 初始化content最小高度
-        document.getElementById('list').style.height = (document.body.clientHeight - 528) + 'px';
+        document.getElementById('list').style.height = (document.body.clientHeight - 565) + 'px';
 
         // 回车触发开始按钮
         document.onkeypress = function(e) {
@@ -94,54 +113,55 @@ var vm = new Vue({
         },
         // 点击开始新增数据
         addList: function() {
-            var h = this.timeObj.hour;
-            var m = this.timeObj.minute;
-            var s = this.timeObj.second;
+            var h = 0;
+            var m = 0;
+            var s = 0;
             var tit = this.timeObj.tit;
 
-            // 校验时分秒不能同时为空
-            if (h == '' && m == '' && s == '') {
-                this.errorClass = true;
-                return;
-            }
-
-            // 空值置0处理
             if (tit == '') {
                 tit = '暂无备注';
             }
-            if (h == '') {
-                h = 0;
-            }
-            if (m == '') {
-                m = 0;
-            }
-            if (s == '') {
-                s = 0;
-            }
 
-            // 校验非负整数
-            if (!(/(^[0-9]\d*$)/.test(h))) {
-                this.errorClass = true;
-                return;
-            }
-            if (!(/(^[0-9]\d*$)/.test(m))) {
-                this.errorClass = true;
-                return;
-            }
-            if (!(/(^[0-9]\d*$)/.test(s))) {
-                this.errorClass = true;
-                return;
-            }
+            if (this.timeObj.pCheckNum > -1) {
+                m = this.timeObj.preinstall[this.timeObj.pCheckNum].val;
+            } else {
+                h = this.timeObj.hour;
+                m = this.timeObj.minute;
+                s = this.timeObj.second;
 
-            // 时分秒转整
-            h = parseInt(h);
-            m = parseInt(m);
-            s = parseInt(s);
+                // 时分秒不能同时为空
+                if (h == '' && m == '' && s == '') {
+                    this.errorClass = true;
+                    return;
+                }
 
-            // 校验时分秒不能同时为0
-            if (h == 0 && m == 0 && s == 0) {
-                this.errorClass = true;
-                return;
+                // 空值置0处理
+                if (h == '') {
+                    h = 0;
+                }
+                if (m == '') {
+                    m = 0;
+                }
+                if (s == '') {
+                    s = 0;
+                }
+
+                // 校验非负整数
+                if (!(/(^[0-9]\d*$)/.test(h)) || !(/(^[0-9]\d*$)/.test(m)) || !(/(^[0-9]\d*$)/.test(s))) {
+                    this.errorClass = true;
+                    return;
+                }
+
+                // 时分秒转整
+                h = parseInt(h);
+                m = parseInt(m);
+                s = parseInt(s);
+
+                // 时分秒不能同时为0
+                if (h == 0 && m == 0 && s == 0) {
+                    this.errorClass = true;
+                    return;
+                }
             }
 
             // 大于60的数据格式化
@@ -228,6 +248,8 @@ var vm = new Vue({
         // 重置
         reset: function() {
             this.timeObj.tit = this.timeObj.hour = this.timeObj.minute = this.timeObj.second = '';
+            this.timeObj.pCheckNum = -1;
+            this.errorClass = false;
         },
         // 提示音试听
         play: function() {

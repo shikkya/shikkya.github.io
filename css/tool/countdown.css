@@ -68,7 +68,7 @@
 
 .tab,
 .list {
-    width: 335px;
+    width: 352px;
     margin: 30px auto;
     font-size: 16px;
     color: #333;
@@ -97,7 +97,7 @@
 .tab input.title {
     padding: 4px 8px;
     text-align: left;
-    width: 200px;
+    width: 215px;
 }
 
 .tab font {
@@ -109,6 +109,29 @@
     font-size: 14px;
     padding: 7px 0px;
     width: 70px;
+}
+
+.tab span {
+    cursor: pointer;
+}
+
+.tab span label {
+    margin: 0px 12px 0px 3px;
+    cursor: pointer;
+}
+
+.tab span i {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    margin: -2px 3px 0px 0px;
+    vertical-align: middle;
+    background: url('../../images/common_03.png') #D8D8D8 no-repeat center;
+}
+
+.tab span.active i {
+    background: url('../../images/common_03.png') #00CBDB no-repeat center;
 }
 
 .list {
