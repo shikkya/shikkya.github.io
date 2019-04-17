@@ -42,6 +42,28 @@ var vm = new Vue({
             lunarM: '',
             lunarD: ''
         },
+        dayObj: {
+            year_1: '',
+            month_1: '',
+            day_1: '',
+            year_2: '',
+            month_2: '',
+            day_2: ''
+        },
+        dateObj: {
+            year: '',
+            month: '',
+            day: '',
+            num: ''
+        },
+        lunarObj: {
+            year: '',
+            month: '',
+            day: '',
+            lunarY: '',
+            lunarM: '',
+            lunarD: ''
+        },
         errorClass: false,
         inputVal_1: '',
         inputVal_2: '',
