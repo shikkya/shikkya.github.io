@@ -25,26 +25,76 @@
             <div class="tit">
                 <h1>{{tit}}</h1>
                 <p>今天是 {{todayObj.year}}年 {{todayObj.month}}月 {{todayObj.day}}日 星期{{todayObj.week}} 阴历 {{todayObj.lunarY}}年 {{todayObj.lunarM}}月 {{todayObj.lunarD}}</p>
-                <!-- <p>快速计算圆周率小数点后指定位数的值，<font :class="{error:errorClass}">请输入小于等于1000的正整数</font></p> -->
+                <p>快速计算圆周率小数点后指定位数的值，<font :class="{error:errorClass}">请输入小于等于1000的正整数</font></p>
             </div>
             <div class="out">
                 <ul>
                     <li>
-                        <h3>天数计算</h3>
-                        <p>从<input type="text" v-model="dayObj.year_1" />年<input type="text" v-model="dayObj.month_1" />月<input type="text" v-model="dayObj.day_1" />日</p>
-                        <p>到<input type="text" v-model="dayObj.year_2" />年<input type="text" v-model="dayObj.month_2" />月<input type="text" v-model="dayObj.day_2" />日</p>
-                        <p>共计？天 ？月？天 ？周？天</p>
+                        <h3>{{dayObj.tit}}</h3>
+                        <div>
+                            <form name="dayStartFrm">
+                                从
+                                <select name="year" v-model="dayStartSelect.year"></select>
+                                年
+                                <select name="month" v-model="dayStartSelect.month"></select>
+                                月
+                                <select name="day" v-model="dayStartSelect.day"></select>
+                                日
+                            </form>
+                        </div>
+                        <div>
+                            <form name="dayEndFrm">
+                                到
+                                <select name="year" v-model="dayEndSelect.year"></select>
+                                年
+                                <select name="month" v-model="dayEndSelect.month"></select>
+                                月
+                                <select name="day" v-model="dayEndSelect.day"></select>
+                                日
+                            </form>
+                        </div>
+                        <p>相差 {{dayObj.result_1}} 天 / {{dayObj.result_2}} 月 {{dayObj.result_3}} 天 / {{dayObj.result_4}} 周 {{dayObj.result_5}} 天</p>
                     </li>
                     <li>
-                        <h3>日期推算</h3>
-                        <p>与<input type="text" v-model="dateObj.year" />年<input type="text" v-model="dateObj.month" />月<input type="text" v-model="dateObj.day" />日</p>
+                        <h3>{{dateObj.tit}}</h3>
+                        <div>
+                            <form name="dateFrm">
+                                与
+                                <select name="year" v-model="dateSelect.year"></select>
+                                年
+                                <select name="month" v-model="dateSelect.month"></select>
+                                月
+                                <select name="day" v-model="dateSelect.day"></select>
+                                日
+                            </form>
+                        </div>
                         <p>相差<input type="text" v-model="dateObj.num" />天（输入负数向前推算）</p>
-                        <p>是？年？月？日星期？</p>
+                        <p>是 {{dateObj.result_1}} 年 {{dateObj.result_2}} 月 {{dateObj.result_3}} 日 星期{{dateObj.result_4}}</p>
                     </li>
                     <li>
-                        <h3>阴阳历转换</h3>
-                        <p>阴历<input type="text" v-model="lunarObj.year" />年<input type="text" v-model="lunarObj.month" />月<input type="text" v-model="lunarObj.day" />日</p>
-                        <p>阳历<input type="text" v-model="lunarObj.lunarY" />年<input type="text" v-model="lunarObj.lunarM" />月<input type="text" v-model="lunarObj.lunarD" />日</p>
+                        <h3>{{lunarTit}}</h3>
+                        <div>
+                            <form name="lunarYinFrm">
+                                阴历
+                                <select name="year" v-model="lunarYinSelect.year"></select>
+                                年
+                                <select name="month" v-model="lunarYinSelect.month"></select>
+                                月
+                                <select name="day" v-model="lunarYinSelect.day"></select>
+                                日
+                            </form>
+                        </div>
+                        <div>
+                            <form name="lunarYangFrm">
+                                阳历
+                                <select name="year" v-model="lunarYangSelect.year"></select>
+                                年
+                                <select name="month" v-model="lunarYangSelect.month"></select>
+                                月
+                                <select name="day" v-model="lunarYangSelect.day"></select>
+                                日
+                            </form>
+                        </div>
                     </li>
                 </ul>
             </div>

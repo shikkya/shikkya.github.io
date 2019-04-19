@@ -55,8 +55,8 @@
 .out li {
     display: inline-block;
     vertical-align: top;
-    padding:0px 15px;
-    
+    padding: 0px 15px;
+
 }
 
 .out input[type="text"] {
@@ -70,10 +70,16 @@
     font-size: 15px;
 }
 
-.out span {
-    color: #00CBDB;
+.out select {
+    padding: 2px 3px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    vertical-align: middle;
+    text-align: center;
+    color: #666;
+    font-size: 15px;
 }
 
-.out .error {
+.tit .error {
     color: #f90;
 }
