@@ -1,0 +1,104 @@
+﻿@charset "UTF-8";
+
+/**
+ * @authors kk
+ * @date    2019-04-23
+ */
+
+/*************** header ***************/
+
+.header {
+    background: #58508D;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 998;
+    border-bottom: 15px solid #403a6c;
+    height: 20px;
+    padding: 20px 0px;
+    overflow: hidden;
+}
+
+.header .logo img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.header .btn {
+    font-size: 12px;
+    padding: 6px 0px;
+    margin-top: -1px;
+}
+
+/*************** content ***************/
+
+.content {
+    color: #666;
+    font-size: 16px;
+    padding-top: 90px;
+}
+
+.tit {
+    margin: 20px 0px;
+    text-align: center;
+    color: #58508D;
+}
+
+.tit p {
+    color: #888;
+    margin: 15px 0px;
+}
+
+.titCheck {
+    font-size: 0px;
+    margin-top: 30px;
+}
+
+.titCheck li {
+    display: inline-block;
+    padding: 8px 0px;
+    width: 33%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 15px;
+    border: 1px solid #fff;
+    background: #eee;
+    color: #888;
+}
+
+.titCheck li:hover,
+.titCheck li.active {
+    color: #fff;
+    background: #00cbdb;
+}
+
+.hide {
+    display: none;
+}
+
+.food {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+.food li {
+    display: inline-block;
+    margin: 0px 50px;
+}
+
+.food div {
+    border:5px solid #DCD6FF;
+    width: 200px;
+    padding: 20px 0px;
+    margin: 30px 0px;
+    font-size: 16px;
+    color: #333;
+    border-radius:10px;
+    animation: water 5s linear infinite;
+}
+
+.food p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #888;
+}
