@@ -42,7 +42,7 @@
 .header li.active a,
 .header li a:hover {
     color: #00cbdb;
-    border-bottom: 1px solid #00cbdb;
+    border-bottom: 2px solid #00cbdb;
 }
 
 /*************** content ***************/
