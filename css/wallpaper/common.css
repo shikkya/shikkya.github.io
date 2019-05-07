@@ -22,11 +22,11 @@ body {
 
 .picture li {
     display: inline-block;
-    width: calc(33.3% - 20px);
     font-size: 12px;
-    margin: 0px 0px 40px 30px;
     color: #506a85;
     position: relative;
+    width: calc(33.3% - 20px);
+    margin: 0px 0px 40px 30px;
 }
 
 .picture ul li:nth-child(3n+1) {
@@ -49,10 +49,29 @@ body {
     font-size: 13px;
 }
 
+@media screen and (max-width: 800px) {
+
+    .picture li,
+    .picture ul li:nth-child(3n+1) {
+        width: calc(50% - 22.5px);
+        margin: 0px 15px 20px 15px;
+    }
+
+    .picture ul li:nth-child(2n+1) {
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .picture li .btn {
+        display: none;
+    }
+}
+
 /*************** position btn ***************/
 
 .go_top {
-    background: #506a85;
+    background: rgba(80, 106, 133, 0.9);
     border: 1px solid #506a85;
 }
 

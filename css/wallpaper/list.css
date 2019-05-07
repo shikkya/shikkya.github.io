@@ -43,6 +43,16 @@
     margin-left: 5px;
 }
 
+@media screen and (max-width: 600px) {
+    .header .logo {
+        display: none;
+    }
+
+    .header .search {
+        float: none;
+        text-align: center;
+    }
+}
 
 /*************** content ***************/
 
@@ -89,6 +99,9 @@
     overflow: hidden;
     background: #6d8399;
     border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
 }
 
 .key_word span {
@@ -109,6 +122,8 @@
 .size {
     position: relative;
     cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .size .size_list {
@@ -157,4 +172,40 @@
 
 .no_info {
     padding: 180px 0px;
+}
+
+@media screen and (max-width: 860px) {
+    .result_num {
+        display: none;
+    }
+
+    .key_word span {
+        max-width: 65px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .content {
+        padding-top: 161px;
+    }
+
+    .top {
+        text-align: center;
+    }
+
+    .type {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .type li {
+        margin: 1px;
+    }
+
+    .key_word,
+    .size {
+        float: none;
+    }
 }

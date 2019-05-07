@@ -45,6 +45,21 @@
     border-bottom: 2px solid #00bc9c;
 }
 
+@media screen and (max-width: 600px) {
+    .header .logo {
+        display: none;
+    }
+
+    .header ul {
+        float: none;
+        text-align: center;
+    }
+
+    .header li {
+        margin: 0px 5px;
+    }
+}
+
 /*************** content ***************/
 
 .content {
@@ -56,7 +71,8 @@
     position: relative;
     font-size: 16px;
     background: #506a85;
-    min-height: 370px;
+    text-align: center;
+    min-height: 343px;
 }
 
 .top img {
@@ -65,7 +81,6 @@
 
 .top div {
     width: 100%;
-    text-align: center;
     position: absolute;
     top: 50%;
     margin-top: -90px;
@@ -102,6 +117,10 @@
     font-size: 16px;
 }
 
+.picture .tit p:nth-child(3) {
+    display: none;
+}
+
 .picture .tit a {
     color: #00bc9c;
     margin: 0px 2px;
@@ -112,4 +131,67 @@
 
 .picture .tit a:hover {
     background: #dcf1ed;
+}
+
+@media screen and (max-width: 1000px) {
+    .top {
+        height: 343px;
+        overflow: hidden;
+    }
+
+    .top img {
+        width: auto;
+        height: 100%;
+    }
+
+    .top h1 {
+        font-size: 30px;
+        letter-spacing: 0px;
+    }
+
+    .top p {
+        width: 90%;
+        margin: 30px auto;
+        letter-spacing: 0px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .picture .tit p:nth-child(2) {
+        display: none;
+    }
+
+    .picture .tit p:nth-child(3) {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .top {
+        height: 220px;
+        min-height: 220px;
+    }
+
+    .top div {
+        margin-top: -40px;
+    }
+
+    .top h1 {
+        font-size: 25px;
+    }
+
+    .top p {
+        display: none;
+    }
+
+    .top .btn {
+        width: 100px;
+        padding: 8px 0px;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    .picture .tit h1 {
+        display: none;
+    }
 }

@@ -28,8 +28,8 @@ Vue.component("NoInfoItem", {
     data: function() {
         return {
             text: '暂时没有哦 ~ 看看其他的吧',
-            imgUrl: '../../images/common_01.png',
-            dataImg: '../../images/common_02.png'
+            imgUrl: '../../images/common_02.png',
+            dataImg: '../../images/common_01.png'
         }
     }
 })

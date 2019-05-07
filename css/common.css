@@ -17,7 +17,6 @@ body {
     height: 100%;
     font-family: '微软雅黑 Light', '微软雅黑 Regular', '微软雅黑';
     font-size: 14px;
-    min-width: 1100px;
     cursor: default;
 }
 
@@ -69,6 +68,12 @@ a {
     margin: 0px auto;
 }
 
+@media screen and (max-width: 1050px) {
+    .wid_size {
+        width: auto;
+    }
+}
+
 .fll {
     float: left;
 }
@@ -107,7 +112,7 @@ a {
 
 .shortcut {
     position: fixed;
-    bottom: 120px;
+    bottom: 90px;
     right: 0px;
     z-index: 999;
 }
@@ -127,7 +132,7 @@ a {
 }
 
 .go_home {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid #cdcdcd;
     color: #999;
     font-size: 25px;
@@ -161,4 +166,10 @@ a {
     padding: 8px 18px;
     margin-right: 5px;
     border-radius: 3px;
+}
+
+@media screen and (max-width: 460px) {
+    .footer ul li:first-child {
+        display: none;
+    }
 }
