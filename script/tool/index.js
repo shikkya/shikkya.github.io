@@ -6,7 +6,7 @@
 // 图片展示列表组件
 var ToolItem = {
     props: ['item'],
-    template: '<li @click="window.open(item.url)"><div><img src="../../images/tool_04.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3></div><p v-html="item.text"></p></li>'
+    template: '<li @click="vm.checkList(item.url)"><div><img src="../../images/tool_04.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3></div><p v-html="item.text"></p></li>'
 }
 
 var vm = new Vue({
@@ -42,5 +42,19 @@ var vm = new Vue({
     mounted: function() {
         // 加载图片
         loadImg();
+    },
+    methods: {
+        // 点击工具列表
+        checkList: function(url) {
+            if (document.body.clientWidth <= 720) {
+                alert('请使用电脑浏览器访问');
+                return;
+            }
+            if (url == '') {
+                alert('努力开发中,敬请期待~');
+                return;
+            }
+            window.open(url);
+        }
     }
 })
