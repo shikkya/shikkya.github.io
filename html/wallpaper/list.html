@@ -43,13 +43,16 @@
                     </div>
                     <div class="size flr">
                         分辨率：<span>{{curSize}}</span>
-                        <div class="size_list">
+                        <div class="size_list" id="size_list">
                             <ul>
                                 <li v-for="(item,index) in sizeList" @click="changeSize(item)">
                                     <span>{{item}}</span>
                                 </li>
                             </ul>
                         </div>
+                    </div>
+                    <div class="app_info">
+                        请使用电脑浏览器下载壁纸
                     </div>
                 </div>
             </div>
