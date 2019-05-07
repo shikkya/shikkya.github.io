@@ -201,7 +201,8 @@
     }
 
     .type li {
-        margin: 1px;
+        margin: 0px 2px;
+        padding: 1px 5px;
     }
 
     .key_word,

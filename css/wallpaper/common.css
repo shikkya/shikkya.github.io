@@ -53,8 +53,8 @@ body {
 
     .picture li,
     .picture ul li:nth-child(3n+1) {
-        width: calc(50% - 22.5px);
-        margin: 0px 15px 20px 15px;
+        width: calc(50% - 15px);
+        margin: 0px 10px 20px 10px;
     }
 
     .picture ul li:nth-child(2n+1) {
