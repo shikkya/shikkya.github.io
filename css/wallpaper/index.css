@@ -34,7 +34,7 @@
 .header li a {
     color: #506a85;
     font-size: 15px;
-    border-bottom: 1px solid #fff;
+    border-bottom: 2px solid #fff;
     padding: 1px 5px;
     transition: all 0.4s;
 }
@@ -43,6 +43,13 @@
 .header li a:hover {
     color: #00bc9c;
     border-bottom: 2px solid #00bc9c;
+}
+
+@media screen and (max-width: 720px) {
+    .header li a:hover {
+        color: #506a85;
+        border-bottom: 2px solid #fff;
+    }
 }
 
 @media screen and (max-width: 600px) {
