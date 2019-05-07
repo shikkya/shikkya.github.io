@@ -191,6 +191,10 @@
         margin-top: 20px;
     }
 
+    .picture .tit {
+        margin: 25px 0px;
+    }
+
     .picture .tit h1 {
         display: none;
     }
