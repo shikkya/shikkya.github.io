@@ -17,7 +17,7 @@ body {
 /*************** position btn ***************/
 
 .go_top {
-    background: #403a6c;
+    background: rgba(64, 58, 108, 0.9);
     border: 1px solid #403a6c;
 }
 
