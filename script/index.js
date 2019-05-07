@@ -3,6 +3,14 @@
  * @date    2019-03-12
  */
 
+try {
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        window.location.href = "./html/wallpaper/index.html";
+    } else {
+        // window.location.href = "cindex.html";
+    }
+} catch (e) {}
+
 var TypeItem = {
     props: ['content', 'index'],
     template: '<div :class="\'type type_\'+index"><img :src="\'./images/\'+content.imgName"/><a :href="content.url" target="_blank">{{content.text}}</a></div>',
