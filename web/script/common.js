@@ -5,7 +5,7 @@
 
 // 各产品首页右上角导航
 var productList = [
-    { text: '可可导航', url: '../../index.html' },
+    { text: '可可导航', url: '../index.html' },
     { text: '模板壁纸', url: '../wallpaper/index.html' },
     { text: '便易工具', url: '../tool/index.html' }
 ];
