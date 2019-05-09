@@ -49,22 +49,16 @@ body {
     font-size: 13px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
 
     .picture li,
     .picture ul li:nth-child(3n+1) {
-        width: calc(50% - 15px);
-        margin: 0px 10px 20px 10px;
+        width: calc(50% - 10px);
+        margin: 0px 0px 40px 20px;
     }
 
     .picture ul li:nth-child(2n+1) {
-        margin-right: 0px;
-    }
-}
-
-@media screen and (max-width: 720px) {
-    .picture li .btn {
-        display: none;
+        margin-left: 0px;
     }
 }
 

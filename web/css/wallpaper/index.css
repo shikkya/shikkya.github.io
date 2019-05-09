@@ -45,28 +45,6 @@
     border-bottom: 2px solid #00bc9c;
 }
 
-@media screen and (max-width: 720px) {
-    .header li a:hover {
-        color: #506a85;
-        border-bottom: 2px solid #fff;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .header .logo {
-        display: none;
-    }
-
-    .header ul {
-        float: none;
-        text-align: center;
-    }
-
-    .header li {
-        margin: 0px 5px;
-    }
-}
-
 /*************** content ***************/
 
 .content {
@@ -79,7 +57,7 @@
     font-size: 16px;
     background: #506a85;
     text-align: center;
-    min-height: 343px;
+    min-height: 360.9px;
 }
 
 .top img {
@@ -124,10 +102,6 @@
     font-size: 16px;
 }
 
-.picture .tit p:nth-child(3) {
-    display: none;
-}
-
 .picture .tit a {
     color: #00bc9c;
     margin: 0px 2px;
@@ -140,69 +114,28 @@
     background: #dcf1ed;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     .top {
-        height: 343px;
         overflow: hidden;
     }
 
     .top img {
         width: auto;
-        height: 100%;
+        height: 360.9px;
     }
 
     .top h1 {
-        font-size: 30px;
-        letter-spacing: 0px;
+        font-size: 33px;
     }
 
     .top p {
-        width: 90%;
         margin: 30px auto;
         letter-spacing: 0px;
     }
 }
 
-@media screen and (max-width: 720px) {
-    .picture .tit p:nth-child(2) {
-        display: none;
-    }
-
-    .picture .tit p:nth-child(3) {
-        display: block;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .top {
-        height: 220px;
-        min-height: 220px;
-    }
-
-    .top div {
-        margin-top: -40px;
-    }
-
+@media screen and (max-width: 850px) {
     .top h1 {
-        font-size: 25px;
-    }
-
-    .top p {
-        display: none;
-    }
-
-    .top .btn {
-        width: 100px;
-        padding: 8px 0px;
-        font-size: 14px;
-        margin-top: 20px;
-    }
-
-    .picture .tit {
-        margin: 25px 0px;
-    }
-
-    .picture .tit h1 {
-        display: none;
+        letter-spacing: 0px;
     }
 }

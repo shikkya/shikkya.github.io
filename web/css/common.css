@@ -18,6 +18,7 @@ body {
     font-family: '微软雅黑 Light', '微软雅黑 Regular', '微软雅黑';
     font-size: 14px;
     cursor: default;
+    min-width: 1000px;
 }
 
 ul,
@@ -69,8 +70,26 @@ a {
 }
 
 @media screen and (max-width: 1050px) {
+
+    html,
+    body {
+        min-width: 800px;
+    }
+
     .wid_size {
-        width: auto;
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    html,
+    body {
+        min-width: 600px;
+    }
+
+    .wid_size {
+        width: 600px;
     }
 }
 
@@ -81,6 +100,8 @@ a {
 .flr {
     float: right;
 }
+
+/*************** no_info ***************/
 
 .no_info {
     text-align: center;
