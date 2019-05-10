@@ -89,7 +89,7 @@ var vm = new Vue({
         }
 
         // 回车触发开始按钮
-        document.onkeypress = function(e) {
+        document.onkeydown = function(e) {
             if (e.which == 13) {
                 vm.addList();
             }
