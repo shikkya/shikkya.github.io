@@ -47,6 +47,21 @@ var vm = new Vue({
         this.init();
     },
     methods: {
+        init: function() {
+            var w1cm = document.getElementById("w1cm").offsetWidth;
+            var sWidth = screen.width;
+            var sHeight = screen.height;
+            var sDiagonal = Math.sqrt(sWidth / w1cm * sWidth / w1cm + sHeight / w1cm * sHeight / w1cm) / 2.54;
+            // 初始化说明
+            this.sizeHtml += '<p>说明 : 尺子上端以厘米为单位，下端以英寸为单位</p>';
+            this.sizeHtml += '<p>当前显示器分辨率为 : ' + sWidth + ' * ' + sHeight + ' pixels</p>';
+            this.sizeHtml += '<p>当前显示器尺寸为 : ' + (sWidth / w1cm).toFixed(1) + ' * ' + (sHeight / w1cm).toFixed(1) + ' cm ' + sDiagonal.toFixed(1) + ' 寸</p>';
+            this.sizeHtml += '<p>若尺子长度有误，请您设置正确的电脑分辨率；若数据显示有误，请至本页末选择联系方式反馈</p>';
+            // 初始化尺子
+            this.createRuler(sDiagonal, sWidth, sHeight);
+            // 初始化content最小高度
+            document.getElementById('content').style.minHeight = (document.body.clientHeight - 185) + 'px';
+        },
         // 初始化尺子
         createRuler: function(diagonal, screenWidth, screenHeight) {
             var aspectRatio = screenWidth / screenHeight;
@@ -56,7 +71,7 @@ var vm = new Vue({
             for (var i = 0; i < rulerList.length; i++) {
                 tempWid = rulerList[i].wid * screenWidth / (diagonal * aspectRatio / (Math.sqrt(aspectRatio * aspectRatio + 1)));
                 countWid += tempWid;
-                if (countWid >= window.innerWidth - 35 && i != rulerList.length - 1) {
+                if (countWid >= document.body.clientWidth - 20 && i != rulerList.length - 1) {
                     continue;
                 }
                 this.rulerNum++;
@@ -88,22 +103,6 @@ var vm = new Vue({
                 }
             }
             img.src = url;
-        },
-        init: function() {
-            var w1cm = document.getElementById("w1cm").offsetWidth;
-            var sWidth = screen.width;
-            var sHeight = screen.height;
-            var sDiagonal = Math.sqrt(sWidth / w1cm * sWidth / w1cm + sHeight / w1cm * sHeight / w1cm) / 2.54;
-            // 初始化说明
-            this.sizeHtml += '<p>说明 : 尺子上端以厘米为单位，下端以英寸为单位</p>';
-            this.sizeHtml += '<p>当前显示器分辨率为 : ' + sWidth + ' * ' + sHeight + ' pixels</p>';
-            this.sizeHtml += '<p>当前显示器尺寸为 : ' + (sWidth / w1cm).toFixed(1) + ' * ' + (sHeight / w1cm).toFixed(1) + ' cm ' + sDiagonal.toFixed(1) + ' 寸</p>';
-            this.sizeHtml += '<p>若尺子长度有误，请您设置正确的电脑分辨率；若数据显示有误，请至本页末选择联系方式反馈</p>';
-            // 初始化尺子
-            this.createRuler(sDiagonal, sWidth, sHeight);
-            // 初始化内容垂直居中
-            document.getElementById('content').style.paddingTop = (document.body.clientHeight / 2 - 368 + 75) + 'px';
-            document.getElementById('content').style.paddingBottom = (document.body.clientHeight / 2 - 318) + 'px';
         }
     }
 })

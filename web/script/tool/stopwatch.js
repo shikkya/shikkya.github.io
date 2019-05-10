@@ -41,8 +41,12 @@ var vm = new Vue({
         }
     },
     mounted: function() {
-        // 初始化content最小高度
-        document.getElementById('list').style.height = (document.body.clientHeight - 613) + 'px';
+        // 初始化list高度或content最小高度
+        if (document.body.clientHeight - 613 > 118) {
+            document.getElementById('list').style.height = (document.body.clientHeight - 613) + 'px';
+        } else {
+            document.getElementById('content').style.minHeight = (document.body.clientHeight - 210) + 'px';
+        }
 
         // 回车触发开始按钮
         document.onkeypress = function(e) {

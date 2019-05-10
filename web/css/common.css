@@ -101,13 +101,27 @@ a {
     float: right;
 }
 
-/*************** no_info ***************/
+/*************** scrollbar ***************/
 
-.no_info {
-    text-align: center;
-    color: #999;
-    font-size: 16px;
-    padding: 15px 0px;
+/* 整体 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+/* 凹槽 */
+::-webkit-scrollbar-track-piece {
+    background-color: #eee;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ccc;
 }
 
 /*************** btn ***************/
@@ -160,6 +174,18 @@ a {
     margin-top: 10px;
 }
 
+/*************** no_info ***************/
+
+.no_info {
+    text-align: center;
+    color: #999;
+    font-size: 16px;
+}
+
+.no_info img {
+    width: 140px;
+}
+
 /*************** footer ***************/
 
 .footer {
@@ -187,10 +213,4 @@ a {
     padding: 8px 18px;
     margin-right: 5px;
     border-radius: 3px;
-}
-
-@media screen and (max-width: 460px) {
-    .footer ul li:first-child {
-        display: none;
-    }
 }

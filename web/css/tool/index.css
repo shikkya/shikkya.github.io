@@ -45,29 +45,6 @@
     border-bottom: 2px solid #00cbdb;
 }
 
-@media screen and (max-width: 720px) {
-    .header li a:hover {
-        color: #506a85;
-        border-bottom: 2px solid #fff;
-    }
-}
-
-
-@media screen and (max-width: 600px) {
-    .header .logo {
-        display: none;
-    }
-
-    .header ul {
-        float: none;
-        text-align: center;
-    }
-
-    .header li {
-        margin: 0px 5px;
-    }
-}
-
 /*************** content ***************/
 
 .content {
@@ -141,7 +118,7 @@
     width: calc(33.3% - 40px);
     height: 290px;
     padding: 10px;
-    margin: 0px 0px 35px 30px;
+    margin: 0px 0px 30px 30px;
     color: #888;
     font-size: 14px;
     text-align: center;
@@ -173,102 +150,45 @@
     line-height: 20px;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1050px) {
     .top {
-        height: 343px;
         overflow: hidden;
     }
 
     .top img {
         width: auto;
-        height: 100%;
+        height: 360.9px;
     }
 
     .top h1 {
-        font-size: 30px;
-        letter-spacing: 0px;
+        font-size: 33px;
     }
 
     .top p {
-        width: 90%;
         margin: 30px auto;
         letter-spacing: 0px;
     }
 
     .out li {
-        height: calc(33.3vw - 40px);
-        margin-bottom: 25px;
+        width: calc(33.3% - 27px);
+        margin: 0px 0px 25px 10px;
+        height: 255px;
     }
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 850px) {
+    .top h1 {
+        letter-spacing: 0px;
+    }
 
     .out li,
     .out ul li:nth-child(3n+1) {
         width: calc(50% - 25px);
-        margin: 0px 0px 20px 0px;
-        height: auto;
+        margin: 0px 0px 20px 10px;
+        height: 275px;
     }
 
     .out ul li:nth-child(2n+1) {
-        margin-left: 5px;
-    }
-
-    .out ul li:nth-child(2n) {
-        margin-right: 5px;
-    }
-
-    .out li p {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 720px) {
-    .out li:hover {
-        background: #fff;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .top {
-        height: 220px;
-        min-height: 220px;
-    }
-
-    .top div {
-        margin-top: -40px;
-    }
-
-    .top h1 {
-        font-size: 25px;
-    }
-
-    .top p {
-        display: none;
-    }
-
-    .top .btn {
-        width: 100px;
-        padding: 8px 0px;
-        font-size: 14px;
-        margin-top: 20px;
-    }
-
-    .out .tit {
-        margin: 20px 0px;
-    }
-
-    .out .tit h1,
-    .out .tit p {
-        display: none;
-    }
-
-    .out li,
-    .out ul li:nth-child(3n+1) {
-        margin-bottom: 5px;
-    }
-
-    .out li h3 {
-        font-size: 15px;
+        margin-left: 0px;
     }
 }

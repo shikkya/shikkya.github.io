@@ -160,7 +160,7 @@
 }
 
 .no_info {
-    padding-top: 180px;
+    padding: 50px 0px;
 }
 
 @media screen and (max-width: 1050px) {
@@ -170,25 +170,8 @@
 }
 
 @media screen and (max-width: 850px) {
-    .result_num {
-        display: none;
-    }
-
-    .key_word,
-    .size {
-        float: none;
-    }
-
-    .key_word span {
-        max-width: 75px;
-    }
-
-    .no_info {
-        padding-top: 100px;
-    }
-
     .content {
-        padding-top: 150px;
+        padding-top: 170px;
     }
 
     .top {
@@ -199,5 +182,14 @@
         display: block;
         width: 100%;
         margin-bottom: 3px;
+    }
+
+    .result_num {
+        display: none;
+    }
+
+    .key_word,
+    .size {
+        float: none;
     }
 }
