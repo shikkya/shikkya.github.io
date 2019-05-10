@@ -68,7 +68,7 @@
 
 .tab,
 .list {
-    width: 352px;
+    width: 353px;
     margin: 30px auto;
     font-size: 16px;
     color: #333;
@@ -115,8 +115,16 @@
     cursor: pointer;
 }
 
+.tab .pre_td span i {
+    margin-left: 12px;
+}
+
+.tab .pre_td>span:first-child i {
+    margin-left: 0px;
+}
+
 .tab span label {
-    margin: 0px 12px 0px 3px;
+    margin-left: 3px;
     cursor: pointer;
 }
 
@@ -161,7 +169,7 @@
 
 .list span {
     text-align: left;
-    width: 125px;
+    width: 135px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

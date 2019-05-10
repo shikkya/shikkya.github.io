@@ -72,7 +72,7 @@ var vm = new Vue({
                         document.title = '【　　　　　】';
                     }
 
-                    if (this.isShine == false) {
+                    if (vm.isShine == false) {
                         document.title = titleInit;
                         clearInterval(timerShine);
                     }
@@ -97,12 +97,12 @@ var vm = new Vue({
 
         // 取消通知栏闪烁
         window.onfocus = function() {
-            this.isShine = false;
+            vm.isShine = false;
         };
 
         // 取消通知栏闪烁
         document.onfocusin = function() {
-            this.isShine = false;
+            vm.isShine = false;
         };
     },
     methods: {
