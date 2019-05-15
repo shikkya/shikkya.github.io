@@ -3,17 +3,17 @@
  * @date    2019-03-18
  */
 
+// ie版本过低判断
 var ieVersion = IEVersion();
-alert(ieVersion);
-if (typeof(ieVersion) == 'number' && ieVersion > 0 && ieVersion < 11) {
-    // alert('IE浏览器版本过低，可能无法正常浏览，请尽快升级~');
+if (typeof(ieVersion) == 'number' && ieVersion > 0 && ieVersion < 10) {
+    window.location.replace("../html/error_version.html");
 }
 
 // 浏览器判断
 function IEVersion() {
-    var userAgent = navigator.userAgent; // 取得浏览器的userAgent字符串  
-    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; // 判断是否IE<11浏览器  
-    var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; // 判断是否IE的Edge浏览器  
+    var userAgent = navigator.userAgent; // 取得浏览器的userAgent字符串
+    var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; // 判断是否IE<11浏览器
+    var isEdge = userAgent.indexOf("Edge") > -1 && !isIE; // 判断是否IE的Edge浏览器
     var isIE11 = userAgent.indexOf('Trident') > -1 && userAgent.indexOf("rv:11.0") > -1;
     if (isIE) {
         var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
