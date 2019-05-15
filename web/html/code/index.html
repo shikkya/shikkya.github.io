@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>特效码集-SHIKKYA</title>
+    <link rel="shortcut icon" href="../../images/ico/code.ico" />
+    <link rel="stylesheet" type="text/css" href="../../../plugins/font-awesome/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/code/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/code/index.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="header">
+            <div class="wid_size">
+                <a :href="homeUrl" class="logo">
+                <img :src="logoImg"/>
+            </a>
+                <ul class="flr">
+                    <li v-for="(item,index) in productList" :class="{active:index==3}">
+                        <a v-if="index==3">{{item.text}}</a>
+                        <a v-else :href="item.url" target="_blank">{{item.text}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="top">
+                <img src="../../images/code_03.png" :data-src="topObj.img"/>
+                <div>
+                    <h1>{{topObj.tit}}</h1>
+                    <p>{{topObj.text}}</p>
+                    <a href="list.html" class="btn">全部特效</a>
+                </div>
+            </div>
+            <div class="picture wid_size">
+                <div class="tit">
+                    <h1>{{picObj.tit}}</h1>
+                    <p v-html="picText"></p>
+                </div>
+                <div class="info">
+                    <ul>
+                        <pic-item :item="item" v-for="item in picObj.list"></pic-item>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <go-top-item></go-top-item>
+        <footer-item></footer-item>
+    </div>
+    <script src="../../../plugins/vue/vue.min.js"></script>
+    <script src="../../script/common.js"></script>
+    <script src="../../script/code/index.js"></script>
+</body>
+
+</html>

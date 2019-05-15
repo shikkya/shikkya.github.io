@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>特效码集-SHIKKYA</title>
+    <link rel="shortcut icon" href="../../images/ico/code.ico" />
+    <link rel="stylesheet" type="text/css" href="../../../plugins/font-awesome/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/code/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/code/list.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div id="header" class="header">
+            <div class="wid_size">
+                <a :href="homeUrl" class="logo">
+                <img :src="logoImg"/>
+            </a>
+                <div class="search flr">
+                    <input type="text" id="searchInput" v-model="searchVal" placeholder="请输入要搜索的关键字" />
+                    <button class="btn" @click="search">搜索</button>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="content">
+            <div class="top">
+                <div class="wid_size">
+                    <ul class="type fll">
+                        <li v-for="(item,index) in typeList" :class="{active:index==curType}" @click="changeType(item,index)">
+                            <span>{{item}}</span>
+                        </li>
+                    </ul>
+                    <div class="result_num fll">
+                        <span>共 {{resultNum}} 张</span>
+                    </div>
+                    <div class="key_word fll" v-if="curkeyWord!=''">
+                        <span :title="curkeyWord">搜索：{{curkeyWord}}</span>
+                        <i class="fa fa-times-circle" aria-hidden="true" @click="delSearch"></i>
+                    </div>
+                    <div class="size flr">
+                        分辨率：<span>{{curSize}}</span>
+                        <div class="size_list" id="size_list">
+                            <ul>
+                                <li v-for="(item,index) in sizeList" @click="changeSize(item)">
+                                    <span>{{item}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="picture wid_size">
+                <ul id="picUl">
+                    <pic-item :size="curSize" :loadimg="picLoadImg" :item="item" v-for="item in picShowList"></pic-item>
+                </ul>
+            </div>
+            <no-info-item v-if="isNoInfo"></no-info-item>
+        </div>
+        <go-top-item></go-top-item>
+        <footer-item></footer-item>
+    </div>
+    <script src="../../../plugins/vue/vue.min.js"></script>
+    <script src="../../script/common.js"></script>
+    <script src="../../script/code/list.js"></script>
+</body>
+
+</html>

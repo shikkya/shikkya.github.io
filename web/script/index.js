@@ -19,7 +19,7 @@ var vm = new Vue({
         list: [
             { imgName: 'index_11.png', text: '模板壁纸', url: './wallpaper/index.html' },
             { imgName: 'index_07.png', text: '便易工具', url: './tool/index.html' },
-            { imgName: 'index_06.png', text: '敬请期待', url: '' },
+            { imgName: 'index_06.png', text: '特效码集', url: './code/index.html' },
             { imgName: 'index_10.png', text: '敬请期待', url: '' }
         ]
     },

@@ -1,0 +1,86 @@
+﻿@charset "UTF-8";
+
+/**
+ * @authors kk
+ * @date    2019-03-18
+ */
+
+html,
+body {
+    background: #fff;
+}
+
+.btn {
+    background: #00bc9c;
+}
+
+/*************** picture list ***************/
+
+.picture ul {
+    font-size: 0px;
+}
+
+.picture li {
+    display: inline-block;
+    font-size: 12px;
+    color: #506a85;
+    position: relative;
+    width: calc(33.3% - 20px);
+    margin: 0px 0px 40px 30px;
+}
+
+.picture ul li:nth-child(3n+1) {
+    margin-left: 0px;
+}
+
+.picture li img {
+    width: 100%;
+}
+
+.picture li h3 {
+    margin: 8px 0px 3px;
+    font-size: 15px;
+}
+
+.picture li .btn {
+    position: absolute;
+    right: 0px;
+    bottom: 3px;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 850px) {
+
+    .picture li,
+    .picture ul li:nth-child(3n+1) {
+        width: calc(50% - 10px);
+        margin: 0px 0px 40px 20px;
+    }
+
+    .picture ul li:nth-child(2n+1) {
+        margin-left: 0px;
+    }
+}
+
+/*************** position btn ***************/
+
+.go_top {
+    background: rgba(45, 86, 144, 0.9);
+    border: 1px solid #2D5690;
+}
+
+/*************** footer ***************/
+
+.footer {
+    background: #24416A;
+    border-bottom: 15px solid #183358;
+}
+
+.footer ul li:first-child {
+    border-right: 1px solid #5a6774;
+}
+
+.footer img {
+    background: #344C6E;
+    border: 1px solid #5a6774;
+}

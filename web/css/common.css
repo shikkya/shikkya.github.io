@@ -65,11 +65,11 @@ a {
 /*************** common ***************/
 
 .wid_size {
-    width: 1000px;
+    width: 1100px;
     margin: 0px auto;
 }
 
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1150px) {
 
     html,
     body {

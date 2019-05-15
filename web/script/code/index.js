@@ -16,16 +16,15 @@ var vm = new Vue({
     },
     data: {
         homeUrl: './index.html',
-        logoImg: '../../images/wallpaper_01.png',
+        logoImg: '../../images/code_01.png',
         productList: productList,
         topObj: {
-            img: '../../images/wallpaper_02.png',
-            tit: '模板壁纸高清下载',
-            // text: '浏览图库下载心仪壁纸 · 上传素材在线合成专属壁纸 · 让你的桌面更加方便实用'
-            text: '浏览图库下载模板壁纸 · 搜索关键字寻找心仪壁纸 · 让你的桌面更加方便实用'
+            img: '../../images/code_02.png',
+            tit: '特效码集演示下载',
+            text: '纯前端代码页面特效 · 多浏览器兼容在线演示 · 全部开源一键下载'
         },
         picObj: {
-            tit: '最新壁纸',
+            tit: '最新特效',
             moreUrl: './list.html',
             list: [
                 { img: '037.png', tit: '僵小鱼' },
@@ -36,16 +35,13 @@ var vm = new Vue({
                 { img: '025.png', tit: '微微一笑很倾城' },
                 { img: '012.png', tit: '高能少年团' },
                 { img: '001.png', tit: 'By2《成人礼》' },
-                { img: '011.png', tit: '浪花一朵朵' },
-                { img: '014.png', tit: '美人为馅' },
-                { img: '033.png', tit: '旋风少女' },
-                { img: '022.png', tit: '蜀山战纪之剑侠传奇' }
+                { img: '011.png', tit: '浪花一朵朵' }
             ]
         }
     },
     computed: {
         picText: function() {
-            return '点击下载获取模板壁纸 · 点击<a href="' + this.picObj.moreUrl + '">更多</a>浏览全部壁纸';
+            return '点击下载获取模板壁纸 · 点击<a href="' + this.picObj.moreUrl + '">更多</a>浏览全部特效';
         }
     },
     mounted: function() {
