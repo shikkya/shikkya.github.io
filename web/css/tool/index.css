@@ -115,10 +115,10 @@
 
 .out li {
     display: inline-block;
-    width: calc(33.3% - 40px);
-    height: 290px;
+    width: calc(33.3% - 33px);
+    height: 315px;
     padding: 10px;
-    margin: 0px 0px 30px 30px;
+    margin: 0px 0px 25px 20px;
     color: #888;
     font-size: 14px;
     text-align: center;
@@ -171,8 +171,8 @@
 
     .out li {
         width: calc(33.3% - 27px);
-        margin: 0px 0px 25px 10px;
-        height: 255px;
+        margin: 0px 0px 20px 10px;
+        height: 250px;
     }
 }
 

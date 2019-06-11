@@ -1,6 +1,6 @@
 ﻿/**
  * @authors kk
- * @date    2019-03-16
+ * @date    2019-05-15
  */
 
 // 图片展示列表组件
@@ -41,7 +41,7 @@ var vm = new Vue({
     },
     computed: {
         picText: function() {
-            return '点击下载获取模板壁纸 · 点击<a href="' + this.picObj.moreUrl + '">更多</a>浏览全部特效';
+            return '点击进入特效详情页 · 点击<a href="' + this.picObj.moreUrl + '">更多</a>浏览全部特效';
         }
     },
     mounted: function() {

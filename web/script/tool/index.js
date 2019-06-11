@@ -28,7 +28,7 @@ var vm = new Vue({
         },
         toolObj: {
             tit: '工具列表',
-            text: '点击可进入工具使用页 · 返回首页查看全部工具',
+            text: '点击进入工具使用页 · 返回首页查看全部工具',
             list: [
                 { img: 'tool_07.png', tit: '在线量尺', text: '根据屏幕尺寸和分辨率生成度量尺<br/>无实物精准便捷化测量', url: './ruler.html' },
                 { img: 'tool_08.png', tit: '圆周率速算', text: '快速计算圆周率小数点后指定位数的值<br/>展示1000位圆周率小数', url: './pi.html' },
