@@ -3,6 +3,21 @@
  * @date    2019-03-18
  */
 
+// 判断当前设备为PC或移动
+checkDevice();
+
+// 判断当前设备为PC或移动
+function checkDevice() {
+    var url = window.location.href;
+    if (/Android|Mobile|ios|phone|pad|pod|iPhone|iPad|iPod|webOS|BlackBerry|Symbian/i.test(navigator.userAgent)) {
+        if (url.indexOf('/web/html/') > -1) {
+            window.location.replace(url.split('/web/html/')[0] + '/mobile/html/' + url.split('/web/html/')[1]);
+        }
+    } else if (url.indexOf('/mobile/html/') > -1) {
+        window.location.replace(url.split('/mobile/html/')[0] + '/web/html/' + url.split('/mobile/html/')[1]);
+    }
+}
+
 // ie版本过低判断
 var ieVersion = IEVersion();
 if (typeof(ieVersion) == 'number' && ieVersion > 0 && ieVersion < 10) {
