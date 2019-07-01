@@ -26,12 +26,16 @@
     <script type="text/javascript">
     var ifr = document.getElementById('ifr');
     ifr.onload = function() {
-        //  console.log(ifr.src);
         ifr.contentWindow.thisUrl();
     }
 
     function getUrl(url) {
         console.log('+++' + url);
+        if (url.indexOf('ifb') > -1) {
+            ifr.height = '394px';
+        } else if (url.indexOf('ifc') > -1) {
+            ifr.height = '666px';
+        }
     }
     </script>
 </body>
