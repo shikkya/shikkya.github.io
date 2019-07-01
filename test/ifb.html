@@ -16,7 +16,8 @@
     <a href="http://www.baidu.com">to baidu</a>
     <br /><br />
     <a href="ifc.html">to ifc.hmtl</a><br />
-    <p onclick="parent.location.href='a.html'">to a</p>
+    <p onclick="parent.location.href='a.html'">to a</p><br />
+    <p onclick="parent.aa()">parent aa</p>
     <div>
         <p>this is ifbbb</p>
         <p>this is ifbbb</p>
@@ -27,7 +28,9 @@
     </div>
     <script src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript">
-   parent.aa();
+    window.onload = function() {
+        parent.getUrl(window.location.href);
+    }
 
     function bb() {
         console.log('bb');
