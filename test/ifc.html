@@ -36,8 +36,12 @@
     </div>
     <script src="jquery-1.7.1.min.js"></script>
     <script type="text/javascript">
-    function cc() {
-        console.log('cc');
+    window.onload = function() {
+        parent.getUrl(window.location.href);
+    }
+
+    function thisUrl() {
+        console.log('---' + window.location.href);
     }
     </script>
 </body>

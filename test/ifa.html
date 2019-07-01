@@ -27,10 +27,7 @@
     var ifr = document.getElementById('ifr');
     ifr.onload = function() {
         //  console.log(ifr.src);
-    }
-
-    function aa() {
-        console.log('aa');
+        ifr.contentWindow.thisUrl();
     }
 
     function getUrl(url) {
