@@ -36,9 +36,8 @@
     </div>
     <script type="text/javascript">
     window.onload = function() {
-        console.log(document.body.scrollHeight);
-        console.log(document.body.clientHeight);
-        parent.getUrl(window.location.href, document.body.clientHeight);
+        var hei = Math.max(document.body.scrollHeight, document.body.clientHeight);
+        parent.getUrl(window.location.href, hei);
     }
 
     function thisUrl() {
