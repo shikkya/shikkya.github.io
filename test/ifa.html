@@ -21,6 +21,17 @@
     </div>
     <iframe src="./ifb.html" id="ifr">
     </iframe>
+    <!-- 
+    <iframe id="c_iframe" height="0" width="0" src="http://www.12348cc.gov.cn/#/common/agent" style="display:none"></iframe>
+    <script type="text/javascript">
+    (function autoHeight() {
+        var b_width = Math.max(document.body.scrollWidth, document.body.clientWidth);
+        var b_height = Math.max(document.body.scrollHeight, document.body.clientHeight);
+        var c_iframe = document.getElementById("c_iframe");
+        c_iframe.src = c_iframe.src + "#" + b_width + "|" + b_height; // 这里通过hash传递本页面的宽高  
+    })();
+    </script>
+     -->
     <script type="text/javascript">
     var ifr = document.getElementById('ifr');
     ifr.onload = function() {
