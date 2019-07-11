@@ -1,0 +1,28 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1562831546638'); /* IE9 */
+  src: url('iconfont.eot?t=1562831546638#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOQAAsAAAAAB+AAAANEAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqDFIJaATYCJAMQCwoABCAFhG0HThvSBsgOJcGQwIApA0FIPNCP1d6X3ftnnsSseRXPh0kmE5p4g8pQApXpHoqXsP+rM7/pQMndFUElCk0lIJ/z5TgkP1kFtouEWyeG6WBqO3XuwTX1VzaBPHubS1RTRFMk4AQHFNU0nNgGsonyhrGbKA9iPwEN+nWm7A8eORGKZGBYQHjo2CYUpWyyrAWLoFoyN0N4ylDihvgCwBP++fAfEqEIRJUEYOzx7UFJ6PsLqr5ofs2HmRTBGc8IbREJs0Am3C01X6eFvlmaBuc3unWgKCK/oKq06sv/msgG4lD7h1cQBYlQBTGxCayK/sQvwCiRX6UogV9fEiR4IZrijuIeAe8AELu8LIhie7c64XAmed5/sqmdjWc2PQs6srMbJz3/1FLrufv0xrP19h5Ugt7G9r5zm87UxYZ7wN9f1IYl1T2vQiEl+EjW3PTBP08IvD3fmpgbLwaX2oU2vamvcUbZWqC+/zJwyYeKiR8rJ32unvKpatbEyRCZgkxqO/Ez37oNurR3ac5sQdg8EEB657IIVM6Bvtsw6mJgYZ3CgUMFMboG794ZDBYVbBrEPWCNv3m5c+ezxX+J97D2+jpVXevb0cwHD9X1g+c2G7XlGHqc/CmGIiXAUG1gMPk/dUr1r1BJKeHHnn7XGLsNClILzCUOTJ/VANSO6ZCufth3nC5G784p6/mvNOoAP0eFHvK8mq9DegzeOqc15/dwWtZklwc0Odt8zPas2UHvIRENGvBTQnT4NYa0u3UiQdEdQ1SnD5JiFJMJs1DRaBWqii1oMGPI4kadBE3IxcC0NQIEba5B1OITJG1eYjLhJ1T0+A1VbUGDBpeh9pqNxoNDBgg0JSZp+SLqWDzPkE6SIHk82vOypkjyOGkyCs9x0ngklg0OwTyKMSZ48+2ElIwywXN0sHAYZrOcuoKn0ZKRlJRu92iUlT0pYvEcEHsEZJJQElVuEcph4fIYbS6R3PvHQ7Z5skyipqBDPxkSPE7rVFxErAVmiDjfquBaHvHMZ0uQJIZiBC6HGiwYURb6OMot75WGLFJEqofH1V1UasTaiiPzS3MPkKWVALrloCqaoisGtJz7lXNMIfiCOZK7eornMGxluYddLEdYWQQA') format('woff2'),
+  url('iconfont.woff?t=1562831546638') format('woff'),
+  url('iconfont.ttf?t=1562831546638') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1562831546638#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-icon_arrow_top:before {
+  content: "\e60e";
+}
+
+.icon-home:before {
+  content: "\e600";
+}
+
+.icon-close-circle:before {
+  content: "\e6d8";
+}
+

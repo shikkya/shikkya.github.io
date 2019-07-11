@@ -88,7 +88,7 @@ Vue.component("NoInfoItem", {
 
 // 悬浮功能按钮
 Vue.component("GoTopItem", {
-    template: '<div class="shortcut"><div class="go_top" @click="goTop"><i class="fa fa-angle-up" aria-hidden="true"></i></div><div class="go_home" @click="window.location.href=\'./index.html\'"><i class="fa fa-home" aria-hidden="true"></i></div></div>'
+    template: '<div class="shortcut"><div class="go_top" @click="goTop"><i class="icon iconfont icon-icon_arrow_top"></i></div><div class="go_home" @click="window.location.href=\'./index.html\'"><i class="icon iconfont icon-home"></i></div></div>'
 })
 
 // 返回顶部

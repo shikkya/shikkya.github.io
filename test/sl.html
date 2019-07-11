@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>sl</title>
     <style type="text/css">
+    html,
+    body {
+        cursor: default;
+    }
+
     .tab_out {
         text-align: center;
     }
@@ -21,7 +26,12 @@
         overflow: hidden;
         text-align: center;
         line-height: 10px;
+        background: #eee;
+    }
+
+    .tab td.handle {
         cursor: pointer;
+        background: #fff;
     }
 
     .tab img {
@@ -35,6 +45,11 @@
 </head>
 
 <body>
+    <span class="handle">aaa</span>
+    <br />
+    <span class="handle">bbb</span>
+    <br />
+    <span class="handle">ccc</span>
     <div class="top">
         size:<input type="text" value="10" id="mapSize" />
         <br />
@@ -65,70 +80,21 @@
 
         // 事件绑定
         this.createEventer = function() {
-            // 左键点击网格
-            $(this).delegate('#tab td', 'click', function() {
+            // 左键点击可操作网格
+            $(this).delegate('td.handle', 'click', function() {
                 var x = parseInt($("#tab td").index(this) / self.mapSize);
                 var y = parseInt($("#tab td").index(this) % self.mapSize);
 
                 if (arrMap[x][y] > 0) {
                     $(this).html(arrMap[x][y]);
+                    $(this).removeClass('handle');
                 } else if (arrMap[x][y] == 0) {
                     alert('555');
                     self.gameEnd();
                 } else {
                     // 空 ???
                 }
-
             });
-
-
-
-
-
-
-
-            document.oncontextmenu = function(e) {
-                return false;
-            }
-
-            // $('#tab td').mousedown(function(e) {
-            //     if (3 == e.which) {
-            //         console.log('这是右键单击事件');
-            //     } else if (1 == e.which) {
-            //         console.log('这是左键单击事件');
-            //     } else {
-            //         return false;
-            //     }
-            // })
-
-            document.getElementById('#tab').onmousedown = function(e) {
-
-                switch (e.button) {
-                    case 0:
-                        console.log("鼠标左键")
-                        break;
-                    case 2:
-                        console.log("鼠标右键");
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             // 放弃游戏
             $(this).delegate('#giveUp', 'click', function() {
@@ -141,6 +107,7 @@
         // 游戏结束
         this.gameEnd = function() {
             // 结束 ???
+            console.log('go');
         }
 
         // 获取设置参数
@@ -155,11 +122,36 @@
             for (var i = 0; i < self.mapSize; i++) {
                 html_tab += '<tr>';
                 for (var j = 0; j < self.mapSize; j++) {
-                    html_tab += '<td></td>';
+                    html_tab += '<td class="handle"></td>';
                 }
                 html_tab += '</tr>';
             }
             $('#tab').html(html_tab);
+            self.rClickHandle();
+        }
+
+        // 右键点击可操作网格
+        this.rClickHandle = function() {
+            var aObj = $('.handle');
+            for (var i = 0; i < aObj.length; i++) {
+                aObj[i].oncontextmenu = function() {
+                    if (!$(this).hasClass('handle')) {
+                        return false;
+                    }
+                    if ($(this).html() == '') {
+                        $(this).html('<img src="./images/01.png" class="flag"/>');
+                    } else if ($(this).find('img').length > 0) {
+                        $(this).find('img').remove();
+                        $(this).html('?');
+                    } else {
+                        $(this).html('');
+                    }
+                    return false;
+                }
+            }
+            document.oncontextmenu = function() {
+                return false;
+            }
         }
 
         // 初始化数组

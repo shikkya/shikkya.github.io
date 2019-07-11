@@ -103,8 +103,9 @@
 .key_word i {
     margin-left: 8px;
     cursor: pointer;
-    margin-top: -9px;
-    vertical-align: middle;
+    font-size: 12px;
+    position: relative;
+    top: -4px;
 }
 
 .size {
