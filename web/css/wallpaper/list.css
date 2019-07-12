@@ -94,7 +94,7 @@
 
 .key_word span {
     display: inline-block;
-    max-width: 150px;
+    max-width: 260px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap
@@ -166,31 +166,16 @@
 
 @media screen and (max-width: 1150px) {
     .key_word span {
-        max-width: 80px;
+        max-width: 160px;
     }
 }
 
 @media screen and (max-width: 850px) {
-    .content {
-        padding-top: 170px;
-    }
-
-    .top {
-        text-align: center;
-    }
-
-    .type {
-        display: block;
-        width: 100%;
-        margin-bottom: 3px;
+    .key_word span {
+        max-width: 90px;
     }
 
     .result_num {
         display: none;
-    }
-
-    .key_word,
-    .size {
-        float: none;
     }
 }
