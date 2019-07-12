@@ -11,7 +11,7 @@ body {
 }
 
 .btn {
-    background: #00bc9c;
+    background: #00cbdb;
 }
 
 /*************** picture list ***************/
@@ -65,22 +65,22 @@ body {
 /*************** position btn ***************/
 
 .go_top {
-    background: rgba(45, 86, 144, 0.9);
-    border: 1px solid #2D5690;
+    background: rgba(64, 58, 108, 0.9);
+    border: 1px solid #403a6c;
 }
 
 /*************** footer ***************/
 
 .footer {
-    background: #24416A;
-    border-bottom: 15px solid #183358;
+    background: #302a5a;
+    border-bottom: 15px solid #221e45;
 }
 
 .footer ul li:first-child {
-    border-right: 1px solid #5a6774;
+    border-right: 1px solid #6f6b8f;
 }
 
 .footer img {
-    background: #344C6E;
-    border: 1px solid #5a6774;
+    background: #403a6c;
+    border: 1px solid #6f6b8f;
 }

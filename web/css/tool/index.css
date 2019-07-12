@@ -32,7 +32,7 @@
 }
 
 .header li a {
-    color: #506a85;
+    color: #666;
     font-size: 15px;
     border-bottom: 2px solid #fff;
     padding: 0px 2px;
@@ -41,8 +41,8 @@
 
 .header li.active a,
 .header li a:hover {
-    color: #00cbdb;
-    border-bottom: 2px solid #00cbdb;
+    color: #EFC34B;
+    border-bottom: 2px solid #EFC34B;
 }
 
 /*************** content ***************/
@@ -55,7 +55,7 @@
     color: #fff;
     position: relative;
     font-size: 16px;
-    background: #403A6C;
+    background: #366f6c;
     min-height: 370px;
 }
 
@@ -99,7 +99,7 @@
 
 .out .tit {
     text-align: center;
-    color: #403a6c;
+    color: #366f6c;
     margin: 40px 0px;
 }
 
@@ -143,7 +143,7 @@
 .out li h3 {
     margin: 8px 0px;
     font-size: 18px;
-    color: #403a6c;
+    color: #366f6c;
 }
 
 .out li p {
@@ -156,8 +156,7 @@
     }
 
     .top img {
-        width: auto;
-        height: 360.9px;
+        min-height: 370px;
     }
 
     .top h1 {
@@ -177,6 +176,11 @@
 }
 
 @media screen and (max-width: 850px) {
+    .top img {
+        width: auto;
+        height: 370px;
+    }
+
     .top h1 {
         letter-spacing: 0px;
     }
