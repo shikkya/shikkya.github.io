@@ -3,17 +3,6 @@
  * @date    2019-07-13
  */
 
-// 列表组件
-var PicItem = {
-    props: ['item', 'loadimg'],
-    template: '<li @click="handleItemClick"><img :src="loadimg" :data-src="\'../../images/code/\' + item.id+ \'.png\'"/><h3>{{item.tit}}</h3><p>{{item.keyWord}}</p></li>',
-    methods: {
-        handleItemClick: function() {
-            window.open('./detail.html?codeId=' + this.item.id);
-        }
-    }
-}
-
 var vm = new Vue({
     el: '#app',
     components: {

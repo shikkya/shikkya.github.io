@@ -4,10 +4,10 @@
  */
 
 // 图片展示列表组件
-var PicItem = {
-    props: ['item'],
-    template: '<li><img src="../../images/wallpaper_04.png" :data-src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
-}
+// var PicItem = {
+//     props: ['item'],
+//     template: '<li><img src="../../images/wallpaper_04.png" :data-src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
+// }
 
 var vm = new Vue({
     el: '#app',
@@ -26,16 +26,14 @@ var vm = new Vue({
         picObj: {
             tit: '最新特效',
             moreUrl: './list.html',
+            loadImg: '../../images/wallpaper_04.png',
             list: [
-                { img: '037.png', tit: '僵小鱼' },
-                { img: '017.png', tit: '你和我的倾城时光' },
-                { img: '035.png', tit: '夏至未至' },
-                { img: '018.png', tit: '三生三世十里桃花' },
-                { img: '029.png', tit: '无心法师' },
-                { img: '025.png', tit: '微微一笑很倾城' },
-                { img: '012.png', tit: '高能少年团' },
-                { img: '001.png', tit: 'By2《成人礼》' },
-                { img: '011.png', tit: '浪花一朵朵' }
+                { id: '001', tit: '容器内拖拽分割线自由分配左右空间', type: '其他', keyWord: ['拖拽', 'js'], intro: '说明' },
+                { id: '002', tit: '这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' },
+                { id: '003', tit: '这是一条测试数据这是一条测试数据这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' },
+                { id: '004', tit: '这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' },
+                { id: '005', tit: '这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' },
+                { id: '006', tit: '这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' }
             ]
         }
     },

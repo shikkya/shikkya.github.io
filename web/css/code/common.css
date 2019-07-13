@@ -25,11 +25,16 @@ body {
     font-size: 12px;
     color: #506a85;
     position: relative;
-    width: calc(33.3% - 20px);
+    width: calc(33.3% - 42px);
     margin: 0px 0px 40px 30px;
     border: 1px solid #ebebeb;
     padding: 10px;
     background: #F8F8F8;
+    cursor: pointer;
+}
+
+.picture li:hover {
+    background: #E0F4F1;
 }
 
 .picture ul li:nth-child(3n+1) {
@@ -41,22 +46,32 @@ body {
 }
 
 .picture li h3 {
-    margin: 8px 0px 5px;
+    margin: 8px 0px 10px;
     font-size: 15px;
+    width: 100%;
+    color: #506a85;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.picture li .btn {
-    position: absolute;
-    right: 0px;
-    bottom: 3px;
-    font-size: 13px;
+.picture li i {
+    font-size: 16px;
+    color: #888;
+}
+
+.picture li span {
+    border: 1px solid #ebebeb;
+    margin-left: 8px;
+    background: #fff;
+    padding: 0px 8px;
 }
 
 @media screen and (max-width: 850px) {
 
     .picture li,
     .picture ul li:nth-child(3n+1) {
-        width: calc(50% - 10px);
+        width: calc(50% - 33px);
         margin: 0px 0px 40px 20px;
     }
 

@@ -35,8 +35,10 @@
                         </li>
                     </ul>
                     <div class="key_word fll" v-if="curkeyWord!=''">
-                        <span :title="curkeyWord">搜索：{{curkeyWord}}</span>
-                        <i class="icon iconfont icon-close-circle" @click="delSearch"></i>
+                        <div>
+                            <span :title="curkeyWord">搜索：{{curkeyWord}}</span>
+                            <i class="icon iconfont icon-close-circle" @click="delSearch"></i>
+                        </div>
                     </div>
                     <div class="result_num flr">
                         <span>共 {{resultNum}} 个</span>

@@ -82,6 +82,11 @@
 }
 
 .key_word {
+    border-left: 1px solid #738ca6;
+    padding-left: 15px;
+}
+
+.key_word div {
     padding: 1px 6px 1px 8px;
     height: 21px;
     overflow: hidden;
