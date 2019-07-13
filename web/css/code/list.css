@@ -2,7 +2,7 @@
 
 /**
  * @authors kk
- * @date    2019-05-15
+ * @date    2019-07-13
  */
 
 /*************** header ***************/
@@ -75,9 +75,8 @@
 }
 
 .result_num {
-    border-left: 1px solid #738ca6;
+    /*border-left: 1px solid #738ca6;*/
     padding: 1px 0px 1px 23px;
-    margin: 0px 23px 0px 7px;
     height: 21px;
     overflow: hidden;
 }
@@ -94,7 +93,7 @@
 
 .key_word span {
     display: inline-block;
-    max-width: 150px;
+    max-width: 260px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap
@@ -108,89 +107,22 @@
     top: -4px;
 }
 
-.size {
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-}
-
-.size .size_list {
-    position: relative;
-    display: none;
-    transition: all 0.4s;
-    padding: 8px 0px;
-}
-
-.size ul {
-    color: #506a85;
-    border-radius: 3px;
-    padding: 5px 0px;
-    box-shadow: 0px 0px 5px #ccc;
-    background: #fff;
-}
-
-.size:hover .size_list,
-.size .size_list:hover {
-    display: block;
-    position: absolute;
-    right: 0px;
-    z-index: 999;
-}
-
-.size ul li {
-    padding: 8px 30px;
-    cursor: pointer;
-    transition: all 0.4s;
-}
-
-.size ul li:first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-}
-
-.size ul li:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
-
-.size ul li:hover {
-    color: #00bc9c;
-    background: #e5f4f1;
-}
-
 .no_info {
     padding: 50px 0px;
 }
 
 @media screen and (max-width: 1150px) {
     .key_word span {
-        max-width: 80px;
+        max-width: 160px;
     }
 }
 
 @media screen and (max-width: 850px) {
-    .content {
-        padding-top: 170px;
-    }
-
-    .top {
-        text-align: center;
-    }
-
-    .type {
-        display: block;
-        width: 100%;
-        margin-bottom: 3px;
+    .key_word span {
+        max-width: 90px;
     }
 
     .result_num {
         display: none;
-    }
-
-    .key_word,
-    .size {
-        float: none;
     }
 }

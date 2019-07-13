@@ -41,8 +41,8 @@
 
 .header li.active a,
 .header li a:hover {
-    color: #EFC34B;
-    border-bottom: 2px solid #EFC34B;
+    color: #00cbdb;
+    border-bottom: 2px solid #00cbdb;
 }
 
 /*************** content ***************/
@@ -55,7 +55,7 @@
     color: #fff;
     position: relative;
     font-size: 16px;
-    background: #366f6c;
+    background: #125b84;
     min-height: 370px;
 }
 
@@ -99,7 +99,7 @@
 
 .out .tit {
     text-align: center;
-    color: #366f6c;
+    color: #403a6c;
     margin: 40px 0px;
 }
 
@@ -128,7 +128,7 @@
 }
 
 .out li:hover {
-    background: #EFEDF8;
+    background: #EEECFF;
 }
 
 .out ul li:nth-child(3n+1) {
@@ -142,8 +142,8 @@
 
 .out li h3 {
     margin: 8px 0px;
-    font-size: 18px;
-    color: #366f6c;
+    font-size: 17px;
+    color: #403a6c;
 }
 
 .out li p {

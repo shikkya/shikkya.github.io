@@ -34,28 +34,18 @@
                             <span>{{item}}</span>
                         </li>
                     </ul>
-                    <div class="result_num fll">
-                        <span>共 {{resultNum}} 张</span>
-                    </div>
                     <div class="key_word fll" v-if="curkeyWord!=''">
                         <span :title="curkeyWord">搜索：{{curkeyWord}}</span>
                         <i class="icon iconfont icon-close-circle" @click="delSearch"></i>
                     </div>
-                    <div class="size flr">
-                        分辨率：<span>{{curSize}}</span>
-                        <div class="size_list" id="size_list">
-                            <ul>
-                                <li v-for="(item,index) in sizeList" @click="changeSize(item)">
-                                    <span>{{item}}</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="result_num flr">
+                        <span>共 {{resultNum}} 个</span>
                     </div>
                 </div>
             </div>
             <div class="picture wid_size">
                 <ul id="picUl">
-                    <pic-item :size="curSize" :loadimg="picLoadImg" :item="item" v-for="item in picShowList"></pic-item>
+                    <pic-item :loadimg="picLoadImg" :item="item" v-for="item in picShowList"></pic-item>
                 </ul>
             </div>
             <no-info-item v-if="isNoInfo"></no-info-item>
