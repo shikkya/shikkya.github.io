@@ -21,7 +21,7 @@ var ListItem = {
 // 预设时间列表
 var PreinstallItem = {
     props: ['item', 'index', 'num'],
-    template: '<span @click="check" :class="{active:index==num}"><i></i><label>{{item.text}}</label></span>',
+    template: '<span @click="check" :class="{active:index==num}"><i class="icon iconfont icon-check"></i><label>{{item.text}}</label></span>',
     methods: {
         check: function() {
             vm.timeObj.pCheckNum = this.index;

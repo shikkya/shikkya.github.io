@@ -26,14 +26,16 @@
                 <h1>{{tit}}</h1>
                 <p>事件进行时请勿刷新页面，<font :class="{error:errorClass}">时分秒请输入正整数，最多支持72小时</font>
                 </p>
-                <p>提示音试听（若无法播放请尽快反馈）<img src="../../images/tool_05.png" @click="play"/></p>
+                <p>提示音试听（若无法播放请尽快反馈）<i class="icon iconfont icon-play" @click="play"/></i>
             </div>
             <div class="wid_size">
                 <table class="tab">
                     <tr>
                         <td>距离现在：</td>
                         <td>
-                            <span @click="timeObj.pCheckNum=-1" :class="{active:timeObj.pCheckNum==-1}"><i></i></span>
+                            <span @click="timeObj.pCheckNum=-1" :class="{active:timeObj.pCheckNum==-1}">
+                                <i class="icon iconfont icon-check"></i>
+                            </span>
                             <input type="text" tabindex="2" placeholder="0" v-model="timeObj.hour" key="hour" />
                             <font>时</font>
                             <input type="text" tabindex="3" placeholder="0" v-model="timeObj.minute" key="minute" />

@@ -3,12 +3,6 @@
  * @date    2019-07-13
  */
 
-// 图片展示列表组件
-// var PicItem = {
-//     props: ['item'],
-//     template: '<li><img src="../../images/wallpaper_04.png" :data-src="\'../../images/wallpaper/\' + item.img"/><h3>{{item.tit}}</h3><p>1920 x 1080</p><a class="btn" :href="\'../../images/wallpaper_1920x1080/\' + item.img"  download="">下载</a></li>'
-// }
-
 var vm = new Vue({
     el: '#app',
     components: {
@@ -28,12 +22,8 @@ var vm = new Vue({
             moreUrl: './list.html',
             loadImg: '../../images/wallpaper_04.png',
             list: [
-                { id: '001', tit: '容器内拖拽分割线自由分配左右空间', type: '其他', keyWord: ['拖拽', 'js'], intro: '说明' },
-                { id: '002', tit: '这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' },
-                { id: '003', tit: '这是一条测试数据这是一条测试数据这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' },
-                { id: '004', tit: '这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' },
-                { id: '005', tit: '这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' },
-                { id: '006', tit: '这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' }
+                { id: '001', tit: '拖拽分割线自由分配左右空间', type: '其他', keyWord: ['拖拽', 'js'], intro: '说明' },
+                { id: '002', tit: '这是一条测试数据这是一条测试数据这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' }
             ]
         }
     },

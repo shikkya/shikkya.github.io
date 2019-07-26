@@ -30,7 +30,7 @@ var vm = new Vue({
             tit: '在线尺子',
             text: '根据屏幕尺寸和分辨率生成度量尺 · 无实物精准便捷化测量'
         },
-        rulerHtml: '<img src="../../images/tool_06.png"/>',
+        rulerHtml: '<img src="../../images/tool_05.png"/>',
         rulerNum: 0,
         rulerLoadHtml: '',
         rulerLoadNum: 0,

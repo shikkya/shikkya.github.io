@@ -56,10 +56,12 @@
     margin: 6px 0px;
 }
 
-.tit img {
+.tit i {
     vertical-align: middle;
     cursor: pointer;
-    margin: -2px 0px 0px 3px;
+    margin-left: 3px;
+    color: #00cbdb;
+    font-size: 19px;
 }
 
 .tit .error {
@@ -130,16 +132,14 @@
 
 .tab span i {
     display: inline-block;
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
     margin: -2px 3px 0px 0px;
     vertical-align: middle;
-    background: url('../../images/common_03.png') #D8D8D8 no-repeat center;
+    color: #E2E1E1;
+    font-size: 17px;
 }
 
 .tab span.active i {
-    background: url('../../images/common_03.png') #00CBDB no-repeat center;
+    color: #00CBDB;
 }
 
 .list {

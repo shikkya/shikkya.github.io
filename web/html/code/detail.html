@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>便易工具-SHIKKYA</title>
+    <link rel="shortcut icon" href="../../images/ico/tool.ico" />
+    <link rel="stylesheet" type="text/css" href="../../../plugins/iconfont/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/code/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/code/detail.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="header">
+            <div class="wid_size">
+                <a :href="headerObj.homeUrl" class="logo"><img :src="headerObj.logoImg"/></a>
+                <a :href="headerObj.goListUrl" class="btn flr">{{headerObj.goListBtn}}</a>
+            </div>
+        </div>
+        <div class="content" id="content">
+            <div class="out wid_size">
+                <div class="left">
+                    <img src="../../images/tool_04.png" :data-src="'../../../res/code/' + dataObj.id + '/pic.png'"/>
+                </div>
+                    <div class="right">
+                        <h3>{{dataObj.tit}}</h3>
+                        <div class="tag">
+                            <i class="icon iconfont icon-tag"></i>
+                            <span v-for="item in dataObj.keyWord">{{item}}</span>
+                        </div>
+                        <a :href="'../../../res/code/' + dataObj.id + '/index.html'" target="_blank" class="btn">在线演示</a>
+                        <a :href="'../../../res/code/' + dataObj.id + '/shikkya-' + dataObj.id + '.rar'" class="btn">下载源码</a>
+                        <div class="intro">
+                            <p>说明：</p>
+                            {{dataObj.intro}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <go-top-item></go-top-item>
+            <footer-item></footer-item>
+        </div>
+        <script src="../../../plugins/vue/vue.min.js"></script>
+        <script src="../../script/common.js"></script>
+        <script src="../../script/code/common.js"></script>
+        <script src="../../script/code/detail.js"></script>
+</body>
+
+</html>

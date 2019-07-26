@@ -1,0 +1,165 @@
+﻿@charset "UTF-8";
+
+/**
+ * @authors kk
+ * @date    2019-07-16
+ */
+
+/*************** header ***************/
+
+.header {
+    background: #506a85;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 998;
+    border-bottom: 15px solid #3E5872;
+    height: 20px;
+    padding: 20px 0px;
+    overflow: hidden;
+}
+
+.header .logo img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.header .btn {
+    font-size: 12px;
+    padding: 6px 0px;
+    margin-top: -1px;
+}
+
+/*************** content ***************/
+
+.content {
+    color: #666;
+    font-size: 16px;
+    padding-top: 75px;
+}
+
+.out {
+    font-size: 0px;
+    padding: 50px 0px;
+}
+
+.left,
+.right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.left {
+    width: 350px;
+    padding: 10px;
+    border: 1px solid #ebebeb;
+    margin-right: 40px;
+}
+
+.left img {
+    width: 100%;
+}
+
+.right {
+    width: calc(100% - 412px);
+    font-size: 16px;
+}
+
+.right h3 {
+    font-size: 22px;
+    color: #506a85;
+}
+
+.right i {
+    font-size: 16px;
+    color: #888;
+}
+
+.right span {
+    font-size: 14px;
+    border: 1px solid #ebebeb;
+    margin-left: 8px;
+    padding: 0px 8px;
+}
+
+.right .btn {
+    margin-right: 10px;
+}
+
+.right .tag {
+    margin: 15px 0px
+}
+
+.right .intro {
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tit,
+.calculate {
+    margin: 20px 0px;
+    text-align: center;
+}
+
+.tit {
+    color: #403a6c;
+}
+
+.calculate {
+    line-height: 38px;
+}
+
+.calculate input[type="text"] {
+    width: 36px;
+    padding: 2px 0px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    vertical-align: middle;
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+}
+
+.calculate span {
+    color: #00CBDB;
+}
+
+.calculate .error {
+    color: #f90;
+}
+
+.show {
+    margin-bottom: 50px;
+    max-width: 800px;
+}
+
+.show div {
+    margin: 30px auto;
+    line-height: 26px;
+}
+
+.show div p:first-child {
+    background: #E9F7F8;
+    border-left: 5px solid #00CBDB;
+    padding: 0px 10px;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.show span {
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+}

@@ -111,6 +111,17 @@ Browser.ie = /msie/.test(Browser.userAgent);
 Browser.Moz = /gecko/.test(Browser.userAgent);
 
 // 图片加载
+function loadImg() {
+    var imgList = document.getElementsByTagName('img');
+    for (i = 0; i < imgList.length; i++) {
+        if (imgList[i].getAttribute('data-src')) {
+            imgList[i].id = 'img_' + i;
+            checkLoad(imgList[i].getAttribute("data-src"), imgList[i].id);
+        }
+    }
+}
+
+// 图片加载
 function checkLoad(url, imgId) {
     var img = new Image();
     if (Browser.ie) {
@@ -130,18 +141,13 @@ function checkLoad(url, imgId) {
     }
     //如果因为网络或图片的原因发生异常，则显示该图片  
     img.onerror = function() {
-        img.src = "../images/wallpaper_05.png"
+        img.src = "../../images/wallpaper_05.png"
     }
     img.src = url;
 }
 
-// 图片加载中
-function loadImg() {
-    var imgList = document.getElementsByTagName('img');
-    for (i = 0; i < imgList.length; i++) {
-        if (imgList[i].getAttribute('data-src')) {
-            imgList[i].id = 'img_' + i;
-            checkLoad(imgList[i].getAttribute("data-src"), imgList[i].id);
-        }
-    }
+// 获取url参数
+function getUrlStr(name) {
+    var url = window.location.href;
+    return url.split(name + '=')[1].split('&')[0];
 }
