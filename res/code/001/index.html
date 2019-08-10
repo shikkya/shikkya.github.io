@@ -30,6 +30,7 @@
     #resize {
         width: 5px;
         height: 100%;
+        background: #fff;
         cursor: w-resize;
         float: left;
     }
@@ -62,11 +63,12 @@
                 var endX = e.clientX;
                 var moveLen = resize.left + (endX - startX);
                 var maxT = box.clientWidth - resize.offsetWidth;
-                if (moveLen < 150) {
-                    moveLen = 150;
+                var minWid = 150;  // 最小保留宽度
+                if (moveLen < minWid) {
+                    moveLen = minWid;
                 }
-                if (moveLen > maxT - 150) {
-                    moveLen = maxT - 150;
+                if (moveLen > maxT - minWid) {
+                    moveLen = maxT - minWid;
                 }
                 resize.style.left = moveLen;
                 left.style.width = moveLen + "px";
