@@ -14,8 +14,8 @@ var PicItem = {
     }
 }
 
-// 所有数据 chrome, firefox, safari, opera, tencent, se360, Android, Ios, WeChat, ie8, ie9, ie11
+// 所有数据 [ chrome, firefox, safari, opera, tencent, se360, ie8, ie11 ]  [ Android, Ios, WeChat ]
 var picList = [
-    { id: '001', tit: '容器内拖拽分割线自由分配左右空间', type: '其他', keyWord: ['拖拽', 'js'], intro: '说明', compatible: ['', '', '', '', '', '', '', '', '', '', '', '', ''] },
-    { id: '002', tit: '这是一条测试数据这是一条测试数据这是一条测试数据', type: '其他', keyWord: ['测试', '测试'], intro: '说明', compatible: ['', '', '', '', '', '', '', '', '', '', '', '', ''] }
+    { id: '001', tit: '容器内拖拽分割线自由分配左右空间', type: '其他', keyWord: ['拖拽', 'js'], intro: '', compatible: ['', '1', '1', '0', '', '1', '', '0'], comMobile: ['', '', ''] },
+    { id: '002', tit: '这是一条测试数据这是一条测试数据这是一条测试数据', type: '其他', keyWord: ['测试', '测试'], intro: '<p>dd</p>', compatible: ['', '1', '1', '0', '', '1', '1', '0'], comMobile: ['', '1', '0'] },
 ];

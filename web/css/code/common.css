@@ -27,14 +27,13 @@ body {
     position: relative;
     width: calc(33.3% - 42px);
     margin: 0px 0px 40px 30px;
-    border: 1px solid #ebebeb;
+    border: 1px solid #e0e0e0;
     padding: 10px;
-    background: #F8F8F8;
     cursor: pointer;
 }
 
 .picture li:hover {
-    background: #E8F6F8;
+    background: #E8FAFD;
 }
 
 .picture ul li:nth-child(3n+1) {
@@ -61,7 +60,7 @@ body {
 }
 
 .picture li span {
-    border: 1px solid #ebebeb;
+    border: 1px solid #e0e0e0;
     margin-left: 8px;
     background: #fff;
     padding: 0px 8px;

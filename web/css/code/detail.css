@@ -40,7 +40,8 @@
 
 .out {
     font-size: 0px;
-    padding: 50px 0px;
+    padding-top: 50px;
+    position: relative;
 }
 
 .left,
@@ -50,9 +51,9 @@
 }
 
 .left {
-    width: 350px;
+    width: 300px;
     padding: 10px;
-    border: 1px solid #ebebeb;
+    border: 1px solid #e0e0e0;
     margin-right: 40px;
 }
 
@@ -61,105 +62,141 @@
 }
 
 .right {
-    width: calc(100% - 412px);
+    width: calc(100% - 362px);
     font-size: 16px;
 }
 
 .right h3 {
     font-size: 22px;
     color: #506a85;
+    margin-top: 6px;
 }
 
-.right i {
+.right .tag {
+    margin: 25px 0px;
+}
+
+.right .tag i {
     font-size: 16px;
     color: #888;
 }
 
-.right span {
+.right .tag span {
     font-size: 14px;
-    border: 1px solid #ebebeb;
+    border: 1px solid #e0e0e0;
     margin-left: 8px;
     padding: 0px 8px;
 }
 
-.right .btn {
-    margin-right: 10px;
+.right .btn_out {
+    position: absolute;
+    bottom: 15px;
 }
 
-.right .tag {
-    margin: 15px 0px
-}
-
-.right .intro {
-    margin-top: 30px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.tit,
-.calculate {
-    margin: 20px 0px;
-    text-align: center;
+.right .btn_out .btn {
+    margin-right: 15px;
+    padding: 10px 0px;
+    width: 105px;
+    font-size: 16px;
 }
 
 .tit {
-    color: #403a6c;
+    border-left: 6px solid #506a85;
+    color: #506a85;
+    padding-left: 10px;
+    background: rgba(171, 199, 227, 0.1);
+    margin: 35px 0px 25px;
 }
 
-.calculate {
-    line-height: 38px;
+.compatible ul {
+    font-size: 0px;
 }
 
-.calculate input[type="text"] {
-    width: 36px;
-    padding: 2px 0px;
-    border: 1px solid #e0e0e0;
-    border-radius: 3px;
-    vertical-align: middle;
+.compatible li {
+    width: 100px;
+    display: inline-block;
     text-align: center;
-    color: #666;
-    font-size: 15px;
+    padding: 10px 0px;
+    margin: 12px 10px;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 3px;
+    position: relative;
 }
 
-.calculate span {
-    color: #00CBDB;
+.compatible .com_0 {
+    background: #FFF2F0;
 }
 
-.calculate .error {
-    color: #f90;
+.compatible .com_1 {
+    background: #E7F5ED;
 }
 
-.show {
-    margin-bottom: 50px;
-    max-width: 800px;
+.compatible .com_0,
+.compatible .com_1 {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.show div {
-    margin: 30px auto;
+.compatible .com_0:after,
+.compatible .com_1:after {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.compatible .com_0:after {
+    content: "\e62b";
+    color: #FF8370;
+}
+
+.compatible .com_1:after {
+    content: "\e63d";
+    color: #00BC9C;
+}
+
+.compatible img {
+    width: 48px;
+    height: 48px;
+}
+
+.intro {
+    padding-bottom: 50px;
+}
+
+.intro .info {
     line-height: 26px;
 }
 
-.show div p:first-child {
-    background: #E9F7F8;
-    border-left: 5px solid #00CBDB;
-    padding: 0px 10px;
-    font-size: 15px;
-    margin-bottom: 8px;
+.intro .info p {
+    text-indent: 32px
 }
 
-.show span {
-    display: inline-block;
-    width: 10%;
-    text-align: center;
+@media screen and (max-width: 1150px) {
+
+    .compatible li {
+        width: 94px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    .right .btn_out {
+        position: relative;
+        bottom: 0px;
+    }
+
+    .compatible li {
+        width: 100px;
+    }
 }
