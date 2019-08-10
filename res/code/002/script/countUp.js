@@ -59,7 +59,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
     if (!self.options.prefix) self.options.prefix = '';
     if (!self.options.suffix) self.options.suffix = '';
 
-    self.d = (typeof target === 'string') ? document.getElementsByName(target)[0] : target;
+    self.d = (typeof target === 'string') ? document.getElementById(target) : target;
     self.startVal = Number(startVal);
     self.endVal = Number(endVal);
     self.countDown = (self.startVal > self.endVal);

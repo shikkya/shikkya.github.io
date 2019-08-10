@@ -15,8 +15,23 @@ var PicItem = {
 }
 
 // 所有数据 [ chrome, firefox, safari, opera, tencent, se360, ie8, ie11 ]  [ Android, Ios, WeChat ]
-// ,{ id: '002', tit: '', type: '其他', keyWord: [], intro: '', compatible: ['', '', '', '', '', '', '', ''], comMobile: ['', '', ''] }
-var picList = [
-    { id: '001', tit: '容器内拖拽分割线自由分配左右空间', type: '其他', keyWord: ['拖拽', 'js'], intro: '<p>1、分割线宽度占位</p><p>2、左右两部分的最小宽度一致，可为0</p>', compatible: ['1', '1', '0', '', '1', '1', '', '1'], comMobile: ['', '', ''] },
-    { id: '002', tit: '数字滚动增值插件countUp.js', type: '其他', keyWord: ['数字', '滚动', '跳数', 'js'], intro: '', compatible: ['', '', '', '', '', '', '', ''], comMobile: ['', '', ''] }
+// { id: '', tit: '', type: '', keyWord: [], compatible: ['', '', '', '', '', '', '', ''], comMobile: ['', '', ''], intro: '<p></p>' }
+var picList = [{
+        id: '001',
+        tit: '容器内拖拽分割线自由分配左右空间',
+        type: '其他',
+        keyWord: ['拖拽', 'js'],
+        compatible: ['1', '1', '0', '', '1', '1', '', '1'],
+        comMobile: ['', '', ''],
+        intro: '<p>1、分割线宽度占位</p><p>2、左右两部分的最小宽度一致，可为0</p>'
+    },
+    {
+        id: '002',
+        tit: '数字滚动增值插件countUp.js',
+        type: '其他',
+        keyWord: ['数字', '滚动', '跳数', 'js'],
+        compatible: ['', '', '', '', '', '', '', ''],
+        comMobile: ['', '', ''],
+        intro: '<p>CountUp.js 无依赖的、轻量级的 JavaScript 类，可以用来快速创建以一种更有趣的动画方式显示数值数据。<font>重置开始后可能出现不滚动情况</font>。</p><p>可配置的参数：</p><p>target = 目标元素的 ID</p><p>startVal = 开始值</p><p>endVal = 结束值</p><p>decimals = 小数位数，默认值是0</p><p>duration = 动画延迟秒数，默认值是2</p>'
+    }
 ];

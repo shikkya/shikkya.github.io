@@ -21,9 +21,18 @@ var vm = new Vue({
             tit: '最新特效',
             moreUrl: './list.html',
             loadImg: '../../images/wallpaper_04.png',
-            list: [
-                { id: '001', tit: '拖拽分割线自由分配左右空间', type: '其他', keyWord: ['拖拽', 'js'], intro: '说明' },
-                { id: '002', tit: '这是一条测试数据这是一条测试数据这是一条测试数据', type: '其他', keyWord: ['测试'], intro: '说明' }
+            list: [{
+                    id: '001',
+                    tit: '容器内拖拽分割线自由分配左右空间',
+                    type: '其他',
+                    keyWord: ['拖拽', 'js']
+                },
+                {
+                    id: '002',
+                    tit: '数字滚动增值插件countUp.js',
+                    type: '其他',
+                    keyWord: ['数字', '滚动', '跳数', 'js']
+                }
             ]
         }
     },
