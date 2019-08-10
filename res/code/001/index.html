@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>拖拽分割线自由分配左右空间</title>
+    <title>容器内拖拽分割线自由分配左右空间</title>
     <style type="text/css">
     body,
     html {
@@ -63,7 +63,7 @@
                 var endX = e.clientX;
                 var moveLen = resize.left + (endX - startX);
                 var maxT = box.clientWidth - resize.offsetWidth;
-                var minWid = 150;  // 最小保留宽度
+                var minWid = 150; // 最小保留宽度
                 if (moveLen < minWid) {
                     moveLen = minWid;
                 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>数字滚动增值插件countUp.js</title>
+</head>
+
+<body>
+    <span name="jumpNum">5,201,314</span>
+    <script type="text/javascript" src="./script/countUp.js"></script>
+    <script type="text/javascript">
+    var jumpNumber = function(begin, end) {
+        var easingFn = function(t, b, c, d) {
+            var ts = (t /= d) * t;
+            var tc = ts * t;
+            return b + c * (tc * ts + -5 * ts * ts + 10 * tc + -10 * ts + 5 * t);
+        }
+
+        var options = {
+            useEasing: true,
+            easingFn: easingFn,
+            useGrouping: true,
+            separator: ',',
+            decimal: '.',
+            prefix: '',
+            suffix: ''
+        };
+
+        var demo = new CountUp("jumpNum", begin, end, 0, 2.5, options); // jumpNum参数为name 2.5为变化时长
+        demo.start();
+    }
+
+    var m = document.getElementsByName('jumpNum')[0].innerText;
+    var n = m.replace(/,/g, ''); //去掉数字中的逗号
+
+    jumpNumber(0, n); // 起始值 结束值
+    </script>
+</body>
+
+</html>
