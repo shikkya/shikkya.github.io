@@ -30,8 +30,8 @@ var picList = [{
         tit: '数字滚动增值插件countUp.js',
         type: '其他',
         keyWord: ['数字', '滚动', '跳数', 'js'],
-        compatible: ['', '', '', '', '', '', '', ''],
+        compatible: ['1', '1', '1', '', '1', '1', '', '1'],
         comMobile: ['', '', ''],
-        intro: '<p>CountUp.js 无依赖的、轻量级的 JavaScript 类，可以用来快速创建以一种更有趣的动画方式显示数值数据。<font>重置开始后可能出现不滚动情况</font>。</p><p>可配置的参数：</p><p>target = 目标元素的 ID</p><p>startVal = 开始值</p><p>endVal = 结束值</p><p>decimals = 小数位数，默认值是0</p><p>duration = 动画延迟秒数，默认值是2</p>'
+        intro: '<p>CountUp.js 无依赖的、轻量级的 JavaScript 类，可以用来快速创建以一种更有趣的动画方式显示数值数据。<font>换值只用于临时变化，重置开始后依然是初始值。</font>。</p><p>可配置的参数：</p><p>target = 目标元素的 ID</p><p>startVal = 开始值</p><p>endVal = 结束值</p><p>decimals = 小数位数，默认值是0</p><p>duration = 动画延迟秒数，默认值是2</p>'
     }
 ];
