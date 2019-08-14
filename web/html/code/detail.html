@@ -58,6 +58,10 @@
                     <div class="tit">说明</div>
                     <div v-html="dataObj.intro" class="info"></div>
                 </div>
+                <div v-if="dataObj.bugIntro!=''" class="intro wid_size">
+                    <div class="tit">缺陷</div>
+                    <div v-html="dataObj.bugIntro" class="info"></div>
+                </div>
             </div>
             <go-top-item></go-top-item>
             <footer-item></footer-item>

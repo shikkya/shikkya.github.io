@@ -63,7 +63,7 @@ body {
     border: 1px solid #e0e0e0;
     margin-left: 8px;
     background: #fff;
-    padding: 0px 8px;
+    padding: 0px 8px 2px;
 }
 
 @media screen and (max-width: 850px) {
