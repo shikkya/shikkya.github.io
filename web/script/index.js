@@ -5,7 +5,7 @@
 
 var TypeItem = {
     props: ['content', 'index'],
-    template: '<div :class="\'type type_\'+index"><img :src="\'../images/\'+content.imgName"/><a :href="content.url" target="_blank">{{content.text}}</a></div>',
+    template: '<div :class="\'type type_\'+index"><img :src="\'../images/\'+content.imgName"/><a :href="content.url">{{content.text}}</a></div>',
     methods: {}
 }
 

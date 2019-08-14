@@ -23,7 +23,7 @@
                 <ul class="flr">
                     <li v-for="(item,index) in productList" :class="{active:index==3}">
                         <a v-if="index==3">{{item.text}}</a>
-                        <a v-else :href="item.url" target="_blank">{{item.text}}</a>
+                        <a v-else :href="item.url">{{item.text}}</a>
                     </li>
                 </ul>
             </div>
