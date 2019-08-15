@@ -12,7 +12,7 @@ var vm = new Vue({
         homeUrl: './index.html',
         logoImg: '../../images/wallpaper_01.png',
         searchVal: '',
-        typeList: ['全部', '特效', '功能', '其他'],
+        typeList: ['全部', '插件', '特效', '功能', '其他'],
         curType: '0',
         curkeyWord: '',
         isNoInfo: false,

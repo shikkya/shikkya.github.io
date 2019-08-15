@@ -18,7 +18,7 @@ var PicItem = {
 var picList = [{
         id: '001',
         tit: '容器内拖拽分割线自由分配左右空间',
-        type: '其他',
+        type: '功能',
         keyWord: ['拖拽', 'Js'],
         compatible: ['1', '1', '0', '', '1', '1', '', '1'],
         comMobile: ['', '', ''],
@@ -28,7 +28,7 @@ var picList = [{
     {
         id: '002',
         tit: '数字滚动增值插件countUp.js',
-        type: '其他',
+        type: '插件,功能',
         keyWord: ['数字', '滚动', '跳数', 'js'],
         compatible: ['1', '1', '1', '', '1', '1', '', '1'],
         comMobile: ['', '', ''],
@@ -38,7 +38,7 @@ var picList = [{
     {
         id: '003',
         tit: '纯CSS3卡通蜡烛动画特效',
-        type: '其他',
+        type: '特效',
         keyWord: ['CSS3'],
         compatible: ['1', '1', '0', '', '1', '1', '', '1'],
         comMobile: ['', '', ''],
@@ -47,23 +47,23 @@ var picList = [{
     },
     {
         id: '004',
+        tit: 'textarea实时文字计数器',
+        type: '功能',
+        keyWord: ['文字', '计数', 'Js'],
+        compatible: ['1', '1', '1', '', '1', '1', '', '1'],
+        comMobile: ['', '', ''],
+        intro: '<p>过滤空格和换行，超出时数字标红。</p>',
+        bugIntro: ''
+    },
+    {
+        id: '005',
         tit: '可被鼠标划破的网',
-        type: '其他',
+        type: '特效',
         keyWord: ['Canvas', 'Js'],
         compatible: ['1', '1', '1', '', '1', '1', '', '1'],
         comMobile: ['', '', ''],
         intro: '',
         bugIntro: '<p>safari浏览器下速度略迟缓，不影响使用。</p>'
-    },
-    {
-        id: '005',
-        tit: 'textarea实时文字计数器',
-        type: '其他',
-        keyWord: ['Js'],
-        compatible: ['1', '1', '1', '', '1', '1', '', '1'],
-        comMobile: ['', '', ''],
-        intro: '<p>过滤空格和换行，超出时数字标红。</p>',
-        bugIntro: ''
     }
 ];
 
