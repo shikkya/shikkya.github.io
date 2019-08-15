@@ -54,6 +54,16 @@ var picList = [{
         comMobile: ['', '', ''],
         intro: '',
         bugIntro: '<p>safari浏览器下速度略迟缓，不影响使用。</p>'
+    },
+    {
+        id: '005',
+        tit: 'textarea实时文字计数器',
+        type: '其他',
+        keyWord: ['Js'],
+        compatible: ['1', '1', '1', '', '1', '1', '', '1'],
+        comMobile: ['', '', ''],
+        intro: '<p>过滤空格和换行，超出时数字标红。</p>',
+        bugIntro: ''
     }
 ];
 
