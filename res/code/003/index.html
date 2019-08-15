@@ -5,85 +5,44 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>容器内拖拽分割线自由分配左右空间</title>
-    <style type="text/css">
-    body,
-    html {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-    }
-
-    #box {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    #left {
-        width: calc(30% - 5px);
-        height: 100%;
-        background: #C2DDF1;
-        float: left;
-    }
-
-    #resize {
-        width: 5px;
-        height: 100%;
-        background: #fff;
-        cursor: w-resize;
-        float: left;
-    }
-
-    #right {
-        float: right;
-        width: 70%;
-        height: 100%;
-        background: #FCC;
-    }
-    </style>
+    <title>纯CSS3卡通蜡烛动画特效</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
 </head>
 
 <body>
-    <div id="box">
-        <div id="left"></div>
-        <div id="resize"></div>
-        <div id="right"></div>
+    <div class="wrapper">
+        <div class="candles">
+            <div class="light__wave"></div>
+            <div class="candle1">
+                <div class="candle1__body">
+                    <div class="candle1__eyes">
+                        <span class="candle1__eyes-one"></span>
+                        <span class="candle1__eyes-two"></span>
+                    </div>
+                    <div class="candle1__mouth"></div>
+                </div>
+                <div class="candle1__stick"></div>
+            </div>
+            <div class="candle2">
+                <div class="candle2__body">
+                    <div class="candle2__eyes">
+                        <div class="candle2__eyes-one"></div>
+                        <div class="candle2__eyes-two"></div>
+                    </div>
+                </div>
+                <div class="candle2__stick"></div>
+            </div>
+            <div class="candle2__fire"></div>
+            <div class="sparkles-one"></div>
+            <div class="sparkles-two"></div>
+            <div class="candle__smoke-one">
+            </div>
+            <div class="candle__smoke-two">
+            </div>
+        </div>
+        <div class="floor">
+        </div>
     </div>
-    <script type="text/javascript">
-    window.onload = function() {
-        var resize = document.getElementById("resize");
-        var left = document.getElementById("left");
-        var right = document.getElementById("right");
-        var box = document.getElementById("box");
-        resize.onmousedown = function(e) {
-            var startX = e.clientX;
-            resize.left = resize.offsetLeft;
-            document.onmousemove = function(e) {
-                var endX = e.clientX;
-                var moveLen = resize.left + (endX - startX);
-                var maxT = box.clientWidth - resize.offsetWidth;
-                var minWid = 150; // 最小保留宽度
-                if (moveLen < minWid) {
-                    moveLen = minWid;
-                }
-                if (moveLen > maxT - minWid) {
-                    moveLen = maxT - minWid;
-                }
-                resize.style.left = moveLen;
-                left.style.width = moveLen + "px";
-                right.style.width = (box.clientWidth - moveLen - 5) + "px";
-            }
-            document.onmouseup = function(evt) {
-                document.onmousemove = null;
-                document.onmouseup = null;
-                resize.releaseCapture && resize.releaseCapture();
-            }
-            resize.setCapture && resize.setCapture();
-            return false;
-        }
-    }
-    </script>
 </body>
 
 </html>

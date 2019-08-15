@@ -36,6 +36,7 @@
     color: #666;
     font-size: 16px;
     padding-top: 75px;
+    padding-bottom: 10px;
 }
 
 .out {
@@ -163,7 +164,7 @@
 }
 
 .intro {
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .intro .info {

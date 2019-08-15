@@ -6,28 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>数字滚动增值插件countUp.js</title>
-    <style type="text/css">
-    body {
-        text-align: center;
-        padding: 50px;
-    }
-
-    span {
-        font-size: 40px;
-        color: #445cb8;
-    }
-
-    button {
-        background: #445cb8;
-        color: #fff;
-        padding: 8px 15px;
-        border: 0px;
-        border-radius: 3px;
-        margin: 20px 2px;
-        cursor: pointer;
-        font-size: 14px;
-    }
-    </style>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
 </head>
 
 <body>
@@ -39,45 +18,7 @@
         <button id="update">换值</button>
     </div>
     <script type="text/javascript" src="./script/countUp.js"></script>
-    <script type="text/javascript">
-    var options = {
-        useEasing: true, // toggle easing
-        useGrouping: true, // 1,000,000 vs 1000000
-        separator: ',', // character to use as a separator
-        decimal: '.', // character to use as a decimal
-        // easingFn: easeOutExpo, // optional custom easing function, default is Robert Penner's easeOutExpo
-        // formattingFn: formatNumber, // optional custom formatting function, default is formatNumber above
-        prefix: '', // optional text before the result
-        suffix: '', // optional text after the result
-        numerals: [] // optionally pass an array of custom numerals for 0-9
-    };
-
-    var endNum = document.getElementById('jumpNum').innerText.replace(/,/g, ''); //去掉数字中的逗号
-
-    var demo = new CountUp("jumpNum", 0, endNum, 2, 3.5, options);
-
-    demo.start();
-
-    //暂停/恢复
-    document.getElementById('pauseResume').addEventListener('click', function() {
-        demo.pauseResume();
-    }, false);
-
-    //重置动画
-    document.getElementById('reset').addEventListener('click', function() {
-        demo.reset();
-    }, false);
-
-    //开始
-    document.getElementById('start').addEventListener('click', function() {
-        demo.start();
-    }, false);
-
-    //更新一个值
-    document.getElementById('update').addEventListener('click', function() {
-        demo.update(5566.88);
-    }, false);
-    </script>
+    <script type="text/javascript" src="./script/index.js"></script>
 </body>
 
 </html>
