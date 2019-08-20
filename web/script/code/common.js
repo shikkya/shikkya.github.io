@@ -39,7 +39,7 @@ var picList = [{
         id: '003',
         tit: '纯CSS3卡通蜡烛动画特效',
         type: '特效',
-        keyWord: ['CSS3'],
+        keyWord: ['动画', 'CSS3'],
         compatible: ['1', '1', '0', '', '1', '1', '', '1'],
         comMobile: ['', '', ''],
         intro: '',
@@ -57,6 +57,16 @@ var picList = [{
     },
     {
         id: '005',
+        tit: '多边形彩色折纸动态圆球js特效动画',
+        type: '特效',
+        keyWord: ['Canvas', 'Js'],
+        compatible: ['1', '1', '0', '', '1', '1', '', '1'],
+        comMobile: ['', '', ''],
+        intro: '',
+        bugIntro: ''
+    },
+    {
+        id: '006',
         tit: '可被鼠标划破的网',
         type: '特效',
         keyWord: ['Canvas', 'Js'],

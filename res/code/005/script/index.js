@@ -1,283 +1,236 @@
-/**
- * index.html
- * @authors shikkya
- * @date    2019-08-15
- * @version $Id$
- */
+var scene, camera, cameraCtrl, renderer;
 
-function cleanJS(js) {
-    js = js.replace(/location(s+)?=/mi, '');
-    js = js.replace(/top.location.+=('|")/mi, '');
-    js = js.replace(/location.replace/mi, '');
-    js = js.replace(/window(s+)?\[(s+)?("|')l/mi, '');
-    js = js.replace(/self(s+)?\[(s+)?("|')loc/mi, '');
-    return js;
+const nbTrucs = 200, tRadius = 2, tMargin = 0.2, radius=10;
+var trucs, tGeometry;
+
+function init() {
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 0.1, 1000);
+  cameraCtrl = new THREE.OrbitControls(camera);
+  cameraCtrl.autoRotate = true;
+  cameraCtrl.autoRotateSpeed = 5;
+
+  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  initScene();
+
+  onWindowResize();
+  window.addEventListener('resize', onWindowResize, false);
+
+  animate();
+};
+
+function initScene() {
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xffffff);
+  camera.position.z = 50;
+  // camera.position.y = -50;
+
+  // this.initLights();
+  this.initGeo();
+
+  var geometry = new THREE.SphereGeometry(radius, 16, 16);
+  var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+  var sphere = new THREE.Mesh(geometry, material);
+  scene.add(sphere);
+
+  trucs = [];
+  for (var i = 0; i < nbTrucs; i++) {
+    var truc = new Truc();
+    trucs.push(truc);
+    scene.add(truc.o3d);
+  }
 }
-_ogEval = window.eval;
-window.eval = function(text) { _ogEval(cleanJS(text)); };
-window.open = function() {};
-window.print = function() {};
-window.innerWidth = window.outerWidth; // Fixes browser bug with it innerWidth reports 0 
-window.innerHeight = window.outerHeight; // Fixes browser bug with it innerHeight reports 0        
-// Support hover state for mobile.        
-window.ontouchstart = function() {};
 
-var physics_accuracy = 5,
-    mouse_influence = 20,
-    mouse_cut = 5,
-    gravity = 1200,
-    cloth_height = 30,
-    cloth_width = 50,
-    start_y = 20,
-    spacing = 7,
-    tear_distance = 60;
+function initGeo() {
+  const shape = new THREE.Shape();
+  const y = Math.sin(-Math.PI / 6) * tRadius;
+  const x = Math.cos(Math.PI / 6) * tRadius;
+  shape.moveTo(0, tRadius);
+  shape.lineTo(-x, y);
+  shape.lineTo(x, y);
+  shape.lineTo(0, tRadius);
+  tGeometry = new THREE.ShapeBufferGeometry(shape);
+}
 
+function initLights() {
+  const lightIntensity = 0.5;
+  const lightDistance = 200;
 
-window.requestAnimFrame =
-    window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    window.mozRequestAnimationFrame ||
-    window.oRequestAnimationFrame ||
-    window.msRequestAnimationFrame ||
-    function(callback) {
-        window.setTimeout(callback, 1000 / 60);
-    };
+  scene.add(new THREE.AmbientLight(0xeeeeee));
 
-var canvas,
-    ctx,
-    cloth,
-    boundsx,
-    boundsy,
-    mouse = {
-        down: false,
-        button: 1,
-        x: 0,
-        y: 0,
-        px: 0,
-        py: 0
-    };
+  var light;
 
-window.onload = function() {
+  light = new THREE.PointLight(randomColor({ luminosity: 'light' }), lightIntensity, lightDistance);
+  light.position.set(0, 100, 0);
+  scene.add(light);
+  light = new THREE.PointLight(randomColor({ luminosity: 'light' }), lightIntensity, lightDistance);
+  light.position.set(0, -100, 0);
+  scene.add(light);
 
-    canvas = document.getElementById('c');
-    ctx = canvas.getContext('2d');
+  light = new THREE.PointLight(randomColor({ luminosity: 'light' }), lightIntensity, lightDistance);
+  light.position.set(100, 0, 0);
+  scene.add(light);
+  light = new THREE.PointLight(randomColor({ luminosity: 'light' }), lightIntensity, lightDistance);
+  light.position.set(-100, 0, 0);
+  scene.add(light);
 
-    canvas.width = canvas.clientWidth;
-    canvas.height = 376;
+  light = new THREE.PointLight(randomColor({ luminosity: 'light' }), lightIntensity, lightDistance);
+  light.position.set(0, 0, 100);
+  scene.add(light);
+  light = new THREE.PointLight(randomColor({ luminosity: 'light' }), lightIntensity, lightDistance);
+  light.position.set(0, 0, -100);
+  scene.add(light);
+}
 
-    canvas.onmousedown = function(e) {
-        mouse.button = e.which;
-        mouse.px = mouse.x;
-        mouse.py = mouse.y;
-        var rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left,
-            mouse.y = e.clientY - rect.top,
-            mouse.down = true;
-        e.preventDefault();
-    };
+function animate() {
+  requestAnimationFrame(animate);
 
-    canvas.onmouseup = function(e) {
-        mouse.down = false;
-        e.preventDefault();
-    };
+  cameraCtrl.update();
 
-    canvas.onmousemove = function(e) {
-        mouse.px = mouse.x;
-        mouse.py = mouse.y;
-        var rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left,
-            mouse.y = e.clientY - rect.top,
-            e.preventDefault();
-    };
-
-    canvas.oncontextmenu = function(e) {
-        e.preventDefault();
-    };
-
-    boundsx = canvas.width - 1;
-    boundsy = canvas.height - 1;
-
-    ctx.strokeStyle = 'rgba(222,222,222,0.6)';
-    cloth = new Cloth();
-    update();
+  renderer.render(scene, camera);
 };
 
-var Point = function(x, y) {
+function Truc() {
+  if (!Truc.points) {
+    Truc.counter = 0;
+    Truc.points = getFibonacciSpherePoints(nbTrucs, radius, false);
+  }
+  this.init();
+}
 
-    this.x = x;
-    this.y = y;
-    this.px = x;
-    this.py = y;
-    this.vx = 0;
-    this.vy = 0;
-    this.pin_x = null;
-    this.pin_y = null;
-    this.constraints = [];
+Truc.prototype.init = function () {
+  this.o3d = new THREE.Object3D();
+
+  var p = Truc.points[Truc.counter++];
+  this.o3d.position.set(p.x, p.y, p.z);
+  this.o3d.lookAt(p.multiplyScalar(2));
+
+  // var material = new THREE.MeshStandardMaterial({ color: randomColor({ luminosity: 'light' }), roughness: 0.4, metalness: 0.9, side: THREE.DoubleSide });
+  var material = new THREE.MeshBasicMaterial({ color: randomColor({ luminosity: 'light' }), side: THREE.DoubleSide });
+
+  var t0 = new THREE.Mesh(tGeometry, material);
+  this.o3d.add(t0);
+
+  var dx = Math.cos(Math.PI / 6);
+  var dy = Math.sin(Math.PI / 6);
+  var dr = dy * tRadius;
+
+  this.t1 = group(material);
+  this.t1.rotation.z = Math.PI;
+  this.t1.position.y = - dr - tMargin;
+  this.o3d.add(this.t1);
+
+  this.t2 = group(material);
+  this.t2.rotation.z = Math.PI / 3;
+  var v = (new THREE.Vector3(-dx, dy, 0)).multiplyScalar(dr + tMargin);
+  this.t2.position.x = v.x;
+  this.t2.position.y = v.y;
+  this.o3d.add(this.t2);
+
+  this.t3 = group(material);
+  this.t3.rotation.z = - Math.PI / 3;
+  v = (new THREE.Vector3(dx, dy, 0)).multiplyScalar(dr + tMargin);
+  this.t3.position.x = v.x;
+  this.t3.position.y = v.y;
+  this.o3d.add(this.t3);
+
+  // var tconf = { x: 0, ease: Power1.easeInOut, repeat: -1, yoyo: true };
+  // TweenMax.to(t1.group1.rotation, 1, tconf);
+  // TweenMax.to(t2.group1.rotation, 1, tconf);
+  // TweenMax.to(t3.group1.rotation, 1, tconf);
+
+  this.shuffle();
+
+  // this.o3d.add(t2);
+  // this.o3d.add(t3);
 };
 
-Point.prototype.update = function(delta) {
+Truc.prototype.shuffle = function () {
+  this.scale = 0.2+rnd(0.2);
+  this.o3d.scale.set(0.01, 0.01, 0.01);
 
-    if (mouse.down) {
+  const duration = 2 + rnd(2);
+  const bloomDuration = 2;
+  const stayDuration = 3 + rnd(2);
+  var tweens = [];
+  tweens.push(TweenMax.to(this.o3d.scale, duration, { x: this.scale, y: this.scale, z: this.scale, ease: Power1.easeIn }));
+  tweens.push(TweenMax.to(this.o3d.rotation, duration, { z: 3 * Math.PI + rnd(Math.PI / 3), ease: Power0.easeInOut }));
 
-        var diff_x = this.x - mouse.x,
-            diff_y = this.y - mouse.y,
-            dist = Math.sqrt(diff_x * diff_x + diff_y * diff_y);
+  var tconf = { x: Math.PI / 8, ease: Power0.easeIn, delay: duration - bloomDuration };
+  tweens.push(TweenMax.to(this.t1.group1.rotation, bloomDuration, tconf));
+  tweens.push(TweenMax.to(this.t2.group1.rotation, bloomDuration, tconf));
+  tweens.push(TweenMax.to(this.t3.group1.rotation, bloomDuration, tconf));
 
-        if (mouse.button == 1) {
-
-            if (dist < mouse_influence) {
-                this.px = this.x - (mouse.x - mouse.px) * 1.8;
-                this.py = this.y - (mouse.y - mouse.py) * 1.8;
-            }
-
-        } else if (dist < mouse_cut) this.constraints = [];
-    }
-
-    this.add_force(0, gravity);
-
-    delta *= delta;
-    nx = this.x + ((this.x - this.px) * .99) + ((this.vx / 2) * delta);
-    ny = this.y + ((this.y - this.py) * .99) + ((this.vy / 2) * delta);
-
-    this.px = this.x;
-    this.py = this.y;
-
-    this.x = nx;
-    this.y = ny;
-
-    this.vy = this.vx = 0
+  TweenMax.to({}, duration + stayDuration, {
+    onComplete: function () {
+      for (var i = 0; i < tweens.length; i++) {
+        tweens[i].reverse();
+      }
+      TweenMax.to({}, duration, {
+        onComplete: function () {
+          this.shuffle();
+        },
+        onCompleteScope: this
+      });
+    },
+    onCompleteScope: this
+  });
 };
 
-Point.prototype.draw = function() {
+function group(material) {
+  var group = new THREE.Object3D();
+  group.group1 = group1(material);
+  group.add(group.group1);
 
-    if (this.constraints.length <= 0) return;
+  return group;
+}
 
-    var i = this.constraints.length;
-    while (i--) this.constraints[i].draw();
-};
+function group1(material) {
+  var mesh = new THREE.Mesh(tGeometry, material);
+  mesh.position.y = Math.sin(Math.PI / 6) * tRadius;
+  var group1 = new THREE.Object3D();
+  group1.add(mesh);
+  group1.rotation.x = Math.PI * 0.62;
+  return group1;
+}
 
-Point.prototype.resolve_constraints = function() {
+function getFibonacciSpherePoints(samples, radius, randomize) {
+  samples = samples || 1;
+  radius = radius || 1;
+  randomize = randomize || true;
+  var random = 1;
+  if (randomize === true) {
+    random = Math.random() * samples;
+  }
+  var points = [];
+  var offset = 2 / samples;
+  var increment = Math.PI * (3 - Math.sqrt(5));
+  for (var i = 0; i < samples; i++) {
+    var y = ((i * offset) - 1) + (offset / 2);
+    var distance = Math.sqrt(1 - Math.pow(y, 2));
+    var phi = ((i + random) % samples) * increment;
+    var x = Math.cos(phi) * distance;
+    var z = Math.sin(phi) * distance;
+    x = x * radius;
+    y = y * radius;
+    z = z * radius;
+    var point = new THREE.Vector3(x, y, z);
+    points.push(point);
+  }
+  return points;
+}
 
-    if (this.pin_x != null && this.pin_y != null) {
+function rnd(max, negative) {
+  return negative ? Math.random() * 2 * max - max : Math.random() * max;
+}
 
-        this.x = this.pin_x;
-        this.y = this.pin_y;
-        return;
-    }
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
 
-    var i = this.constraints.length;
-    while (i--) this.constraints[i].resolve();
-
-    this.x > boundsx ? this.x = 2 * boundsx - this.x : 1 > this.x && (this.x = 2 - this.x);
-    this.y < 1 ? this.y = 2 - this.y : this.y > boundsy && (this.y = 2 * boundsy - this.y);
-};
-
-Point.prototype.attach = function(point) {
-
-    this.constraints.push(
-        new Constraint(this, point)
-    );
-};
-
-Point.prototype.remove_constraint = function(lnk) {
-
-    var i = this.constraints.length;
-    while (i--)
-        if (this.constraints[i] == lnk) this.constraints.splice(i, 1);
-};
-
-Point.prototype.add_force = function(x, y) {
-
-    this.vx += x;
-    this.vy += y;
-};
-
-Point.prototype.pin = function(pinx, piny) {
-    this.pin_x = pinx;
-    this.pin_y = piny;
-};
-
-var Constraint = function(p1, p2) {
-
-    this.p1 = p1;
-    this.p2 = p2;
-    this.length = spacing;
-};
-
-Constraint.prototype.resolve = function() {
-
-    var diff_x = this.p1.x - this.p2.x,
-        diff_y = this.p1.y - this.p2.y,
-        dist = Math.sqrt(diff_x * diff_x + diff_y * diff_y),
-        diff = (this.length - dist) / dist;
-
-    if (dist > tear_distance) this.p1.remove_constraint(this);
-
-    var px = diff_x * diff * 0.5;
-    var py = diff_y * diff * 0.5;
-
-    this.p1.x += px;
-    this.p1.y += py;
-    this.p2.x -= px;
-    this.p2.y -= py;
-};
-
-Constraint.prototype.draw = function() {
-
-    ctx.moveTo(this.p1.x, this.p1.y);
-    ctx.lineTo(this.p2.x, this.p2.y);
-};
-
-var Cloth = function() {
-
-    this.points = [];
-
-    var start_x = canvas.width / 2 - cloth_width * spacing / 2;
-
-    for (var y = 0; y <= cloth_height; y++) {
-
-        for (var x = 0; x <= cloth_width; x++) {
-
-            var p = new Point(start_x + x * spacing, start_y + y * spacing);
-
-            x != 0 && p.attach(this.points[this.points.length - 1]);
-            y == 0 && p.pin(p.x, p.y);
-            y != 0 && p.attach(this.points[x + (y - 1) * (cloth_width + 1)])
-
-            this.points.push(p);
-        }
-    }
-};
-
-Cloth.prototype.update = function() {
-
-    var i = physics_accuracy;
-
-    while (i--) {
-        var p = this.points.length;
-        while (p--) this.points[p].resolve_constraints();
-    }
-
-    i = this.points.length;
-    while (i--) this.points[i].update(.016);
-};
-
-Cloth.prototype.draw = function() {
-
-    ctx.beginPath();
-
-    var i = cloth.points.length;
-    while (i--) cloth.points[i].draw();
-
-    ctx.stroke();
-};
-
-function update() {
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    cloth.update();
-    cloth.draw();
-
-    requestAnimFrame(update);
-} //@ sourceURL=pen.js
+init();
