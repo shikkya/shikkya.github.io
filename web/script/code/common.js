@@ -14,7 +14,7 @@ var PicItem = {
     }
 }
 
-// 所有数据 [ chrome, firefox, safari, opera, tencent, se360, ie8, ie11 ]  [ Android, Ios, WeChat ]
+// 所有数据 
 var picList = [{
         id: '001',
         tit: '容器内拖拽分割线自由分配左右空间',
@@ -74,8 +74,22 @@ var picList = [{
         comMobile: ['', '', ''],
         intro: '',
         bugIntro: '<p>safari浏览器下速度略迟缓，不影响使用。</p>'
+    },
+    {
+        id: '007',
+        tit: '纯前端导出数据为Excel表格',
+        type: '功能',
+        keyWord: ['Excel', 'Js'],
+        compatible: ['1', '1', '0', '', '1', '1', '', '0'],
+        comMobile: ['', '', ''],
+        intro: '',
+        bugIntro: '<p>第一种方法无法合并单元格，长字符串无法自动调整单元格宽度，导出格式只能为csv。</p><p>第二种方法导出后会有错误提示，但不影响使用。</p>'
     }
 ];
+
+// compatible: [ chrome, firefox, safari, opera, tencent, se360, ie8, ie11 ]  
+// comMobile: [ Android, Ios, WeChat ]
+// typeList: ['全部', '插件', '特效', '功能', '其他']
 
 /*
 {

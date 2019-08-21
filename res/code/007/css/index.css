@@ -1,0 +1,22 @@
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2019-08-20
+ * @version $Id$
+ */
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    text-align: center;
+}
+
+div {
+    margin: 50px 0px;
+}
+
+table {
+    margin: 0px auto 15px;
+}
