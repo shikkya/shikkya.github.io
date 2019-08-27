@@ -7,35 +7,9 @@
  * @version $Id$
  */
 
-/*************** header ***************/
-
-.header {
-    background: #58508D;
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    z-index: 998;
-    border-bottom: 15px solid #403a6c;
-    height: 20px;
-    padding: 20px 0px;
-    overflow: hidden;
-}
-
-.header .logo img {
-    height: 20px;
-    vertical-align: middle;
-}
-
-.header .btn {
-    font-size: 12px;
-    padding: 6px 0px;
-    margin-top: -1px;
-}
-
-/*************** content ***************/
-
 .content {
     padding-top: 105px;
+    min-height: calc(100vh - 185px);
 }
 
 .tit {

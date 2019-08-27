@@ -22,12 +22,6 @@ var rulerList = [
 var vm = new Vue({
     el: '#app',
     data: {
-        headerObj: {
-            homeUrl: './index.html',
-            logoImg: '../../images/footer_01.png',
-            goListUrl: './index.html#toolList',
-            goListBtn: '返回工具列表'
-        },
         infoObj: {
             tit: '在线尺子',
             text: '根据屏幕尺寸和分辨率生成度量尺 · 无实物精准便捷化测量'
@@ -46,24 +40,19 @@ var vm = new Vue({
         }
     },
     mounted: function() {
-        this.init();
+        var w1cm = document.getElementById("w1cm").offsetWidth;
+        var sWidth = screen.width;
+        var sHeight = screen.height;
+        var sDiagonal = Math.sqrt(sWidth / w1cm * sWidth / w1cm + sHeight / w1cm * sHeight / w1cm) / 2.54;
+        // 初始化说明
+        this.sizeHtml += '<p>说明 : 尺子上端以厘米为单位，下端以英寸为单位</p>';
+        this.sizeHtml += '<p>当前显示器分辨率为 : ' + sWidth + ' * ' + sHeight + ' pixels</p>';
+        this.sizeHtml += '<p>当前显示器尺寸为 : ' + (sWidth / w1cm).toFixed(1) + ' * ' + (sHeight / w1cm).toFixed(1) + ' cm ' + sDiagonal.toFixed(1) + ' 寸</p>';
+        this.sizeHtml += '<p>若尺子长度有误，请您设置正确的电脑分辨率；若数据显示有误，请至本页末选择联系方式反馈</p>';
+        // 初始化尺子
+        this.createRuler(sDiagonal, sWidth, sHeight);
     },
     methods: {
-        init: function() {
-            var w1cm = document.getElementById("w1cm").offsetWidth;
-            var sWidth = screen.width;
-            var sHeight = screen.height;
-            var sDiagonal = Math.sqrt(sWidth / w1cm * sWidth / w1cm + sHeight / w1cm * sHeight / w1cm) / 2.54;
-            // 初始化说明
-            this.sizeHtml += '<p>说明 : 尺子上端以厘米为单位，下端以英寸为单位</p>';
-            this.sizeHtml += '<p>当前显示器分辨率为 : ' + sWidth + ' * ' + sHeight + ' pixels</p>';
-            this.sizeHtml += '<p>当前显示器尺寸为 : ' + (sWidth / w1cm).toFixed(1) + ' * ' + (sHeight / w1cm).toFixed(1) + ' cm ' + sDiagonal.toFixed(1) + ' 寸</p>';
-            this.sizeHtml += '<p>若尺子长度有误，请您设置正确的电脑分辨率；若数据显示有误，请至本页末选择联系方式反馈</p>';
-            // 初始化尺子
-            this.createRuler(sDiagonal, sWidth, sHeight);
-            // 初始化content最小高度
-            document.getElementById('content').style.minHeight = (document.body.clientHeight - 185) + 'px';
-        },
         // 初始化尺子
         createRuler: function(diagonal, screenWidth, screenHeight) {
             var aspectRatio = screenWidth / screenHeight;

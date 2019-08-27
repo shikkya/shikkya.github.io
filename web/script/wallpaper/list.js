@@ -35,8 +35,6 @@ var vm = new Vue({
         }
     },
     mounted: function() {
-        // 设置最小高度
-        setContentMinHei(240);
         // 加载图片
         loadImg();
         // 文本框获焦时回车触发检索

@@ -32,12 +32,6 @@ var vm = new Vue({
         ShowPiItem: ShowPiItem
     },
     data: {
-        headerObj: {
-            homeUrl: './index.html',
-            logoImg: '../../images/footer_01.png',
-            goListUrl: './index.html#toolList',
-            goListBtn: '返回工具列表'
-        },
         tit: '圆周率速算',
         errorClass: false,
         inputVal_1: '',
@@ -74,10 +68,6 @@ var vm = new Vue({
                 this.result_2 = parseInt(this.inputVal_2) + parseInt(piStr[n]);
             }
         }
-    },
-    mounted: function() {
-        // 初始化content最小高度
-        document.getElementById('content').style.minHeight = (document.body.clientHeight - 220) + 'px';
     },
     methods: {
         // 判断是否标记错误提示

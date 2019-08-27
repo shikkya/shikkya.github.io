@@ -11,6 +11,19 @@
     background: #00cbdb;
 }
 
+/*************** header ***************/
+
+.header_detail {
+    background: #58508D;
+    border-bottom: 15px solid #403a6c;
+}
+
+.header_detail .btn {
+    font-size: 12px;
+    padding: 6px 0px;
+    margin-top: -1px;
+}
+
 /*************** position btn ***************/
 
 .go_top {

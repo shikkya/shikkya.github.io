@@ -106,11 +106,6 @@ function getUrlStr(name) {
     return url.split(name + '=')[1].split('&')[0];
 }
 
-// 设置content最小高度
-function setContentMinHei(num) {
-    document.getElementById('content').style.minHeight = (document.body.clientHeight - num) + 'px';
-}
-
 // 返回顶部
 function goTop() {
     clearInterval(timer);
@@ -140,6 +135,11 @@ Vue.component("HeaderIndexItem", {
             ]
         }
     }
+})
+
+// 头部 - 各产品详情页
+Vue.component("HeaderDetailItem", {
+    template: '<div class="header header_detail"><div class="wid_size"><a href="./index.html" class="logo"><img src="../../images/footer_01.png"/></a><a href="./index.html#toolList" class="btn flr">返回工具列表</a></div></div>'
 })
 
 // 悬浮功能按钮

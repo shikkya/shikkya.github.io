@@ -7,41 +7,15 @@
  * @version $Id$
  */
 
-/*************** header ***************/
-
-.header {
-    background: #58508D;
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    z-index: 998;
-    border-bottom: 15px solid #403a6c;
-    height: 20px;
-    padding: 20px 0px;
-    overflow: hidden;
-}
-
-.header .logo img {
-    height: 20px;
-    vertical-align: middle;
-}
-
-.header .btn {
-    font-size: 12px;
-    padding: 6px 0px;
-    margin-top: -1px;
-}
-
-/*************** content ***************/
-
 .hide {
     display: none;
 }
 
 .content {
     font-size: 16px;
-    padding-top: 90px;
+    padding: 90px 0px 40px;
     text-align: center;
+    min-height: calc(100vh - 210px);
 }
 
 .tit {
@@ -73,9 +47,13 @@
 .tab,
 .list {
     width: 353px;
-    margin: 30px auto;
+    margin: 0px auto;
     font-size: 16px;
     color: #333;
+}
+
+.tab {
+    margin: 30px auto;
 }
 
 .tab td {
@@ -147,7 +125,6 @@
 .list {
     overflow-x: hidden;
     overflow-y: auto;
-    margin-bottom: 40px;
 }
 
 .list li {

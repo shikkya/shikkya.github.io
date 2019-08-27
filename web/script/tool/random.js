@@ -29,12 +29,6 @@ var vm = new Vue({
     //     ShowPiItem: ShowPiItem
     // },
     data: {
-        headerObj: {
-            homeUrl: './index.html',
-            logoImg: '../../images/footer_01.png',
-            goListUrl: './index.html#toolList',
-            goListBtn: '返回工具列表'
-        },
         tit: '专治选择困难症',
         errorClass: false,
         titCheckNum: 0,
@@ -55,10 +49,6 @@ var vm = new Vue({
     },
     watch: {
 
-    },
-    mounted: function() {
-        // 初始化content最小高度
-        document.getElementById('content').style.minHeight = (document.body.clientHeight - 220) + 'px';
     },
     methods: {
         // 点击标题切换

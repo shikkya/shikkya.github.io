@@ -15,12 +15,7 @@
 
 <body>
     <div id="app" v-cloak>
-        <div class="header">
-            <div class="wid_size">
-                <a :href="headerObj.homeUrl" class="logo"><img :src="headerObj.logoImg"/></a>
-                <a :href="headerObj.goListUrl" class="btn flr">{{headerObj.goListBtn}}</a>
-            </div>
-        </div>
+        <header-detail-item></header-detail-item>
         <div class="content" id="content">
             <div class="tit">
                 <h1>{{tit}}</h1>
