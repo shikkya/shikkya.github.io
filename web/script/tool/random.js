@@ -1,6 +1,8 @@
 ﻿/**
- * @authors kk
+ * tool - random
+ * @authors shikkya
  * @date    2019-04-23
+ * @version $Id$
  */
 
 // 小于等于1000的正整数

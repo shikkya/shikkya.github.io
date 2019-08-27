@@ -1,14 +1,11 @@
 ﻿@charset "UTF-8";
 
 /**
- * @authors kk
+ * tool - common
+ * @authors shikkya
  * @date    2019-03-18
+ * @version $Id$
  */
-
-html,
-body {
-    background: #fff;
-}
 
 .btn {
     background: #00cbdb;

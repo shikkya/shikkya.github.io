@@ -1,9 +1,11 @@
 ﻿/**
- * @authors kk
+ * tool - index
+ * @authors shikkya
  * @date    2019-04-01
+ * @version $Id$
  */
 
-// 图片展示列表组件
+// 图片展示列表
 var ToolItem = {
     props: ['item'],
     template: '<li @click="vm.checkList(item.url)"><div><img src="../../images/tool_04.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3></div><p v-html="item.text"></p></li>'
@@ -15,9 +17,8 @@ var vm = new Vue({
         ToolItem: ToolItem
     },
     data: {
-        homeUrl: './index.html',
         logoImg: '../../images/tool_01.png',
-        productList: productList,
+        curIndex: '2',
         topObj: {
             bgImgInit: '../../images/tool_03.png',
             bgImg: '../../images/tool_02.png',
@@ -46,10 +47,6 @@ var vm = new Vue({
     methods: {
         // 点击工具列表
         checkList: function(url) {
-            // if (document.body.clientWidth <= 720) {
-            //     alert('');
-            //     return;
-            // }
             if (url == '') {
                 alert('努力开发中,敬请期待~');
                 return;

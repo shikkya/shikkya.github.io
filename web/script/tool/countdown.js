@@ -1,6 +1,8 @@
 ﻿/**
- * @authors kk
+ * tool - countdown
+ * @authors shikkya
  * @date    2019-04-09
+ * @version $Id$
  */
 
 // 事件列表

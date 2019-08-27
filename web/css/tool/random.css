@@ -1,8 +1,10 @@
 ﻿@charset "UTF-8";
 
 /**
- * @authors kk
+ * tool - random
+ * @authors shikkya
  * @date    2019-04-23
+ * @version $Id$
  */
 
 /*************** header ***************/
@@ -87,13 +89,13 @@
 }
 
 .food div {
-    border:5px solid #DCD6FF;
+    border: 5px solid #DCD6FF;
     width: 200px;
     padding: 20px 0px;
     margin: 30px 0px;
     font-size: 16px;
     color: #333;
-    border-radius:10px;
+    border-radius: 10px;
     animation: water 5s linear infinite;
 }
 

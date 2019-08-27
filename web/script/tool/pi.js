@@ -1,6 +1,8 @@
 ﻿/**
- * @authors kk
+ * tool - pi
+ * @authors shikkya
  * @date    2019-04-04
+ * @version $Id$
  */
 
 // 圆周率

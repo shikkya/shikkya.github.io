@@ -1,8 +1,10 @@
 ﻿@charset "UTF-8";
 
 /**
- * @authors kk
+ * common
+ * @authors shikkya
  * @date    2019-03-12
+ * @version $Id$
  */
 
 * {
@@ -19,6 +21,7 @@ body {
     font-size: 14px;
     cursor: default;
     min-width: 1000px;
+    background: #fff;
 }
 
 ul,
@@ -124,6 +127,39 @@ a {
     background-color: #ccc;
 }
 
+/*************** header ***************/
+
+.header {
+    background: #fff;
+    width: 100%;
+    height: 20px;
+    overflow: hidden;
+    padding: 20px 0px;
+    position: fixed;
+    top: 0px;
+    z-index: 998;
+}
+
+.header .logo img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+.header .product li {
+    display: inline-block;
+    margin: 0px 0px 0px 15px;
+    height: 20px;
+    line-height: 20px;
+}
+
+.header .product li a {
+    color: #666;
+    font-size: 15px;
+    border-bottom: 2px solid #fff;
+    padding: 1px 5px;
+    transition: all 0.4s;
+}
+
 /*************** btn ***************/
 
 .btn {
@@ -145,14 +181,14 @@ a {
 
 /*************** position btn ***************/
 
-.shortcut {
+.pos_btn {
     position: fixed;
     bottom: 90px;
     right: 0px;
     z-index: 999;
 }
 
-.shortcut div {
+.pos_btn div {
     text-align: center;
     cursor: pointer;
     width: 35px;

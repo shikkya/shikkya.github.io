@@ -55,16 +55,17 @@
             </div>
             <div class="picture wid_size">
                 <ul id="picUl">
-                    <pic-item :size="curSize" :loadimg="picLoadImg" :item="item" v-for="item in picShowList"></pic-item>
+                    <pic-item :size="curSize" :item="item" v-for="item in picShowList"></pic-item>
                 </ul>
             </div>
             <no-info-item v-if="isNoInfo"></no-info-item>
         </div>
-        <go-top-item></go-top-item>
+        <pos-btn-item></pos-btn-item>
         <footer-item></footer-item>
     </div>
     <script src="../../../plugins/vue/vue.min.js"></script>
     <script src="../../script/common.js"></script>
+    <script src="../../script/wallpaper/common.js"></script>
     <script src="../../script/wallpaper/list.js"></script>
 </body>
 

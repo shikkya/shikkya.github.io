@@ -1,6 +1,8 @@
 ﻿/**
- * @authors kk
+ * common
+ * @authors shikkya
  * @date    2019-03-18
+ * @version $Id$
  */
 
 // 判断当前设备为PC或移动
@@ -54,30 +56,7 @@ function IEVersion() {
     }
 }
 
-// 暂无信息
-Vue.component("NoInfoItem", {
-    template: '<div id="noInfo" class="no_info"><img :src="imgUrl" :data-src="dataImg"/><p>{{text}}</p></div>',
-    data: function() {
-        return {
-            text: '暂时没有哦 ~ 看看其他的吧',
-            imgUrl: '../../images/common_02.png',
-            dataImg: '../../images/common_01.png'
-        }
-    }
-})
-
-// 返回顶部
-function goTop() {
-    clearInterval(timer);
-    var timer = setInterval(function() {
-        var target = document.documentElement.scrollTop > document.body.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
-        target -= Math.ceil(target / 10);
-        window.scrollTo(0, target);
-        if (target <= 0) {
-            clearInterval(timer);
-        }
-    }, 15);
-};
+/****************************** 功能 ******************************/
 
 // 图片加载-判断浏览器  
 var Browser = new Object();
@@ -127,13 +106,46 @@ function getUrlStr(name) {
     return url.split(name + '=')[1].split('&')[0];
 }
 
+// 设置content最小高度
+function setContentMinHei(num) {
+    document.getElementById('content').style.minHeight = (document.body.clientHeight - num) + 'px';
+}
+
+// 返回顶部
+function goTop() {
+    clearInterval(timer);
+    var timer = setInterval(function() {
+        var target = document.documentElement.scrollTop > document.body.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
+        target -= Math.ceil(target / 10);
+        window.scrollTo(0, target);
+        if (target <= 0) {
+            clearInterval(timer);
+        }
+    }, 15);
+}
+
 /****************************** 组件 ******************************/
 
-// 悬浮功能按钮
-Vue.component("GoTopItem", {
-    template: '<div class="shortcut"><div class="go_top" @click="goTop"><i class="icon iconfont icon-arrow-top"></i></div><div class="go_home" @click="window.location.href=\'./index.html\'"><i class="icon iconfont icon-home"></i></div></div>'
+// 头部 - 各产品首页
+Vue.component("HeaderIndexItem", {
+    props: ['logoimg', 'curindex'],
+    template: '<div class="header"><div class="wid_size"><a class="logo"><img :src="logoimg"/></a><ul class="product flr"><li v-for="(item,index) in productList" :class="{active:index==curindex}"><a v-if="index==curindex">{{item.text}}</a><a v-else :href="item.url">{{item.text}}</a></li></ul></div></div>',
+    data: function() {
+        return {
+            productList: [
+                { text: '可可导航', url: '../index.html' },
+                { text: '模板壁纸', url: '../wallpaper/index.html' },
+                { text: '便易工具', url: '../tool/index.html' },
+                { text: '特效码集', url: '../code/index.html' }
+            ]
+        }
+    }
 })
 
+// 悬浮功能按钮
+Vue.component("PosBtnItem", {
+    template: '<div class="pos_btn"><div class="go_top" @click="goTop"><i class="icon iconfont icon-arrow-top"></i></div><div class="go_home" @click="window.location.href=\'./index.html\'"><i class="icon iconfont icon-home"></i></div></div>'
+})
 
 // 页脚
 Vue.component("FooterItem", {
@@ -147,19 +159,23 @@ Vue.component("FooterItem", {
     }
 })
 
-/****************************** 数据 ******************************/
+// 暂无信息
+Vue.component("NoInfoItem", {
+    template: '<div id="noInfo" class="no_info"><img :src="imgUrl" :data-src="dataImg"/><p>{{text}}</p></div>',
+    data: function() {
+        return {
+            text: '暂时没有哦 ~ 看看其他的吧',
+            imgUrl: '../../images/common_02.png',
+            dataImg: '../../images/common_01.png'
+        }
+    }
+})
 
-// 各产品首页右上角导航
-var productList = [
-    { text: '可可导航', url: '../index.html' },
-    { text: '模板壁纸', url: '../wallpaper/index.html' },
-    { text: '便易工具', url: '../tool/index.html' },
-    { text: '特效码集', url: '../code/index.html' }
-];
+/****************************** 数据 ******************************/
 
 // 金句列表
 var sentenceList = [
     '存储阳光，必有远芳。',
     '生活如人饮水，冷暖自知。',
     '因为因果，所以要善待他人。'
-];
+]

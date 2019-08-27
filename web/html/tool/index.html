@@ -15,19 +15,7 @@
 
 <body>
     <div id="app" v-cloak>
-        <div class="header">
-            <div class="wid_size">
-                <a :href="homeUrl" class="logo">
-                <img :src="logoImg"/>
-            </a>
-                <ul class="flr">
-                    <li v-for="(item,index) in productList" :class="{active:index==2}">
-                        <a v-if="index==2">{{item.text}}</a>
-                        <a v-else :href="item.url">{{item.text}}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <header-index-item :logoimg="logoImg" :curindex="curIndex"></header-index-item>
         <div class="content">
             <div class="top">
                 <img :src="topObj.bgImgInit" :data-src="topObj.bgImg"/>
@@ -50,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <go-top-item></go-top-item>
+        <pos-btn-item></pos-btn-item>
         <footer-item></footer-item>
     </div>
     <script src="../../../plugins/vue/vue.min.js"></script>

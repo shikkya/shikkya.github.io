@@ -1,6 +1,8 @@
 ﻿/**
- * @authors kk
+ * tool - stopwatch
+ * @authors shikkya
  * @date    2019-04-08
+ * @version $Id$
  */
 
 // 计次列表

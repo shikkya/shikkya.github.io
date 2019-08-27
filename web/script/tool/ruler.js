@@ -1,6 +1,8 @@
 ﻿/**
- * @authors kk
+ * tool - ruler
+ * @authors shikkya
  * @date    2019-04-02
+ * @version $Id$
  */
 
 // 尺子分段数据 wid原图高为35.95mm时的宽度/英寸
