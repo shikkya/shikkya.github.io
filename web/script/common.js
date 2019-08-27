@@ -54,26 +54,6 @@ function IEVersion() {
     }
 }
 
-// 各产品首页右上角导航
-var productList = [
-    { text: '可可导航', url: '../index.html' },
-    { text: '模板壁纸', url: '../wallpaper/index.html' },
-    { text: '便易工具', url: '../tool/index.html' },
-    { text: '特效码集', url: '../code/index.html' }
-];
-
-// 页脚
-Vue.component("FooterItem", {
-    template: '<div class="footer" v-cloak><ul><li><img :src="logoImg"/></li><li><p>联系 QQ：{{QNum}}</p><p>意见反馈：{{email}}</p></li></ul></div>',
-    data: function() {
-        return {
-            logoImg: '../../images/footer_01.png',
-            QNum: '125048224',
-            email: 'shikkya@qq.com'
-        }
-    }
-})
-
 // 暂无信息
 Vue.component("NoInfoItem", {
     template: '<div id="noInfo" class="no_info"><img :src="imgUrl" :data-src="dataImg"/><p>{{text}}</p></div>',
@@ -84,11 +64,6 @@ Vue.component("NoInfoItem", {
             dataImg: '../../images/common_01.png'
         }
     }
-})
-
-// 悬浮功能按钮
-Vue.component("GoTopItem", {
-    template: '<div class="shortcut"><div class="go_top" @click="goTop"><i class="icon iconfont icon-arrow-top"></i></div><div class="go_home" @click="window.location.href=\'./index.html\'"><i class="icon iconfont icon-home"></i></div></div>'
 })
 
 // 返回顶部
@@ -151,3 +126,40 @@ function getUrlStr(name) {
     var url = window.location.href;
     return url.split(name + '=')[1].split('&')[0];
 }
+
+/****************************** 组件 ******************************/
+
+// 悬浮功能按钮
+Vue.component("GoTopItem", {
+    template: '<div class="shortcut"><div class="go_top" @click="goTop"><i class="icon iconfont icon-arrow-top"></i></div><div class="go_home" @click="window.location.href=\'./index.html\'"><i class="icon iconfont icon-home"></i></div></div>'
+})
+
+
+// 页脚
+Vue.component("FooterItem", {
+    template: '<div class="footer" v-cloak><ul><li><img :src="logoImg"/></li><li><p>联系 QQ：{{QNum}}</p><p>意见反馈：{{email}}</p></li></ul></div>',
+    data: function() {
+        return {
+            logoImg: '../../images/footer_01.png',
+            QNum: '125048224',
+            email: 'shikkya@qq.com'
+        }
+    }
+})
+
+/****************************** 数据 ******************************/
+
+// 各产品首页右上角导航
+var productList = [
+    { text: '可可导航', url: '../index.html' },
+    { text: '模板壁纸', url: '../wallpaper/index.html' },
+    { text: '便易工具', url: '../tool/index.html' },
+    { text: '特效码集', url: '../code/index.html' }
+];
+
+// 金句列表
+var sentenceList = [
+    '存储阳光，必有远芳。',
+    '生活如人饮水，冷暖自知。',
+    '因为因果，所以要善待他人。'
+];
