@@ -1,12 +1,14 @@
 ﻿/**
- * @authors kk
+ * code - common
+ * @authors shikkya
  * @date    2019-07-13
+ * @version $Id$
  */
 
 // 列表组件
-var PicItem = {
-    props: ['item', 'loadimg'],
-    template: '<li @click="handleItemClick"><img :src="loadimg" :data-src="\'../../../res/code/\' + item.id+ \'/shikkya.png\'"/><h3 :title="item.tit">{{item.tit}}</h3><p><i class="icon iconfont icon-tag"></i><span v-for="iteminner in item.keyWord">{{iteminner}}</span></p></li>',
+var codeItem = {
+    props: ['item'],
+    template: '<li @click="handleItemClick"><img src="../../images/wallpaper_04.png" :data-src="\'../../../res/code/\' + item.id+ \'/shikkya.png\'"/><h3 :title="item.tit">{{item.tit}}</h3><p><i class="icon iconfont icon-tag"></i><span v-for="iteminner in item.keyWord">{{iteminner}}</span></p></li>',
     methods: {
         handleItemClick: function() {
             window.open('./detail.html?codeId=' + this.item.id);
@@ -15,7 +17,7 @@ var PicItem = {
 }
 
 // 所有数据 
-var picList = [{
+var codeList = [{
         id: '001',
         tit: '容器内拖拽分割线自由分配左右空间',
         type: '功能',

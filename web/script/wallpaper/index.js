@@ -33,7 +33,7 @@ var vm = new Vue({
         picShowList: function() {
             var tempList = new Array();
             for (var i = 0; i < this.picObj.list.length; i++) {
-                var num = parseInt(this.picObj.list[i]);
+                var num = parseInt(this.picObj.list[i]) - 1;
                 tempList[i] = {
                     'img': picList[num].img,
                     'tit': picList[num].tit

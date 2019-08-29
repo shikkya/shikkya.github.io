@@ -160,6 +160,23 @@ a {
     transition: all 0.4s;
 }
 
+.header .sentence {
+    display: inline-block;
+    color: #fff;
+    font-size: 16px;
+    height: 28px;
+    line-height: 26px;
+    margin-right: 20px;
+    padding-right: 18px;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.header_detail .btn {
+    font-size: 12px;
+    padding: 6px 0px;
+    margin-top: -1px;
+}
+
 /*************** btn ***************/
 
 .btn {

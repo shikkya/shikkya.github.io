@@ -15,12 +15,7 @@
 
 <body>
     <div id="app" v-cloak>
-        <div class="header">
-            <div class="wid_size">
-                <a :href="headerObj.homeUrl" class="logo"><img :src="headerObj.logoImg"/></a>
-                <a :href="headerObj.goListUrl" class="btn flr">{{headerObj.goListBtn}}</a>
-            </div>
-        </div>
+        <header-detail-item></header-detail-item>
         <div class="content" id="content">
             <div class="out wid_size">
                 <div class="left">
@@ -71,7 +66,7 @@
                     </div>
                 </div>
             </div>
-            <go-top-item></go-top-item>
+            <pos-btn-item></pos-btn-item>
             <footer-item></footer-item>
         </div>
         <script src="../../../plugins/vue/vue.min.js"></script>

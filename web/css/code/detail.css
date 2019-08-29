@@ -1,33 +1,17 @@
 ﻿@charset "UTF-8";
 
 /**
- * @authors kk
+ * code - detail
+ * @authors shikkya
  * @date    2019-07-16
+ * @version $Id$
  */
 
 /*************** header ***************/
 
-.header {
+.header_detail {
     background: #506a85;
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    z-index: 998;
     border-bottom: 15px solid #3E5872;
-    height: 20px;
-    padding: 20px 0px;
-    overflow: hidden;
-}
-
-.header .logo img {
-    height: 20px;
-    vertical-align: middle;
-}
-
-.header .btn {
-    font-size: 12px;
-    padding: 6px 0px;
-    margin-top: -1px;
 }
 
 /*************** content ***************/
@@ -37,6 +21,7 @@
     font-size: 16px;
     padding-top: 75px;
     padding-bottom: 10px;
+    min-height: calc(100vh - 155px);
 }
 
 .out {

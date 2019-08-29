@@ -1,32 +1,26 @@
 ﻿/**
- * @authors kk
+ * code - detail
+ * @authors shikkya
  * @date    2019-07-16
+ * @version $Id$
  */
-
-// 根据url中的codeId获取对象数据
-var codeId = getUrlStr('codeId');
-for (var i = 0; i < picList.length; i++) {
-    if (picList[i].id == codeId) {
-        var dataObj = picList[i];
-        break;
-    }
-}
 
 var vm = new Vue({
     el: '#app',
-    data: {
-        headerObj: {
-            homeUrl: './index.html',
-            logoImg: '../../images/footer_01.png',
-            goListUrl: './list.html',
-            goListBtn: '返回特效列表'
-        },
-        dataObj: dataObj
+    data: {},
+    computed: {
+        dataObj: function() {
+            var codeId = getUrlStr('codeId');
+            for (var i = 0; i < codeList.length; i++) {
+                if (codeList[i].id == codeId) {
+                    var dataObj = codeList[i];
+                    break;
+                }
+            }
+            return dataObj;
+        }
     },
     mounted: function() {
-        // 初始化content最小高度
-        document.getElementById('content').style.minHeight = (document.body.clientHeight - 155) + 'px';
-
         // 加载图片
         loadImg();
     },

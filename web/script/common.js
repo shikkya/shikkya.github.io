@@ -64,7 +64,7 @@ Browser.userAgent = window.navigator.userAgent.toLowerCase();
 Browser.ie = /msie/.test(Browser.userAgent);
 Browser.Moz = /gecko/.test(Browser.userAgent);
 
-// 图片加载
+// 图片加载 - 入口
 function loadImg() {
     var imgList = document.getElementsByTagName('img');
     for (i = 0; i < imgList.length; i++) {
@@ -119,6 +119,12 @@ function goTop() {
     }, 15);
 }
 
+// 随机整数 包括m不包括n
+function getRandomNum(m, n) {
+    var random = Math.floor(Math.random() * (m - n) + n);
+    return random;
+}
+
 /****************************** 组件 ******************************/
 
 // 头部 - 各产品首页
@@ -139,7 +145,12 @@ Vue.component("HeaderIndexItem", {
 
 // 头部 - 各产品详情页
 Vue.component("HeaderDetailItem", {
-    template: '<div class="header header_detail"><div class="wid_size"><a href="./index.html" class="logo"><img src="../../images/footer_01.png"/></a><a href="./index.html#toolList" class="btn flr">返回工具列表</a></div></div>'
+    template: '<div class="header header_detail"><div class="wid_size"><a href="./index.html" class="logo"><img src="../../images/footer_01.png"/></a><a href="./index.html#toolList" class="btn flr">返回工具列表</a><span class="sentence flr">{{sentenceList[num]}}</span></div></div>',
+    data: function() {
+        return {
+            num: getRandomNum(0, sentenceList.length)
+        }
+    }
 })
 
 // 悬浮功能按钮
@@ -175,7 +186,23 @@ Vue.component("NoInfoItem", {
 
 // 金句列表
 var sentenceList = [
-    '存储阳光，必有远芳。',
-    '生活如人饮水，冷暖自知。',
-    '因为因果，所以要善待他人。'
+    '莫生气，莫生气，怎能事事都如意',
+    '存储阳光，必有远芳',
+    '你必须非常努力，才能做到毫不在意',
+    '生活如人饮水，冷暖自知',
+    '勿忘初心，方得始终',
+    '发光并非太阳的专利，你也可以',
+    '弱者喋喋不休，强者无需多言',
+    '没有所谓的命运，只有不同的选择',
+    '放弃不难，坚持不易',
+    '越努力，越幸运',
+    '心的通透，不是没有杂念，而是明白取舍',
+    '水的清澈，并非不含杂质，而是懂得沉淀',
+    '除了奋斗，别无选择',
+    '每一个不曾起舞的日子，都是对生命的辜负',
+    '不以物喜，不以己悲',
+    '自助者天助之，自弃者天弃之',
+    '如果你曾歌颂黎明，那么也请你拥抱黑夜',
+    '可以奋起激进，也懂适可而止',
+    '取舍间必有得失，无需太过计较'
 ]

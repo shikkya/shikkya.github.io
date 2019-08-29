@@ -1,44 +1,40 @@
 ﻿/**
- * @authors kk
+ * code - index
+ * @authors shikkya
  * @date    2019-07-13
+ * @version $Id$
  */
 
 var vm = new Vue({
     el: '#app',
     components: {
-        PicItem: PicItem
+        codeItem: codeItem
     },
     data: {
-        homeUrl: './index.html',
         logoImg: '../../images/code_01.png',
-        productList: productList,
+        curIndex: '3',
         topObj: {
             img: '../../images/code_02.png',
             tit: '特效码集演示下载',
             text: '纯前端代码页面特效 · 多浏览器兼容在线演示 · 全部开源一键下载'
         },
-        picObj: {
+        codeObj: {
             tit: '最新特效',
             moreUrl: './list.html',
-            loadImg: '../../images/wallpaper_04.png',
-            list: [{
-                    id: '001',
-                    tit: '容器内拖拽分割线自由分配左右空间',
-                    type: '其他',
-                    keyWord: ['拖拽', 'js']
-                },
-                {
-                    id: '002',
-                    tit: '数字滚动增值插件countUp.js',
-                    type: '其他',
-                    keyWord: ['数字', '滚动', '跳数', 'js']
-                }
-            ]
+            list: ['001', '002', '003', '004', '005', '007']
         }
     },
     computed: {
-        picText: function() {
-            return '点击进入特效详情页 · 点击<a href="' + this.picObj.moreUrl + '">更多</a>浏览全部特效';
+        codeText: function() {
+            return '点击进入特效详情页 · 点击<a href="' + this.codeObj.moreUrl + '">更多</a>浏览全部特效';
+        },
+        codeShowList: function() {
+            var tempList = new Array();
+            for (var i = 0; i < this.codeObj.list.length; i++) {
+                var num = parseInt(this.codeObj.list[i]) - 1;
+                tempList[i] = codeList[num];
+            }
+            return tempList;
         }
     },
     mounted: function() {
