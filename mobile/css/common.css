@@ -1,0 +1,122 @@
+﻿@charset "UTF-8";
+
+/**
+ * common
+ * @authors shikkya
+ * @date    2019-08-29
+ * @version $Id$
+ */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: '微软雅黑 Light', '微软雅黑 Regular', '微软雅黑';
+    font-size: 14px;
+    background: #fff;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+textarea {
+    background: #fff;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+/*************** common ***************/
+
+.fll {
+    float: left;
+}
+
+.flr {
+    float: right;
+}
+
+.fcb {
+    clear: both;
+}
+
+/*************** btn ***************/
+
+.btn {
+    display: inline-block;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    width: 80px;
+    padding: 5px 0px;
+    border: 0px;
+    border-radius: 50px;
+}
+
+/*************** position btn ***************/
+
+.pos_btn {
+    position: fixed;
+    bottom: 50px;
+    right: 0px;
+    z-index: 999;
+}
+
+.pos_btn div {
+    text-align: center;
+    width: 33px;
+    height: 33px;
+    padding-left: 3px;
+    line-height: 31px;
+    overflow: hidden;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    color: #fff;
+}
+
+.pos_btn .go_top {
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.pos_btn .go_contact {
+    font-size: 18px;
+    margin-top: 12px;
+}

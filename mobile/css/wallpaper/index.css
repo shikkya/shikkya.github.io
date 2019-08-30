@@ -1,0 +1,99 @@
+﻿@charset "UTF-8";
+
+/**
+ * wallpaper - index
+ * @authors shikkya
+ * @date    2019-08-29
+ * @version $Id$
+ */
+
+html,
+body {
+    background: #F1F6FA;
+}
+
+.btn {
+    background: #00bc9c;
+    margin-top: 10px;
+    width: 85%;
+}
+
+/*************** header ***************/
+
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.header .back,
+.header .top {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.header .back {
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    font-size: 16px;
+    text-align: center;
+    background: #506a85;
+    color: #fff;
+    border-radius: 50%;
+    margin: 15px;
+}
+
+.header .top {
+    background: #506a85;
+    color: #fff;
+    border-bottom-left-radius: 15px;
+    padding: 15px 0px 15px 25px;
+    width: calc(100% - 90px);
+}
+
+.header .top p {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/*************** content ***************/
+
+.content {
+    padding-top: 73px;
+}
+
+.list ul {
+    font-size: 0px;
+}
+
+.list li {
+    display: inline-block;
+    background: #fff;
+    font-size: 13px;
+    padding: 20px 0px 20px 20px;
+    margin-top: 20px;
+    width: calc(33.3% - 33px);
+    text-align: center;
+}
+
+.list li:nth-child(3n) {
+    padding-right: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.list li:last-child {
+    border-bottom-right-radius: 0px;
+}
+
+.list li img {
+    width: 100%;
+}
+
+/*************** position btn ***************/
+
+.pos_btn div {
+    background: #506a85;
+}
