@@ -8,7 +8,7 @@
 var vm = new Vue({
     el: '#app',
     data: {
-        tit: 'Welcome To Know About Shikkya',
+        logoImg: '../../images/home_02.png',
         curIndex: -1,
         productList: [
             { tit: '模板壁纸', img: 'home_03.png', url: '../wallpaper/index.html' },

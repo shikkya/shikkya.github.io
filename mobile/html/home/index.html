@@ -14,7 +14,7 @@
 <body>
     <div id="app" class="app" v-cloak>
         <div class="header">
-            <img src="../../images/home_02.png"/>
+            <img :src="logoImg"/>
         </div>
             <div class="content">
                 <div :class="'type type_'+index" v-for="(item,index) in productList">
