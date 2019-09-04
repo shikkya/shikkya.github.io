@@ -96,12 +96,16 @@ a {
     }
 }
 
-.fll {
+.fl {
     float: left;
 }
 
-.flr {
+.fr {
     float: right;
+}
+
+.fc {
+    clear: both;
 }
 
 /*************** scrollbar ***************/

@@ -20,7 +20,7 @@
                 <a :href="homeUrl" class="logo">
                 <img :src="logoImg"/>
             </a>
-                <div class="search flr">
+                <div class="search fr">
                     <input type="text" id="searchInput" v-model="searchVal" placeholder="请输入要搜索的关键字" />
                     <button class="btn" @click="search">搜索</button>
                 </div>
@@ -29,18 +29,18 @@
         <div id="content" class="content">
             <div class="top">
                 <div class="wid_size">
-                    <ul class="type fll">
+                    <ul class="type fl">
                         <li v-for="(item,index) in typeList" :class="{active:index==curType}" @click="changeType(item,index)">
                             <span>{{item}}</span>
                         </li>
                     </ul>
-                    <div class="key_word fll" v-if="curkeyWord!=''">
+                    <div class="key_word fl" v-if="curkeyWord!=''">
                         <div>
                             <span :title="curkeyWord">搜索：{{curkeyWord}}</span>
                             <i class="icon iconfont icon-close-circle" @click="delSearch"></i>
                         </div>
                     </div>
-                    <div class="result_num flr">
+                    <div class="result_num fr">
                         <span>共 {{resultNum}} 个</span>
                     </div>
                 </div>

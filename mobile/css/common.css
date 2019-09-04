@@ -65,15 +65,15 @@ a {
 
 /*************** common ***************/
 
-.fll {
+.fl {
     float: left;
 }
 
-.flr {
+.fr {
     float: right;
 }
 
-.fcb {
+.fc {
     clear: both;
 }
 
@@ -97,26 +97,31 @@ a {
     bottom: 50px;
     right: 0px;
     z-index: 999;
+    text-align: right;
 }
 
 .pos_btn div {
-    text-align: center;
-    width: 33px;
+    width: 14px;
     height: 33px;
-    padding-left: 3px;
     line-height: 31px;
     overflow: hidden;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     color: #fff;
+    padding: 0px 10px;
+    font-size: 18px;
 }
 
 .pos_btn .go_top {
-    font-size: 20px;
-    line-height: 28px;
+    display: inline-block;
+    line-height: 30px;
 }
 
 .pos_btn .go_contact {
-    font-size: 18px;
     margin-top: 12px;
+}
+
+.pos_btn span {
+    margin-left: 10px;
+    font-size: 15px;
 }

@@ -8,7 +8,7 @@
 // 事件列表
 var ListItem = {
     props: ['item'],
-    template: '<li :class="{hide:item.isHide}"><span :title="item.tit" class="fll">{{item.tit}}</span><font :class="item.fontClass">{{item.time}}</font><button class="btn" :class="{close:item.btnText==\'关闭\'}" @click="delList">{{item.btnText}}</button></li>',
+    template: '<li :class="{hide:item.isHide}"><span :title="item.tit" class="fl">{{item.tit}}</span><font :class="item.fontClass">{{item.time}}</font><button class="btn" :class="{close:item.btnText==\'关闭\'}" @click="delList">{{item.btnText}}</button></li>',
     methods: {
         delList: function() {
             if (this.item.btnText == '关闭') {

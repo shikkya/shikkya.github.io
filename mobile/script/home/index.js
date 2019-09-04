@@ -1,29 +1,24 @@
 ﻿/**
  * home - index
  * @authors shikkya
- * @date    2019-08-29
+ * @date    2019-09-02
  * @version $Id$
  */
 
-var TypeItem = {
-    props: ['content', 'index'],
-    template: '<div :class="\'type type_\'+index"><img :src="\'../images/\'+content.imgName"/><a :href="content.url">{{content.text}}</a></div>',
-    methods: {}
-}
-
 var vm = new Vue({
     el: '#app',
-    components: {
-        TypeItem: TypeItem
-    },
     data: {
-        titVal: 'Welcome To Know About Shikkya',
-        list: [
-            { imgName: 'index_11.png', text: '模板壁纸', url: './wallpaper/index.html' },
-            { imgName: 'index_07.png', text: '便易工具', url: './tool/index.html' },
-            { imgName: 'index_06.png', text: '特效码集', url: './code/index.html' },
-            { imgName: 'index_10.png', text: '敬请期待', url: '' }
+        tit: 'Welcome To Know About Shikkya',
+        curIndex: -1,
+        productList: [
+            { tit: '模板壁纸', img: 'home_03.png', url: '../wallpaper/index.html' },
+            { tit: '便易工具', img: 'home_04.png', url: '../tool/index.html' },
+            { tit: '特效码集', img: 'home_05.png', url: '../code/index.html' }
         ]
     },
-    methods: {}
+    methods: {
+        checkType: function(index) {
+            this.curIndex = this.curIndex == index ? -1 : index;
+        }
+    }
 })

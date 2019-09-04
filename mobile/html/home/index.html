@@ -12,19 +12,23 @@
 </head>
 
 <body>
-    <div id="app" v-cloak>
-        <!-- <div class="content" id="content" v-cloak> -->
-        <div class="main">
-            <div class="tit">{{titVal}}</div>
-            <type-item :content="item" :index="index" v-for="(item,index) in list"></type-item>
-            <div class="type type_more">
-                <a href="">敬请期待</a>
+    <div id="app" class="app" v-cloak>
+        <div class="header">
+            <img src="../../images/home_02.png"/>
+        </div>
+            <div class="content">
+                <div :class="'type type_'+index" v-for="(item,index) in productList">
+                    <img :class="{active:index==curIndex}" :src="'../../images/'+item.img" @click="checkType(index)"/>
+                    <a :href="item.url">{{item.tit}}</a>
+                </div>
+                <div class="type type_more">
+                    <a>敬请期待</a>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="../../../plugins/vue/vue.min.js"></script>
-    <script src="../../script/common.js"></script>
-    <script src="../../script/home/index.js"></script>
+        <script src="../../../plugins/vue/vue.min.js"></script>
+        <script src="../../script/common.js"></script>
+        <script src="../../script/home/index.js"></script>
 </body>
 
 </html>

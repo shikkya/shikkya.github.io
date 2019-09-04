@@ -130,7 +130,7 @@ function getRandomNum(m, n) {
 // 头部 - 各产品首页
 Vue.component("HeaderIndexItem", {
     props: ['logoimg', 'curindex'],
-    template: '<div class="header"><div class="wid_size"><a class="logo"><img :src="logoimg"/></a><ul class="product flr"><li v-for="(item,index) in productList" :class="{active:index==curindex}"><a v-if="index==curindex">{{item.text}}</a><a v-else :href="item.url">{{item.text}}</a></li></ul></div></div>',
+    template: '<div class="header"><div class="wid_size"><a class="logo"><img :src="logoimg"/></a><ul class="product fr"><li v-for="(item,index) in productList" :class="{active:index==curindex}"><a v-if="index==curindex">{{item.text}}</a><a v-else :href="item.url">{{item.text}}</a></li></ul></div></div>',
     data: function() {
         return {
             productList: [
@@ -145,7 +145,7 @@ Vue.component("HeaderIndexItem", {
 
 // 头部 - 各产品详情页
 Vue.component("HeaderDetailItem", {
-    template: '<div class="header header_detail"><div class="wid_size"><a href="./index.html" class="logo"><img src="../../images/footer_01.png"/></a><a href="./index.html#toolList" class="btn flr">返回工具列表</a><span class="sentence flr">{{sentenceList[num]}}</span></div></div>',
+    template: '<div class="header header_detail"><div class="wid_size"><a href="./index.html" class="logo"><img src="../../images/footer_01.png"/></a><a href="./index.html#toolList" class="btn fr">返回工具列表</a><span class="sentence fr">{{sentenceList[num]}}</span></div></div>',
     data: function() {
         return {
             num: getRandomNum(0, sentenceList.length)
@@ -204,5 +204,6 @@ var sentenceList = [
     '自助者天助之，自弃者天弃之',
     '如果你曾歌颂黎明，那么也请你拥抱黑夜',
     '可以奋起激进，也懂适可而止',
-    '取舍间必有得失，无需太过计较'
+    '取舍间必有得失，无需太过计较',
+    '天上下雨地上滑，自己滑倒自己爬'
 ]

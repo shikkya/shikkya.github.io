@@ -8,7 +8,7 @@
 // 计次列表
 var ListItem = {
     props: ['item'],
-    template: '<li><font class="fll">计次{{item.id}}</font><span>间隔 {{item.interval}}</span>{{item.time}}</li>'
+    template: '<li><font class="fl">计次{{item.id}}</font><span>间隔 {{item.interval}}</span>{{item.time}}</li>'
 }
 
 var vm = new Vue({

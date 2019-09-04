@@ -119,6 +119,19 @@ function goTop() {
     }, 15);
 }
 
+// 点击联系我们
+function goContact() {
+    var obj = document.getElementById('goContact');
+    if (obj.clientWidth == 34) {
+        obj.style.width = '152px';
+        setTimeout(function() {
+            obj.style.width = '14px';
+        }, 10000);
+    } else {
+        obj.style.width = '14px';
+    }
+}
+
 // 随机整数 包括m不包括n
 function getRandomNum(m, n) {
     var random = Math.floor(Math.random() * (m - n) + n);
@@ -129,7 +142,7 @@ function getRandomNum(m, n) {
 
 // 悬浮功能按钮
 Vue.component("PosBtnItem", {
-    template: '<div class="pos_btn"><div class="go_top" @click="goTop"><i class="icon iconfont icon-arrow-top"></i></div><div class="go_contact" @click="window.location.href=\'./index.html\'"><i class="icon iconfont icon-contact"></i></div></div>'
+    template: '<div class="pos_btn"><div class="go_top" @click="goTop"><i class="icon iconfont icon-arrow-top"></i></div><div class="go_contact" id="goContact" @click="goContact"><i class="icon iconfont icon-contact"></i><span>shikkya@qq.com</span></div></div>'
 })
 
 /****************************** 数据 ******************************/
@@ -154,5 +167,6 @@ var sentenceList = [
     '自助者天助之，自弃者天弃之',
     '如果你曾歌颂黎明，那么也请你拥抱黑夜',
     '可以奋起激进，也懂适可而止',
-    '取舍间必有得失，无需太过计较'
+    '取舍间必有得失，无需太过计较',
+    '天上下雨地上滑，自己滑倒自己爬'
 ]
