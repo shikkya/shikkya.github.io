@@ -119,6 +119,7 @@ a {
 
 .pos_btn .go_contact {
     margin-top: 12px;
+    transition: all 0.8s;
 }
 
 .pos_btn span {

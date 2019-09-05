@@ -18,7 +18,7 @@ var vm = new Vue({
     },
     data: {
         tit: '模板壁纸 - SHIKKYA .',
-        text: '高清壁纸一键下载，更多精彩请访问电脑版',
+        text: '更多精彩请使用电脑浏览器打开！',
         picList: [
             { img: '001.jpg', type: '卡通,文字', tit: '萌混过关', keyWord: '鸭子,动物' },
             { img: '002.jpg', type: '卡通', tit: 'Kanahei', keyWord: '鸭子,动物' },

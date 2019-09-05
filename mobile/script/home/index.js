@@ -16,7 +16,12 @@ var vm = new Vue({
             { tit: '特效码集', img: 'home_05.png', url: '../code/index.html' }
         ]
     },
+    mounted: function() {
+        // 加载图片
+        loadImg();
+    },
     methods: {
+        // 点击图片
         checkType: function(index) {
             this.curIndex = this.curIndex == index ? -1 : index;
         }
