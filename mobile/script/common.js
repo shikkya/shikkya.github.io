@@ -5,6 +5,8 @@
  * @version $Id$
  */
 
+/****************************** 功能 ******************************/
+
 // 判断当前设备为PC或移动
 checkDevice();
 
@@ -20,12 +22,6 @@ function checkDevice() {
         window.location.replace(url.split('/mobile/html/')[0] + '/web/html/' + url.split('/mobile/html/')[1].split('/')[0] + '/index.html');
     }
 }
-/*
-file:///D:/xampp/htdocs/shikkya.github.io/web/html/wallpaper/index.html
-file:///D:/xampp/htdocs/shikkya.github.io/mobile/html/wallpaper/index.html
-*/
-
-/****************************** 功能 ******************************/
 
 // 图片加载-判断浏览器  
 var Browser = new Object();
