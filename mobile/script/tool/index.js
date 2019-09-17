@@ -8,7 +8,7 @@
 // 工具列表
 var ToolItem = {
     props: ['item'],
-    template: '<li><img src="../../images/tool_01.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3><a class="btn" @click="handleItemClick">下载</a></li>',
+    template: '<li @click="handleItemClick"><img src="../../images/tool_01.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3></li>',
     methods: {
         handleItemClick: function() {
             alert(this.item.url);
