@@ -1,0 +1,99 @@
+﻿@charset "UTF-8";
+
+/**
+ * tool - index
+ * @authors shikkya
+ * @date    2019-09-16
+ * @version $Id$
+ */
+
+html,
+body {
+    background: #F2F1FA;
+}
+
+.btn {
+    background: #00cbdb;
+    margin-top: 10px;
+    width: 85%;
+}
+
+/*************** header ***************/
+
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.header .back,
+.header .top {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.header .back {
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    font-size: 16px;
+    text-align: center;
+    background: #403a6c;
+    color: #fff;
+    border-radius: 50%;
+    margin: 15px 10px;
+}
+
+.header .top {
+    background: #403a6c;
+    color: #fff;
+    border-bottom-left-radius: 15px;
+    padding: 15px 0px 15px 25px;
+    width: calc(100% - 80px);
+}
+
+.header .top p {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/*************** content ***************/
+
+.content {
+    padding-top: 73px;
+}
+
+.list ul {
+    font-size: 0px;
+}
+
+.list li {
+    display: inline-block;
+    background: #fff;
+    font-size: 13px;
+    padding: 20px 0px 20px 20px;
+    margin-top: 20px;
+    width: calc(50% - 39px);
+    text-align: center;
+}
+
+.list li:nth-child(2n) {
+    padding-right: 20px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.list li:last-child {
+    border-bottom-right-radius: 0px;
+}
+
+.list li img {
+    width: 100%;
+}
+
+/*************** position btn ***************/
+
+.pos_btn div {
+    background: #403a6c;
+}
