@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>便易工具-SHIKKYA</title>
+    <link rel="shortcut icon" href="../../images/ico/tool.ico" />
+    <link rel="stylesheet" type="text/css" href="../../../plugins/iconfont/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/tool/pi.css" />
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <div class="header">
+            <a class="back" href="javaScript:history.go(-1)">
+                <i class="icon iconfont icon-back"></i>
+            </a>
+            <div class="top">
+                <h3>{{tit}}</h3>
+                <p>{{text}}</p>
+            </div>
+        </div>
+        <div class="content">
+            <div class="calculate">
+                <p>快速计算圆周率小数点后指定位数的值，<font :class="{error:errorClass}">请输入小于等于1000的正整数</font>
+                </p>
+                <p>小数点后第 <input type="text" v-model="inputVal_1" /> 位是 <span>{{result_1}}</span></p>
+                <p>小数点后第 <input type="text" v-model="inputVal_2" /> 位 + 第 <input type="text" v-model="inputVal_3" /> 位 = <span>{{result_2}}</span></p>
+            </div>
+            <div class="show">
+                <show-pi-item :item="item" v-for="item in 5"></show-pi-item>
+            </div>
+        </div>
+        <pos-btn-item></pos-btn-item>
+    </div>
+    <script src="../../../plugins/vue/vue.min.js"></script>
+    <script src="../../script/common.js"></script>
+    <script src="../../script/tool/pi.js"></script>
+</body>
+
+</html>

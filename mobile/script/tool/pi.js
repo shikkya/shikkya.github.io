@@ -1,7 +1,7 @@
 ﻿/**
  * tool - pi
  * @authors shikkya
- * @date    2019-04-04
+ * @date    2019-09-17
  * @version $Id$
  */
 
@@ -14,12 +14,12 @@ var reg = /^(?:1|[1-9][0-9]?|[1-9][0-9][0-9]?|1000)$/;
 // 圆周率展示
 var ShowPiItem = {
     props: ['item'],
-    template: '<div><p>小数点后第 {{(item - 1) * 50}} - {{item * 50}} 位：</p><p v-html="getPi((item - 1) * 50,item * 50)"></p></div>',
+    template: '<div><p>小数点后第 {{(item - 1) * 40}} - {{item * 40}} 位：</p><ul v-html="getPi((item - 1) * 40,item * 40)"></ul></div>',
     methods: {
         getPi: function(start, end) {
             var str = '';
             for (var i = start; i < end; i += 5) {
-                str += '<span>' + piStr.substring(i, i + 5) + '</span>';
+                str += '<li>' + piStr.substring(i, i + 5) + '</li>';
             }
             return str;
         }
@@ -32,7 +32,8 @@ var vm = new Vue({
         ShowPiItem: ShowPiItem
     },
     data: {
-        tit: '圆周率速算',
+        tit: '圆周率速算 - SHIKKYA .',
+        text: '更多精彩请使用电脑浏览器打开！',
         errorClass: false,
         inputVal_1: '',
         inputVal_2: '',

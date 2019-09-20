@@ -1,0 +1,113 @@
+﻿@charset "UTF-8";
+
+/**
+ * tool - pi
+ * @authors shikkya
+ * @date    2019-09-17
+ * @version $Id$
+ */
+
+html,
+body {
+    background: #F2F1FA;
+}
+
+.btn {
+    background: #00cbdb;
+    margin-top: 10px;
+    width: 85%;
+}
+
+/*************** header ***************/
+
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+.header .back,
+.header .top {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.header .back {
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    font-size: 16px;
+    text-align: center;
+    background: #403a6c;
+    color: #fff;
+    border-radius: 50%;
+    margin: 15px 10px;
+}
+
+.header .top {
+    background: #403a6c;
+    color: #fff;
+    border-bottom-left-radius: 15px;
+    padding: 15px 0px 15px 25px;
+    width: calc(100% - 80px);
+}
+
+.header .top p {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/*************** content ***************/
+
+.content {
+    padding-top: 73px;
+}
+
+.calculate,
+.show {
+    background: #fff;
+    margin: 20px 20px 0px 0px;
+}
+
+.calculate {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 20px 0px;
+}
+
+.show {
+    border-top-right-radius: 15px;
+    padding: 10px 0px 20px;
+}
+
+.show div {
+    line-height: 18px;
+}
+
+.show p {
+    margin: 15px 0px 8px 15px;
+    color: #403a6c;
+    font-weight: bold;
+    border-left: 5px solid #403a6c;
+    padding-left: 10px;
+}
+
+.show ul {
+    font-size: 0px;
+    margin: 0px 20px;
+}
+
+.show li {
+    display: inline-block;
+    font-size: 14px;
+    width: 25%;
+    text-align: center;
+    color: #666;
+}
+
+/*************** position btn ***************/
+
+.pos_btn div {
+    background: #403a6c;
+}
