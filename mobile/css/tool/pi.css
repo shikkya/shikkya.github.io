@@ -76,6 +76,21 @@ body {
     padding: 20px 0px;
 }
 
+.calculate p {
+    margin: 10px 15px;
+}
+
+.calculate p.errorClass {
+    color: #f90;
+}
+
+.calculate input {
+    width: 30px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    padding: 3px 5px;
+}
+
 .show {
     border-top-right-radius: 15px;
     padding: 10px 0px 20px;

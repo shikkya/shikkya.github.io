@@ -33,7 +33,7 @@ var vm = new Vue({
     },
     data: {
         tit: '圆周率速算 - SHIKKYA .',
-        text: '更多精彩请使用电脑浏览器打开！',
+        text: '快速计算圆周率小数点后指定位数的值',
         errorClass: false,
         inputVal_1: '',
         inputVal_2: '',
