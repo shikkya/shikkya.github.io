@@ -1,19 +1,19 @@
 ﻿@charset "UTF-8";
 
 /**
- * tool - pi
+ * code - index
  * @authors shikkya
- * @date    2019-09-17
+ * @date    2019-10-08
  * @version $Id$
  */
 
 html,
 body {
-    background: #F2F1FA;
+    background: #F1F6FA;
 }
 
 .btn {
-    background: #00cbdb;
+    background: #00bc9c;
     margin-top: 10px;
     width: 85%;
 }
@@ -39,14 +39,14 @@ body {
     line-height: 28px;
     font-size: 16px;
     text-align: center;
-    background: #403a6c;
+    background: #506a85;
     color: #fff;
     border-radius: 50%;
     margin: 15px 10px;
 }
 
 .header .top {
-    background: #403a6c;
+    background: #506a85;
     color: #fff;
     border-bottom-left-radius: 15px;
     padding: 15px 0px 15px 25px;
@@ -64,65 +64,42 @@ body {
     padding-top: 73px;
 }
 
-.calculate,
-.show {
-    background: #fff;
-    margin: 20px 20px 0px 0px;
+.list ul {
+    font-size: 0px;
 }
 
-.calculate {
+.list li {
+    display: inline-block;
+    background: #fff;
+    font-size: 13px;
+    padding: 20px 0px 16px 20px;
+    margin-top: 20px;
+    width: calc(50% - 39px);
+    text-align: center;
+}
+
+.list li:nth-child(2n) {
+    padding-right: 20px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding: 20px 0px;
 }
 
-.calculate p {
-    margin: 10px 15px;
+.list li:last-child {
+    border-bottom-right-radius: 0px;
 }
 
-.calculate p.error {
-    color: #f90;
+.list li img {
+    width: 100%;
 }
 
-.calculate input {
-    width: 30px;
-    border: 1px solid #e0e0e0;
-    text-align: center;
-    padding: 3px 5px;
-}
-
-.show {
-    border-top-right-radius: 15px;
-    padding: 10px 0px 20px;
-}
-
-.show div {
-    line-height: 18px;
-}
-
-.show p {
-    margin: 15px 0px 8px 15px;
-    color: #403a6c;
-    font-weight: bold;
-    border-left: 5px solid #403a6c;
-    padding-left: 10px;
-}
-
-.show ul {
-    font-size: 0px;
-    margin: 0px 20px;
-}
-
-.show li {
-    display: inline-block;
+.list li h3 {
+    margin-top: 8px;
     font-size: 14px;
-    width: 25%;
-    text-align: center;
-    color: #666;
+    color: #506A85;
 }
 
 /*************** position btn ***************/
 
 .pos_btn div {
-    background: #403a6c;
+    background: #506a85;
 }
