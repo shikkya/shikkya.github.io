@@ -19,7 +19,7 @@
         </div>
             <div class="content">
                 <div :class="'type type_'+index" v-for="(item,index) in productList">
-                    <img :class="{active:index==curIndex}" src="../../images/home_06.png" :data-src="'../../images/'+item.img" @click="checkType(index)"/>
+                    <img :class="{active:index==curIndex}" src="../../images/tool_01.png" :data-src="'../../images/'+item.img" @click="checkType(index)"/>
                     <a :href="item.url">{{item.tit}}</a>
                 </div>
                 <div class="type type_more">
