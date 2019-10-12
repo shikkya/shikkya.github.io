@@ -74,9 +74,9 @@ body {
 
 .list li {
     margin: 0px 20px;
-    padding: 20px 10px 20px 100px;
+    padding: 20px 10px 20px 117px;
     position: relative;
-    min-height: 50px;
+    min-height: 70px;
     border-top: 1px dashed #e0e0e0;
 }
 
@@ -84,24 +84,23 @@ body {
     border-top: 0px;
 }
 
-.list li img {
-    width: 85px;
+.list li .pic {
+    width: 100px;
     position: absolute;
     left: 0px;
     border: 1px solid #eee;
+    padding: 6px 0px;
 }
 
-.list li h3,
-.list li p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.list li img {
+    width: 100%;
 }
 
 .list li h3 {
     color: #506a85;
-    font-size: 15px;
-    margin-bottom: 9px;
+    font-size: 16px;
+    margin-bottom: 8px;
+    line-height: 20px;
 }
 
 .list li p {
@@ -115,7 +114,7 @@ body {
 
 .list li span {
     font-size: 12px;
-    margin-left: 5px;
+    margin-left: 6px;
     border: 1px solid #eee;
     padding: 0px 5px;
 }
