@@ -1,5 +1,5 @@
 ﻿/**
- * wallpaper - common
+ * wallpaper
  * @authors shikkya
  * @date    2019-03-16
  * @version $Id$

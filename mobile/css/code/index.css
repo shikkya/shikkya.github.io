@@ -25,6 +25,7 @@ body {
     top: 0px;
     left: 0px;
     width: 100%;
+    z-index: 999;
 }
 
 .header .back,
@@ -65,37 +66,58 @@ body {
 }
 
 .list ul {
-    font-size: 0px;
+    background: #fff;
+    margin: 20px 20px 0px 0px;
+    padding: 2px 0px;
+    border-top-right-radius: 15px;
 }
 
 .list li {
-    display: inline-block;
-    background: #fff;
-    font-size: 13px;
-    padding: 20px 0px 16px 20px;
-    margin-top: 20px;
-    width: calc(50% - 39px);
-    text-align: center;
+    margin: 0px 20px;
+    padding: 20px 10px 20px 100px;
+    position: relative;
+    min-height: 50px;
+    border-top: 1px dashed #e0e0e0;
 }
 
-.list li:nth-child(2n) {
-    padding-right: 20px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.list li:last-child {
-    border-bottom-right-radius: 0px;
+.list li:first-child {
+    border-top: 0px;
 }
 
 .list li img {
-    width: 100%;
+    width: 85px;
+    position: absolute;
+    left: 0px;
+    border: 1px solid #eee;
+}
+
+.list li h3,
+.list li p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .list li h3 {
-    margin-top: 8px;
+    color: #506a85;
+    font-size: 15px;
+    margin-bottom: 9px;
+}
+
+.list li p {
+    color: #999;
+    height: 20px;
+}
+
+.list li i {
     font-size: 14px;
-    color: #506A85;
+}
+
+.list li span {
+    font-size: 12px;
+    margin-left: 5px;
+    border: 1px solid #eee;
+    padding: 0px 5px;
 }
 
 /*************** position btn ***************/

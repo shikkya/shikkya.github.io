@@ -23,11 +23,5 @@ var vm = new Vue({
     mounted: function() {
         // 加载图片
         loadImg();
-    },
-    methods: {
-        // 
-        getDataObj: function() {
-
-        }
     }
 })

@@ -91,6 +91,12 @@ function goContact() {
     }
 }
 
+// 获取url参数
+function getUrlStr(name) {
+    var url = window.location.href;
+    return url.split(name + '=')[1].split('&')[0];
+}
+
 /****************************** 组件 ******************************/
 
 // 悬浮功能按钮
