@@ -19,4 +19,19 @@ div {
 
 table {
     margin: 0px auto 15px;
+    border: 1px solid #e0e0e0;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+
+table td {
+    padding: 5px 10px;
+}
+
+button {
+    background: #227547;
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+    padding: 5px 15px;
 }

@@ -16,7 +16,8 @@ body {
 
 div {
     border-radius: 8px;
-    width: 420px;
+    width: 85%;
+    max-width: 420px;
     margin: 80px auto;
     padding: 15px;
     background: #fff;

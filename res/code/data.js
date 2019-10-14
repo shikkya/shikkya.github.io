@@ -42,7 +42,7 @@ var codeList = [{
         type: '功能',
         keyWord: ['文字', '计数', 'Js'],
         compatible: ['1', '1', '1', '', '1', '1', '', '1'],
-        comMobile: ['', '', ''],
+        comMobile: ['1', '', '1'],
         intro: '<p>过滤空格和换行，超出时数字标红。</p>',
         bugIntro: ''
     },
@@ -72,7 +72,7 @@ var codeList = [{
         type: '功能',
         keyWord: ['Excel', 'Js'],
         compatible: ['1', '1', '0', '', '1', '1', '', '0'],
-        comMobile: ['', '', ''],
+        comMobile: ['0', '', '0'],
         intro: '',
         bugIntro: '<p>第一种方法无法合并单元格，长字符串无法自动调整单元格宽度，导出格式只能为csv。</p><p>第二种方法导出后会有错误提示，但不影响使用。</p>'
     }

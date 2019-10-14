@@ -30,14 +30,13 @@ var vm = new Vue({
     methods: {
         // 检查是否支持移动端在线演示
         checkOnline: function() {
-            // for (var i = 0; i < this.dataObj.comMobile.length; i++) {
-            //     if (this.dataObj.comMobile[i] == '1') {
-            //         window.location.href = '../../../res/code/' + this.dataObj.id + '/index.html';
-            //         return false;
-            //     }
-            // }
-            // alert('此插件不支持移动端，请使用电脑浏览器！');
-            window.location.href = '../../../res/code/' + this.dataObj.id + '/index.html';
+            for (var i = 0; i < this.dataObj.comMobile.length; i++) {
+                if (this.dataObj.comMobile[i] == '1') {
+                    window.location.href = '../../../res/code/' + this.dataObj.id + '/index.html';
+                    return false;
+                }
+            }
+            alert('此插件不支持移动端，请使用电脑浏览器！');
         }
     }
 })
