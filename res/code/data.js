@@ -32,7 +32,7 @@ var codeList = [{
         type: '特效',
         keyWord: ['动画', 'CSS3'],
         compatible: ['1', '1', '0', '', '1', '1', '', '1'],
-        comMobile: ['1', '', ''],
+        comMobile: ['1', '', '1'],
         intro: '',
         bugIntro: ''
     },
@@ -52,7 +52,7 @@ var codeList = [{
         type: '特效',
         keyWord: ['Canvas', 'Js'],
         compatible: ['1', '1', '0', '', '1', '1', '', '1'],
-        comMobile: ['', '', ''],
+        comMobile: ['1', '', '1'],
         intro: '',
         bugIntro: ''
     },
@@ -62,7 +62,7 @@ var codeList = [{
         type: '特效',
         keyWord: ['Canvas', 'Js'],
         compatible: ['1', '1', '1', '', '1', '1', '', '1'],
-        comMobile: ['', '', ''],
+        comMobile: ['0', '', '0'],
         intro: '',
         bugIntro: '<p>safari浏览器下速度略迟缓，不影响使用。</p>'
     },
