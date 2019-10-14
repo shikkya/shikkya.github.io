@@ -8,7 +8,7 @@
 body {
     background: #fff;
     text-align: center;
-    padding: 50px;
+    padding: 50px 0px;
 }
 
 span {
@@ -19,7 +19,7 @@ span {
 button {
     background: #445cb8;
     color: #fff;
-    padding: 8px 15px;
+    padding: 8px 12px;
     border: 0px;
     border-radius: 3px;
     margin: 20px 2px;

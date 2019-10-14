@@ -12,7 +12,7 @@ var codeList = [{
         type: '功能',
         keyWord: ['拖拽', 'Js'],
         compatible: ['1', '1', '0', '', '1', '1', '', '1'],
-        comMobile: ['', '', ''],
+        comMobile: ['0', '', '0'],
         intro: '<p>1、分割线宽度占位</p><p>2、左右两部分的最小宽度一致，可为0</p>',
         bugIntro: ''
     },
@@ -22,7 +22,7 @@ var codeList = [{
         type: '插件,功能',
         keyWord: ['数字', '滚动', '跳数', 'js'],
         compatible: ['1', '1', '1', '', '1', '1', '', '1'],
-        comMobile: ['', '', ''],
+        comMobile: ['1', '', '1'],
         intro: '<p>CountUp.js 无依赖的、轻量级的 JavaScript 类，可以用来快速创建以一种更有趣的动画方式显示数值数据。</p><p>换值只用于临时变化，重置开始后依然是初始值。</p><p>可配置的参数：</p><p>target = 目标元素的 ID</p><p>startVal = 开始值</p><p>endVal = 结束值</p><p>decimals = 小数位数，默认值是0</p><p>duration = 动画延迟秒数，默认值是2</p>',
         bugIntro: ''
     },
@@ -32,7 +32,7 @@ var codeList = [{
         type: '特效',
         keyWord: ['动画', 'CSS3'],
         compatible: ['1', '1', '0', '', '1', '1', '', '1'],
-        comMobile: ['', '', ''],
+        comMobile: ['1', '', ''],
         intro: '',
         bugIntro: ''
     },
