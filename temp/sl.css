@@ -1,0 +1,94 @@
+﻿@charset "UTF-8";
+
+/**
+ * 
+ * @authors shikkya
+ * @date    2019-10-14
+ * @version $Id$
+ */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: '微软雅黑 Light', '微软雅黑 Regular', '微软雅黑';
+    font-size: 14px;
+    cursor: default;
+    min-width: 1000px;
+    background: #fff;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+textarea {
+    background: #fff;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*************** common ***************/
+
+.tab_out {
+    text-align: center;
+}
+
+.tab td {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #eee;
+    position: relative;
+    color: #aaa;
+    font-size: 10px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 10px;
+    background: #F5F5F5;
+}
+
+.tab td.handle {
+    cursor: pointer;
+    background: #fff;
+}
+
+.tab img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
