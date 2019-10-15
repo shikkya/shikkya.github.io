@@ -7,6 +7,64 @@
  * @version $Id$
  */
 
+ * {
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: '微软雅黑 Light', '微软雅黑 Regular', '微软雅黑';
+    font-size: 14px;
+    background: #fff;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+textarea {
+    background: #fff;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+/*************** common ***************/
+
 body {
     background: url('../../images/home_01.png') no-repeat;
     background-size: 100% 100%;

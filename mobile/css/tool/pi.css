@@ -20,49 +20,12 @@ body {
 
 /*************** header ***************/
 
-.header {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-}
-
 .header .back,
 .header .top {
-    display: inline-block;
-    vertical-align: top;
-}
-
-.header .back {
-    width: 30px;
-    height: 30px;
-    line-height: 28px;
-    font-size: 16px;
-    text-align: center;
     background: #403a6c;
-    color: #fff;
-    border-radius: 50%;
-    margin: 15px 10px;
-}
-
-.header .top {
-    background: #403a6c;
-    color: #fff;
-    border-bottom-left-radius: 15px;
-    padding: 15px 0px 15px 25px;
-    width: calc(100% - 80px);
-}
-
-.header .top p {
-    font-size: 13px;
-    margin-top: 5px;
 }
 
 /*************** content ***************/
-
-.content {
-    padding-top: 73px;
-}
 
 .calculate,
 .show {
