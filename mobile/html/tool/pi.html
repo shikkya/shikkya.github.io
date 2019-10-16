@@ -14,15 +14,7 @@
 
 <body>
     <div id="app" v-cloak>
-        <div class="header">
-            <a class="back" href="javaScript:history.go(-1)">
-                <i class="icon iconfont icon-back"></i>
-            </a>
-            <div class="top">
-                <h3>{{tit}}</h3>
-                <p>{{text}}</p>
-            </div>
-        </div>
+        <header-item :obj="headerObj"></header-item>
         <div class="content">
             <div class="calculate">
                 <p :class="{error:errorClass}">请输入小于等于1000的正整数</p>

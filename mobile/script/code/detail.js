@@ -8,8 +8,11 @@
 var vm = new Vue({
     el: '#app',
     data: {
-        tit: '特效码集 - SHIKKYA .',
-        text: '使用电脑浏览器访问可免费下载源码！'
+        headerObj: {
+            tit: '特效码集 - SHIKKYA .',
+            text: '使用电脑浏览器访问可免费下载源码！',
+            pageType: 'back'
+        }
     },
     computed: {
         dataObj: function() {

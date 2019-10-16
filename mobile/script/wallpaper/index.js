@@ -17,8 +17,11 @@ var vm = new Vue({
         PicItem: PicItem
     },
     data: {
-        tit: '模板壁纸 - SHIKKYA .',
-        text: '更多精彩请使用电脑浏览器打开！',
+        headerObj: {
+            tit: '模板壁纸 - SHIKKYA .',
+            text: '更多精彩请使用电脑浏览器打开！',
+            pageType: 'home'
+        },
         picList: [
             { img: '001.jpg', type: '卡通,文字', tit: '萌混过关', keyWord: '鸭子,动物' },
             { img: '002.jpg', type: '卡通', tit: 'Kanahei', keyWord: '鸭子,动物' },

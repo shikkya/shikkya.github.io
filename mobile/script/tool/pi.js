@@ -32,8 +32,11 @@ var vm = new Vue({
         ShowPiItem: ShowPiItem
     },
     data: {
-        tit: '圆周率速算 - SHIKKYA .',
-        text: '快速计算圆周率小数点后指定位数的值',
+        headerObj: {
+            tit: '圆周率速算 - SHIKKYA .',
+            text: '快速计算圆周率小数点后指定位数的值',
+            pageType: 'back'
+        },
         errorClass: false,
         inputVal_1: '',
         inputVal_2: '',

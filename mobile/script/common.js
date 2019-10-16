@@ -99,6 +99,21 @@ function getUrlStr(name) {
 
 /****************************** 组件 ******************************/
 
+// 头部
+Vue.component("HeaderItem", {
+    props: ['obj'],
+    template: '<div class="header"><a class="back" :href="url"><i :class="\'icon iconfont icon-\' + obj.pageType"></i></a><div class="top"><h3>{{obj.tit}}</h3><p>{{obj.text}}</p></div></div>',
+    computed: {
+        url: function() {
+            if (this.obj.pageType == 'home') {
+                return '../home/index.html';
+            } else if (this.obj.pageType == 'back') {
+                return 'javaScript:history.go(-1)';
+            }
+        }
+    }
+})
+
 // 悬浮功能按钮
 Vue.component("PosBtnItem", {
     template: '<div class="pos_btn"><div class="go_top" @click="goTop"><i class="icon iconfont icon-arrow-top"></i></div><div class="go_contact" id="goContact" @click="goContact"><i class="icon iconfont icon-contact"></i><span>shikkya@qq.com</span></div></div>'

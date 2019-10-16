@@ -22,8 +22,11 @@ var vm = new Vue({
         CodeItem: CodeItem
     },
     data: {
-        tit: '特效码集 - SHIKKYA .',
-        text: '更多精彩请使用电脑浏览器打开！',
+        headerObj: {
+            tit: '特效码集 - SHIKKYA .',
+            text: '更多精彩请使用电脑浏览器打开！',
+            pageType: 'home'
+        },
         codeList: codeList
     },
     mounted: function() {

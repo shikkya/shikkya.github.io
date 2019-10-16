@@ -14,15 +14,7 @@
 
 <body>
     <div id="app" v-cloak>
-        <div class="header">
-            <a class="back" href="../home/index.html">
-                <i class="icon iconfont icon-home"></i>
-            </a>
-            <div class="top">
-                <h3>{{tit}}</h3>
-                <p>{{text}}</p>
-            </div>
-        </div>
+        <header-item :obj="headerObj"></header-item>
         <div class="content">
             <div class="list">
                 <ul>
