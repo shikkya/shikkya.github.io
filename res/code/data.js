@@ -82,7 +82,7 @@ var codeList = [{
         type: '特效',
         keyWord: ['照片', '3D', '拖拽', 'Js'],
         compatible: ['1', '1', '', '', '1', '1', '0', ''],
-        comMobile: ['', '', ''],
+        comMobile: ['0', '', '0'],
         intro: '<p>图片数量不限，太多会重叠，建议最多17张。</p>',
         bugIntro: '<p>360浏览器略卡顿，不影响使用。</p>'
     }
