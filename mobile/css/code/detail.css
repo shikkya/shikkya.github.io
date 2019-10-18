@@ -53,9 +53,9 @@ body {
 
 .main .tag span {
     border: 1px solid #e0e0e0;
-    padding: 0px 3px;
-    margin-left: 5px;
-    font-size: 13px;
+    padding: 1px 4px;
+    margin-left: 6px;
+    font-size: 12px;
 }
 
 .main .btn {

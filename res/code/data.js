@@ -75,6 +75,16 @@ var codeList = [{
         comMobile: ['0', '', '0'],
         intro: '',
         bugIntro: '<p>第一种方法无法合并单元格，长字符串无法自动调整单元格宽度，导出格式只能为csv。</p><p>第二种方法导出后会有错误提示，但不影响使用。</p>'
+    },
+    {
+        id: '008',
+        tit: '3D立体拖拽图片环',
+        type: '特效',
+        keyWord: ['照片', '3D', '拖拽', 'Js'],
+        compatible: ['1', '1', '', '', '', '1', '0', ''],
+        comMobile: ['', '', ''],
+        intro: '<p>图片数量不限，太多会重叠，建议最多17张。</p>',
+        bugIntro: '<p>360浏览器略卡顿，不影响使用。</p>'
     }
 ];
 
@@ -87,7 +97,7 @@ var codeList = [{
     id: '',
     tit: '',
     type: '',
-    keyWord: [],
+    keyWord: [''],
     compatible: ['', '', '', '', '', '', '', ''],
     comMobile: ['', '', ''],
     intro: '',
