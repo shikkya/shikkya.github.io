@@ -85,6 +85,16 @@ var codeList = [{
         comMobile: ['0', '', '0'],
         intro: '<p>图片数量不限，太多会重叠，建议最多17张。</p>',
         bugIntro: '<p>360浏览器略微卡顿，不影响使用。</p>'
+    },
+    {
+        id: '009',
+        tit: '纯CSS3模拟动态水效果',
+        type: '特效',
+        keyWord: ['动画', 'CSS3'],
+        compatible: ['1', '1', '', '', '', '', '', ''],
+        comMobile: ['', '', ''],
+        intro: '',
+        bugIntro: ''
     }
 ];
 
