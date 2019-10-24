@@ -37,7 +37,8 @@ var vm = new Vue({
             { img: '012.jpg', type: '卡通,文字', tit: '有点健忘', keyWord: '回忆,女孩' },
             { img: '013.jpg', type: '卡通,文字', tit: '远离小人', keyWord: '动物,猫咪,老鼠' },
             { img: '014.jpg', type: '卡通', tit: '我的公式', keyWord: '女孩,书,瓶子,化学,实验' },
-            { img: '015.jpg', type: '卡通,文字', tit: '世界那么大', keyWord: '地球仪,世界,地图' }
+            { img: '015.jpg', type: '卡通,文字', tit: '世界那么大', keyWord: '地球仪,世界,地图' },
+            { img: '016.jpg', type: '水果,文字', tit: 'SUMMER', keyWord: '夏日,夏天,西瓜,冰淇淋,雪糕' }
         ]
     },
     mounted: function() {
