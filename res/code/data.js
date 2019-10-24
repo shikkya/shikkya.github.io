@@ -92,7 +92,7 @@ var codeList = [{
         type: '特效',
         keyWord: ['动画', 'CSS3'],
         compatible: ['1', '1', '', '', '1', '1', '0', ''],
-        comMobile: ['', '', ''],
+        comMobile: ['1', '', '1'],
         intro: '',
         bugIntro: ''
     }
