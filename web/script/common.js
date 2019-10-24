@@ -6,10 +6,10 @@
  */
 
 // ie版本过低判断
-// var ieVersion = IEVersion();
-// if (typeof(ieVersion) == 'number' && ieVersion > 0 && ieVersion < 10) {
-//     window.location.replace("../html/error_version.html");
-// }
+var ieVersion = IEVersion();
+if (typeof(ieVersion) == 'number' && ieVersion > 0 && ieVersion < 10) {
+    window.location.replace("../html/error_version.html");
+}
 
 // 浏览器判断
 function IEVersion() {
