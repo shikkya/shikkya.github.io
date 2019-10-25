@@ -95,6 +95,16 @@ var codeList = [{
         comMobile: ['1', '', '1'],
         intro: '',
         bugIntro: ''
+    },
+    {
+        id: '010',
+        tit: '兼容IE8的简易jQuery日期选择器插件',
+        type: '插件',
+        keyWord: ['日历','jQuery'],
+        compatible: ['', '', '', '', '', '', '', ''],
+        comMobile: ['', '', ''],
+        intro: '',
+        bugIntro: ''
     }
 ];
 

@@ -11,4 +11,9 @@ $(function() {
     $('#myDatepickerFormat').dcalendarpicker({
         format: 'yyyy-mm-dd'
     });
+
+    $('#myDatepickerCh').dcalendarpicker({
+        format: 'yyyy-mm-dd',
+        language:'ch'
+    });
 })
