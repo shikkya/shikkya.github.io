@@ -9,17 +9,19 @@
 
 * {
     margin: 0;
-    padding: 0
+    padding: 0;
 }
 
 body {
     background: #222;
     overflow: hidden;
-    user-select: none; /*禁止选中*/
+    /*禁止选中*/
+    user-select: none;
 }
 
 .perspective {
-    perspective: 800px; /*3D景深*/
+    /*3D景深*/
+    perspective: 800px;
 }
 
 .wrap {
@@ -39,9 +41,10 @@ body {
     transform: rotateY(0deg) translateZ(0px);
     padding: 10px;
     background: transparent;
-    box-shadow: 0 0 4px #fff; /*水平位移 垂直位移 扩散程度 颜色*/
+    box-shadow: 0 0 4px #fff;
     border-radius: 5px;
-    -webkit-box-reflect: below 5px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, .5) 100%); /*倒影 倒影模式 直径*/
+    /*倒影 倒影模式 直径*/
+    -webkit-box-reflect: below 5px -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, .5) 100%);
 }
 
 .wrap p {
@@ -54,5 +57,6 @@ body {
     top: 100%;
     margin-left: -600px;
     margin-top: -600px;
-    transform: rotateX(90deg); /*沿着x轴方向旋转*/
+    /*沿着x轴方向旋转*/
+    transform: rotateX(90deg);
 }

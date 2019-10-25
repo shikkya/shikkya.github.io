@@ -5,7 +5,6 @@
  * @version $Id$
  */
 
-/*谁 触发了什么事件 谁做了什么*/
 window.onload = function() {
     // 最新的原生获取元素方法querySelectorAll
     var oImg = document.querySelectorAll('img');
