@@ -5,7 +5,9 @@
  * @version $Id$
  */
 
-// ie版本过低判断
+/****************************** 功能 ******************************/
+
+// IE版本过低判断
 var ieVersion = IEVersion();
 if (typeof(ieVersion) == 'number' && ieVersion > 0 && ieVersion < 10) {
     window.location.replace("../html/error_version.html");
@@ -40,8 +42,6 @@ function IEVersion() {
         return -1; // 不是ie浏览器
     }
 }
-
-/****************************** 功能 ******************************/
 
 // 判断当前设备为PC或移动
 checkDevice();
