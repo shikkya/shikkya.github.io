@@ -21,7 +21,7 @@ var vm = new Vue({
         codeObj: {
             tit: '最新特效',
             moreUrl: './list.html',
-            list: ['001', '002', '003', '004', '005', '007']
+            list: ['010', '005', '008', '007', '003', '002']
         }
     },
     computed: {

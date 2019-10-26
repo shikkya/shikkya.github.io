@@ -100,10 +100,10 @@ var codeList = [{
         id: '010',
         tit: '兼容IE8的简易jQuery日期选择器插件',
         type: '插件',
-        keyWord: ['日历','jQuery'],
-        compatible: ['', '', '', '', '', '', '', ''],
-        comMobile: ['', '', ''],
-        intro: '',
+        keyWord: ['日历', 'jQuery', 'DCalendar'],
+        compatible: ['1', '1', '', '', '1', '1', '1', ''],
+        comMobile: ['1', '', '1'],
+        intro: '<p>以插件DCalendar为基础，添加了语言配置选项，新增中文。</p><p>注：页面使用table布局时请避免样式冲突。</p>',
         bugIntro: ''
     }
 ];
