@@ -18,7 +18,22 @@
         <div class="content">
             <div class="list">
                 <ul>
-                    <pic-item :item="item" v-for="item in picList"></pic-item>
+                    <template v-for="(item,index) in picList.length">
+                        <li v-if="index%3==0">
+                            <div>
+                                <img src="../../images/wallpaper_01.png" :data-src="'../../images/wallpaper_small/' + picList[index].img"/>
+                                <a class="btn" :href="'../../images/wallpaper/' + picList[index].img"  download="">下载</a>
+                            </div>
+                            <div v-if="index+1<picList.length">
+                                <img src="../../images/wallpaper_01.png" :data-src="'../../images/wallpaper_small/' + picList[index+1].img"/>
+                                <a class="btn" :href="'../../images/wallpaper/' + picList[index+1].img"  download="">下载</a>
+                            </div>
+                            <div v-if="index+2<picList.length">
+                                <img src="../../images/wallpaper_01.png" :data-src="'../../images/wallpaper_small/' + picList[index+2].img"/>
+                                <a class="btn" :href="'../../images/wallpaper/' + picList[index+2].img"  download="">下载</a>
+                            </div>
+                        </li>
+                    </template>
                 </ul>
             </div>
         </div>

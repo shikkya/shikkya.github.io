@@ -5,17 +5,8 @@
  * @version $Id$
  */
 
-// 图片展示列表
-var PicItem = {
-    props: ['item'],
-    template: '<li><img src="../../images/wallpaper_01.png" :data-src="\'../../images/wallpaper_small/\' + item.img"/><a class="btn" :href="\'../../images/wallpaper/\' + item.img"  download="">下载</a></li>'
-}
-
 var vm = new Vue({
     el: '#app',
-    components: {
-        PicItem: PicItem
-    },
     data: {
         headerObj: {
             tit: '模板壁纸 - SHIKKYA .',

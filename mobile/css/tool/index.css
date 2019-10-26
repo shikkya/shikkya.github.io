@@ -32,23 +32,23 @@ body {
 }
 
 .list li {
-    display: inline-block;
     background: #fff;
-    font-size: 13px;
-    padding: 20px 0px 16px 20px;
-    margin-top: 20px;
-    width: calc(50% - 39px);
-    text-align: center;
-}
-
-.list li:nth-child(2n) {
-    padding-right: 20px;
+    margin: 20px 20px 0px 0px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+    padding: 20px 10px;
 }
 
 .list li:last-child {
     border-bottom-right-radius: 0px;
+}
+
+.list li div {
+    display: inline-block;
+    font-size: 13px;
+    text-align: center;
+    width: calc(50% - 20px);
+    margin: 0px 10px;
 }
 
 .list li img {
@@ -56,7 +56,7 @@ body {
 }
 
 .list li h3 {
-    margin-top: 8px;
+    margin-top: 10px;
     font-size: 14px;
     color: #403a6c;
 }

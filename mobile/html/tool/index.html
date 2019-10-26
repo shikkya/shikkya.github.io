@@ -18,7 +18,7 @@
         <div class="content">
             <div class="list">
                 <ul>
-                    <tool-item :item="item" v-for="item in toolList"></tool-item>
+                    <tool-item :index="index" :toollist="toolList" v-for="(item,index) in toolList.length"></tool-item>
                 </ul>
             </div>
         </div>
@@ -26,6 +26,7 @@
     </div>
     <script src="../../../plugins/vue/vue.min.js"></script>
     <script src="../../script/common.js"></script>
+    <script src="../../../res/tool/data.js"></script>
     <script src="../../script/tool/index.js"></script>
 </body>
 

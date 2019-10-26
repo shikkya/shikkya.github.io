@@ -7,14 +7,14 @@
 
 // 工具列表
 var ToolItem = {
-    props: ['item'],
-    template: '<li @click="handleItemClick"><img src="../../images/tool_01.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3></li>',
+    props: ['index', 'toollist'],
+    template: '<li v-if="index%2==0"><div @click="handleItemClick(index)"><img src="../../images/tool_01.png" :data-src="\'../../images/\' + toollist[index].img"/><h3>{{toollist[index].tit}}</h3></div><div v-if="index+1<toollist.length" @click="handleItemClick(index+1)"><img src="../../images/tool_01.png" :data-src="\'../../images/\' + toollist[index+1].img"/><h3>{{toollist[index+1].tit}}</h3></div></li>',
     methods: {
-        handleItemClick: function() {
-            if (this.item.url == '') {
-                alert('该工具只支持电脑版，请使用电脑浏览器访问~');
+        handleItemClick: function(index) {
+            if (this.toollist[index].isMobile) {
+                window.location.href = this.toollist[index].url;
             } else {
-                window.location.href = this.item.url;
+                alert('该工具只支持电脑版，请使用电脑浏览器访问~');
             }
         }
     }
@@ -31,14 +31,7 @@ var vm = new Vue({
             text: '更多精彩请使用电脑浏览器打开！',
             pageType: 'home'
         },
-        toolList: [
-            { img: 'tool_02.png', tit: '在线量尺', url: '' }, // ./ruler.html
-            { img: 'tool_03.png', tit: '圆周率速算', url: './pi.html' },
-            { img: 'tool_04.png', tit: '日期各种算', url: '' }, // ./date.html
-            { img: 'tool_05.png', tit: '专治选择困难症', url: '' }, // ./random.html
-            { img: 'tool_06.png', tit: '倒数计时器', url: '' }, // ./countdown.html
-            // { img: 'tool_07.png', tit: '计时秒表', url: '' } // ./stopwatch.html
-        ]
+        toolList: toolList
     },
     mounted: function() {
         // 加载图片

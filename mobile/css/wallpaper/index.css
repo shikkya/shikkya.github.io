@@ -32,23 +32,23 @@ body {
 }
 
 .list li {
-    display: inline-block;
     background: #fff;
-    font-size: 13px;
-    padding: 20px 0px 20px 20px;
-    margin-top: 20px;
-    width: calc(33.3% - 33px);
-    text-align: center;
-}
-
-.list li:nth-child(3n) {
-    padding-right: 20px;
+    margin: 20px 20px 0px 0px;
+    padding: 20px 10px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
 
 .list li:last-child {
     border-bottom-right-radius: 0px;
+}
+
+.list li div {
+    display: inline-block;
+    font-size: 13px;
+    text-align: center;
+    width: calc(33.3% - 20px);
+    margin: 0px 10px;
 }
 
 .list li img {
