@@ -37,7 +37,7 @@ var vm = new Vue({
             { img: 'tool_04.png', tit: '日期各种算', url: '' }, // ./date.html
             { img: 'tool_05.png', tit: '专治选择困难症', url: '' }, // ./random.html
             { img: 'tool_06.png', tit: '倒数计时器', url: '' }, // ./countdown.html
-            { img: 'tool_07.png', tit: '计时秒表', url: '' } // ./stopwatch.html
+            // { img: 'tool_07.png', tit: '计时秒表', url: '' } // ./stopwatch.html
         ]
     },
     mounted: function() {

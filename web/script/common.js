@@ -7,6 +7,9 @@
 
 /****************************** 功能 ******************************/
 
+// 防复制
+// document.write("<script type='text/javascript' src='../../../plugins/noCopy/noCopy.js'></script>");
+
 // IE版本过低判断
 var ieVersion = IEVersion();
 if (typeof(ieVersion) == 'number' && ieVersion > 0 && ieVersion < 10) {
