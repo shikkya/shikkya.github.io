@@ -8,16 +8,6 @@
 // 所有数据 
 var codeList = [{
         id: '001',
-        tit: '容器内拖拽分割线自由分配左右空间',
-        type: '功能',
-        keyWord: ['拖拽', 'JS'],
-        compatible: ['1', '1', '0', '', '1', '1', '0', '1'],
-        comMobile: ['0', '', '0'],
-        intro: '<p>1、分割线宽度占位</p><p>2、左右两部分的最小宽度一致，可为0</p>',
-        bugIntro: ''
-    },
-    {
-        id: '002',
         tit: '数字滚动增值插件countUp.js',
         type: '插件,功能',
         keyWord: ['跳数', '滚动', 'JS'],
@@ -27,13 +17,23 @@ var codeList = [{
         bugIntro: '<p>IE8支持初始化数字滚动，所有按钮功能均无效。</p>'
     },
     {
-        id: '003',
+        id: '002',
         tit: '纯CSS3卡通蜡烛动画特效',
         type: '特效',
         keyWord: ['CSS3'],
         compatible: ['1', '1', '0', '', '1', '1', '0', '1'],
         comMobile: ['1', '', '1'],
         intro: '',
+        bugIntro: ''
+    },
+    {
+        id: '003',
+        tit: '容器内拖拽分割线自由分配左右空间',
+        type: '功能',
+        keyWord: ['拖拽', 'JS'],
+        compatible: ['1', '1', '0', '', '1', '1', '0', '1'],
+        comMobile: ['0', '', '0'],
+        intro: '<p>1、分割线宽度占位</p><p>2、左右两部分的最小宽度一致，可为0</p>',
         bugIntro: ''
     },
     {

@@ -5,44 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>纯CSS3卡通蜡烛动画特效</title>
+    <title>容器内拖拽分割线自由分配左右空间</title>
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
 </head>
 
 <body>
-    <div class="wrapper">
-        <div class="candles">
-            <div class="light__wave"></div>
-            <div class="candle1">
-                <div class="candle1__body">
-                    <div class="candle1__eyes">
-                        <span class="candle1__eyes-one"></span>
-                        <span class="candle1__eyes-two"></span>
-                    </div>
-                    <div class="candle1__mouth"></div>
-                </div>
-                <div class="candle1__stick"></div>
-            </div>
-            <div class="candle2">
-                <div class="candle2__body">
-                    <div class="candle2__eyes">
-                        <div class="candle2__eyes-one"></div>
-                        <div class="candle2__eyes-two"></div>
-                    </div>
-                </div>
-                <div class="candle2__stick"></div>
-            </div>
-            <div class="candle2__fire"></div>
-            <div class="sparkles-one"></div>
-            <div class="sparkles-two"></div>
-            <div class="candle__smoke-one">
-            </div>
-            <div class="candle__smoke-two">
-            </div>
-        </div>
-        <div class="floor">
-        </div>
+    <div id="box">
+        <div id="left"></div>
+        <div id="resize"></div>
+        <div id="right"></div>
     </div>
+    <script type="text/javascript" src="./script/index.js"></script>
 </body>
 
 </html>
