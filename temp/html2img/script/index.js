@@ -12,11 +12,6 @@ function toPdf() {
         width: 192,
         height: 108,
         onrendered: function(canvas) {
-            document.body.appendChild(canvas);
-            console.log(saveAsPNG(canvas));
-            // window.open(saveAsPNG(canvas));
-            // document.getElementById('abtn').setAttribute('src', saveAsPNG(canvas));
-
             downloadFile('ship.png', canvas.toDataURL("image/png"));
         },
     });
