@@ -111,8 +111,8 @@ var codeList = [{
         tit: 'Html转Pdf',
         type: '插件',
         keyWord: ['Canvas', 'html2canvas', 'Js'],
-        compatible: ['', '', '', '', '', '', '', ''],
-        comMobile: ['', '', ''],
+        compatible: ['1', '1', '', '', '1', '1', '', ''],
+        comMobile: ['0', '', '0'],
         intro: '<p>实现原理：将html转换成canvas，再将canvas图片转换成pdf。</p><p>html2canvas脚本将整个或部分页面渲染成一个Canvas图片，通过读取DOM并将不同的样式应用到这些元素上实现，它不需要来自服务器任何渲染，整张图片都是在客户端浏览器创建。当浏览器不支持Canvas时，将采用Flashcanvas或ExplorerCanvas技术代替实现。</p>',
         bugIntro: ''
     }
