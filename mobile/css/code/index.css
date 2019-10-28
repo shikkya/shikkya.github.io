@@ -27,39 +27,27 @@ body {
 
 /*************** content ***************/
 
-.list ul {
+.list li {
     background: #fff;
     margin: 20px 20px 0px 0px;
-    padding: 2px 0px;
+    padding: 20px;
     border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
-.list li {
-    margin: 0px 20px;
-    padding: 20px 0px 20px 140px;
-    position: relative;
-    min-height: 70px;
-    border-top: 1px dashed #e0e0e0;
-}
-
-.list li:first-child {
-    border-top: 0px;
-}
-
-.list li .pic {
-    width: 125px;
-    position: absolute;
-    left: 0px;
+.list li:last-child {
+    border-bottom-right-radius: 0px;
 }
 
 .list li img {
     width: 100%;
+    border-radius: 5px;
 }
 
 .list li h3 {
     color: #506a85;
     font-size: 16px;
-    margin-bottom: 8px;
+    margin: 8px 0px;
     line-height: 20px;
 }
 

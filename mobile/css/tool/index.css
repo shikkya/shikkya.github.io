@@ -53,6 +53,7 @@ body {
 
 .list li img {
     width: 100%;
+    border-radius: 5px;
 }
 
 .list li h3 {

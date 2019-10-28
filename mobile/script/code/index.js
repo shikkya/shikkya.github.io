@@ -8,7 +8,7 @@
 // 工具列表
 var CodeItem = {
     props: ['item'],
-    template: '<li @click="handleItemClick"><div class="pic"><img src="../../images/code_01.png" :data-src="\'../../../res/code/\' + item.id + \'/shikkya.png\'"/></div><h3>{{item.tit}}</h3><p><i class="icon iconfont icon-tag"></i><span v-for="iteminner in item.keyWord">{{iteminner}}</span></p></li>',
+    template: '<li @click="handleItemClick"><img src="../../images/code_01.png" :data-src="\'../../../res/code/\' + item.id + \'/shikkya.png\'"/><h3>{{item.tit}}</h3><p><i class="icon iconfont icon-tag"></i><span v-for="iteminner in item.keyWord">{{iteminner}}</span></p></li>',
     methods: {
         handleItemClick: function() {
             window.location.href = './detail.html?codeId=' + this.item.id;
