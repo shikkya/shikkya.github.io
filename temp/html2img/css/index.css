@@ -17,15 +17,10 @@ body {
     padding-top: 50px;
 }
 
-.eg {
-    width: 192px;
-    height: 108px;
-}
-
 .wrap {
     width: 192px;
     height: 108px;
-    background: #000;
+    background: #ddd;
     position: relative;
     margin: 0px auto;
 }

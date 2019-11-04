@@ -27,11 +27,18 @@ var toolList = [{
         url: '', // ./date.html
         isMobile: false
     },
+    // {
+    //     img: 'tool_54.png',
+    //     tit: '专治选择困难症',
+    //     text: '努力开发中...',
+    //     url: '', // ./random.html
+    //     isMobile: false
+    // },
     {
-        img: 'tool_54.png',
-        tit: '专治选择困难症',
-        text: '努力开发中...',
-        url: '', // ./random.html
+        img: 'tool_56.png',
+        tit: 'KeyCode查询器',
+        text: '按键名和键码值之间的双向查询<br/>分类键码值对照表',
+        url: './keycode.html',
         isMobile: false
     },
     {
