@@ -22,9 +22,9 @@ var toolList = [{
     },
     {
         img: 'tool_52.png',
-        tit: '日期各种算',
-        text: '努力开发中...',
-        url: '', // ./date.html
+        tit: '日期计算器',
+        text: '推算指定天数前或后的日期<br/>计算指定日期间隔天数',
+        url: './date.html',
         isMobile: false
     },
     // {

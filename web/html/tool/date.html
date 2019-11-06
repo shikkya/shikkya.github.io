@@ -17,12 +17,10 @@
     <div id="app" v-cloak>
         <header-detail-item></header-detail-item>
         <div class="content" id="content">
-            <div class="tit">
-                <h1>{{tit}}</h1>
-                <p>今天是 {{todayObj.year}}年 {{todayObj.month}}月 {{todayObj.day}}日 星期{{todayObj.week}} 阴历 {{todayObj.lunarY}}年 {{todayObj.lunarM}}月 {{todayObj.lunarD}}</p>
-                <p>快速计算圆周率小数点后指定位数的值，<font :class="{error:errorClass}">请输入小于等于1000的正整数</font></p>
+            <div class="top">
+                <p>今天是 {{todayObj.year}}年 {{todayObj.month}}月 {{todayObj.day}}日 星期{{todayObj.week}} {{todayObj.lunarY}}年 {{todayObj.lunarM}}月 {{todayObj.lunarD}}</p>
             </div>
-            <div class="out">
+            <div class="out wid_size">
                 <ul>
                     <li>
                         <h3>{{dayObj.tit}}</h3>
@@ -48,7 +46,7 @@
                                 日
                             </form>
                         </div>
-                        <p>相差 {{dayObj.result_1}} 天 ( {{dayObj.result_2}} 周 {{dayObj.result_3}} 天 )</p>
+                        <p>相差 <font>{{dayObj.result_1}}</font> 天 ( <font>{{dayObj.result_2}}</font> 周 <font>{{dayObj.result_3}}</font> 天 )</p>
                     </li>
                     <li>
                         <h3>{{dateObj.tit}}</h3>
@@ -63,33 +61,10 @@
                                 日
                             </form>
                         </div>
-                        <p>相差<input type="text" v-model="dateObj.num" />天（输入负数向前推算）</p>
-                        <p>是 {{dateObj.result_1}} 年 {{dateObj.result_2}} 月 {{dateObj.result_3}} 日 星期{{dateObj.result_4}}</p>
-                    </li>
-                    <li>
-                        <h3>{{lunarTit}}</h3>
-                        <div>
-                            <form name="lunarYinFrm">
-                                阴历
-                                <select name="year" v-model="lunarYinSelect.year"></select>
-                                年
-                                <select name="month" v-model="lunarYinSelect.month"></select>
-                                月
-                                <select name="day" v-model="lunarYinSelect.day"></select>
-                                日
-                            </form>
-                        </div>
-                        <div>
-                            <form name="lunarYangFrm">
-                                阳历
-                                <select name="year" v-model="lunarYangSelect.year"></select>
-                                年
-                                <select name="month" v-model="lunarYangSelect.month"></select>
-                                月
-                                <select name="day" v-model="lunarYangSelect.day"></select>
-                                日
-                            </form>
-                        </div>
+                        <p>相差 <input type="text" v-model="dateObj.num" /> 天（输入负数向前推算）</p>
+                        <p>是 <font>{{dateObj.result_1}}</font> 年 <font>{{dateObj.result_2}}</font> 月 <font>{{dateObj.result_3}}</font> 日 星期 <font>{{dateObj.result_4}}</font>
+                        </p>
+                        <span :class="{error:errorClass}">注：请输入整数</span>
                     </li>
                 </ul>
             </div>

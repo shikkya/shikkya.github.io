@@ -28,7 +28,6 @@ var lunar = {
 var vm = new Vue({
     el: '#app',
     data: {
-        tit: '日期各种算',
         todayObj: {
             year: '',
             month: '',
@@ -63,17 +62,6 @@ var vm = new Vue({
             result_4: '?'
         },
         dateSelect: {
-            year: '',
-            month: '',
-            day: ''
-        },
-        lunarTit: '阴阳历转换',
-        lunarYinSelect: {
-            year: '',
-            month: '',
-            day: ''
-        },
-        lunarYangSelect: {
             year: '',
             month: '',
             day: ''
@@ -141,31 +129,6 @@ var vm = new Vue({
             if (this.dateObj.num != '' && this.errorClass == false) {
                 this.dateCalculate();
             }
-        },
-        // 阴阳历转换
-        lunarYinYear: function(val) {
-            if (this.lunarYinSelect.month == 2) {
-                this.updateDay('lunarYin');
-            }
-        },
-        lunarYinMonth: function(val) {
-            this.updateDay('lunarYin');
-        },
-        lunarYinDay: function(val) {
-
-        },
-        lunarYangYear: function(val) {
-            if (this.lunarYangSelect.month == 2) {
-                this.updateDay('lunarYang');
-            }
-            this.YangToYin();
-        },
-        lunarYangMonth: function(val) {
-            this.updateDay('lunarYang');
-            this.YangToYin();
-        },
-        lunarYangDay: function(val) {
-            this.YangToYin();
         }
     },
     computed: {
@@ -200,25 +163,6 @@ var vm = new Vue({
         },
         dateDay: function() {
             return this.dateSelect.day;
-        },
-        // 阴阳历转换
-        lunarYinYear: function() {
-            return this.lunarYinSelect.year;
-        },
-        lunarYinMonth: function() {
-            return this.lunarYinSelect.month;
-        },
-        lunarYinDay: function() {
-            return this.lunarYinSelect.day;
-        },
-        lunarYangYear: function() {
-            return this.lunarYangSelect.year;
-        },
-        lunarYangMonth: function() {
-            return this.lunarYangSelect.month;
-        },
-        lunarYangDay: function() {
-            return this.lunarYangSelect.day;
         }
     },
     mounted: function() {
@@ -229,11 +173,6 @@ var vm = new Vue({
         this.initSelect('dayStart');
         this.initSelect('dayEnd');
         this.initSelect('date');
-        this.initSelect('lunarYang');
-        this.initSelect('lunarYin');
-
-        // 阴历转换
-        this.YangToYin();
     },
     methods: {
         // 初始化今天日期
@@ -341,13 +280,6 @@ var vm = new Vue({
             this.dateObj.result_2 = rDate.getMonth() + 1;
             this.dateObj.result_3 = rDate.getDate();
             this.dateObj.result_4 = this.getWeekStr(rDate.getDay());
-        },
-        // 阳历转阴历
-        YangToYin: function() {
-            var lunarDate = this.getLunarDate(this.lunarYangSelect.year + '-' + this.lunarYangSelect.month + '-' + this.lunarYangSelect.day);
-            this.lunarYinSelect.year = lunarDate.lunarYear;
-            this.lunarYinSelect.month = lunarDate.lunarMonth;
-            this.lunarYinSelect.day = lunarDate.lunarDay;
         },
         // 阴历
         getLunarDate: function(date) {
