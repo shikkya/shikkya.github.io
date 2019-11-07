@@ -26,7 +26,7 @@
                 <span class="btn fr" @click="checkOnline()">在线演示</span>
             </div>
             <div class="out compatible">
-                <div class="tit">浏览器兼容性</div>
+                <div class="tit"><i></i>浏览器兼容性</div>
                 <ul>
                     <li v-for="(item,index) in dataObj.compatible.length" :class="'com_' + dataObj.compatible[index]">
                         <img :src="'../../images/code_' + (item+9) + '.png'"/>
@@ -34,7 +34,7 @@
                 </ul>
             </div>
             <div class="out compatible">
-                <div class="tit">移动端兼容性</div>
+                <div class="tit"><i></i>移动端兼容性</div>
                 <ul>
                     <li v-for="(item,index) in dataObj.comMobile.length" :class="'com_' + dataObj.comMobile[index]">
                         <img :src="'../../images/code_' + (item+19) + '.png'"/>
@@ -42,15 +42,15 @@
                 </ul>
             </div>
             <div v-if="dataObj.intro!=''" class="out intro">
-                <div class="tit">内容说明</div>
+                <div class="tit"><i></i>内容说明</div>
                 <div v-html="dataObj.intro" class="info"></div>
             </div>
             <div v-if="dataObj.bugIntro!=''" class="out intro">
-                <div class="tit">缺陷说明</div>
+                <div class="tit"><i></i>缺陷说明</div>
                 <div v-html="dataObj.bugIntro" class="info"></div>
             </div>
             <div class="out intro">
-                <div class="tit">特别声明</div>
+                <div class="tit"><i></i>特别声明</div>
                 <div class="info">
                     <p>1、本站特效部分原创，部分转载，如有侵犯版权，请及时联系客服处理。</p>
                     <p>2、兼容性测试为上传时最新浏览器版本测试，如有差异请及时联系客服修改。</p>

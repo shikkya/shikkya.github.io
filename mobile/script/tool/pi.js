@@ -14,7 +14,7 @@ var reg = /^(?:1|[1-9][0-9]?|[1-9][0-9][0-9]?|1000)$/;
 // 圆周率展示
 var ShowPiItem = {
     props: ['item'],
-    template: '<div><p>小数点后第 {{(item - 1) * 40}} - {{item * 40}} 位：</p><ul v-html="getPi((item - 1) * 40,item * 40)"></ul></div>',
+    template: '<div><p><i></i>小数点后第 {{(item - 1) * 40}} - {{item * 40}} 位：</p><ul v-html="getPi((item - 1) * 40,item * 40)"></ul></div>',
     methods: {
         getPi: function(start, end) {
             var str = '';
