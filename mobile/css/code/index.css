@@ -47,7 +47,7 @@ body {
 .list li h3 {
     color: #506a85;
     font-size: 16px;
-    margin: 8px 0px;
+    margin: 10px 0px;
     line-height: 20px;
 }
 
@@ -62,7 +62,7 @@ body {
 }
 
 .list li span {
-    font-size: 13px;
+    font-size: 12px;
     margin-left: 7px;
     border: 1px solid #e0e0e0;
     padding: 1px 6px;
