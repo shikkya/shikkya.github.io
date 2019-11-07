@@ -90,6 +90,7 @@ a {
 
 .content {
     padding-top: 73px;
+    font-size: 15px;
 }
 
 /*************** header ***************/
@@ -109,14 +110,14 @@ a {
 }
 
 .header .back {
-    width: 30px;
-    height: 30px;
-    line-height: 28px;
-    font-size: 16px;
+    width: 33px;
+    height: 33px;
+    line-height: 31px;
+    font-size: 17px;
     text-align: center;
     color: #fff;
     border-radius: 50%;
-    margin: 15px 10px;
+    margin: 19px 11px 0px;
 }
 
 .header .top {
@@ -143,19 +144,19 @@ a {
 
 .pos_btn div {
     width: 14px;
-    height: 33px;
-    line-height: 31px;
+    height: 35px;
+    line-height: 35px;
     overflow: hidden;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     color: #fff;
-    padding: 0px 10px;
+    padding: 0px 12px;
     font-size: 18px;
 }
 
 .pos_btn .go_top {
     display: inline-block;
-    line-height: 30px;
+    line-height: 32px;
 }
 
 .pos_btn .go_contact {

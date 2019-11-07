@@ -17,9 +17,9 @@
         <header-item :obj="headerObj"></header-item>
         <div class="content">
             <div class="calculate">
-                <p :class="{error:errorClass}">请输入小于等于1000的正整数</p>
                 <p>小数点后第 <input type="text" v-model="inputVal_1" /> 位是 <span>{{result_1}}</span></p>
                 <p>小数点后第 <input type="text" v-model="inputVal_2" /> 位 + 第 <input type="text" v-model="inputVal_3" /> 位 = <span>{{result_2}}</span></p>
+                <p :class="{error:errorClass}">注：请输入小于等于1000的正整数</p>
             </div>
             <div class="show">
                 <show-pi-item :item="item" v-for="item in 5"></show-pi-item>

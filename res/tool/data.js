@@ -25,7 +25,7 @@ var toolList = [{
         tit: '日期计算器',
         text: '推算指定天数前或后的日期<br/>计算指定日期间隔天数',
         url: './date.html',
-        isMobile: false
+        isMobile: true
     },
     // {
     //     img: 'tool_54.png',

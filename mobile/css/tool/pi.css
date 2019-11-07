@@ -36,11 +36,18 @@ body {
 .calculate {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    padding: 20px 0px;
+    padding: 20px;
+    line-height: 40px;
+    color: #555;
 }
 
-.calculate p {
-    margin: 10px 15px;
+.calculate p:last-child {
+    color: #aaa;
+}
+
+.calculate span {
+    color: #00cbdb;
+    font-weight: bold;
 }
 
 .calculate p.error {
@@ -57,15 +64,12 @@ body {
 
 .show {
     border-top-right-radius: 15px;
-    padding: 10px 0px 20px;
-}
-
-.show div {
-    line-height: 18px;
+    padding: 20px 0px;
+    font-size: 15px;
 }
 
 .show p {
-    margin: 15px 0px 8px 15px;
+    margin: 10px 0px;
     color: #403a6c;
     font-weight: bold;
     border-left: 5px solid #403a6c;
@@ -75,11 +79,12 @@ body {
 .show ul {
     font-size: 0px;
     margin: 0px 20px;
+    line-height: 25px;
 }
 
 .show li {
     display: inline-block;
-    font-size: 14px;
+    font-size: 15px;
     width: 25%;
     text-align: center;
     color: #666;

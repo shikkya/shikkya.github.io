@@ -81,13 +81,13 @@ function goTop() {
 // 点击联系我们
 function goContact() {
     var obj = document.getElementById('goContact');
-    if (obj.clientWidth == 34) {
+    if (obj.clientWidth == 152) {
+        obj.style.width = '14px';
+    } else {
         obj.style.width = '152px';
         setTimeout(function() {
             obj.style.width = '14px';
         }, 10000);
-    } else {
-        obj.style.width = '14px';
     }
 }
 
