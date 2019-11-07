@@ -38,6 +38,7 @@ textarea {
 }
 
 input,
+select,
 textarea {
     background: #fff;
 }
