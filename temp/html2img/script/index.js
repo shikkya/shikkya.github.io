@@ -4,8 +4,39 @@
  * @date    2019-10-28
  * @version $Id$
  */
+window.onload = function() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.fillStyle = "#eee";
+    ctx.fillRect(0, 0, 1920, 1080);
+
+
+    var img1 = new Image();
+    img1.src = "./images/01.png";
+    img1.onload = function() {
+        ctx.drawImage(img1, 0, 0, 1920, 1080);
+    }
+
+
+    var img2 = new Image();
+    img2.src = "./images/02.png";
+    img2.onload = function() {
+        ctx.drawImage(img2, 0, 0, 1920, 1080);
+    }
+
+
+    downloadFile('s0000.png', c.toDataURL("image/png"));
+}
+
+function downPng() {
+    var c = document.getElementById("myCanvas");
+    downloadFile('s1111.png', c.toDataURL("image/png"));
+
+}
 
 function toCanvas() {
+
     html2canvas(document.getElementById('wrap'), {
         dpi: 200,
         background: "#fff",
@@ -13,15 +44,9 @@ function toCanvas() {
         height: 108,
         onrendered: function(canvas) {
 
-            var extra_canvas = document.createElement(canvas);
 
-            extra_canvas.setAttribute('width', 1920);
-            extra_canvas.setAttribute(' height', 1080);
 
-            var ctx = extra_canvas.getContext('2d');
-            ctx.drawImage(canvas, 0, 0, 1920, 1080);
-           
-            downloadFile('ship.png', extra_canvas.toDataURL("image/png"));
+            downloadFile('ship.png', canvas.toDataURL("image/png"));
 
 
 
