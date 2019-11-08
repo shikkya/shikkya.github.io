@@ -26,47 +26,30 @@ window.onload = function() {
     }
 
 
-    downloadFile('s0000.png', c.toDataURL("image/png"));
+    // downloadFile('s0000.png', c.toDataURL("image/png"));
 }
+
+function xmTanUploadImg(obj) {
+    console.log(00000);
+    var file = obj.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(e) { //成功读取文件
+        var img = document.getElementById("imgup");
+        console.log(e.target.result);
+        img.src = e.target.result; //或 img.src = this.result / e.target == this
+
+        //实现点击下载图片功能
+        // var xmTanDownload = document.getElementById("xmTanDownload");
+        // xmTanDownload.setAttribute("href", e.target.result); //给a标签设置href
+    };
+}
+
 
 function downPng() {
     var c = document.getElementById("myCanvas");
     downloadFile('s1111.png', c.toDataURL("image/png"));
 
-}
-
-function toCanvas() {
-
-    html2canvas(document.getElementById('wrap'), {
-        dpi: 200,
-        background: "#fff",
-        width: 192,
-        height: 108,
-        onrendered: function(canvas) {
-
-
-
-            downloadFile('ship.png', canvas.toDataURL("image/png"));
-
-
-
-
-
-            // var extra_canvas = document.createElement(canvas);
-
-            // extra_canvas.setAttribute('width',1920);
-            // extra_canvas.setAttribute(' height',1080);
-
-            // var ctx = extra_canvas.getContext('2d');
-            // ctx.drawImage(canvas, 0, 0, 1920, 1080);
-            // var dataURL = extra_canvas.toDataURL();
-
-            // window.open(dataURL);
-
-
-
-        },
-    });
 }
 
 // // 保存成png格式的图片
@@ -84,26 +67,26 @@ function toCanvas() {
 //     return canvas.toDataURL("image/bmp");
 // }
 
-function base64Img2Blob(code) {
-    var parts = code.split(';base64,');
-    var contentType = parts[0].split(':')[1];
-    var raw = window.atob(parts[1]);
-    var rawLength = raw.length;
-    var uInt8Array = new Uint8Array(rawLength);
-    for (var i = 0; i < rawLength; ++i) {
-        uInt8Array[i] = raw.charCodeAt(i);
-    }
-    return new Blob([uInt8Array], { type: contentType });
-}
+// function base64Img2Blob(code) {
+//     var parts = code.split(';base64,');
+//     var contentType = parts[0].split(':')[1];
+//     var raw = window.atob(parts[1]);
+//     var rawLength = raw.length;
+//     var uInt8Array = new Uint8Array(rawLength);
+//     for (var i = 0; i < rawLength; ++i) {
+//         uInt8Array[i] = raw.charCodeAt(i);
+//     }
+//     return new Blob([uInt8Array], { type: contentType });
+// }
 
-function downloadFile(fileName, content) {
-    var aLink = document.createElement('a');
-    var blob = base64Img2Blob(content); //new Blob([content]);
+// function downloadFile(fileName, content) {
+//     var aLink = document.createElement('a');
+//     var blob = base64Img2Blob(content); //new Blob([content]);
 
-    var evt = document.createEvent("HTMLEvents");
-    evt.initEvent("click", false, false); //initEvent 不加后两个参数在FF下会报错
-    aLink.download = fileName;
-    aLink.href = URL.createObjectURL(blob);
+//     var evt = document.createEvent("HTMLEvents");
+//     evt.initEvent("click", false, false); //initEvent 不加后两个参数在FF下会报错
+//     aLink.download = fileName;
+//     aLink.href = URL.createObjectURL(blob);
 
-    aLink.dispatchEvent(evt);
-}
+//     aLink.dispatchEvent(evt);
+// }
