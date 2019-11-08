@@ -4,40 +4,47 @@
  * @date    2019-10-28
  * @version $Id$
  */
-window.onload = function() {
-    var c = document.getElementById("myCanvas");
-    var ctx = c.getContext("2d");
 
-    ctx.fillStyle = "#eee";
-    ctx.fillRect(0, 0, 1920, 1080);
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
 
-
-    var img1 = new Image();
-    img1.src = "./images/01.png";
-    img1.onload = function() {
-        ctx.drawImage(img1, 0, 0, 1920, 1080);
-    }
+ctx.fillStyle = "#eee";
+ctx.fillRect(0, 0, 1920, 1080);
 
 
-    var img2 = new Image();
-    img2.src = "./images/02.png";
-    img2.onload = function() {
-        ctx.drawImage(img2, 0, 0, 1920, 1080);
-    }
-
-
-    // downloadFile('s0000.png', c.toDataURL("image/png"));
+var img1 = new Image();
+img1.src = "./images/01.png";
+img1.onload = function() {
+    ctx.drawImage(img1, 0, 0, 1920, 1080);
 }
 
-function xmTanUploadImg(obj) {
-    console.log(00000);
+
+var img2 = new Image();
+img2.src = "./images/02.png";
+img2.onload = function() {
+    ctx.drawImage(img2, 0, 0, 1920, 1080);
+}
+
+function uploadImg(obj) {
     var file = obj.files[0];
     var reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function(e) { //成功读取文件
         var img = document.getElementById("imgup");
-        console.log(e.target.result);
         img.src = e.target.result; //或 img.src = this.result / e.target == this
+
+
+        var img3 = new Image();
+        img3.src = e.target.result;
+        img3.onload = function() {
+            ctx.drawImage(img3, 0, 0, 1920, 1080);
+        }
+
+        var img4 = new Image();
+        img4.src = "./images/02.png";
+        img4.onload = function() {
+            ctx.drawImage(img4, 0, 0, 1920, 1080);
+        }
 
         //实现点击下载图片功能
         // var xmTanDownload = document.getElementById("xmTanDownload");
@@ -45,9 +52,7 @@ function xmTanUploadImg(obj) {
     };
 }
 
-
 function downPng() {
-    var c = document.getElementById("myCanvas");
     downloadFile('s1111.png', c.toDataURL("image/png"));
 
 }
