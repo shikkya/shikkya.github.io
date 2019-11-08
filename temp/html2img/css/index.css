@@ -47,4 +47,5 @@ button:active {
     border-radius: 3px;
     cursor: pointer;
     font-size: 15px;
+    margin: 20px 0px;
 }

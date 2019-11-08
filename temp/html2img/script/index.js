@@ -5,29 +5,38 @@
  * @version $Id$
  */
 
-function toPdf() {
+function toCanvas() {
     html2canvas(document.getElementById('wrap'), {
         dpi: 200,
         background: "#fff",
         width: 192,
         height: 108,
         onrendered: function(canvas) {
-            // downloadFile('ship.png', canvas.toDataURL("image/png"));
-
-
-
-
 
             var extra_canvas = document.createElement(canvas);
 
-            extra_canvas.setAttribute('width',750);
-            extra_canvas.setAttribute(' height',1050);
+            extra_canvas.setAttribute('width', 1920);
+            extra_canvas.setAttribute(' height', 1080);
 
             var ctx = extra_canvas.getContext('2d');
-            ctx.drawImage(canvas, 0, 0, 750, 1050);
-            var dataURL = extra_canvas.toDataURL();
+            ctx.drawImage(canvas, 0, 0, 1920, 1080);
+           
+            downloadFile('ship.png', extra_canvas.toDataURL("image/png"));
 
-            window.open(dataURL);
+
+
+
+
+            // var extra_canvas = document.createElement(canvas);
+
+            // extra_canvas.setAttribute('width',1920);
+            // extra_canvas.setAttribute(' height',1080);
+
+            // var ctx = extra_canvas.getContext('2d');
+            // ctx.drawImage(canvas, 0, 0, 1920, 1080);
+            // var dataURL = extra_canvas.toDataURL();
+
+            // window.open(dataURL);
 
 
 
