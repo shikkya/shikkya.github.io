@@ -74,10 +74,8 @@
 .size_list li {
     padding: 4px 15px;
     margin-top: 6px;
-    font-family: "iconfont" !important;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    color: #333;
+    position: relative;
 }
 
 .size_list li:first-child {
@@ -90,20 +88,16 @@
 }
 
 .size_list li.active:after {
+    content: url('../../images/wallpaper_08.png');
     position: absolute;
-    top: 5px;
+    top: 4px;
     right: 15px;
-    content: "\e63d";
-    color: #00BC9C;
 }
 
 .template_list li {
     padding: 0px;
     margin-top: 12px;
-    font-family: "iconfont" !important;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    position: relative;
 }
 
 .template_list li:first-child {
@@ -111,11 +105,10 @@
 }
 
 .template_list li.active:after {
+    content: url('../../images/wallpaper_08.png');
     position: absolute;
-    bottom: 0px;
-    right: 0px;
-    content: "\e63d";
-    color: #00BC9C;
+    bottom: 10px;
+    right: 15px;
 }
 
 .template_list img {
@@ -127,17 +120,60 @@
     margin-left: 20px;
 }
 
-.right .view {
+.intro {
     position: relative;
 }
 
-.right .view .template_img {
+.intro .line {
+    width: 75%;
+    height: 1px;
+    border-top: 1px dashed #00bc9c;
+    margin-left: 12.5%;
+    position: relative;
+    top: 26px;
+    z-index: 0;
+}
+
+.intro ul {
+    font-size: 0px;
+    position: relative;
+    z-index: 1;
+}
+
+.intro li {
+    display: inline-block;
+    font-size: 15px;
+    width: 25%;
+    text-align: center;
+}
+
+.intro span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: #00bc9c;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.intro p {
+    margin-top: 10px;
+    color: #666;
+}
+
+.view {
+    position: relative;
+    margin: 20px 0px;
+}
+
+.view .template_img {
     width: 100%;
     position: relative;
     z-index: 1;
 }
 
-.right .view .bg_img {
+.view .bg_img {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -146,12 +182,17 @@
     z-index: 0;
 }
 
-.right .btn_out {
+.btn_out {
     text-align: center;
-    margin: 20px 0px;
 }
 
-.right .btn {
+.btn_out p {
+    margin-bottom: 20px;
+    color: #f90;
+    font-size: 14px;
+}
+
+.btn_out .btn {
     font-size: 16px;
     padding: 10px 0px;
     width: 135px;

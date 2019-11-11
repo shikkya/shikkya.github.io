@@ -41,19 +41,36 @@
                     </ul>
                 </div>
                 <div class="right">
+                    <div class="intro">
+                        <div class="line"></div>
+                        <ul>
+                            <li>
+                                <span>01</span>
+                                <p>选择壁纸尺寸</p>
+                            </li>
+                            <li>
+                                <span>02</span>
+                                <p>选择喜欢的模板</p>
+                            </li>
+                            <li>
+                                <span>03</span>
+                                <p>上传本地图片</p>
+                            </li>
+                            <li>
+                                <span>04</span>
+                                <p>下载合成壁纸</p>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="view">
                         <img :src="'../../images/wallpaper_make/' + templateId + '_' + sizeText + '.png'" class="template_img" />
                         <img :src="imgSrc" class="bg_img" />
                     </div>
                         <div class="btn_out">
+                            <p>为保证最好的合成效果 请按照左侧选择的尺寸上传图片</p>
                             <input type="file" name="imgfile" id="imgFile" onchange="uploadImg(this)" />
                             <label for="imgFile" class="btn">上传本地图片</label>
                             <span class="btn" @click="downloadImg">下载合成壁纸</span>
-                        </div>
-                        <div class="intro">
-                            <p>1、在左侧选择需要的壁纸尺寸</p>
-                            <p>2、在左侧选择喜欢的模板</p>
-                            <p>3、点击上方按钮选择本地图片，注意图片尺寸和选择尺寸相同</p>
                         </div>
                     </div>
                 </div>

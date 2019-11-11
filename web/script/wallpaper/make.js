@@ -87,7 +87,26 @@ var vm = new Vue({
             var cs = document.getElementById("imgCanvas");
             var ctx = cs.getContext("2d");
 
-            this.downloadFile('s1111.png', cs.toDataURL("image/png"));
+            var now = new Date();
+            var year = now.getFullYear(); //年
+            var month = now.getMonth() + 1; //月
+            var day = now.getDate(); //日
+            var hh = now.getHours(); //时
+            var mm = now.getMinutes(); //分
+            var clock = year + "年";
+            if (month < 10)
+                clock += "0";
+            clock += month + "月";
+            if (day < 10)
+                clock += "0";
+            clock += day + "日 ";
+            if (hh < 10)
+                clock += "0";
+            clock += hh + "时";
+            if (mm < 10) clock += '0';
+            clock += mm + "分";
+
+            this.downloadFile('SHIKKYA-模板壁纸-' + clock + '.png', cs.toDataURL("image/png"));
         },
         // 下载
         downloadFile: function(fileName, content) {
