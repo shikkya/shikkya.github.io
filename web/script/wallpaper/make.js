@@ -87,26 +87,30 @@ var vm = new Vue({
             var cs = document.getElementById("imgCanvas");
             var ctx = cs.getContext("2d");
 
-            var now = new Date();
-            var year = now.getFullYear(); //年
-            var month = now.getMonth() + 1; //月
-            var day = now.getDate(); //日
-            var hh = now.getHours(); //时
-            var mm = now.getMinutes(); //分
-            var clock = year + "年";
-            if (month < 10)
-                clock += "0";
-            clock += month + "月";
-            if (day < 10)
-                clock += "0";
-            clock += day + "日 ";
-            if (hh < 10)
-                clock += "0";
-            clock += hh + "时";
-            if (mm < 10) clock += '0';
-            clock += mm + "分";
-
-            this.downloadFile('SHIKKYA-模板壁纸-' + clock + '.png', cs.toDataURL("image/png"));
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var day = date.getDate();
+            var hh = date.getHours();
+            var mm = date.getMinutes();
+            var dateStr = year + "";
+            if (month < 10) {
+                dateStr += "0";
+            }
+            dateStr += month + "";
+            if (day < 10) {
+                dateStr += "0";
+            }
+            dateStr += day + "";
+            if (hh < 10) {
+                dateStr += "0";
+            }
+            dateStr += hh + "";
+            if (mm < 10) {
+                dateStr += '0';
+            }
+            dateStr += mm + "";
+            this.downloadFile('SHIKKYA-模板壁纸-' + dateStr + '.png', cs.toDataURL("image/png"));
         },
         // 下载
         downloadFile: function(fileName, content) {
