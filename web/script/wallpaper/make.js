@@ -110,6 +110,7 @@ var vm = new Vue({
                 dateStr += '0';
             }
             dateStr += mm + "";
+            
             this.downloadFile('SHIKKYA-模板壁纸-' + dateStr + '.png', cs.toDataURL("image/png"));
         },
         // 下载
