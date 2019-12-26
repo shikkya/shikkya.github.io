@@ -9,8 +9,6 @@ var vm = new Vue({
     el: '#app',
     data: {
         tit: '模板壁纸在线制作',
-        sizeId: 1,
-        sizeText: '1920_1080',
         sizeList: [{
                 id: 1,
                 wid: '1920',
@@ -29,17 +27,19 @@ var vm = new Vue({
                 img: '../../images/wallpaper_06.png'
             }
         ],
-        templateId: 1,
-        imgSrc: '../../images/wallpaper_06.png'
+        curSizeId: 1,
+        curSizeText: '1920_1080',
+        curTemplateId: 1,
+        curImgSrc: '../../images/wallpaper_06.png'
     },
     watch: {
-        sizeId: function(val) {
-            if (this.imgSrc.indexOf('../../images/wallpaper_') > -1) {
-                this.imgSrc = this.sizeList[val - 1].img;
+        curSizeId: function(val) {
+            if (this.curImgSrc.indexOf('../../images/wallpaper_') > -1) {
+                this.curImgSrc = this.sizeList[val - 1].img;
             }
             this.updateCanvasImg();
         },
-        templateId: function() {
+        curTemplateId: function() {
             this.updateCanvasImg();
         }
     },
@@ -53,30 +53,30 @@ var vm = new Vue({
     methods: {
         // 更换尺寸
         changeSize: function(val) {
-            this.sizeId = val;
-            this.sizeText = this.sizeList[val - 1].wid + '_' + this.sizeList[val - 1].hei;
+            this.curSizeId = val;
+            this.curSizeText = this.sizeList[val - 1].wid + '_' + this.sizeList[val - 1].hei;
         },
         // 更换模板
         changeTemplate: function(val) {
-            this.templateId = val;
+            this.curTemplateId = val;
         },
         // 更新canvas中的图片
         updateCanvasImg: function() {
             var cs = document.getElementById("imgCanvas");
             var ctx = cs.getContext("2d");
 
-            var wid = this.sizeList[this.sizeId - 1].wid;
-            var hei = this.sizeList[this.sizeId - 1].hei;
+            var wid = this.sizeList[this.curSizeId - 1].wid;
+            var hei = this.sizeList[this.curSizeId - 1].hei;
 
             var temp = this;
 
             var img1 = new Image();
-            img1.src = this.imgSrc;
+            img1.src = this.curImgSrc;
             img1.onload = function() {
                 ctx.drawImage(img1, 0, 0, wid, hei);
 
                 var img2 = new Image();
-                img2.src = '../../images/wallpaper_make/' + temp.templateId + '_' + temp.sizeText + '.png';
+                img2.src = '../../images/wallpaper_make/' + temp.curTemplateId + '_' + temp.curSizeText + '.png';
                 img2.onload = function() {
                     ctx.drawImage(img2, 0, 0, wid, hei);
                 }
@@ -110,7 +110,7 @@ var vm = new Vue({
                 dateStr += '0';
             }
             dateStr += mm + "";
-            
+
             this.downloadFile('SHIKKYA-模板壁纸-' + dateStr + '.png', cs.toDataURL("image/png"));
         },
         // 下载
@@ -145,7 +145,7 @@ function uploadImg(obj) {
     var reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = function(e) { //成功读取文件
-        vm.imgSrc = e.target.result;
+        vm.curImgSrc = e.target.result;
         vm.updateCanvasImg();
     };
 }

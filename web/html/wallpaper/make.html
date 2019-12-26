@@ -29,13 +29,13 @@
                 <div class="left">
                     <div class="tit">更换尺寸</div>
                     <ul class="size_list">
-                        <li v-for="item in sizeList" :class="{active:sizeId==item.id}" @click="changeSize(item.id)">
+                        <li v-for="item in sizeList" :class="{active:curSizeId==item.id}" @click="changeSize(item.id)">
                             <span>{{item.wid}} × {{item.hei}}</span>
                         </li>
                     </ul>
                     <div class="tit">更换模板</div>
                     <ul class="template_list">
-                        <li v-for="item in 3" :class="{active:templateId==item}" @click="changeTemplate(item)">
+                        <li v-for="item in 3" :class="{active:curTemplateId==item}" @click="changeTemplate(item)">
                             <img src="../../images/wallpaper_04.png" :data-src="'../../images/wallpaper_make/' + item + '.png'"/>
                             </li>
                     </ul>
@@ -50,7 +50,7 @@
                             </li>
                             <li>
                                 <span>02</span>
-                                <p>选择喜欢的模板</p>
+                                <p>选择心仪模板</p>
                             </li>
                             <li>
                                 <span>03</span>
@@ -63,8 +63,8 @@
                         </ul>
                     </div>
                     <div class="view">
-                        <img :src="'../../images/wallpaper_make/' + templateId + '_' + sizeText + '.png'" class="template_img" />
-                        <img :src="imgSrc" class="bg_img" />
+                        <img :src="'../../images/wallpaper_make/' + curTemplateId + '_' + curSizeText + '.png'" class="template_img" />
+                        <img :src="curImgSrc" class="bg_img" />
                     </div>
                         <div class="btn_out">
                             <p>为保证最好的合成效果 请按照左侧选择的尺寸上传图片</p>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <canvas id="imgCanvas" :width="sizeList[sizeId-1].wid" :height="sizeList[sizeId-1].hei"></canvas>
+                <canvas id="imgCanvas" :width="sizeList[curSizeId-1].wid" :height="sizeList[curSizeId-1].hei"></canvas>
             </div>
             <pos-btn-item></pos-btn-item>
             <footer-item></footer-item>

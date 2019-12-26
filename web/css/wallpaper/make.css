@@ -49,7 +49,7 @@
 }
 
 .left {
-    width: 200px;
+    width: 180px;
     padding: 20px;
     border: 1px dashed #e0e0e0;
 }
@@ -116,7 +116,7 @@
 }
 
 .right {
-    width: calc(100% - 262px);
+    width: calc(100% - 242px);
     margin-left: 20px;
 }
 
@@ -203,4 +203,44 @@
 .right input[type="file"],
 canvas {
     display: none;
+}
+
+@media screen and (max-width: 1150px) {
+
+    .left {
+        width: 160px;
+    }
+
+    .right {
+        width: calc(100% - 222px);
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .left,
+    .right {
+        display: block;
+        width: auto;
+        margin: 40px 0px;
+    }
+
+    .size_list li,
+    .template_list li {
+        display: inline-block;
+        margin: 0px 0px 0px 20px;
+    }
+
+    .size_list li {
+        width: calc(33% - 42px);
+    }
+
+    .template_list li {
+        width: calc(33% - 12px);
+    }
+
+    .size_list li:nth-child(3n+1),
+    .template_list li:nth-child(3n+1) {
+        margin-left: 0px;
+    }
 }
