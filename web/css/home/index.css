@@ -8,8 +8,9 @@
  */
 
 body {
-    background: url('../../images/home_01.png') no-repeat;
-    background-size: 100% auto;
+    /*background: url('../../images/home_01.png') no-repeat;
+    background-size: 100% auto;*/
+    background: #fff;
     overflow-x: hidden;
 }
 
