@@ -23,7 +23,8 @@ body {
 .select_out {
     display: inline-block;
     position: relative;
-    margin-top: 100px;
+    margin: 80px 6px;
+    vertical-align: top;
 }
 
 .select_out input[type="text"] {

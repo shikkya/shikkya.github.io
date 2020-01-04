@@ -81,7 +81,7 @@ var codeList = [{
         tit: '3D立体拖拽图片环',
         type: '特效',
         keyWord: ['照片', '3D', '拖拽', 'JS'],
-        compatible: ['1', '1', '', '', '1', '1', '0', ''],
+        compatible: ['1', '1', '0', '', '1', '1', '0', ''],
         comMobile: ['0', '', '0'],
         intro: '<p>图片数量不限，太多会重叠，建议最多17张。</p>',
         bugIntro: '<p>360浏览器略微卡顿，不影响使用。</p>'
@@ -91,7 +91,7 @@ var codeList = [{
         tit: '纯CSS3模拟动态水效果',
         type: '特效',
         keyWord: ['CSS3'],
-        compatible: ['1', '1', '', '', '1', '1', '0', ''],
+        compatible: ['1', '1', '0', '', '1', '1', '0', ''],
         comMobile: ['1', '', '1'],
         intro: '',
         bugIntro: ''
@@ -101,7 +101,7 @@ var codeList = [{
         tit: '兼容IE8的简易jQuery日期选择器插件',
         type: '插件',
         keyWord: ['日历', 'DCalendar', 'jQuery'],
-        compatible: ['1', '1', '', '', '1', '1', '1', ''],
+        compatible: ['1', '1', '1', '', '1', '1', '1', ''],
         comMobile: ['1', '', '1'],
         intro: '<p>以插件DCalendar为基础，添加了语言配置选项，新增中文。</p><p>注：页面使用table布局时请避免样式冲突。</p>',
         bugIntro: ''
@@ -111,7 +111,7 @@ var codeList = [{
         tit: 'Html转Pdf',
         type: '插件',
         keyWord: ['Canvas', 'html2canvas', 'Js'],
-        compatible: ['1', '1', '', '', '1', '1', '', ''],
+        compatible: ['1', '1', '0', '', '1', '1', '0', ''],
         comMobile: ['0', '', '0'],
         intro: '<p>实现原理：将html转换成canvas，再将canvas图片转换成pdf。</p><p>html2canvas脚本将整个或部分页面渲染成一个Canvas图片，通过读取DOM并将不同的样式应用到这些元素上实现，它不需要来自服务器任何渲染，整张图片都是在客户端浏览器创建。当浏览器不支持Canvas时，将采用Flashcanvas或ExplorerCanvas技术代替实现。</p>',
         bugIntro: ''
@@ -121,7 +121,7 @@ var codeList = [{
         tit: '省市区下拉三级联动',
         type: '其他',
         keyWord: ['省市区', '三级联动', 'jQuery'],
-        compatible: ['1', '1', '', '', '', '', '', ''],
+        compatible: ['1', '1', '0', '', '1', '1', '0', ''],
         comMobile: ['', '', ''],
         intro: '<p>省市区数据更新于2019年12月11日</p>',
         bugIntro: '<p>三个列表滚动条位置无法重置</p>'
