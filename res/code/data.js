@@ -115,6 +115,16 @@ var codeList = [{
         comMobile: ['0', '', '0'],
         intro: '<p>实现原理：将html转换成canvas，再将canvas图片转换成pdf。</p><p>html2canvas脚本将整个或部分页面渲染成一个Canvas图片，通过读取DOM并将不同的样式应用到这些元素上实现，它不需要来自服务器任何渲染，整张图片都是在客户端浏览器创建。当浏览器不支持Canvas时，将采用Flashcanvas或ExplorerCanvas技术代替实现。</p>',
         bugIntro: ''
+    },
+    {
+        id: '012',
+        tit: '省市区下拉三级联动',
+        type: '其他',
+        keyWord: ['省市区', '三级联动', 'jQuery'],
+        compatible: ['1', '1', '', '', '', '', '', ''],
+        comMobile: ['', '', ''],
+        intro: '<p>省市区数据更新于2019年12月11日</p>',
+        bugIntro: '<p>三个列表滚动条位置无法重置</p>'
     }
 ];
 
