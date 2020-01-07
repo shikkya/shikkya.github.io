@@ -128,7 +128,7 @@ var codeList = [{
     }
 ];
 
-// compatible: [ chrome, firefox, safari, opera, tencent, se360, ie8, ie11 ]  
+// compatible: [ chrome, firefox, safari, opera, tencent, se360, ie8, ie11 ]
 // comMobile: [ Android, Ios, WeChat ]
 // typeList: ['全部', '插件', '特效', '功能', '其他']
 
