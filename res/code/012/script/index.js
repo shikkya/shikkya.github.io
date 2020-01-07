@@ -32,6 +32,9 @@ $(function() {
                 self.hideAll();
                 $(this).addClass('active');
                 $('#' + curId + 'List').slideDown();
+                if ($(this).val() == '') {
+                    $('#' + curId + 'List').animate({ scrollTop: 0 }, 0);
+                }
             } else {
                 self.hideAll();
             }
