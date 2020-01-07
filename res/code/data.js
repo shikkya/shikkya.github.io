@@ -122,7 +122,7 @@ var codeList = [{
         type: '其他',
         keyWord: ['省市区', '三级联动', 'jQuery'],
         compatible: ['1', '1', '0', '', '1', '1', '0', ''],
-        comMobile: ['', '', ''],
+        comMobile: ['1', '', ''],
         intro: '<p>省市区数据更新于2019年12月11日</p>',
         bugIntro: '<p>三个列表滚动条位置无法重置</p>'
     }
