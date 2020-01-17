@@ -70,9 +70,9 @@
                         <div class="btn_out">
                             <p>为保证最好的合成效果 请按照左侧选择的尺寸上传图片</p>
                             <input type="file" name="imgfile" id="imgFile" onchange="uploadImg(this)" />
-                            <label for="imgFile" class="btn">上传本地图片</label>
-                            <span v-if="loadState == 1" class="btn">壁纸合成中...</span>
-                            <span v-else class="btn" @click="downloadImg">下载合成壁纸</span>
+                            <label for="imgFile" class="upload_btn btn">上传本地图片</label>
+                            <span v-if="loadState == 1" class="load_btn btn">壁纸合成中...</span>
+                            <span v-else class="download_btn btn" @click="downloadImg">下载合成壁纸</span>
                         </div>
                     </div>
                 </div>

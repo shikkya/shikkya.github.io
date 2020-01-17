@@ -206,6 +206,18 @@
     padding: 10px 0px;
     width: 135px;
     margin: 0px 10px;
+    border: 1px solid #00bc9c;
+}
+
+.btn_out .upload_btn {
+    background: #fff;
+    color: #00bc9c;
+}
+
+.btn_out .load_btn {
+    background: #bbb;
+    color: #fff;
+    border: 1px solid #bbb;
 }
 
 .right input[type="file"],
