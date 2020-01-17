@@ -15,7 +15,7 @@
 body {
     width: 100%;
     min-height: 100vh;
-    background: #fff;
+    background: #328F8F;
     font-family: "微软雅黑";
     text-align: center;
 }
@@ -31,8 +31,8 @@ body {
     background: url(../images/icon_01.png) no-repeat #fff;
     background-position: calc(100% - 8px) center;
     color: #666;
-    border: 1px solid #cdcdcd;
-    border-radius: 3px;
+    border: 1px solid #328F8F;
+    border-radius: 5px;
     font-size: 15px;
     width: 150px;
     padding: 8px 25px 8px 8px;
@@ -40,10 +40,9 @@ body {
 }
 
 .select_out input[type="text"].active {
-    background: url(../images/icon_02.png) no-repeat rgba(3, 136, 240, 0.05);
+    background: url(../images/icon_02.png) no-repeat #fff;
     background-position: calc(100% - 8px) center;
-    color: #0388F0;
-    border: 1px solid #0388F0;
+    color: #328F8F;
 }
 
 .select_out ul {
@@ -51,10 +50,9 @@ body {
     z-index: 990;
     background: #fff;
     width: calc(100% - 2px);
-    border: 1px solid #cdcdcd;
+    border: 1px solid #328F8F;
     border-top: none;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-radius: 5px;
     text-align: left;
     max-height: 184px;
     overflow-y: auto;
@@ -62,7 +60,7 @@ body {
 }
 
 .select_out li {
-    border-top: 1px dashed #cdcdcd;
+    border-top: 1px dashed #e0e0e0;
     padding: 8px;
     color: #666;
     font-size: 15px;
@@ -75,5 +73,5 @@ body {
 
 .select_out li.active,
 .select_out li:hover {
-    color: #0388F0;
+    color: #328F8F;
 }
