@@ -86,7 +86,7 @@ var vm = new Vue({
         // 下载合成壁纸
         downloadImg: function() {
             var _this = this;
-            
+
             this.loadState = 1;
 
             setTimeout(function() {
@@ -120,7 +120,7 @@ var vm = new Vue({
                 _this.downloadFile('SHIKKYA-模板壁纸-' + dateStr + '.png', cs.toDataURL("image/png"));
 
                 _this.loadState = 0;
-            }, 3000);
+            }, 10000);
         },
         // 下载
         downloadFile: function(fileName, content) {
