@@ -27,13 +27,13 @@
         <div class="content" id="content">
             <div class="wid_size">
                 <div class="left">
-                    <div class="tit">更换尺寸</div>
+                    <div class="tit">选择尺寸</div>
                     <ul class="size_list">
                         <li v-for="item in sizeList" :class="{active:curSizeId==item.id}" @click="changeSize(item.id)">
                             <span>{{item.wid}} × {{item.hei}}</span>
                         </li>
                     </ul>
-                    <div class="tit">更换模板</div>
+                    <div class="tit">选择模板</div>
                     <ul class="template_list">
                         <li v-for="item in 3" :class="{active:curTemplateId==item}" @click="changeTemplate(item)">
                             <img src="../../images/wallpaper_04.png" :data-src="'../../images/wallpaper_make/' + item + '.png'"/>
@@ -65,12 +65,14 @@
                     <div class="view">
                         <img :src="'../../images/wallpaper_make/' + curTemplateId + '_' + curSizeText + '.png'" class="template_img" />
                         <img :src="curImgSrc" class="bg_img" />
+                        <img src="../../images/wallpaper_09.gif" v-if="loadState == 1" class="load_img"/>
                     </div>
                         <div class="btn_out">
                             <p>为保证最好的合成效果 请按照左侧选择的尺寸上传图片</p>
                             <input type="file" name="imgfile" id="imgFile" onchange="uploadImg(this)" />
                             <label for="imgFile" class="btn">上传本地图片</label>
-                            <span class="btn" @click="downloadImg">下载合成壁纸</span>
+                            <span v-if="loadState == 1" class="btn">壁纸合成中...</span>
+                            <span v-else class="btn" @click="downloadImg">下载合成壁纸</span>
                         </div>
                     </div>
                 </div>

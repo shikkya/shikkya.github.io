@@ -9,6 +9,7 @@ var vm = new Vue({
     el: '#app',
     data: {
         tit: '模板壁纸在线制作',
+        loadState: 0,
         sizeList: [{
                 id: 1,
                 wid: '1920',
@@ -84,34 +85,42 @@ var vm = new Vue({
         },
         // 下载合成壁纸
         downloadImg: function() {
-            var cs = document.getElementById("imgCanvas");
-            var ctx = cs.getContext("2d");
+            var _this = this;
+            
+            this.loadState = 1;
 
-            var date = new Date();
-            var year = date.getFullYear();
-            var month = date.getMonth() + 1;
-            var day = date.getDate();
-            var hh = date.getHours();
-            var mm = date.getMinutes();
-            var dateStr = year + "";
-            if (month < 10) {
-                dateStr += "0";
-            }
-            dateStr += month + "";
-            if (day < 10) {
-                dateStr += "0";
-            }
-            dateStr += day + "";
-            if (hh < 10) {
-                dateStr += "0";
-            }
-            dateStr += hh + "";
-            if (mm < 10) {
-                dateStr += '0';
-            }
-            dateStr += mm + "";
+            setTimeout(function() {
+                var cs = document.getElementById("imgCanvas");
+                var ctx = cs.getContext("2d");
 
-            this.downloadFile('SHIKKYA-模板壁纸-' + dateStr + '.png', cs.toDataURL("image/png"));
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var day = date.getDate();
+                var hh = date.getHours();
+                var mm = date.getMinutes();
+                var dateStr = year + "";
+                if (month < 10) {
+                    dateStr += "0";
+                }
+                dateStr += month + "";
+                if (day < 10) {
+                    dateStr += "0";
+                }
+                dateStr += day + "";
+                if (hh < 10) {
+                    dateStr += "0";
+                }
+                dateStr += hh + "";
+                if (mm < 10) {
+                    dateStr += '0';
+                }
+                dateStr += mm + "";
+
+                _this.downloadFile('SHIKKYA-模板壁纸-' + dateStr + '.png', cs.toDataURL("image/png"));
+
+                _this.loadState = 0;
+            }, 3000);
         },
         // 下载
         downloadFile: function(fileName, content) {
