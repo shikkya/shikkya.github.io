@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>兼容IE8的仿浏览器关键词搜索</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="content">
+        <!-- 标题 -->
+        <div class="detail_tit">
+            <h2>中华人民共和国民事诉讼法示例</h2>
+        </div>
+        <!-- 搜索 -->
+        <div class="detail_search_out">
+            <div class="detail_search" id="detailSearch">
+                <div>
+                    <input type="text" id="searchWord" placeholder="请输入关键词" />
+                    <div class="not-select">
+                        <font id="curNum">0</font>/<font id="totalNum">0</font>
+                        |<a class="search_btn" id="searchBtn">搜索</a>|
+                        <a id="preWord">上一条</a><a id="nextWord">下一条</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 正文 -->
+        <div class="detail_info" id="detailInfo">
+            <p class="p_tit">第一章 任务、适用范围和基本原则</p>
+            <p class="p_tit">第一条</p>
+            <p class="p_tit">第一条第一款</p>
+            <p>中华人民共和国民事诉讼法以宪法为根据，结合我国民事审判工作的经验和实际情况制定。</p>
+            <p class="p_tit">第一条第二款</p>
+            <p>中华人民共和国民事诉讼法的任务，是保护当事人行使诉讼权利，保证人民法院查明事实，分清是非，正确适用法律，及时审理民事案件，确认民事权利义务关系，制裁民事违法行为，保护当事人的合法权益，教育公民自觉遵守法律，维护社会秩序、经济秩序，保障社会主义建设事业顺利进行。</p>
+            <p class="p_tit">第二条</p>
+            <p class="p_tit">第二条第一款</p>
+            <p>外国法院对中华人民共和国公民、法人和其他组织的民事诉讼权利加以限制的，中华人民共和国人民法院对该国公民、企业和组织的民事诉讼权利，实行对等原则。</p>
+            <p class="p_tit">第二条第二款</p>
+            <p>有管辖权的人民法院由于特殊原因，不能行使管辖权的，由上级人民法院指定管辖。</p>
+            <p class="p_tit">第二条第三款</p>
+            <p>合同或者其他财产权益纠纷的当事人可以书面协议选择被告住所地、合同履行地、合同签订地、原告住所地、标的物所在地等与争议有实际联系的地点的人民法院管辖，但不得违反本法对级别管辖和专属管辖的规定。</p>
+            <p class="p_tit">第二条第四款</p>
+            <p>两个以上人民法院都有管辖权的诉讼，原告可以向其中一个人民法院起诉；原告向两个以上有管辖权的人民法院起诉的，由最先立案的人民法院管辖。</p>
+            <p class="p_tit">第三条</p>
+            <p class="p_tit">第三条第一款</p>
+            <p>民族自治地方的人民代表大会根据宪法和本法的原则，结合当地民族的具体情况，可以制定变通或者补充的规定。自治区的规定，报全国人民代表大会常务委员会批准。自治州、自治县的规定，报省或者自治区的人民代表大会常务委员会批准，并报全国人民代表大会常务委员会备案。</p>
+            <p class="p_tit">第三条第二款</p>
+            <p>下级人民法院对它所管辖的第一审民事案件，认为需要由上级人民法院审理的，可以报请上级人民法院审理。</p>
+            <p class="p_tit">第三条第三款</p>
+            <p>上级人民法院有权审理下级人民法院管辖的第一审民事案件；确有必要将本院管辖的第一审民事案件交下级人民法院审理的，应当报请其上级人民法院批准。</p>
+            <p class="p_tit">第二章 管辖</p>
+            <p class="p_tit">第四条</p>
+            <p class="p_tit">第四条第一款</p>
+            <p>人民法院受理申请后，经审查，符合法律规定的，裁定拍卖、变卖担保财产，当事人依据该裁定可以向人民法院申请执行；不符合法律规定的，裁定驳回申请，当事人可以向人民法院提起诉讼。</p>
+            <p class="p_tit">第五条</p>
+            <p class="p_tit">第五条第一款</p>
+            <p>当事人对已经发生法律效力的解除婚姻关系的判决、调解书，不得申请再审。</p>
+            <p class="p_tit">第五条第二款</p>
+            <p>因当事人申请裁定再审的案件由中级人民法院以上的人民法院审理，但当事人依照本法第一百九十九条的规定选择向基层人民法院申请再审的除外。最高人民法院、高级人民法院裁定再审的案件，由本院再审或者交其他人民法院再审，也可以交原审人民法院再审。</p>
+            <p>说明：以上内容仅供演示，不具任何实际意义。</p>
+        </div>
+    </div>
+    <!-- 返回顶部 -->
+    <div class="go_top" id="goTop">
+        <span>返回<br/>顶部</span>
+    </div>
+    <script type="text/javascript" src="./script/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./script/index.js"></script>
+</body>
+
+</html>
