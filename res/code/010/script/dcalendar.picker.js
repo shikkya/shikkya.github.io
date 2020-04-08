@@ -40,6 +40,8 @@ $(function() {
         this.calendar = $(elem);
         this.today = new Date(); //system date
 
+        this.options = options; // 该配置要放在前面 否则设置了初始值会取不到配置参数
+
         //current selected date, default is today if no value given
         if (this.calendar.prev().val() === '') {
             this.date = new Date();
@@ -49,7 +51,6 @@ $(function() {
         }
 
         this.viewMode = 'days';
-        this.options = options;
         this.selected = (this.date.getMonth() + 1) + "/" + this.date.getDate() + "/" + this.date.getFullYear();
         this.minDate = this.calendar.prev().data('mindate');
         this.maxDate = this.calendar.prev().data('maxdate');
@@ -57,15 +58,34 @@ $(function() {
 
         var that = this;
 
-        this.calendar.on('click', '#next', function() { initCreate('next'); })
-            .on('click', '#prev', function() { initCreate('prev'); })
-            .on('click', '#today', function() {
+        this.calendar.on('click', '#next', function(e) {
+                e.stopPropagation();
+                initCreate('next');
+            })
+            .on('click', '#prev', function(e) {
+                e.stopPropagation();
+                initCreate('prev');
+            })
+            .on('click', '#today', function(e) {
+                e.stopPropagation();
                 that.viewMode = 'days';
                 var curr = new Date(that.date),
                     sys = new Date(that.today);
-                if (curr.toString() != sys.toString()) { that.date = sys; }
+                if (curr.toString() != sys.toString()) {
+                    that.date = sys;
+                }
                 that.create('days');
-            }).on('click', '.date, .pMDate, .nMDate', function() {
+            })
+            .on('click', '#clearBtn', function(e) { // 点击清空
+                e.stopPropagation();
+                e = $.Event('selectdate', {
+                    date: ''
+                });
+                that.calendar.trigger(e);
+            })
+            .on('click', '.date, .pMDate, .nMDate', function(e) {
+                e.stopPropagation();
+
                 var isPrev = $(this).hasClass('pMDate'),
                     isNext = $(this).hasClass('nMDate'),
                     sdate = $(this).text(),
@@ -75,15 +95,23 @@ $(function() {
                     max = that.maxDate === "today" ? new Date(that.today.getFullYear(), that.today.getMonth(), that.today.getDate()) : new Date(that.maxDate);
 
                 /* Calculate year */
-                if (isPrev) { cyear = (cmonth === 0 ? cyear - 1 : cyear); } else if (isNext) { cyear = (cmonth + 2 === 13 ? cyear + 1 : cyear); }
+                if (isPrev) {
+                    cyear = (cmonth === 0 ? cyear - 1 : cyear);
+                } else if (isNext) {
+                    cyear = (cmonth + 2 === 13 ? cyear + 1 : cyear);
+                }
                 /* Calculate month */
-                if (isPrev) { cmonth = (cmonth === 0 ? '12' : cmonth); } else if (isNext) { cmonth = (cmonth + 2 === 13 ? '1' : cmonth + 2); } else { cmonth = cmonth + 1; }
+                if (isPrev) {
+                    cmonth = (cmonth === 0 ? '12' : cmonth);
+                } else if (isNext) {
+                    cmonth = (cmonth + 2 === 13 ? '1' : cmonth + 2);
+                } else {
+                    cmonth = cmonth + 1;
+                }
 
                 // Selected date
                 var selected = new Date(cyear, cmonth - 1, sdate);
 
-                // console.log(cmonth);
-                // console.log(selected);
                 if ((that.minDate && selected < min) || (that.maxDate && selected > max)) return;
 
                 that.selected = cmonth + '/' + sdate + '/' + cyear;
@@ -92,17 +120,30 @@ $(function() {
                     that.calendar.find('td').removeClass('selected');
                     $(this).addClass('selected');
                 }
-
                 that.selectDate();
-                return true;
-            }).on('click', '#currM', function() {
-                that.viewMode = 'months';
+                // return true;
+            }).on('click', '#currM', function(e) {
+                e.stopPropagation();
+                that.viewMode = 'years';
+                that.create(that.viewMode);
+            }).on('click', '#currY', function(e) {
+                e.stopPropagation();
+                that.viewMode = 'month';
                 that.create(that.viewMode);
             }).on('click', '.month', function(e) {
+                e.stopPropagation();
                 that.viewMode = 'days';
                 var curr = new Date(that.date),
                     y = that.calendar.find('#currM').text();
                 curr.setMonth($(e.currentTarget).attr('num'));
+                that.date = curr;
+                that.create(that.viewMode);
+            }).on('click', '.year', function(e) {
+                e.stopPropagation();
+                that.viewMode = 'months';
+                var curr = new Date(that.date),
+                    y = that.calendar.find('#currY').text();
+                curr.setYear($(e.currentTarget).attr('num'));
                 that.date = curr;
                 that.create(that.viewMode);
             });
@@ -114,11 +155,55 @@ $(function() {
             curr.setDate(1);
             if (that.viewMode === 'days') {
                 curr.setMonth(currMonth + (o === 'next' ? 1 : -1));
+                that.date = curr;
+                that.create(that.viewMode);
+            } else if (that.viewMode === 'years') {
+                // 年视图
+                var tBody = that.calendar.find('tbody');
+                if (o === 'next') {
+                    var selectyear = tBody.find('tr:eq(2) td:eq(3) span.year').text();
+                    var currI = 1;
+                    selectyear = parseInt(selectyear);
+                    tBody.empty();
+                    for (var i = 0; i < 3; i++) {
+                        var row = $('<tr></tr>');
+                        for (var x = 0; x < 4; x++) {
+                            var col = $('<td align="center"></td>');
+                            var y = $('<span class="year" num="' + (selectyear + currI) + '">' + (selectyear + currI) + '</span>');
+                            col.append(y).appendTo(row);
+                            currI++;
+                        }
+                        tBody.append(row);
+                    }
+                } else {
+                    var selectyear = tBody.find('tr:eq(0) td:eq(0) span.year').text();
+                    var currI = 13;
+                    selectyear = parseInt(selectyear) + 1;
+                    tBody.empty();
+                    for (var i = 0; i < 3; i++) {
+                        var row = $('<tr></tr>');
+                        for (var x = 0; x < 4; x++) {
+                            var col = $('<td align="center"></td>');
+                            var y = $('<span class="year" num="' + (selectyear - currI) + '">' + (selectyear - currI) + '</span>');
+                            col.append(y).appendTo(row);
+                            currI--;
+                        }
+                        tBody.append(row);
+                    }
+                }
+                if (that.options.language == 'ch') {
+                    var sysDate = "今天: " + that.today.getFullYear() + "年" + langData[that.options.language].months[that.today.getMonth()] + that.today.getDate() + "日" + langData[that.options.language].daysOfWeek[that.today.getDay()];
+                    var clearBtnName = '清空';
+                } else if (that.options.language == 'en') {
+                    var sysDate = "Today: " + langData[that.options.language].daysOfWeek[that.today.getDay()] + ", " + langData[that.options.language].months[that.today.getMonth()] + " " + that.today.getDate() + ", " + that.today.getFullYear();
+                    var clearBtnName = 'clear';
+                }
+                tBody.append('<tr><td colspan="3" id="today">' + sysDate + '</td><td><span id="clearBtn">' + clearBtnName + '</span></td></tr>').appendTo(that.calendar);
             } else {
                 curr.setFullYear(currYear + (o === 'next' ? 1 : -1));
+                that.date = curr;
+                that.create(that.viewMode);
             }
-            that.date = curr;
-            that.create(that.viewMode);
         }
 
         this.create(this.viewMode);
@@ -139,7 +224,9 @@ $(function() {
         selectDate: function() {
             var that = this,
                 newDate = that.formatDate(that.options.format),
-                e = $.Event('selectdate', { date: newDate });
+                e = $.Event('selectdate', {
+                    date: newDate
+                });
 
             that.calendar.trigger(e);
         },
@@ -271,16 +358,50 @@ $(function() {
                 $.each(cal, function(i, v) {
                     var row = $('<tr></tr>'),
                         l = v.length;
-                    for (var i = 0; i < l; i++) { row.append(v[i]); }
+                    for (var i = 0; i < l; i++) {
+                        row.append(v[i]);
+                    }
                     tBody.append(row);
                 });
 
                 if (this.options.language == 'ch') {
                     var sysDate = "今天: " + that.today.getFullYear() + "年" + langData[this.options.language].months[that.today.getMonth()] + that.today.getDate() + "日" + langData[this.options.language].daysOfWeek[that.today.getDay()];
+                    var clearBtnName = '清空';
                 } else if (this.options.language == 'en') {
                     var sysDate = "Today: " + langData[this.options.language].daysOfWeek[that.today.getDay()] + ", " + langData[this.options.language].months[that.today.getMonth()] + " " + that.today.getDate() + ", " + that.today.getFullYear();
+                    var clearBtnName = 'clear';
                 }
-                tBody.append('<tr><td colspan="7" id="today">' + sysDate + '</td></tr>').appendTo(that.calendar);
+                tBody.append('<tr><td colspan="5" id="today">' + sysDate + '</td><td colspan="2"><span id="clearBtn">' + clearBtnName + '</span></td></tr>').appendTo(that.calendar);
+            } else if (mode === "years") {
+                // 增加年视图
+                this.tHead = $('<thead><tr><th id="prev">&lsaquo;</th><th colspan="2" id="currY"></th><th id="next">&rsaquo;</th></tr>');
+                if (this.options.language == 'ch') {
+                    that.tHead.find('#currY').text(that.date.getFullYear() + "年");
+                } else if (this.options.language == 'en') {
+                    that.tHead.find('#currY').text(that.date.getFullYear());
+                }
+                that.tHead.appendTo(that.calendar);
+                var currentyear = that.date.getFullYear();
+                var currI = 0;
+                for (var i = 0; i < 3; i++) {
+                    var row = $('<tr></tr>');
+                    for (var x = 0; x < 4; x++) {
+                        var col = $('<td align="center"></td>');
+                        var y = $('<span class="year" num="' + (currI + currentyear) + '">' + (currI + currentyear) + '</span>');
+                        col.append(y).appendTo(row);
+                        currI++;
+                    }
+                    tBody.append(row);
+                }
+
+                if (this.options.language == 'ch') {
+                    var sysDate = "今天: " + that.today.getFullYear() + "年" + langData[this.options.language].months[that.today.getMonth()] + that.today.getDate() + "日" + langData[this.options.language].daysOfWeek[that.today.getDay()];
+                    var clearBtnName = '清空';
+                } else if (this.options.language == 'en') {
+                    var sysDate = "Today: " + langData[this.options.language].daysOfWeek[that.today.getDay()] + ", " + langData[this.options.language].months[that.today.getMonth()] + " " + that.today.getDate() + ", " + that.today.getFullYear();
+                    var clearBtnName = 'clear';
+                }
+                tBody.append('<tr><td colspan="3" id="today">' + sysDate + '</td><td><span id="clearBtn">' + clearBtnName + '</span></td></tr>').appendTo(that.calendar);
             } else {
                 this.tHead = $('<thead><tr><th id="prev">&lsaquo;</th><th colspan="2" id="currM"></th><th id="next">&rsaquo;</th></tr>');
                 if (this.options.language == 'ch') {
@@ -303,10 +424,12 @@ $(function() {
 
                 if (this.options.language == 'ch') {
                     var sysDate = "今天: " + that.today.getFullYear() + "年" + langData[this.options.language].months[that.today.getMonth()] + that.today.getDate() + "日" + langData[this.options.language].daysOfWeek[that.today.getDay()];
+                    var clearBtnName = '清空';
                 } else if (this.options.language == 'en') {
                     var sysDate = "Today: " + langData[this.options.language].daysOfWeek[that.today.getDay()] + ", " + langData[this.options.language].months[that.today.getMonth()] + " " + that.today.getDate() + ", " + that.today.getFullYear();
+                    var clearBtnName = 'clear';
                 }
-                tBody.append('<tr><td colspan="4" id="today">' + sysDate + '</td></tr>').appendTo(that.calendar);
+                tBody.append('<tr><td colspan="3" id="today">' + sysDate + '</td><td><span id="clearBtn">' + clearBtnName + '</span></td></tr>').appendTo(that.calendar);
             }
         }
     }
@@ -350,10 +473,9 @@ $(function() {
                 data[opts]();
             } else {
                 cal = $('<table class="calendar"></table>');
-                that.wrap($('<div class="datepicker" style="display:inline-block;position:relative;"></div>'));
+                that.wrap($('<div class="datepicker" style="display:inline-block;"></div>'));
                 cal.css({
                     position: 'absolute',
-                    left: 0,
                     display: 'none',
                     'box-shadow': '0 4px 6px 1px rgba(0, 0, 0, 0.14)',
                     width: '230px',
@@ -362,13 +484,16 @@ $(function() {
                     opts.mode = 'datepicker';
                     cal.dcalendar(opts);
                 } else {
-                    cal.dcalendar({ mode: 'datepicker' });
+                    cal.dcalendar({
+                        mode: 'datepicker'
+                    });
                 }
                 cal.hover(function() {
                     hovered = true;
                 }, function() {
                     hovered = false;
-                }).on('click', function() {
+                }).on('click', function(e) {
+                    e.stopPropagation();
                     if (!selectedDate)
                         that.focus();
                     else {
@@ -376,16 +501,35 @@ $(function() {
                         $(this).hide();
                     }
                 }).on('selectdate', function(e) {
+                    e.stopPropagation();
                     that.val(e.date).trigger('onchange');
-                    that.trigger($.Event('dateselected', { date: e.date, elem: that }));
+                    // that.trigger($.Event('dateselected', { date: e.date, elem: that })); // 该事件没有被调用所以注释了
                     selectedDate = true;
+                    // 因为阻止了选择日期的冒泡，所以需要增加原本的click样式处理
+                    if (!selectedDate)
+                        that.focus();
+                    else {
+                        selectedDate = false;
+                        $(this).hide();
+                    }
                 });
-                that.on('keydown', function(e) { if (e.which) return false; })
-                    .on('focus', function() {
+                that.on('keydown', function(e) {
+                        e.stopPropagation();
+                        if (e.which) {
+                            return false;
+                        }
+                    })
+                    .on('focus', function(e) {
+                        e.stopPropagation()
                         $('.datepicker').find('.calendar').not(cal).hide();
                         cal.show();
                     })
-                    .on('blur', function() { if (!hovered) cal.hide(); });
+                    .on('blur', function(e) {
+                        e.stopPropagation()
+                        if (!hovered) {
+                            cal.hide();
+                        }
+                    });
             }
         });
     }

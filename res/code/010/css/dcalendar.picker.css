@@ -19,6 +19,7 @@
     color: #000;
     text-align: center;
     background-color: #FFF;
+    table-layout: fixed;
 }
 
 .calendar th,
@@ -39,8 +40,9 @@
     display: block;
 }
 
-.calendar .month {
-    padding: 15px;
+.calendar .month,
+.calendar .year {
+    padding: 15px 0px;
 }
 
 .calendar .pMDate,
@@ -51,7 +53,8 @@
 .calendar .date,
 .calendar .pMDate,
 .calendar .nMDate,
-.calendar .month {
+.calendar .month,
+.calendar .year {
     cursor: pointer;
 }
 
@@ -64,14 +67,16 @@
 .calendar .date:not(.disabled):hover,
 .calendar .pMDate:not(.disabled):hover,
 .calendar .nMDate:not(.disabled):hover,
-.calendar .month:hover {
+.calendar .month:hover,
+.calendar .year:hover {
     background-color: #E2E2E2;
 }
 
 .calendar .date:not(.disabled):active,
 .calendar .pMDate:not(.disabled):active,
 .calendar .nMDate:not(.disabled):active,
-.calendar .month:active {
+.calendar .month:active,
+.calendar .year:active {
     background-color: #22A7F0;
     color: #FFF;
 }
@@ -113,19 +118,21 @@
     padding: 0;
 }
 
-.calendar #today {
+.calendar #today,
+.calendar #today:hover,
+.calendar #today:active {
     text-align: center;
     cursor: pointer;
     color: #22A7F0;
-    padding: 10px 6px;
+    padding: 10px 0px;
 }
 
-.calendar #today:hover {
-    color: #80A7DD;
-}
-
-.calendar #today:active {
-    color: #000;
+.calendar #clearBtn,
+.calendar #clearBtn:hover,
+.calendar #clearBtn:active {
+    cursor: pointer;
+    color: #22A7F0;
+    padding: 10px 0px;
 }
 
 .calendar #currDay {

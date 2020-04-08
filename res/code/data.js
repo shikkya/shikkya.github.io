@@ -103,7 +103,7 @@ var codeList = [{
         keyWord: ['日历', 'DCalendar', 'jQuery'],
         compatible: ['1', '1', '1', '', '1', '1', '1', ''],
         comMobile: ['1', '', '1'],
-        intro: '<p>以插件DCalendar为基础，添加了语言配置选项，新增中文。</p><p>注：页面使用table布局时请避免样式冲突。</p>',
+        intro: '<p>以插件DCalendar为基础，新增语言配置选项，支持中文和英文，新增清空按钮。</p><p>注：页面使用table布局时请避免样式冲突。</p>',
         bugIntro: ''
     },
     {
