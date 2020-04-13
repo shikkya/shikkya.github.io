@@ -27,13 +27,6 @@ var toolList = [{
         url: './date.html',
         isMobile: true
     },
-    // {
-    //     img: 'tool_54.png',
-    //     tit: '专治选择困难症',
-    //     text: '努力开发中...',
-    //     url: '', // ./random.html
-    //     isMobile: false
-    // },
     {
         img: 'tool_56.png',
         tit: 'KeyCode查询器',
@@ -54,5 +47,19 @@ var toolList = [{
         text: '支持一键分段计次，不限记录次数<br/>精准计算间隔时长',
         url: './stopwatch.html',
         isMobile: false
+    },
+    {
+        img: 'tool_57.png',
+        tit: 'CDN查询器',
+        text: '常用CDN地址集合，多版本选择<br/>支持一键复制链接或标签',
+        url: './cdn.html',
+        isMobile: false
     }
+    // {
+    //     img: 'tool_54.png',
+    //     tit: '专治选择困难症',
+    //     text: '努力开发中...',
+    //     url: '', // ./random.html
+    //     isMobile: false
+    // },
 ]
