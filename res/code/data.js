@@ -135,6 +135,16 @@ var codeList = [{
         comMobile: ['', '', ''],
         intro: '<p>1、支持回车按键与按钮点击双操作</p><p>2、支持关键词定位</p><p>3、支持搜索框悬浮</p><p>4、不支持实时输入搜索（防止反复定位）</p>',
         bugIntro: ''
+    },
+    {
+        id: '014',
+        tit: 'jQuery分页插件',
+        type: '插件',
+        keyWord: ['分页', 'jQuery'],
+        compatible: ['1', '1', '0', '', '1', '1', '0', ''],
+        comMobile: ['', '', ''],
+        intro: '<p>配置参数如下：</p><table><tr><td>containerId</td><td>控件容器id</td><td>必填</td><td></td><td></td></tr><tr><td>cssStyle</td><td>控件样式</td><td>选填</td><td>1&nbsp;&nbsp;|&nbsp;&nbsp;2&nbsp;&nbsp;|&nbsp;&nbsp;3&nbsp;&nbsp;|&nbsp;&nbsp;4</td><td>默认1</td></tr><tr><td>curPage</td><td>当前页码</td><td>选填</td><td></td><td>默认1</td></tr><tr><td>isSkip</td><td>是否需要跳转功能</td><td>选填</td><td>true&nbsp;&nbsp;|&nbsp;&nbsp;false</td><td>默认false</td></tr><tr><td>isSize</td><td>是否需要选择条数功能</td><td>选填</td><td>true&nbsp;&nbsp;|&nbsp;&nbsp;false</td><td>默认false</td></tr><tr><td>sizeList</td><td>每页显示条数</td><td>选填</td><td></td><td>默认[10,20]</td></tr><tr><td>callback</td><td>回调函数</td><td>必填</td><td></td><td></td></tr></table><p>注：回调函数中必填数据总数与执行回调语句，详见代码注释</p>',
+        bugIntro: ''
     }
 ];
 

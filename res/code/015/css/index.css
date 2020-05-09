@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2020-04-14
+ * @version $Id$
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    text-shadow: none;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    background: #fff;
+    font-family: "微软雅黑";
+    font-size: 16px;
+    color: #888;
+    cursor: default;
+}
+
+input,
+textarea {
+    background: #fff;
+}
+
+.not-select {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+.content {
+    text-align: center;
+}
+
+.list {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 30px;
+}
+
+.list li {
+    cursor: pointer;
+}
+
+.list li.active,
+.list li:hover {
+    color: #f90;
+}
+
+.ifr {
+    border: 1px solid #ddd;
+    width: 420px;
+    height: 500px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>zTree Demo</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="content">
+        <div>
+            <a href="http://www.treejs.cn/v3/main.php#_zTreeInfo" target="_blank">zTree官网</a>
+        </div>
+        <ul class="list">
+            <li data-h="./01.html" class="active">01 最简单的树-标准JSON数据</li>
+        </ul>
+        <iframe src="" id="ifr" class="ifr"></iframe>
+    </div>
+    <script type="text/javascript" src="./script/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./script/index.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var self = this;
+
+        $('.list li').click(function() {
+            $('#ifr').attr('src', $(this).attr('data-h'));
+        })
+    })
+    </script>
+</body>
+
+</html>
