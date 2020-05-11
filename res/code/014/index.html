@@ -5,113 +5,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>jQuery分页插件</title>
-    <link rel="stylesheet" type="text/css" href="./css/zPage.css" />
-    <style type="text/css">
-    html,
-    body {
-        background: #fff;
-    }
-
-    div {
-        margin: 10px 0px;
-    }
-
-    .btn_out {
-        text-align: center;
-        margin: 60px 0px;
-    }
-
-    .btn {
-        background: #f90;
-        color: #fff;
-        border: none;
-        padding: 8px 12px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    </style>
+    <title>实时搜索</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
 </head>
 
 <body>
-    <div id="pageDemo"></div>
-    <div id="pageDemo_2"></div>
-    <div id="pageDemo_3"></div>
-    <div id="pageDemo_4"></div>
-    <div class="btn_out">
-        <button class="btn" onclick="resetZPage()">重新加载所有控件</button>
+    <div class="search_box">
+        <input type="text" id="keyWord" placeholder="请输入搜索关键词" />
+        <button id="searchBtn">搜索</button>
+        <ul id="searchList"></ul>
     </div>
-    <script type="text/javascript" src="./script/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="./script/zPage.js"></script>
-    <script>
-    var zPageObj = null;
-    new zPage({
-        containerId: "pageDemo", // 控件容器id 必填
-        cssStyle: 1, // 控件样式 默认1 可选1-4
-        curPage: 1, // 当前页码 默认1
-        isSkip: true, // 是否需要跳转功能 默认false
-        isSize: true, // 是否需要选择条数功能 默认false
-        sizeList: [10, 20, 30], // 每页显示条数 默认[10,20]
-        callback: function(e) { // 回调函数 用于ajax请求数据后的操作
-
-            // console.log(e.curPage); // 当前页码
-            // console.log(e.curSize); // 每页显示条数
-
-            e.totalNum = 100; // 数据总条数 必填
-            createPageHtml(e); // 加载控件 必填
-
-            zPageObj = e;
-        }
-    });
-
-    var zPageObj_2 = null;
-    new zPage({
-        containerId: "pageDemo_2",
-        cssStyle: 2,
-        isSkip: true,
-        isSize: true,
-        callback: function(e) {
-            e.totalNum = 100;
-            createPageHtml(e);
-            zPageObj_2 = e;
-        }
-    });
-
-    var zPageObj_3 = null;
-    new zPage({
-        containerId: "pageDemo_3",
-        cssStyle: 3,
-        isSkip: true,
-        isSize: true,
-        callback: function(e) {
-            e.totalNum = 100;
-            createPageHtml(e);
-            zPageObj_3 = e;
-        }
-    });
-
-    var zPageObj_4 = null;
-    new zPage({
-        containerId: "pageDemo_4",
-        cssStyle: 4,
-        isSkip: true,
-        isSize: true,
-        callback: function(e) {
-            e.totalNum = 100;
-            createPageHtml(e);
-            zPageObj_4 = e;
-        }
-    });
-
-    // 重新加载所有控件
-    function resetZPage() {
-        zPageObj.curPage = zPageObj_2.curPage = zPageObj_3.curPage = zPageObj_4.curPage = 1;
-        executeCallBack(zPageObj); // 执行回调函数
-        executeCallBack(zPageObj_2); // 执行回调函数
-        executeCallBack(zPageObj_3); // 执行回调函数
-        executeCallBack(zPageObj_4); // 执行回调函数
-    }
-    </script>
+    <script type="text/javascript" src="./script/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./script/index.js"></script>
 </body>
 
 </html>

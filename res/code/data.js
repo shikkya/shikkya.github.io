@@ -138,6 +138,16 @@ var codeList = [{
     },
     {
         id: '014',
+        tit: '实时搜索',
+        type: '功能',
+        keyWord: ['检索', '联想词', 'jQuery'],
+        compatible: ['1', '1', '0', '', '1', '1', '0', ''],
+        comMobile: ['', '', ''],
+        intro: '',
+        bugIntro: ''
+    },
+    {
+        id: '015',
         tit: 'jQuery分页插件',
         type: '插件',
         keyWord: ['分页', 'jQuery'],
