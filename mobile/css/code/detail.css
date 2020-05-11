@@ -152,6 +152,10 @@ body {
     margin: 3px 0px;
 }
 
+.intro .web {
+    display: none;
+}
+
 /*************** position btn ***************/
 
 .pos_btn div {
