@@ -6,7 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>zTree Demo</title>
-    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        text-shadow: none;
+        outline: none;
+    }
+
+    html,
+    body {
+        width: 100%;
+        background: #fff;
+        font-family: "微软雅黑";
+        font-size: 16px;
+        color: #888;
+        cursor: default;
+    }
+
+    ul,
+    li {
+        list-style: none;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .list {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 30px;
+        text-align: left;
+    }
+
+    .list li {
+        cursor: pointer;
+        color: #888;
+        padding: 3px 0px 3px 18px;
+    }
+
+    .list li.active,
+    .list li:hover {
+        color: #09f;
+    }
+
+    .list li.tit {
+        color: #333;
+        cursor: default;
+        padding-left: 0px;
+        font-weight: bold;
+    }
+
+    .ifr {
+        border: 1px solid #ddd;
+        width: 420px;
+        height: 500px;
+    }
+    </style>
 </head>
 
 <body>
@@ -15,18 +73,27 @@
             <a href="http://www.treejs.cn/v3/main.php#_zTreeInfo" target="_blank">zTree官网</a>
         </div>
         <ul class="list">
-            <li data-h="./01.html" class="active">01 最简单的树-标准JSON数据</li>
+            <li class="tit">基本功能 core</li>
+            <li data-i="01" class="active">01 标准JSON数据</li>
+            <li data-i="02">02 简单JSON数据</li>
+            <li data-i="03">03 不显示连接线和节点图标</li>
+            <li data-i="04">04 自定义图标</li>
+            <li data-i="05">05 自定文字样式</li>
+            <li data-i="06">06 超链接和简易click事件</li>
         </ul>
-        <iframe src="" id="ifr" class="ifr"></iframe>
+        <iframe src="./html/01.html" id="ifr" class="ifr"></iframe>
     </div>
     <script type="text/javascript" src="./script/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="./script/index.js"></script>
     <script type="text/javascript">
     $(function() {
         var self = this;
 
         $('.list li').click(function() {
-            $('#ifr').attr('src', $(this).attr('data-h'));
+            if ($(this).attr('data-i')) {
+                $('#ifr').attr('src', './html/' + $(this).attr('data-i') + '.html');
+                $('.list li').removeClass('active');
+                $(this).addClass('active');
+            }
         })
     })
     </script>
