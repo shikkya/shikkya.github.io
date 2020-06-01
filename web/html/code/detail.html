@@ -37,17 +37,17 @@
                 <div class="compatible wid_size">
                     <div class="tit">浏览器兼容性</div>
                     <ul>
-                        <li v-for="(item,index) in dataObj.compatible.length" :class="'com_' + dataObj.compatible[index]">
-                            <img :src="'../../images/code_' + (item+9) + '.png'"/>
-                            </li>
+                        <li v-for="(item,index) in dataObj.compatible" :class="'com_' + item">
+                            <span :style="'background-position: -' + index*48 + 'px 0px;'"></span>
+                        </li>
                     </ul>
                 </div>
                 <div class="compatible wid_size">
                     <div class="tit">移动端兼容性</div>
                     <ul>
-                        <li v-for="(item,index) in dataObj.comMobile.length" :class="'com_' + dataObj.comMobile[index]">
-                            <img :src="'../../images/code_' + (item+19) + '.png'"/>
-                            </li>
+                        <li v-for="(item,index) in dataObj.comMobile" :class="'com_' + item">
+                            <span :style="'background-position: -' + index*48 + 'px -48px;'"></span>
+                        </li>
                     </ul>
                 </div>
                 <div v-if="dataObj.intro!=''" class="intro wid_size">
