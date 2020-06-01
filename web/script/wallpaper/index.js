@@ -12,7 +12,7 @@ var vm = new Vue({
     },
     data: {
         logoImg: '../../images/wallpaper_01.png',
-        curIndex: '1',
+        curIndex: '0',
         curSize: '1920x1080',
         topObj: {
             img: '../../images/wallpaper_02.png',

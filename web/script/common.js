@@ -138,7 +138,6 @@ Vue.component("HeaderIndexItem", {
     data: function() {
         return {
             productList: [
-                { text: '可可导航', url: '../home/index.html' },
                 { text: '模板壁纸', url: '../wallpaper/index.html' },
                 { text: '便易工具', url: '../tool/index.html' },
                 { text: '特效码集', url: '../code/index.html' }

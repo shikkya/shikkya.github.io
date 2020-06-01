@@ -18,7 +18,7 @@ var vm = new Vue({
     },
     data: {
         logoImg: '../../images/tool_01.png',
-        curIndex: '2',
+        curIndex: '1',
         topObj: {
             bgImgInit: '../../images/tool_03.png',
             bgImg: '../../images/tool_02.png',

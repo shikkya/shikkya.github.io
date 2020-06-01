@@ -12,7 +12,7 @@ var vm = new Vue({
     },
     data: {
         logoImg: '../../images/code_01.png',
-        curIndex: '3',
+        curIndex: '2',
         topObj: {
             img: '../../images/code_02.png',
             tit: '特效码集演示下载',
