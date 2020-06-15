@@ -98,9 +98,9 @@ function checkLoad(url, imgId) {
         }
     }
     //如果因为网络或图片的原因发生异常，则显示该图片  
-    img.onerror = function() {
-        img.src = "../../images/wallpaper_05.png"
-    }
+    // img.onerror = function() {
+    //     img.src = "../../images/wallpaper_05.png"
+    // }
     img.src = url;
 }
 
@@ -148,7 +148,7 @@ Vue.component("HeaderIndexItem", {
 
 // 头部 - 各产品详情页
 Vue.component("HeaderDetailItem", {
-    template: '<div class="header header_detail"><div class="wid_size"><a href="./index.html" class="logo"><img src="../../images/footer_01.png"/></a><a href="./index.html#toolList" class="btn fr">返回工具列表</a><span class="sentence fr">{{sentenceList[num]}}</span></div></div>',
+    template: '<div class="header header_detail"><div class="wid_size"><a href="./index.html" class="logo"><img src="../../images/common_07.png"/></a><a href="./index.html#toolList" class="btn fr">返回工具列表</a><span class="sentence fr">{{sentenceList[num]}}</span></div></div>',
     data: function() {
         return {
             num: getRandomNum(0, sentenceList.length)
@@ -166,7 +166,7 @@ Vue.component("FooterItem", {
     template: '<div class="footer" v-cloak><ul><li><img :src="logoImg"/></li><li><p>联系 QQ：{{QNum}}</p><p>意见反馈：{{email}}</p></li></ul></div>',
     data: function() {
         return {
-            logoImg: '../../images/footer_01.png',
+            logoImg: '../../images/common_07.png',
             QNum: '125048224',
             email: 'shikkya@qq.com'
         }
@@ -179,8 +179,8 @@ Vue.component("NoInfoItem", {
     data: function() {
         return {
             text: '暂时没有哦 ~ 看看其他的吧',
-            imgUrl: '../../images/common_02.png',
-            dataImg: '../../images/common_01.png'
+            imgUrl: '../../images/common_09.png',
+            dataImg: '../../images/common_08.png'
         }
     }
 })

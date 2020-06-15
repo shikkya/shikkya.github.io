@@ -8,7 +8,7 @@
 // 图片展示列表
 var ToolItem = {
     props: ['item'],
-    template: '<li @click="vm.checkList(item.url)"><div><img src="../../images/tool_04.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3></div><p v-html="item.text"></p></li>'
+    template: '<li @click="vm.checkList(item.url)"><div><img src="../../images/tool_01.png" :data-src="\'../../images/\' + item.img"/><h3>{{item.tit}}</h3></div><p v-html="item.text"></p></li>'
 }
 
 var vm = new Vue({
@@ -17,11 +17,11 @@ var vm = new Vue({
         ToolItem: ToolItem
     },
     data: {
-        logoImg: '../../images/tool_01.png',
+        logoImg: '../../images/common_04.png',
         curIndex: '1',
         topObj: {
-            bgImgInit: '../../images/tool_03.png',
-            bgImg: '../../images/tool_02.png',
+            bgImgInit: '../../images/common_06.png',
+            bgImg: '../../images/common_05.png',
             tit: '便易工具在线使用',
             text: '网页在线随处可用 · 无需登录即开即用 · 无需下载省时省力 · 无需安装方便快捷',
             btnText: '全部工具',

@@ -12,7 +12,7 @@ var vm = new Vue({
     },
     data: {
         homeUrl: './index.html',
-        logoImg: '../../images/wallpaper_01.png',
+        logoImg: '../../images/common_01.png',
         searchVal: '',
         typeList: ['全部', '萌宠', '动漫', '影视', '明星', '其他'],
         sizeList: ['1920x1080', '1440x900', '1366x768'],

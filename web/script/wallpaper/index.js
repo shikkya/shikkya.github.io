@@ -11,11 +11,11 @@ var vm = new Vue({
         PicItem: PicItem
     },
     data: {
-        logoImg: '../../images/wallpaper_01.png',
+        logoImg: '../../images/common_01.png',
         curIndex: '0',
         curSize: '1920x1080',
         topObj: {
-            img: '../../images/wallpaper_02.png',
+            img: '../../images/common_02.png',
             tit: '模板壁纸高清下载',
             text: '浏览图库下载心仪壁纸 · 上传素材在线合成专属壁纸 · 让你的桌面更加方便实用'
         },

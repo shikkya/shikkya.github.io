@@ -167,21 +167,6 @@ var cdnData = [{
     }, ]
 }];
 
-/*
-, {
-    tit: '',
-    list: [{
-        url: '',
-        version: '',
-        type: 'js'
-    }, {
-        url: '',
-        version: '',
-        type: 'css'
-    } ]
-}
-*/
-
 var vm = new Vue({
     el: '#app',
     data: {

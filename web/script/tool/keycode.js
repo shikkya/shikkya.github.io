@@ -109,18 +109,12 @@ var vm = new Vue({
     mounted: function() {
         // 显示按键对应的键码值
         document.onkeydown = function() {
-            // if (document.getElementById('num') != document.activeElement) {
-                var oEvent = window.event;
-                var str = oEvent.keyCode;
-                if (keyCodeArr[oEvent.keyCode] != '') {
-                    str = keyCodeArr[oEvent.keyCode] + '&nbsp;&nbsp;&nbsp;&nbsp;' + str;
-                }
-                vm.resultKeyDown = str;
-            // }
-
-            // if (oEvent.ctrlKey && oEvent.altKey && oEvent.keyCode == 77) {
-            //     alert("刚刚按下的是 ctrl + alt + m 组合键");
-            // }
+            var oEvent = window.event;
+            var str = oEvent.keyCode;
+            if (keyCodeArr[oEvent.keyCode] != '') {
+                str = keyCodeArr[oEvent.keyCode] + '&nbsp;&nbsp;&nbsp;&nbsp;' + str;
+            }
+            vm.resultKeyDown = str;
         }
     },
     methods: {

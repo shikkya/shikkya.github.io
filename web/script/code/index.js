@@ -11,10 +11,10 @@ var vm = new Vue({
         codeItem: codeItem
     },
     data: {
-        logoImg: '../../images/code_01.png',
+        logoImg: '../../images/common_01.png',
         curIndex: '2',
         topObj: {
-            img: '../../images/code_02.png',
+            img: '../../images/common_02.png',
             tit: '特效码集演示下载',
             text: '纯前端代码页面特效 · 多浏览器兼容在线演示 · 全部开源一键下载'
         },

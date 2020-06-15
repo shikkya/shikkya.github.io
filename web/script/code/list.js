@@ -12,7 +12,7 @@ var vm = new Vue({
     },
     data: {
         homeUrl: './index.html',
-        logoImg: '../../images/code_01.png',
+        logoImg: '../../images/common_01.png',
         searchVal: '',
         typeList: ['全部', '插件', '特效', '功能', '其他'],
         curType: '0',
