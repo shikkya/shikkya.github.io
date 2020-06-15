@@ -116,7 +116,6 @@ var vm = new Vue({
                     str = keyCodeArr[oEvent.keyCode] + '&nbsp;&nbsp;&nbsp;&nbsp;' + str;
                 }
                 vm.resultKeyDown = str;
-                console.log(str);
             // }
 
             // if (oEvent.ctrlKey && oEvent.altKey && oEvent.keyCode == 77) {

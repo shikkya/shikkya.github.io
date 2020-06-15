@@ -8,7 +8,7 @@
 /****************************** 功能 ******************************/
 
 // 防复制
-document.write("<script type='text/javascript' src='../../../plugins/noCopy/noCopy.js'></script>");
+// document.write("<script type='text/javascript' src='../../../plugins/noCopy/noCopy.js'></script>");
 
 // IE版本过低判断
 var ieVersion = IEVersion();
