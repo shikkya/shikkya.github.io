@@ -8,18 +8,15 @@
 
 // 用于Mozilla和Webkit内核浏览器
 if (navigator.userAgent.indexOf('MSIE') < 0) {
-
     var css = document.createElement('style');
     css.type = 'text/css';
     css.innerHTML = 'body{-moz-user-select:none;-webkit-user-select:none;}';
     document.getElementsByTagName('head')[0].appendChild(css);
 }
-
 // 屏蔽事件：松开键盘/开始选择/开始拖动/点击鼠标右键/复制/按下鼠标键
 document.onkeyup = document.onselectstart = document.ondragstart = document.oncontextmenu = document.oncopy = document.onmousedown = function() {
     return preventDefault(window.event || arguments[0]);
 };
-
 document.onkeydown = function() {
     var e = window.event || arguments[0];
     if (e.keyCode == 123) { // F12
@@ -31,13 +28,11 @@ document.onkeydown = function() {
     } else if ((e.ctrlKey) && (e.keyCode == 83)) { // Ctrl+S
         return false;
     }
-
     var c = e.keyCode || e.which;
     if (c == 16 || c == 17 || c == 18 || c == 112 || c == 113 || c == 114 || c == 115 || c == 116 || c == 117 || c == 118 || c == 119 || c == 120 || c == 121 || c == 122 || c == 123 || c == 87 || c == 82 || c == 83 || c == 72 || c == 74 || c == 75 || c == 78) {
         return preventDefault(e); //屏蔽shift/ctrl/alt键
     }
 };
-
 // 阻止事件冒泡并且阻止默认事件
 function preventDefault(e) {
     try {
