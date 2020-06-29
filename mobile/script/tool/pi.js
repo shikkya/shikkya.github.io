@@ -33,7 +33,7 @@ var vm = new Vue({
     },
     data: {
         headerObj: {
-            tit: '圆周率速算 - SHIKKYA .',
+            tit: '圆周率速算',
             text: '快速计算圆周率小数点后指定位数的值',
             pageType: 'back'
         },

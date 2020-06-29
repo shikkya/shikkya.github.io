@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>特效码集-SHIKKYA</title>
-    <link rel="shortcut icon" href="../../images/ico/code.ico" />
+    <link rel="shortcut icon" href="../../images/ico/ico_01.ico" />
     <link rel="stylesheet" type="text/css" href="../../../plugins/iconfont/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="../../css/common.css" />
     <link rel="stylesheet" type="text/css" href="../../css/code/detail.css" />
@@ -28,17 +28,17 @@
             <div class="out compatible">
                 <div class="tit"><i></i>浏览器兼容性</div>
                 <ul>
-                    <li v-for="(item,index) in dataObj.compatible.length" :class="'com_' + dataObj.compatible[index]">
-                        <img :src="'../../images/code_' + (item+9) + '.png'"/>
-                            </li>
+                    <li v-for="(item,index) in dataObj.compatible" :class="'com_' + item">
+                        <span :style="'background-position: -' + index*48 + 'px 0px;'"></span>
+                    </li>
                 </ul>
             </div>
             <div class="out compatible">
                 <div class="tit"><i></i>移动端兼容性</div>
                 <ul>
-                    <li v-for="(item,index) in dataObj.comMobile.length" :class="'com_' + dataObj.comMobile[index]">
-                        <img :src="'../../images/code_' + (item+19) + '.png'"/>
-                            </li>
+                    <li v-for="(item,index) in dataObj.comMobile" :class="'com_' + item">
+                        <span :style="'background-position: -' + index*48 + 'px -48px;'"></span>
+                    </li>
                 </ul>
             </div>
             <div v-if="dataObj.intro!=''" class="out intro">

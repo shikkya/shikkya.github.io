@@ -104,6 +104,14 @@ body {
     position: relative;
 }
 
+.compatible span {
+    display: inline-block;
+    background: url('../../images/code_02.png') no-repeat;
+    background-size: auto 96px;
+    width: 48px;
+    height: 48px;
+}
+
 .compatible .com_0 {
     background: #FFF2F0;
 }
@@ -135,11 +143,6 @@ body {
 .compatible .com_1:after {
     content: "\e63d";
     color: #00BC9C;
-}
-
-.compatible img {
-    width: 48px;
-    height: 48px;
 }
 
 .intro .info {

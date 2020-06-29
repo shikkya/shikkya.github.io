@@ -9,7 +9,6 @@
 
 // 判断当前设备为PC或移动
 checkDevice();
-
 // 判断当前设备为PC或移动
 function checkDevice() {
     var url = window.location.href;
@@ -28,7 +27,6 @@ var Browser = new Object();
 Browser.userAgent = window.navigator.userAgent.toLowerCase();
 Browser.ie = /msie/.test(Browser.userAgent);
 Browser.Moz = /gecko/.test(Browser.userAgent);
-
 // 图片加载 - 入口
 function loadImg() {
     var imgList = document.getElementsByTagName('img');
@@ -39,7 +37,6 @@ function loadImg() {
         }
     }
 }
-
 // 图片加载
 function checkLoad(url, imgId) {
     var img = new Image();
@@ -77,7 +74,6 @@ function goTop() {
         }
     }, 15);
 }
-
 // 点击联系我们
 function goContact() {
     var obj = document.getElementById('goContact');
@@ -102,7 +98,7 @@ function getUrlStr(name) {
 // 头部
 Vue.component("HeaderItem", {
     props: ['obj'],
-    template: '<div class="header"><a class="back" :href="url"><i :class="\'icon iconfont icon-\' + obj.pageType"></i></a><div class="top"><h3>{{obj.tit}}</h3><p>{{obj.text}}</p></div></div>',
+    template: '<div class="header"><a class="back" :href="url"><i :class="\'icon iconfont icon-\' + obj.pageType"></i></a><div class="top"><h3>{{obj.tit}} · SHIKKYA</h3><p>{{obj.text}}</p></div></div>',
     computed: {
         url: function() {
             if (this.obj.pageType == 'home') {

@@ -27,7 +27,7 @@ var vm = new Vue({
     },
     data: {
         headerObj: {
-            tit: '便易工具 - SHIKKYA .',
+            tit: '便易工具',
             text: '更多精彩请使用电脑浏览器打开！',
             pageType: 'home'
         },

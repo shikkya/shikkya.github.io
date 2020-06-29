@@ -23,7 +23,7 @@ var vm = new Vue({
     },
     data: {
         headerObj: {
-            tit: '特效码集 - SHIKKYA .',
+            tit: '特效码集',
             text: '更多精彩请使用电脑浏览器打开！',
             pageType: 'home'
         },

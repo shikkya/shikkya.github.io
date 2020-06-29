@@ -29,7 +29,7 @@ var vm = new Vue({
     el: '#app',
     data: {
         headerObj: {
-            tit: '日期计算器 - SHIKKYA .',
+            tit: '日期计算器',
             text: '计算日期间隔天数与推算指定天数的日期',
             pageType: 'back'
         },

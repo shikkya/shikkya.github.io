@@ -9,7 +9,7 @@ var vm = new Vue({
     el: '#app',
     data: {
         headerObj: {
-            tit: '特效码集 - SHIKKYA .',
+            tit: '特效码集',
             text: '使用电脑浏览器访问可免费下载源码！',
             pageType: 'back'
         }

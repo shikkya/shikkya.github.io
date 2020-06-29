@@ -9,7 +9,7 @@ var vm = new Vue({
     el: '#app',
     data: {
         headerObj: {
-            tit: '模板壁纸 - SHIKKYA .',
+            tit: '模板壁纸',
             text: '更多精彩请使用电脑浏览器打开！',
             pageType: 'home'
         },
