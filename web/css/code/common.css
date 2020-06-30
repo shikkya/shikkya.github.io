@@ -7,10 +7,6 @@
  * @version $Id$
  */
 
-.btn {
-    background: #00bc9c;
-}
-
 /*************** picture list ***************/
 
 .picture ul {
@@ -74,27 +70,4 @@
     .picture ul li:nth-child(2n+1) {
         margin-left: 0px;
     }
-}
-
-/*************** position btn ***************/
-
-.go_top {
-    background: rgba(80, 106, 133, 0.9);
-    border: 1px solid #506a85;
-}
-
-/*************** footer ***************/
-
-.footer {
-    background: #2F445A;
-    border-bottom: 15px solid #283645;
-}
-
-.footer ul li:first-child {
-    border-right: 1px solid #5a6774;
-}
-
-.footer img {
-    background: #3f4f60;
-    border: 1px solid #5a6774;
 }

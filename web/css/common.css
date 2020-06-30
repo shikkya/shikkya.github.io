@@ -147,7 +147,6 @@ a {
 
 .header .logo img {
     height: 20px;
-    vertical-align: middle;
 }
 
 .header .product li {
@@ -182,11 +181,17 @@ a {
     margin-top: -1px;
 }
 
+.theme_1 .header_detail {
+    background: #58508D;
+    border-bottom: 15px solid #403a6c;
+}
+
 /*************** btn ***************/
 
 .btn {
     display: inline-block;
     color: #fff;
+    background: #00bc9c;
     font-size: 15px;
     text-align: center;
     width: 90px;
@@ -195,6 +200,10 @@ a {
     border-radius: 3px;
     transition: all 0.4s;
     cursor: pointer;
+}
+
+.theme_1 .btn {
+    background: #00cbdb;
 }
 
 .btn:hover {
@@ -222,6 +231,13 @@ a {
 .go_top {
     color: #fff;
     font-size: 23px;
+    background: rgba(80, 106, 133, 0.9);
+    border: 1px solid #506a85;
+}
+
+.theme_1 .go_top {
+    background: rgba(64, 58, 108, 0.9);
+    border: 1px solid #403a6c;
 }
 
 .go_home {
@@ -251,6 +267,13 @@ a {
     color: #fff;
     font-size: 12px;
     text-align: center;
+    background: #2F445A;
+    border-bottom: 15px solid #283645;
+}
+
+.theme_1 .footer {
+    background: #302a5a;
+    border-bottom: 15px solid #221e45;
 }
 
 .footer li {
@@ -264,6 +287,11 @@ a {
 .footer ul li:first-child {
     width: 158px;
     height: 38px;
+    border-right: 1px solid #5a6774;
+}
+
+.theme_1 .footer ul li:first-child {
+    border-right: 1px solid #6f6b8f;
 }
 
 .footer img {
@@ -271,4 +299,11 @@ a {
     padding: 8px 18px;
     margin-right: 5px;
     border-radius: 3px;
+    background: #3f4f60;
+    border: 1px solid #5a6774;
+}
+
+.theme_1 .footer img {
+    background: #403a6c;
+    border: 1px solid #6f6b8f;
 }
