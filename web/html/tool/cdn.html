@@ -21,15 +21,21 @@
             <div class="tit">
                 <h1>{{tit}}</h1>
             </div>
-            <div class="info wid_size" v-for="item in cdnData">
-                <div class="info_tit">
-                    <span>{{item.tit}}<font>({{item.list.length}})</font></span>
+            <div class="wid_size">
+                <div class="nav">
+                    <a v-for="item in cdnData" :href="'#'+item.tit">{{item.tit}}<font class="fr">{{item.list.length}}</font></a>
                 </div>
-                <div class="info_list" v-for="obj in item.list">
-                    <span>{{obj.url}}</span>
-                    <font>{{obj.version}}</font>
-                    <button class="btn fr" @click="copyHtml(this,obj)">复制标签</button>
-                    <button class="btn fr" @click="copyUrl(this,obj.url)">复制链接</button>
+                <div class="info" v-for="item in cdnData">
+                    <div :id="item.tit" class="info_nav"></div>
+                    <div class="info_tit">
+                        <span>{{item.tit}}<font>({{item.list.length}})</font></span>
+                    </div>
+                    <div class="info_list" v-for="obj in item.list">
+                        <span>{{obj.url}}</span>
+                        <font>{{obj.version}}</font>
+                        <button class="btn fr" @click="copyHtml(this,obj)">复制标签</button>
+                        <button class="btn fr" @click="copyUrl(this,obj.url)">复制链接</button>
+                    </div>
                 </div>
             </div>
         </div>
