@@ -49,10 +49,17 @@ var toolList = [{
         isMobile: false
     },
     {
-        img: 'tool_57.png',
+        img: 'tool_58.png',
         tit: 'CDN查询器',
         text: '常用CDN地址集合，多版本选择<br/>支持一键复制链接或标签',
         url: './cdn.html',
+        isMobile: false
+    },
+    {
+        img: 'tool_57.png',
+        tit: 'HTML代码运行器',
+        text: '在线可视化编辑HTML代码<br/>快速预览执行效果',
+        url: './compiler.html',
         isMobile: false
     }
 ]

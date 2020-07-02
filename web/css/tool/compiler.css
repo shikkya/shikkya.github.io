@@ -1,0 +1,100 @@
+﻿@charset "UTF-8";
+
+/**
+ * tool - compiler
+ * @authors shikkya
+ * @date    2020-06-30
+ * @version $Id$
+ */
+
+html,
+body {
+    min-width: 1030px;
+}
+
+@media screen and (max-width: 1150px) {
+
+    html,
+    body {
+        min-width: 1030px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    html,
+    body {
+        min-width: 1030px;
+    }
+}
+
+.content {
+    padding-top: 90px;
+}
+
+.tit {
+    text-align: center;
+    color: #403a6c;
+    margin: 20px 0px 0px;
+}
+
+.info {
+    font-size: 0px;
+}
+
+.left,
+.right {
+    display: inline-block;
+    width: calc(50% - 62px);
+    border: 1px solid #e0e0e0;
+    font-size: 15px;
+    margin: 40px;
+    border-radius: 3px;
+}
+
+.right {
+    margin-left: 0px;
+}
+
+.top {
+    padding: 10px;
+    height: 26px;
+    line-height: 26px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.top .btn {
+    width: auto;
+    padding: 3px 8px;
+    margin-left: 5px;
+}
+
+.top .btn:first-child {
+    margin-left: 0px;
+}
+
+.top span {
+    color: #fff;
+    background: #f90;
+    margin-left: 15px;
+    border-radius: 3px;
+    padding: 3px 8px;
+}
+
+.left textarea,
+.right iframe {
+    border: 0px;
+}
+
+.left textarea {
+    width: calc(100% - 24px);
+    height: calc(100vh - 338px);
+    line-height: 25px;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.right iframe {
+    width: 100%;
+    height: calc(100vh - 314px);
+}
