@@ -127,6 +127,10 @@ textarea {
     background: #FF9632;
 }
 
+.detail_info b {
+    color: #333;
+}
+
 /******************** 返回顶部 ********************/
 
 .go_top {
