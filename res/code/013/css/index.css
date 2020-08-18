@@ -119,11 +119,11 @@ textarea {
     color: #333;
 }
 
-.detail_info p .s_keyword {
+.detail_info .s_keyword {
     background: #FFFF00;
 }
 
-.detail_info p .s_keyword.active {
+.detail_info .s_keyword.active {
     background: #FF9632;
 }
 

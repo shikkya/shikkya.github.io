@@ -121,6 +121,10 @@ $(function() {
             return false;
         }
 
+        if (obj.html() == '') { // 防止类似<br/>或无内容节点
+            return false;
+        }
+
         var childNodeNum = obj.children().length; // 子节点数量
 
         if (childNodeNum == 0) { // 无子节点 搜索
@@ -142,14 +146,18 @@ $(function() {
     // 切割子节点并搜索非节点部分
     this.searchFromNode = function(str, childHtmlArr, curIndex) {
         var tempArr = str.split(childHtmlArr[curIndex]);
-        if (tempArr.length == 1) { // 只含一个节点不做处理
-            return str;
+        tempArr[0] = tempArr[0].trim() == '' ? '' : self.searchFromStr(tempArr[0]);
+
+        // 避免出现重复子节点
+        if (tempArr.length > 2) {
+            for (var i = 2; i < tempArr.length; i++) {
+                tempArr[1] += childHtmlArr[curIndex] + tempArr[i];
+            }
         }
 
-        tempArr[0] = tempArr[0] == '' ? '' : self.searchFromStr(tempArr[0]);
-
-        if (curIndex == childHtmlArr.length - 1) { // 最后一个子节点
-            tempArr[1] = tempArr[1] == '' ? '' : self.searchFromStr(tempArr[1]);
+        // 最后一个子节点
+        if (curIndex == childHtmlArr.length - 1) {
+            tempArr[1] = tempArr[1].trim() == '' ? '' : self.searchFromStr(tempArr[1]);
             return (tempArr[0] + childHtmlArr[curIndex] + tempArr[1]);
         }
 
