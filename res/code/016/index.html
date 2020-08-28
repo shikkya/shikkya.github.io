@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>IE仿复制粘贴</title>
+    <style type="text/css">
+    html,
+    body {
+        text-align: center;
+        background: #333;
+    }
+
+    div {
+        padding: 20px 0;
+    }
+
+    button {
+        background: #09f;
+        color: #fff;
+        border: 0;
+        padding: 6px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 15px;
+    }
+
+    textarea {
+        width: 60%;
+        height: 200px;
+        padding: 10px;
+        background: #fff;
+        border-radius: 3px;
+        font-size: 15px;
+        line-height: 23px;
+        color: #666;
+    }
+
+    textarea,
+    textarea:focus {
+        border: 0;
+        outline: none;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button onclick="copy()">复制</button>
+        <button onclick="paste()">粘贴</button>
+    </div>
+    <textarea id="txarea" placeholder="功能测试区"></textarea>
+    <script type="text/javascript" src="./script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./script/index.js"></script>
+</body>
+
+</html>
