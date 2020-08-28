@@ -161,7 +161,7 @@ var codeList = [{
         tit: 'IE仿复制粘贴',
         type: '功能',
         keyWord: ['复制粘贴', '光标插入', 'jQuery'],
-        compatible: ['0', '', '', '', '', '', '1', ''],
+        compatible: ['0', '', '', '', '', '', '1', '1'],
         comMobile: ['', '', ''],
         intro: '支持在光标后插入粘贴文字<br/>测试规定仅在文本域内生效，开发者可自行更改',
         bugIntro: ''
