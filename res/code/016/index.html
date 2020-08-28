@@ -17,17 +17,6 @@
         padding: 20px 0;
     }
 
-    button {
-        background: #09f;
-        color: #fff;
-        border: 0;
-        padding: 6px 20px;
-        margin: 0 5px;
-        cursor: pointer;
-        border-radius: 3px;
-        font-size: 15px;
-    }
-
     textarea {
         width: 60%;
         height: 200px;
@@ -44,15 +33,26 @@
         border: 0;
         outline: none;
     }
+
+    button {
+        background: #09f;
+        color: #fff;
+        border: 0;
+        padding: 6px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 3px;
+        font-size: 15px;
+    }
     </style>
 </head>
 
 <body>
     <div>
-        <button onclick="copy()">复制</button>
-        <button onclick="paste()">粘贴</button>
+        <textarea id="txarea" placeholder="功能测试区"></textarea>
     </div>
-    <textarea id="txarea" placeholder="功能测试区"></textarea>
+    <button onclick="copy()">复制</button>
+    <button onclick="paste()">粘贴</button>
     <script type="text/javascript" src="./script/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="./script/index.js"></script>
 </body>
