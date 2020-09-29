@@ -12,7 +12,7 @@
 
 // IE版本过低判断
 var ieVersion = IEVersion();
-if (typeof(ieVersion) == 'number' && ieVersion > 0 && ieVersion < 10) {
+if (typeof (ieVersion) == 'number' && ieVersion > 0 && ieVersion < 10) {
     window.location.replace("../html/error_version.html");
 }
 
@@ -83,14 +83,14 @@ function loadImg() {
 function checkLoad(url, imgId) {
     var img = new Image();
     if (Browser.ie) {
-        img.onreadystatechange = function() {
+        img.onreadystatechange = function () {
             if (img.readyState == "complete" || img.readyState == "loaded") {
                 document.getElementById(imgId).src = img.src;
                 document.getElementById(imgId).id = '';
             }
         }
     } else if (Browser.Moz) {
-        img.onload = function() {
+        img.onload = function () {
             if (img.complete == true) {
                 document.getElementById(imgId).src = img.src;
                 document.getElementById(imgId).id = '';
@@ -113,7 +113,7 @@ function getUrlStr(name) {
 // 返回顶部
 function goTop() {
     clearInterval(timer);
-    var timer = setInterval(function() {
+    var timer = setInterval(function () {
         var target = document.documentElement.scrollTop > document.body.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
         target -= Math.ceil(target / 10);
         window.scrollTo(0, target);
@@ -135,7 +135,7 @@ function getRandomNum(m, n) {
 Vue.component("HeaderIndexItem", {
     props: ['logoimg', 'curindex'],
     template: '<div class="header"><div class="wid_size"><a class="logo"><img :src="logoimg"/></a><ul class="product fr"><li v-for="(item,index) in productList" :class="{active:index==curindex}"><a v-if="index==curindex">{{item.text}}</a><a v-else :href="item.url">{{item.text}}</a></li></ul></div></div>',
-    data: function() {
+    data: function () {
         return {
             productList: [
                 { text: '模板壁纸', url: '../wallpaper/index.html' },
@@ -149,7 +149,7 @@ Vue.component("HeaderIndexItem", {
 // 头部 - 各产品详情页
 Vue.component("HeaderDetailItem", {
     template: '<div class="header header_detail"><div class="wid_size"><a href="./index.html" class="logo"><img src="../../images/common_07.png"/></a><a href="./index.html#toolList" class="btn fr">返回工具列表</a><span class="sentence fr">{{sentenceList[num]}}</span></div></div>',
-    data: function() {
+    data: function () {
         return {
             num: getRandomNum(0, sentenceList.length)
         }
@@ -164,7 +164,7 @@ Vue.component("PosBtnItem", {
 // 页脚
 Vue.component("FooterItem", {
     template: '<div class="footer" v-cloak><ul><li><img :src="logoImg"/></li><li><p>联系 QQ：{{QNum}}</p><p>意见反馈：{{email}}</p></li></ul></div>',
-    data: function() {
+    data: function () {
         return {
             logoImg: '../../images/common_07.png',
             QNum: '125048224',
@@ -176,7 +176,7 @@ Vue.component("FooterItem", {
 // 暂无信息
 Vue.component("NoInfoItem", {
     template: '<div id="noInfo" class="no_info"><img :src="imgUrl" :data-src="dataImg"/><p>{{text}}</p></div>',
-    data: function() {
+    data: function () {
         return {
             text: '暂时没有哦 ~ 看看其他的吧',
             imgUrl: '../../images/common_09.png',
@@ -208,5 +208,6 @@ var sentenceList = [
     '如果你曾歌颂黎明，那么也请你拥抱黑夜',
     '可以奋起激进，也懂适可而止',
     '取舍间必有得失，无需太过计较',
-    '天上下雨地上滑，自己滑倒自己爬'
+    '天上下雨地上滑，自己滑倒自己爬',
+    '命是弱者的借口，运是强者的谦辞'
 ]
