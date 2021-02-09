@@ -19,50 +19,57 @@ $(function () {
         })
 
         // 监听按键
-        $('body').bind('keypress', function (e) {
+        $('body').bind('keydown', function (e) {
             e = e ? e : window.event;
             // 0-9
             if (e.keyCode >= 48 && e.keyCode <= 57) {
                 $('.cal_btn[data-v="' + (e.keyCode - 48) + '"]').click();
             }
+            if (e.keyCode >= 96 && e.keyCode <= 105) {
+                $('.cal_btn[data-v="' + (e.keyCode - 96) + '"]').click();
+            }
             // .
-            if (e.keyCode == 46) {
+            if (e.keyCode == 110) {
                 $('.cal_btn[data-v="."]').click();
             }
             // +
-            if (e.keyCode == 43) {
+            if (e.keyCode == 107) {
                 $('.cal_btn[data-v="+"]').click();
             }
             // -
-            if (e.keyCode == 45) {
+            if (e.keyCode == 109) {
                 $('.cal_btn[data-v="-"]').click();
             }
             // *
-            if (e.keyCode == 42) {
-                $('.cal_btn[data-v="*"]').click();
+            if (e.keyCode == 106) {
+                $('.cal_btn[data-v="×"]').click();
             }
             // /
-            if (e.keyCode == 47) {
-                $('.cal_btn[data-v="/"]').click();
+            if (e.keyCode == 111) {
+                $('.cal_btn[data-v="÷"]').click();
             }
             // =
             if (e.keyCode == 13) {
                 $('.cal_btn[data-v="="]').click();
             }
+            // DEL
+            // if (e.keyCode == 8) {
+            //     $('.cal_btn[data-v="DEL"]').click();
+            // }
+            e.stopPropagation();
         });
-
     }
 
     // 执行按钮功能 共24个
-    // % ( ) /x CE C DEL + - * / = 0-9 ± .
+    // % ( ) sup CE C DEL + - × ÷ = 0-9 ± .
     this.handleBtn = function (key) {
         // 数字 0-9
-        if (parseInt(key)) {
+        if (parseInt(key) == 0 || parseInt(key)) {
             var temp = $('#inputVal').html();
-            if (temp.length >= 15) {
+            if (temp.length >= 16 || temp.indexOf('%') > -1 || temp.indexOf('<sup>-1</sup>') > -1) {
                 return false;
             }
-            if (temp == '0') {
+            if (temp == '0' || temp == 'ERROR') {
                 $('#inputVal').html(key);
                 return false;
             }
@@ -73,7 +80,11 @@ $(function () {
         // 小数点 .
         if (key == '.') {
             var temp = $('#inputVal').html();
-            if (temp.length >= 15 || temp[temp.length - 1] == '.') {
+            if (temp.length >= 16 || temp.indexOf('.') > -1 || temp.indexOf('%') > -1 || temp.indexOf('<sup>-1</sup>') > -1) {
+                return false;
+            }
+            if (temp == 'ERROR') {
+                $('#inputVal').html('0.');
                 return false;
             }
             $('#inputVal').html(temp + '.');
@@ -86,6 +97,10 @@ $(function () {
             if (temp == '0') {
                 return false;
             }
+            if (temp == 'ERROR') {
+                $('#inputVal').html('0');
+                return false;
+            }
             if (temp[0] == '-') {
                 temp = temp.substring(1, temp.length);
                 $('#inputVal').html(temp);
@@ -95,18 +110,41 @@ $(function () {
             return false;
         }
 
-        // 负一次方 /x
-        if (key == '/x') {
+        // 负一次方 sup
+        if (key == 'sup') {
             var temp = $('#inputVal').html();
             if (temp == '0') {
                 return false;
             }
+            if (temp == 'ERROR') {
+                $('#inputVal').html('0');
+                return false;
+            }
             if (temp.indexOf('<sup>-1</sup>') > -1) {
-                temp = temp.substring(0, temp.length - '<sup>-1</sup>'.length);
+                temp = temp.split('<sup>-1</sup>')[0] + temp.split('<sup>-1</sup>')[1];
                 $('#inputVal').html(temp);
                 return false;
             }
             $('#inputVal').html(temp + '<sup>-1</sup>');
+            return false;
+        }
+
+        // 百分比 %
+        if (key == '%') {
+            var temp = $('#inputVal').html();
+            if (temp == '0' || temp[temp.length - 1] == '.') {
+                return false;
+            }
+            if (temp == 'ERROR') {
+                $('#inputVal').html('0');
+                return false;
+            }
+            if (temp.indexOf('%') > -1) {
+                temp = temp.split('%')[0] + temp.split('%')[1];
+                $('#inputVal').html(temp);
+                return false;
+            }
+            $('#inputVal').html(temp + '%');
             return false;
         }
 
@@ -128,11 +166,11 @@ $(function () {
         // 删除 DEL
         if (key == 'DEL') {
             var temp = $('#inputVal').html();
-            if (temp.length == 1) {
+            if (temp.length == 1 || temp == 'ERROR') {
                 $('#inputVal').html('0');
                 return false;
             }
-            if (temp.indexOf('<sup>-1</sup>') > -1) {
+            if (temp.indexOf('<sup>-1</sup>') > -1 && temp.split('<sup>-1</sup>')[1] == '') {
                 temp = temp.substring(0, temp.length - '<sup>-1</sup>'.length);
                 $('#inputVal').html(temp);
                 return false;
@@ -151,6 +189,9 @@ $(function () {
             if (temp[temp.length - 1] == '(' || temp[temp.length - 1] == ')') {
                 return false;
             }
+            if ($('#inputVal').html() == 'ERROR') {
+                $('#inputVal').html('0');
+            }
             $('#recordVal').html(temp + '(');
             self.recordStr += '(';
             return false;
@@ -158,24 +199,26 @@ $(function () {
 
         // 右括号 )
         if (key == ')') {
+            if ($('#inputVal').html() == 'ERROR') {
+                $('#inputVal').html('0');
+                return false;
+            }
             var temp = $('#recordVal').html();
             if (temp[temp.length - 1] == ')') {
                 return false;
             }
-            var tempArr = self.formatInputVal($('#inputVal').html());
+            var tempArr = self.formatInputVal();
             $('#recordVal').html(temp + tempArr[0] + ')');
             self.recordStr += tempArr[1] + ')';
             $('#inputVal').html('0');
             return false;
         }
 
-        // 运算符号 + - * / %
-        if (key == '+' || key == '-' || key == '*' || key == '/' || key == '%') {
-            if (key == '*') {
-                key = '×';
-            }
-            else if (key == '/') {
-                key = '÷';
+        // 运算符号 + - × ÷
+        if (key == '+' || key == '-' || key == '×' || key == '÷') {
+            if ($('#inputVal').html() == 'ERROR') {
+                $('#inputVal').html('0');
+                return false;
             }
             var temp = $('#recordVal').html();
             if (self.curHandle == ')') {
@@ -183,14 +226,13 @@ $(function () {
                 self.recordStr += key;
                 return false;
             }
-            if (self.curHandle == '+' || self.curHandle == '-' || self.curHandle == '*' || self.curHandle == '/' || self.curHandle == '%') {
+            if (self.curHandle == '+' || self.curHandle == '-' || self.curHandle == '×' || self.curHandle == '÷') {
                 self.recordStr = self.recordStr.substring(0, self.recordStr.length - self.curHandle.length) + key;
-                temp = temp.substring(0, temp.length - self.curHandle.length) + key;
-                $('#recordVal').html(temp);
+                $('#recordVal').html(temp.substring(0, temp.length - self.curHandle.length) + key);
                 return false;
             }
-            // 其他 0-9 . ± /x CE DEL (
-            var tempArr = self.formatInputVal($('#inputVal').html());
+            // 其他 0-9 . ± sup CE DEL ( %
+            var tempArr = self.formatInputVal();
             $('#recordVal').html(temp + tempArr[0] + key);
             self.recordStr += tempArr[1] + key;
             $('#inputVal').html('0');
@@ -199,67 +241,111 @@ $(function () {
 
         // 等号 =
         if (key == '=') {
+            if ($('#inputVal').html() == 'ERROR') {
+                $('#inputVal').html('0');
+                return false;
+            }
+            var temp = $('#recordVal').html();
+            if (temp == '') {
+                self.recordStr = self.formatInputVal()[1];
+            }
+            else if (temp[temp.length - 1] == '+' || temp[temp.length - 1] == '-' || temp[temp.length - 1] == '×' || temp[temp.length - 1] == '÷') {
+                self.recordStr += self.formatInputVal()[1];
+            }
             $('#inputVal').html(self.calculate());
             self.recordStr = '';
             self.curHandle = '';
             $('#recordVal').html('');
-            return false;
         }
     }
 
     // 格式化输入区 [显示,计算]
-    this.formatInputVal = function (str) {
+    this.formatInputVal = function () {
         var arr = [];
+        var str = $('#inputVal').html();
+
         if (str[str.length - 1] == '.') {
             str = str.substring(0, str.length - 1);
         }
+
         if (str[0] == '-') {
-            str = '(' + str + ')';
+            arr[0] = '(' + str + ')';
+            str = str.substring(1, str.length);
         }
-        arr[0] = str;
-        if (str.indexOf('<sup>-1</sup>') > -1) {
-            if (str.length > 1 && str[1] == '-') {
-                str = '(-1/' + str.split('<sup>-1</sup>')[0].split('-')[1] + ')';
-            } else {
-                str = '(1/' + str.split('<sup>-1</sup>')[0] + ')';
-            }
+        else {
+            arr[0] = str;
         }
+
+        var temp_1 = str.indexOf('<sup>-1</sup>');
+        var temp_2 = str.indexOf('%');
+        if (temp_1 > -1 && temp_2 == -1) {
+            str = '(1/' + str.split('<sup>-1</sup>')[0] + ')' + str.split('<sup>-1</sup>')[1];
+        }
+        else if (temp_1 == -1 && temp_2 > -1) {
+            str = '(' + str.split('%')[0] + '/100)' + str.split('%')[1];
+        }
+        else if (temp_1 > temp_2 && temp_2 > -1) {
+            str = '(' + str.split('%')[0] + '/100)' + str.split('%')[1];
+            str = '(1/' + str.split('<sup>-1</sup>')[0] + ')' + str.split('<sup>-1</sup>')[1];
+        }
+        else if (temp_2 > temp_1 && temp_1 > -1) {
+            str = '(1/' + str.split('<sup>-1</sup>')[0] + ')' + str.split('<sup>-1</sup>')[1];
+            str = '(' + str.split('%')[0] + '/100)' + str.split('%')[1];
+        }
+
+        if (arr[0].indexOf('(') > -1) {
+            str = '(-' + str + ')';
+        }
+
         arr[1] = str;
+
         return arr;
     }
 
     // 计算
-    this.calculate = function (inputVal) {
+    this.calculate = function () {
         var calcStr = self.recordStr;
-        var temp = $('#inputVal').html();
-        if (temp != '0') {
-            if (temp[temp.length - 1] == '.') {
-                temp = temp.substring(0, temp.length - 1);
-            }
-            if (temp[0] == '-') {
-                temp = '(' + temp + ')';
-            }
-            if (temp.indexOf('<sup>-1</sup>') > -1) {
-                if (temp.split('<sup>-1</sup>')[0].indexOf('-') > -1) {
-                    temp = '(-1/' + temp.split('<sup>-1</sup>')[0].split('-')[1] + ')';
-                }
-                else {
-                    temp = '1/' + temp.split('<sup>-1</sup>')[0];
-                }
-            }
-            calcStr = self.recordStr + temp;
-        }
-
         calcStr = calcStr.replace('×', '*', 'g');
         calcStr = calcStr.replace('÷', '/', 'g');
-        console.log(calcStr);
+
+        // console.log(calcStr);
 
         try {
-            return eval(calcStr);
+            return self.formatResult(eval(calcStr) + '');
         }
-        catch {
+        catch (err) {
             return 'ERROR';
         }
+    }
+
+    // 格式化结果
+    this.formatResult = function (val) {
+        var hasComma = val.match(/\./),
+            tmp,
+            valAbs = Math.abs(+val);
+        resBuffer = val;
+        if (valAbs >= 1e+16) {
+            val = (+val).toExponential(18) + '';
+        }
+        if (valAbs !== 0) {
+            val = (+val).toPrecision(14);
+        }
+        tmp = (val + '').split('.');
+        if (tmp[1]) {
+            tmp[2] = tmp[1].split('e');
+            if (tmp[2][1]) {
+                tmp[1] = tmp[2][0];
+            }
+            tmp[1] = (((+('1.' + tmp[1])).toPrecision(tmp[2][1] ? 12 : 14)) + '');
+            if (tmp[1] >= 2) {
+                tmp[0] = (+tmp[0] + 1) + '';
+            }
+            tmp[1] = tmp[1].substr(2).replace(/0+$/, '');
+        }
+        tmp = tmp[0] + ((tmp[1] || hasComma) ? '.' + tmp[1] : '').
+            replace('.undefined', '').
+            replace(/\.$/, '') + (tmp[2] && tmp[2][1] ? 'e' + tmp[2][1] : '');
+        return tmp;
     }
 
     this.init = function () {
@@ -268,3 +354,4 @@ $(function () {
 
     self.init();
 })
+

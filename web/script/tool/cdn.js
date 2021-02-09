@@ -113,6 +113,17 @@ var cdnData = [{
         type: 'css'
     }]
 }, {
+    tit: 'layui',
+    list: [{
+        url: 'https://www.layuicdn.com/layui/layui.js',
+        version: '2.5.7',
+        type: 'js'
+    }, {
+        url: 'https://www.layuicdn.com/layui/css/layui.css',
+        version: '2.5.7',
+        type: 'css'
+    }]
+}, {
     tit: 'echarts',
     list: [{
         url: 'https://cdn.bootcss.com/echarts/4.7.0/echarts.min.js',
@@ -164,7 +175,7 @@ var cdnData = [{
         url: 'https://cdn.bootcss.com/vue/2.2.2/vue.min.js',
         version: '2.2.2',
         type: 'js'
-    }, ]
+    },]
 }];
 
 var vm = new Vue({
@@ -177,12 +188,12 @@ var vm = new Vue({
     },
     methods: {
         // 点击复制地址
-        copyUrl: function(_this, url) {
+        copyUrl: function (_this, url) {
             this.inputVal = url;
             this.copyText();
         },
         // 点击复制Html
-        copyHtml: function(_this, obj) {
+        copyHtml: function (_this, obj) {
             if (obj.type == 'js') {
                 this.inputVal = '<script type="text/javascript" src="' + obj.url + '"></script>';
             } else if (obj.type == 'css') {
@@ -191,17 +202,17 @@ var vm = new Vue({
             this.copyText();
         },
         // 复制
-        copyText: function() {
+        copyText: function () {
             var _this = this;
 
-            setTimeout(function() {
+            setTimeout(function () {
                 var Url2 = document.getElementById("copyText");
                 Url2.select(); // 选择对象
                 document.execCommand("Copy"); // 执行浏览器复制命令
                 _this.alertShow = true;
             }, 50);
 
-            setTimeout(function() {
+            setTimeout(function () {
                 _this.alertShow = false;
             }, 3000);
         }

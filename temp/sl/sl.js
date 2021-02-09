@@ -5,7 +5,7 @@
  * @version $Id$
  */
 
-$(function() {
+$(function () {
     var self = this;
 
     // 地图尺寸
@@ -27,15 +27,15 @@ $(function() {
     this.arrGame = new Array();
 
     // 事件绑定
-    this.createEventer = function() {
+    this.createEventer = function () {
 
         // 屏蔽页面右键
-        document.oncontextmenu = function() {
+        document.oncontextmenu = function () {
             return false;
         }
 
         // 点击可操作网格
-        $(this).delegate('td.handle', 'mousedown', function(e) {
+        $('#tab').on('mousedown', 'td.handle', function (e) {
             var x = parseInt($("#tab td").index(this) / self.mapSize);
             var y = parseInt($("#tab td").index(this) % self.mapSize);
 
@@ -77,20 +77,19 @@ $(function() {
                     self.stepCount--;
                 } else {
                     $(this).html('');
-                    self.arrGame[x][y] = -2;
                 }
             }
         });
 
         // 放弃游戏
-        $(this).delegate('#giveUp', 'click', function() {
+        $('#giveUp').on('click', function () {
             if (confirm("gu?")) {
                 self.gameEnd();
             }
         });
 
         // 重新开始
-        $(this).delegate('.restart', 'click', function() {
+        $('#restart').on('click', function () {
             if (self.stepCount == 0) {
                 self.reStartGame();
             } else if (confirm("rs?")) {
@@ -100,13 +99,13 @@ $(function() {
     }
 
     // 获取设置参数
-    this.getSet = function() {
+    this.getSet = function () {
         self.mapSize = parseInt($('#mapSize').val());
         self.bombNum = parseInt($('#bombNum').val());
     }
 
     // 初始化网格
-    this.initTab = function() {
+    this.initTab = function () {
         var html_tab = '';
         for (var i = 0; i < self.mapSize; i++) {
             html_tab += '<tr>';
@@ -119,7 +118,9 @@ $(function() {
     }
 
     // 初始化数组
-    this.initArr = function() {
+    this.initArr = function () {
+        self.arrMap = [];
+        self.arrGame = [];
         for (var i = 0; i < self.mapSize; i++) {
             self.arrMap[i] = new Array();
             self.arrGame[i] = new Array();
@@ -131,7 +132,7 @@ $(function() {
     }
 
     // 初始化雷的位置
-    this.initBomb = function() {
+    this.initBomb = function () {
         var tempNum = 0;
         var x = 0;
         var y = 0;
@@ -145,8 +146,14 @@ $(function() {
         }
     }
 
+    // 随机整数 包括m不包括n
+    this.randomNum = function (m, n) {
+        var random = Math.floor(Math.random() * (m - n) + n);
+        return random;
+    }
+
     // 初始化数字位置
-    this.initNum = function() {
+    this.initNum = function () {
         for (var i = 0; i < self.mapSize; i++) {
             for (var j = 0; j < self.mapSize; j++) {
                 if (self.arrMap[i][j] == -1) {
@@ -157,7 +164,7 @@ $(function() {
     }
 
     // 根据坐标计算周边雷数
-    this.calcNum = function(x, y) {
+    this.calcNum = function (x, y) {
         var tempNum = 0;
 
         if (x >= 1 && y >= 1 && self.arrMap[x - 1][y - 1] == 0) {
@@ -195,14 +202,8 @@ $(function() {
         return tempNum == 0 ? -1 : tempNum;
     }
 
-    // 随机整数 包括m不包括n
-    this.randomNum = function(m, n) {
-        var random = Math.floor(Math.random() * (m - n) + n);
-        return random;
-    }
-
     // 点击结果为空
-    this.clickNone = function(x, y) {
+    this.clickNone = function (x, y) {
 
         $('td[data-i="w' + x + y + '"]').removeClass('handle');
         self.arrGame[x][y] = -1;
@@ -242,23 +243,21 @@ $(function() {
     }
 
     // 处理结果为空
-    this.setNone = function(x, y) {
+    this.setNone = function (x, y) {
         if ($('td[data-i="w' + x + y + '"]').hasClass('handle')) {
+            $('td[data-i="w' + x + y + '"]').removeClass('handle');
+            self.arrGame[x][y] = self.arrMap[x][y];
             if (self.arrMap[x][y] > 0) {
-                $('td[data-i="w' + x + y + '"]').removeClass('handle');
-                self.arrGame[x][y] = self.arrMap[x][y];
                 $('td[data-i="w' + x + y + '"]').html(self.arrMap[x][y]);
                 self.addStepCount();
             } else if (self.arrMap[x][y] == -1) {
-                $('td[data-i="w' + x + y + '"]').removeClass('handle');
-                self.arrGame[x][y] = self.arrMap[x][y];
                 self.clickNone(x, y);
             }
         }
     }
 
     // 增加已完成数
-    this.addStepCount = function() {
+    this.addStepCount = function () {
         self.stepCount++;
         if (self.stepCount == self.mapSize * self.mapSize && self.flagCount == self.bombNum) {
             alert('done');
@@ -267,7 +266,7 @@ $(function() {
     }
 
     // 游戏结束
-    this.gameEnd = function() {
+    this.gameEnd = function () {
         for (var i = 0; i < self.mapSize; i++) {
             for (var j = 0; j < self.mapSize; j++) {
                 if (self.arrMap[i][j] != self.arrGame[i][j]) {
@@ -299,7 +298,7 @@ $(function() {
     }
 
     // 后台打印arrMap
-    this.debugShowArrMap = function() {
+    this.debugShowArrMap = function () {
         console.log('++++++++++ map ++++++++++');
         for (var i = 0; i < self.mapSize; i++) {
             var str = "";
@@ -312,7 +311,7 @@ $(function() {
     }
 
     // 后台打印arrGame
-    this.debugShowArrGame = function() {
+    this.debugShowArrGame = function () {
         console.log('++++++++++ game ++++++++++');
         for (var i = 0; i < self.mapSize; i++) {
             var str = "";
@@ -325,9 +324,12 @@ $(function() {
     }
 
     // 重新开始
-    this.reStartGame = function() {
+    this.reStartGame = function () {
         self.stepCount = 0;
         self.flagCount = 0;
+
+        // 获取设置参数
+        self.getSet();
 
         // 初始化页面网格
         self.initTab();
@@ -346,7 +348,7 @@ $(function() {
     }
 
     // 初始化
-    this.init = function() {
+    this.init = function () {
         // 事件绑定
         self.createEventer();
 

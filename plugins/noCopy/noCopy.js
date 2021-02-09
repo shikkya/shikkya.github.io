@@ -14,10 +14,10 @@ if (navigator.userAgent.indexOf('MSIE') < 0) {
     document.getElementsByTagName('head')[0].appendChild(css);
 }
 // 屏蔽事件：松开键盘/开始选择/开始拖动/点击鼠标右键/复制/按下鼠标键
-document.onkeyup = document.onselectstart = document.ondragstart = document.oncontextmenu = document.oncopy = document.onmousedown = function() {
+document.onkeyup = document.onselectstart = document.ondragstart = document.oncontextmenu = document.oncopy = document.onmousedown = function () {
     return preventDefault(window.event || arguments[0]);
 };
-document.onkeydown = function() {
+document.onkeydown = function () {
     var e = window.event || arguments[0];
     if (e.keyCode == 123) { // F12
         return false;

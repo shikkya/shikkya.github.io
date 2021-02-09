@@ -14,12 +14,12 @@
 body {
   padding: 10px;
   text-align: center;
-  background: #51bab2;
+  background: #fff;
   color: #333;
 }
 
 .box {
-  max-width: 300px;
+  max-width: 320px;
   margin: 20px auto;
   background: #ddd;
   border-radius: 3px;
@@ -45,7 +45,7 @@ body {
 }
 
 .input_val {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: bold;
   height: 38px;
 }
@@ -59,8 +59,7 @@ table td {
 }
 
 .cal_btn {
-  display: block;
-  padding: 12px 0;
+  padding: 15px 0;
   cursor: pointer;
   background: #fff;
   border-radius: 3px;

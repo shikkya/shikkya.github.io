@@ -171,7 +171,7 @@ var codeList = [{
     tit: '简易计算器',
     type: '插件',
     keyWord: ['计算器', 'jQuery'],
-    compatible: ['1', '1', '', '', '1', '', '', ''],
+    compatible: ['1', '1', '1', '', '1', '1', '0', '1'],
     comMobile: ['', '', ''],
     intro: '',
     bugIntro: ''
