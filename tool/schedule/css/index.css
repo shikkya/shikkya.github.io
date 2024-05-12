@@ -230,14 +230,3 @@ input {
 .list_box .td i[data-v="休"] {
   background: rgba(255, 47, 0, 0.3);
 }
-
-/******************** version_box ********************/
-
-.version_box {
-  position: fixed;
-  bottom: 0.2rem;
-  right: 1.5rem;
-  z-index: 999;
-  font-size: 1rem;
-  color: rgba(0, 0, 0, 0.3);
-}
