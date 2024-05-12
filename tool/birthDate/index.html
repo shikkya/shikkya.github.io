@@ -14,29 +14,39 @@
 <body>
 
     <div class="content">
-        <div class="item">
-            <label>末次月经</label>
-            <input type="text" id="startDate" placeholder="请选择末次月经日期" value="" readonly />
+        <div>
+            <div class="item">
+                <label>末次月经</label>
+                <input type="text" id="lastDate" placeholder="请选择末次月经日期" value="" readonly />
+            </div>
+            <div class="item">
+                <label>孕期天数</label>
+                <span id="produceDay">280</span>天
+            </div>
+            <div class="item">
+                <label>预产期</label>
+                <span id="birthDate"></span>
+            </div>
+            <div class="item_btn">
+                <button class="btn" id="calcBirthDateBtn">计算预产期</button>
+            </div>
         </div>
-        <div class="item">
-            <label>孕期天数</label>
-            <span id="produceDay">280</span>天
-        </div>
-        <div class="item">
-            <label>预产期</label>
-            <input type="text" id="birthDate" placeholder="请选择预产期" value="" readonly />
-        </div>
-        <div class="item">
-            <label>产假天数</label>
-            <span id="restDay">180</span>天
-        </div>
-        <div class="item">
-            <label>产假结束</label>
-            <span id="workDate"></span>
-        </div>
-        <div class="btn_box">
-            <button class="btn" id="searchBirthDateBtn">计算预产期</button>
-            <button class="btn" id="searchWorkDateBtn">计算产假结束期</button>
+        <div>
+            <div class="item">
+                <label>产假开始</label>
+                <input type="text" id="startDate" placeholder="请选择开始日期" value="" readonly />
+            </div>
+            <div class="item">
+                <label>产假天数</label>
+                <span id="restDay">180</span>天
+            </div>
+            <div class="item">
+                <label>产假结束</label>
+                <span id="endDate"></span>
+            </div>
+            <div class="item_btn">
+                <button class="btn" id="calcEndDateBtn">计算产假结束期</button>
+            </div>
         </div>
     </div>
 

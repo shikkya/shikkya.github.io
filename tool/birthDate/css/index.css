@@ -6,18 +6,16 @@
  * @date 2023-08-08
  */
 
-body {
-  padding: 15px;
+.content {
+  padding: 0 15px 15px;
 }
 
-.content {
-  padding: 10px 15px;
+.content > div {
+  padding: 15px;
   background: #fff;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-top: 15px;
 }
-
-/******************** item ********************/
 
 .item {
   padding: 5px 0 5px 80px;
@@ -32,10 +30,6 @@ body {
   top: 13px;
 }
 
-.item:nth-child(3) label {
-  letter-spacing: 7.5px;
-}
-
 .item input {
   width: 100%;
   line-height: 36px;
@@ -48,16 +42,14 @@ body {
   line-height: 36px;
 }
 
-/******************** btn_box ********************/
-
-.btn_box {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px 0 8px;
+.item_btn {
+  padding: 5px 0;
 }
 
-.btn {
-  width: calc(50% - 7.5px);
+.item_btn .btn {
+  width: 100%;
 }
 
-/******************** dcalendar ********************/
+.content > div:first-child .item:nth-child(3) label {
+  letter-spacing: 7.5px;
+}
