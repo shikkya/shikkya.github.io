@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SHIKKYA</title>
+    <link rel="stylesheet" href="../common/css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+
+    <!-- filter -->
+    <div class="filter_box" id="filterBox">
+        <div class="filter_item" data-t="">
+            <label>周期规律</label>
+            <input type="text" id="planVal" placeholder="示例：住副休" value="副住副休" />
+        </div>
+        <div class="filter_item" data-t="">
+            <label>起始日期</label>
+            <input type="text" id="planStart" placeholder="示例：2023-06-03" value="2023-12-10" />
+        </div>
+        <div class="filter_item" data-t="week">
+            <label>生成周数</label>
+            <input type="text" id="weeklySize" placeholder="示例：4" value="4" />
+        </div>
+        <div class="filter_item" data-t="">
+            <label>周末休息</label>
+            <span id="isRest" class="active"><i></i></span>
+            <font>（周六周日副班休息）</font>
+        </div>
+        <button class="btn" id="subBtn">开始排班</button>
+    </div>
+
+    <!-- tab -->
+    <ul class="tab_box" id="tabBox">
+        <li data-t="week" class="active">
+            <span>周历</span>
+        </li>
+        <li data-t="month">
+            <span>月历</span>
+        </li>
+    </ul>
+
+    <!-- week -->
+    <div class="content_box active" data-t="week">
+        <div class="list_box" data-t="week"></div>
+    </div>
+
+    <!-- month -->
+    <div class="content_box" data-t="month">
+        <div class="handle_box" data-t="month">
+            <button class="btn" data-t="y-">&lt;&lt;</button>
+            <button class="btn" data-t="m-">&lt;</button>
+            <span></span>年
+            <span></span>月
+            <button class="btn" data-t="m+">&gt;</button>
+            <button class="btn" data-t="y+">&gt;&gt;</button>
+        </div>
+        <div class="list_box" data-t="month"></div>
+    </div>
+
+    <!-- version -->
+    <div class="version_box">V.2024030201</div>
+
+    <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../common/js/noCopy.js"></script>
+    <script src="../common/js/common.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

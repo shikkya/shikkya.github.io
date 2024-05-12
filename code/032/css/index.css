@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2024-05-09
+ * @version $Id$
+ */
+
+.content {
+  width: 80%;
+  height: 300px;
+  margin: 50px auto;
+  overflow: auto;
+}
+
+.content table {
+  width: 100%;
+}
+
+.content th,
+.content td {
+  border: 1px solid #ddd;
+  white-space: nowrap;
+  line-height: 40px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.content th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #eee;
+}
+
+.content th:first-child {
+  left: 0;
+  z-index: 2;
+}
+
+.content td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: #fafafa;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>基于zTree的搜索穿梭框</title>
+    <link rel="stylesheet" type="text/css" href="./plugins/zTreeStyle.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="content">
+        <div class="left_box">
+            <!-- 搜索 -->
+            <div class="search_box">
+                <img src="./images/index_01.png" />
+                <input type="text" id="searchVal" placeholder="请输入搜索关键字" />
+            </div>
+            <!-- 树 -->
+            <div class="ztree_box">
+                <div class="ztree" id="zTree"></div>
+            </div>
+        </div>
+        <div class="mid_box">
+            <img src="./images/index_03.png" />
+        </div>
+        <div class="right_box">
+            <!-- 信息 -->
+            <div class="info_box">
+                <span>已选择<font id="totalNum">0</font>项</span>
+                <a class="fr" id="clearBtn"><img src="./images/index_02.png" />清空</a>
+            </div>
+            <!-- 列表 -->
+            <ul class="list_box" id="listBox"></ul>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./plugins/jquery.ztree.core.min.js"></script>
+    <script type="text/javascript" src="./plugins/jquery.ztree.excheck.min.js"></script>
+    <script type="text/javascript" src="./plugins/jquery.ztree.exhide.min.js"></script>
+    <!-- <script type="text/javascript" src="./plugins/jquery.ztree.fuzzysearch.js"></script> -->
+    <script type="text/javascript" src="./script/index.js"></script>
+</body>
+
+</html>

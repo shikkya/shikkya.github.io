@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+/**
+ * food.html
+ * @authors shikkya
+ * @date 2023-11-01
+ */
+
+.attr_box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  line-height: 24px;
+}
+
+.attr_box .no_data {
+  width: 100%;
+  padding: 50px 0;
+  color: #999;
+}
+
+.attr_box .item {
+  width: 157px;
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.attr_box .item.active {
+  border-color: #f90;
+}
+
+.attr_box .item:hover {
+  border-color: #00bc9c;
+  background: rgb(0, 188, 156, 0.05);
+}
+
+.attr_box i {
+  position: absolute;
+  top: 0;
+  right: 3px;
+  font-size: 18px;
+  color: #00bc9c;
+}
+
+.attr_box img {
+  width: 42px;
+  height: 42px;
+  padding: 3px;
+  background: #e3eaf2;
+  border-radius: 3px;
+}
+
+.attr_box .item > img {
+  margin: 5px 0;
+}
+
+.attr_box p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.attr_box .tag {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
+.attr_box .tag b {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.attr_box .made {
+  display: flex;
+  margin: 5px 0 10px;
+}
+
+.attr_box .made span {
+  position: relative;
+  margin-left: 5px;
+}
+
+.attr_box .made span:first-child {
+  margin: 0;
+}
+
+.attr_box .made font {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  font-size: 12px;
+  background: #00bc9c;
+  color: #fff;
+  line-height: 16px;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+.attr_box table {
+  margin-bottom: 5px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.attr_box td {
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.attr_box .item.active td {
+  border-color: #f90;
+}

@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+/**
+ * common
+ * @authors shikkya
+ * @date 2023-06-14
+ */
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #e3eaf2;
+  color: #333;
+  font-weight: normal;
+  font-size: 15px;
+  font-family: "微软雅黑", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: default;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+i {
+  font-style: normal;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+input,
+textarea,
+select {
+  background: #fff;
+  color: #666;
+  font-size: 15px;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/******************** common ********************/
+
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.btn {
+  display: inline-block;
+  background: #00bc9c;
+  color: #fff;
+  border: 1px solid #00bc9c;
+  line-height: 32px;
+  border-radius: 5px;
+  padding: 0 12px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/******************** scroll ********************/
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0);
+}
+
+/******************** msgBox ********************/
+
+.msgBox {
+  position: fixed;
+  bottom: 20%;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  text-align: center;
+}
+
+.msgBox span {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 5px;
+}

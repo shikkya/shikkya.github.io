@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date 2022-03-19
+ */
+
+.btn {
+  background: #4e6ef2;
+  color: #fff;
+  border: 0;
+  padding: 4px 10px;
+  margin: 0 3px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.content {
+  padding-top: 105px;
+}
+
+/******************** handle_box ********************/
+
+.handle_box {
+  padding-top: 15px;
+}
+
+.handle_box span {
+  padding-right: 20px;
+}
+
+.handle_box select,
+.handle_box input {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 5px 0;
+}
+
+.handle_box select {
+  width: 130px;
+}
+
+.handle_box input {
+  width: 50px;
+  text-align: center;
+}
+
+/******************** skin_box ********************/
+
+.skin_box {
+  margin: 15px 0;
+}
+
+.skin_box label {
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.skin_box span {
+  margin: 0 5px;
+}
+
+.skin_box img {
+  width: 30px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+}
+
+/******************** map_box ********************/
+
+.map_box td {
+  cursor: pointer;
+}
+
+/******************** copy_text ********************/
+
+.copy_text {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  display: none;
+}
+
+/******************** alert_info ********************/
+
+.alert_info {
+  position: fixed;
+  bottom: 30%;
+  z-index: 999;
+  width: 100%;
+  text-align: center;
+}
+
+.alert_info span {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 3px;
+}

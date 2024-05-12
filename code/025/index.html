@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>兼容IE8的美化滚动条</title>
+    <style>
+        body {
+            background: #fff;
+        }
+
+        .content {
+            padding: 30px 0;
+        }
+
+        .scrollObj {
+            width: 350px;
+            height: 230px;
+            margin: 0 auto;
+            padding: 0 25px;
+            overflow: auto;
+            border: 1px solid #e0e0e0;
+        }
+
+        .scrollObj p {
+            padding-bottom: 5px;
+        }
+
+        .scrollObj div {
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="scrollObj">
+            <p>兼容IE8的美化滚动条</p>
+            <p>使用方法：</p>
+            <p>1、引入 jQuery.js</p>
+            <p>2、引入 divscroll.js</p>
+            <p>3、初始化滚动容器</p>
+            <div></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./script/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="./plugins/divscroll.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.scrollObj').perfectScrollbar();
+        });
+    </script>
+</body>
+
+</html>

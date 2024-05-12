@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>通知滚动展示</title>
+    <style>
+        body {
+            font-size: 15px;
+            background: #ddd;
+        }
+
+        ul,
+        li {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            height: 40px;
+        }
+
+        ul {
+            overflow: hidden;
+            margin: 100px auto 0;
+            width: 200px;
+            background: #fff;
+        }
+
+        li {
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="marqueeBox">
+        <li>滚动示例文本 1</li>
+        <li>滚动示例文本 2</li>
+        <li>滚动示例文本 3</li>
+        <li>滚动示例文本 4</li>
+        <li>滚动示例文本 5</li>
+    </ul>
+
+    <script>
+        window.onload = function () {
+            var marqueeBox = document.getElementById('marqueeBox');
+            var childArr = marqueeBox.getElementsByTagName('li');
+
+            var liHei = 30; // 移动高度
+            var scrollStep = 3; // 移动步幅 越大越快
+            var scrollTime = 25; // 移动频度 越大越慢
+            var stopTime = 2500; // 停顿时间
+            var tmpHei = 0;
+
+            marqueeBox.innerHTML += marqueeBox.innerHTML;
+
+            setTimeout(marqueeStart, stopTime);
+
+            function marqueeStart() {
+                if (tmpHei < liHei) {
+                    tmpHei += scrollStep;
+                    if (tmpHei > liHei) tmpHei = liHei;
+                    marqueeBox.scrollTop = tmpHei;
+                    setTimeout(marqueeStart, scrollTime);
+                } else {
+                    tmpHei = 0;
+                    marqueeBox.appendChild(childArr[0]);
+                    marqueeBox.scrollTop = 0;
+                    setTimeout(marqueeStart, stopTime);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

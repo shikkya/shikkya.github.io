@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+/**
+ * common
+ * @authors shikkya
+ * @date 2023-11-01
+ */
+
+* {
+  vertical-align: middle;
+}
+
+.content {
+  margin: 15px auto;
+  width: calc(100vw - 30px);
+  max-width: 1360px;
+  min-width: 200px;
+}
+
+/* plan_box + filter_box */
+
+.plan_box,
+.filter_box {
+  background: #fff;
+  border-radius: 8px;
+  line-height: 30px;
+  user-select: none;
+}
+
+.plan_box label,
+.filter_box label {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  display: inline-block;
+  width: 35px;
+  text-align: justify;
+  text-align-last: justify;
+  text-justify: distribute-all-lines;
+}
+
+.plan_box label::after,
+.filter_box label::after {
+  content: ":";
+  position: absolute;
+  z-index: 1;
+  margin-left: 3px;
+}
+
+.plan_box ul,
+.filter_box ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.plan_box li,
+.filter_box li {
+  padding: 0 10px;
+  margin-right: 6px;
+  border-radius: 5px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.plan_box li:hover,
+.plan_box li.active,
+.filter_box li:hover,
+.filter_box li.active {
+  background: #00bc9c;
+  color: #fff;
+}
+
+.plan_box input,
+.filter_box input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  line-height: 28px;
+}
+
+/* plan_box */
+
+.plan_box {
+  padding: 15px 100px 15px 75px;
+  position: relative;
+}
+
+.plan_box label {
+  left: 15px;
+}
+
+.plan_box div {
+  position: absolute;
+  right: 15px;
+  top: 16px;
+  z-index: 1;
+}
+
+.plan_box input {
+  width: 35px;
+  text-align: center;
+  margin: 0 3px;
+}
+
+/* filter_box */
+
+.filter_box {
+  padding: 10px 15px;
+  margin: 15px 0;
+}
+
+.filter_box div {
+  position: relative;
+  padding: 5px 0 5px 60px;
+}
+
+.filter_box i {
+  color: #666;
+  margin-right: 3px;
+}
+
+.filter_box li:hover i,
+.filter_box li.active i {
+  color: #fff;
+}
+
+.filter_box input {
+  width: 100%;
+  padding: 0 10px;
+}
+
+/* version_tag */
+
+.version_tag {
+  display: inline-block;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 3px;
+  padding: 0 3px;
+  color: #fff;
+  background: #923218;
+}
+
+.version_tag[data-t="1"] {
+  background: #6d3079;
+}
+
+.version_tag[data-t="2"] {
+  background: #1499ae;
+}
+
+.version_tag[data-t="3"] {
+  background: #2f712f;
+}

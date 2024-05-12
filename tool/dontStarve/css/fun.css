@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/**
+ * fun.html
+ * @authors shikkya
+ * @date 2023-11-01
+ */
+
+.fun_box div {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-top: 15px;
+  line-height: 30px;
+}
+
+.fun_box a {
+  display: block;
+  color: #00bc9c;
+}
+
+.fun_box a:hover {
+  background: rgb(0, 188, 156, 0.05);
+}
+
+.fun_box b {
+  margin-right: 5px;
+}

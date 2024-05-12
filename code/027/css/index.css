@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2024-02-26
+ * @version $Id$
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  padding: 0 50px;
+  min-height: 100vh;
+  background: #fff;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+/* handle_box */
+
+.handle_box {
+  padding: 20px 0;
+}
+
+.handle_box input[type="file"] {
+  display: none;
+}
+
+.handle_box button {
+  line-height: 32px;
+  padding: 0 15px;
+  background: #09f;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.handle_box ul {
+  float: right;
+  display: flex;
+}
+
+.handle_box li {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.handle_box li i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.handle_box li i::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  margin: 2px 0 0 2px;
+}
+
+.handle_box li.active i {
+  border-color: #09f;
+}
+
+.handle_box li.active i::before {
+  background: #09f;
+}
+
+/* text_box */
+
+.text_box {
+  padding-bottom: 20px;
+}
+
+.text_box textarea {
+  width: 100%;
+  height: 300px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+}

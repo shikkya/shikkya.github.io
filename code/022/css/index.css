@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2021-06-23
+ * @version $Id$
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  font-size: 15px;
+  background: #fff;
+}
+
+#jsMindContainer {
+  border: 1px solid #e0e0e0;
+  margin: 20px;
+  height: 650px;
+}
+
+.handle_box {
+  text-align: center;
+}
+
+.btn {
+  background: #09f;
+  color: #fff;
+  border: 0;
+  padding: 8px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+/******************** new theme ********************/
+
+/* 节点样式 */
+jmnodes.theme-shikkya jmnode {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #cdcdcd;
+  box-shadow: none;
+}
+
+/* 鼠标悬停的节点样式 */
+jmnodes.theme-shikkya jmnode:hover {
+  background-color: #09f;
+  color: #fff;
+  border: 1px solid #09f;
+}
+
+/* 选中的节点样式 */
+jmnodes.theme-shikkya jmnode.selected {
+  background-color: #09f;
+  color: #fff;
+  border: 1px solid #09f;
+}
+
+/* 根节点样式 */
+jmnodes.theme-shikkya jmnode.root {
+  background-color: #09f;
+  color: #fff;
+  border: 1px solid #09f;
+}
+
+/* 展开/关闭节点的控制点样式 */
+jmnodes.theme-shikkya jmexpander {
+  color: #888;
+  line-height: 11px;
+  border-color: #aaa;
+  margin-left: 1px;
+}
+
+/* 鼠标悬停展开/关闭节点的控制点样式 */
+jmnodes.theme-shikkya jmexpander:hover {
+}

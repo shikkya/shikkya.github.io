@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SHIKKYA</title>
+    <link rel="stylesheet" href="../common/css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="header">
+        <!-- color -->
+        <div class="color_box" id="colorBox">
+            <i data-c="">空</i>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- map -->
+        <div class="map_box" id="mapBox"></div>
+
+        <!-- count -->
+        <div class="count_box" id="countBox"></div>
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <button class="btn" id="rectMapBtn">新建正方形</button>
+        <button class="btn" id="hexaMapBtn">新建六边形</button>
+        <button class="btn" id="saveBtn">复制源码</button>
+        <button class="btn" id="loadBtn">读取源码</button>
+    </div>
+
+    <!-- modal 读取 -->
+    <div class="modal load_modal" id="loadModal">
+        <div>
+            <div class="modal_header">
+                <b>读取</b>
+                <a class="close_modal_btn">×</a>
+            </div>
+            <div class="modal_content">
+                <textarea id="modalText" placeholder="请输入源码"></textarea>
+                <button class="btn" id="modalSubBtn">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../common/js/noCopy.js"></script>
+    <script src="../common/js/common.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

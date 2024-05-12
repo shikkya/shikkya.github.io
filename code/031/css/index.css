@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2024-05-08
+ * @version $Id$
+ */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  background: #eee;
+}
+
+body {
+  padding: 20px 10%;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}
+
+/* list_box */
+
+.list_box {
+  overflow-x: auto;
+  background: #fff;
+}
+
+.list_box th,
+.list_box td {
+  border: 1px solid #ddd;
+  white-space: nowrap;
+  line-height: 40px;
+  padding: 0 50px;
+  text-align: center;
+}
+
+/* scroll_bar */
+
+.scroll_bar {
+  width: 80%;
+  height: 7px;
+  position: fixed;
+  left: 50%;
+  bottom: 5px;
+  transform: translate(-50%, 0);
+  z-index: 100;
+  background: #ddd;
+  overflow: hidden;
+  display: none;
+}
+
+.scroll_handle {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}

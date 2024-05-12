@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+/**
+ * food.html
+ * @authors shikkya
+ * @date 2023-11-01
+ */
+
+.food_box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  line-height: 24px;
+}
+
+.food_box .no_data {
+  width: 100%;
+  padding: 50px 0;
+  color: #999;
+}
+
+.food_box .item {
+  width: 181px;
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.food_box .item:hover {
+  border-color: #00bc9c;
+  background: rgb(0, 188, 156, 0.05);
+}
+
+.food_box font {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  z-index: 1;
+  font-size: 12px;
+  background: #00bc9c;
+  color: #fff;
+  line-height: 16px;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+.food_box img {
+  width: 36px;
+  height: 36px;
+  padding: 3px;
+  background: #e3eaf2;
+  border-radius: 3px;
+}
+
+.food_box .item > img {
+  width: 42px;
+  height: 42px;
+  margin: 5px 0;
+}
+
+.food_box p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.food_box .made {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.food_box table {
+  margin: 8px 0 6px;
+}
+
+.food_box td {
+  border: 1px solid #ddd;
+  text-align: center;
+  font-size: 14px;
+}
+
+.food_box td[colspan="3"] {
+  width: 50%;
+}
+
+.food_box td[colspan="2"] {
+  width: 33.3%;
+}
+
+.food_box td i {
+  margin-right: 2px;
+  position: relative;
+  top: -1px;
+  font-size: 15px;
+  color: #555;
+}
+
+.food_box td.active_stomach {
+  background: #fffade;
+}
+
+.food_box td.active_mind {
+  background: #fff1e3;
+}
+
+.food_box td.active_health {
+  background: #ffecec;
+}

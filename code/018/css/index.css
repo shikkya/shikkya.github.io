@@ -1,0 +1,38 @@
+﻿@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2021-02-22
+ * @version $Id$
+ */
+
+* {
+  outline: none;
+}
+
+body {
+  text-align: center;
+  background: #fff;
+  color: #333;
+  font-size: 16px;
+}
+
+.box {
+  max-width: 70%;
+  padding: 35px 0;
+  margin: 0 auto;
+}
+
+.box input {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  padding: 8px 15px;
+  font-size: 15px;
+  margin-right: 8px;
+}
+
+.box p > font {
+  color: #eb0000;
+}

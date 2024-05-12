@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SHIKKYA</title>
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="header">
+        <!-- 选项 -->
+        <div class="handle_box">
+            <span>
+                皮肤：
+                <select id="skinIndex">
+                    <option value="01">普通 经典地图</option>
+                    <option value="02">普通 秘密房间</option>
+                    <option value="03">普通 冰雪地图</option>
+                    <option value="04">剧情 苔藓密室</option>
+                    <option value="05">剧情 御敌千里</option>
+                    <option value="04">剧情 强行变卖</option>
+                    <option value="06">剧情 帮你花钱</option>
+                </select>
+            </span>
+            <span>
+                尺寸：
+                <input type="text" id="widNum" value="32" />
+                *
+                <input type="text" id="heiNum" value="39" />
+            </span>
+            <button class="btn" id="createMapBtn">创建地图</button>
+            <button class="btn" id="copyMapBtn">复制地图</button>
+        </div>
+        <!-- 皮肤 -->
+        <div class="skin_box" id="skinBox"></div>
+    </div>
+    <div class="content">
+        <!-- 地图 -->
+        <div class="map_box" id="mapBox"></div>
+    </div>
+    <!-- 复制 -->
+    <textarea class="copy_text" id="copyText"></textarea>
+    <!-- 提示 -->
+    <div class="alert_info" id="alertInfo"></div>
+
+    <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../common/js/noCopy.js"></script>
+    <script src="./script/index.js"></script>
+</body>
+
+</html>

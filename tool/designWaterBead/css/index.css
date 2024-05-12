@@ -1,0 +1,200 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date 2023-08-18
+ */
+
+.content {
+  padding: 118px 0 54px;
+}
+
+/******************** color_box ********************/
+
+.color_box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: calc(100% - 30px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 8px 0;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  margin: 0 15px;
+}
+
+.color_box i {
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  margin: 5px 7px;
+  color: #888;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.color_box i.active {
+  box-shadow: 0 0 0 4px #00bc9c;
+}
+
+/******************** map_box ********************/
+
+.map_box {
+  margin: 15px 0;
+  text-align: center;
+  font-size: 0;
+}
+
+.map_box > div {
+  display: inline-block;
+}
+
+.map_box > div div {
+  display: flex;
+  justify-content: center;
+}
+
+.map_box span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.map_box .rect span {
+  width: 23.5px;
+  height: 23.5px;
+}
+
+.map_box .hexa div {
+  height: 20px;
+}
+
+.map_box .hexa span {
+  width: 22px;
+  height: 22px;
+  margin: 0 0.5px;
+}
+
+/******************** count_box ********************/
+
+.count_box {
+  background: #fff;
+  border-radius: 8px;
+  margin: 15px;
+  padding: 5px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.count_box * {
+  vertical-align: middle;
+}
+
+.count_box div {
+  width: 25%;
+  text-align: center;
+}
+
+.count_box i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 13px;
+  border-radius: 50%;
+  margin: 4px 2px 4px 0;
+  color: #888;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.count_box font {
+  display: inline-block;
+  width: 35px;
+  text-align: left;
+}
+
+/******************** footer ********************/
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: calc(100% - 30px);
+  padding: 10px;
+  margin: 0 15px;
+  background: #fff;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .btn {
+  padding: 0;
+  font-size: 14px;
+  width: calc(25% - 6px);
+}
+
+/******************** modal ********************/
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 110;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal > div {
+  background: #fff;
+  margin: 10vh auto 0;
+  width: 80%;
+  border-radius: 8px;
+}
+
+.modal_header {
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  line-height: 40px;
+  position: relative;
+  font-size: 16px;
+}
+
+.modal_header .close_modal_btn {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  font-size: 20px;
+  color: #999;
+}
+
+/******************** load_modal ********************/
+
+.load_modal .modal_content {
+  padding: 15px;
+}
+
+.load_modal .modal_content textarea {
+  display: block;
+  width: 100%;
+  height: 50vh;
+  padding: 15px;
+  line-height: 20px;
+  color: #666;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.load_modal .modal_content .btn {
+  width: 100%;
+  margin-top: 15px;
+}

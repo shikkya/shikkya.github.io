@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Html转Pdf</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="wrap" id="wrap">
+        <table cellspacing=0 cellpadding=0>
+            <tr>
+                <td>
+                    <h2>Html转Pdf</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="./images/01.png" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <button id="downPdf" onclick="toPdf()">下载PDF</button>
+    <script type="text/javascript" src="./script/es6-promise.auto.min.js"></script>
+    <script type="text/javascript" src="./script/html2canvas.min.js"></script> <!-- 将dom节点转成canvas -->
+    <script type="text/javascript" src="./script/pdf.js"></script> <!-- 将canvas image转成PDF -->
+    <script type="text/javascript" src="./script/index.js"></script>
+</body>
+
+</html>

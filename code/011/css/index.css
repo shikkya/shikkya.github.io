@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2019-10-28
+ * @version $Id$
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #eff3f3;
+  color: #666;
+  font-family: "微软雅黑";
+  text-align: center;
+}
+
+.wrap {
+  padding: 50px 0px;
+  width: 800px;
+  margin: 0 auto;
+}
+
+table {
+  width: 240px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+td {
+  padding: 20px 0;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+button,
+button:hover,
+button:focus,
+button:active {
+  background: #f90;
+  color: #fff;
+  border: 0px;
+  padding: 8px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 15px;
+}

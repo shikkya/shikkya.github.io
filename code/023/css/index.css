@@ -1,0 +1,325 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2021-06-23
+ * @version $Id$
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  font-size: 15px;
+  background: #fff;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.content {
+  display: flex;
+  padding: 20px;
+}
+
+.btn {
+  background: #128bed;
+  color: #fff;
+  border: 0;
+  padding: 8px 10px;
+  margin: 0 3px;
+  cursor: pointer;
+  font-size: 15px;
+  border-radius: 2px;
+}
+
+.btn:disabled {
+  background: #bbb;
+  cursor: not-allowed;
+}
+
+/******************** left_box ********************/
+
+.left_box {
+  border: 1px solid #e0e0e0;
+  width: calc(100% - 320px);
+  height: 650px;
+  overflow: hidden;
+  cursor: move;
+}
+
+.left_box .jsmind-inner {
+  overflow: visible;
+}
+
+#jsMindContainer {
+  transform: translate(0, 0);
+}
+
+jmnodes {
+  transform: scale(1);
+}
+
+/******************** right_box ********************/
+
+.right_box {
+  width: 320px;
+  margin-left: 20px;
+}
+
+.btn_box {
+  text-align: center;
+}
+
+/******************** search_box ********************/
+
+.search_box {
+  border: 1px solid #e0e0e0;
+  color: #aaa;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search_box input {
+  background: #fff;
+  font-size: 15px;
+  color: #666;
+  padding: 10px 0;
+  border: 0;
+}
+
+.search_box span {
+  border-right: 1px solid #e0e0e0;
+  margin-right: 8px;
+  padding-right: 5px;
+}
+
+.search_box font {
+  margin: 0 2px;
+}
+
+.search_box i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  padding: 3px;
+  cursor: pointer;
+  vertical-align: middle;
+  background: url("../images/index_02.png") no-repeat center;
+}
+
+.search_box .prev_btn {
+  background: url("../images/index_01.png") no-repeat center;
+}
+
+/******************** result_box ********************/
+
+.result_box {
+  border: 1px solid #e0e0e0;
+  padding: 8px 7px;
+  margin: 20px 0;
+  height: 518px;
+  overflow-y: auto;
+}
+
+.result_box li {
+  margin: 5px 0;
+}
+
+.result_box .no_data {
+  color: #aaa;
+}
+
+.result_box li div {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.result_box li b {
+  color: #ffaa00;
+}
+
+.result_box li p {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #888;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.result_box li div:hover,
+.result_box li div.active {
+  background: rgba(0, 192, 255, 0.08);
+}
+
+/******************** modal ********************/
+
+.modal {
+  width: 200px;
+  position: fixed;
+  z-index: 990;
+  background: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  padding: 10px;
+  color: #aaa;
+  display: none;
+}
+
+.modal > div {
+  display: flex;
+}
+
+.modal span {
+  display: inline-block;
+  background: #9eb5de;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  color: #fff;
+  border-radius: 2px;
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.modal a {
+  color: #128bed;
+  text-decoration: none;
+  white-space: normal;
+  line-height: 20px;
+}
+
+.modal a:hover {
+  text-decoration: underline;
+}
+
+/******************** new theme ********************/
+
+/* 节点样式 */
+jmnodes.theme-shikkya jmnode {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #dcdcdc;
+  box-shadow: none;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+jmnodes.theme-shikkya jmnode.c_1 {
+  border-color: #fcd381;
+}
+jmnodes.theme-shikkya jmnode.c_2 {
+  border-color: #89caff;
+}
+jmnodes.theme-shikkya jmnode.c_3 {
+  border-color: #89e8e8;
+}
+jmnodes.theme-shikkya jmnode.c_4 {
+  border-color: #8dd06c;
+}
+
+jmnodes.theme-shikkya jmnode.active {
+  background-color: #128bed;
+  color: #fff;
+  border-color: #128bed;
+}
+
+/* 鼠标悬停的节点样式 */
+jmnodes.theme-shikkya jmnode:hover {
+}
+
+/* 选中的节点样式 */
+jmnodes.theme-shikkya jmnode.selected {
+}
+
+/* 根节点样式 */
+jmnodes.theme-shikkya jmnode.root {
+  background-color: #128bed;
+  color: #fff;
+  border: 1px solid #128bed;
+  font-size: 18px;
+}
+
+/* 展开/关闭节点的控制点样式 */
+jmnodes.theme-shikkya jmexpander {
+  color: #999;
+  line-height: 10px;
+  border-color: #999;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+jmnodes.theme-shikkya jmnode.active jmexpander {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* 鼠标悬停展开/关闭节点的控制点样式 */
+jmnodes.theme-shikkya jmexpander:hover {
+}
+
+/* 节点内标签样式 */
+
+jmnodes.theme-shikkya jmnode > span {
+  color: #bbb;
+  margin-left: 3px;
+  letter-spacing: -1px;
+}
+
+jmnodes.theme-shikkya jmnode > span > font {
+  font-style: normal;
+  color: #f9ad14;
+}
+
+jmnodes.theme-shikkya jmnode.active span,
+jmnodes.theme-shikkya jmnode.active font {
+  color: #fff;
+}
+
+jmnodes.theme-shikkya jmnode > i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+jmnodes.theme-shikkya jmnode.c_1 > i {
+  background: #fcd381;
+  margin-left: 4px;
+}
+jmnodes.theme-shikkya jmnode.c_2 > i {
+  background: #89caff;
+  margin-left: 4px;
+}
+jmnodes.theme-shikkya jmnode.c_3 > i {
+  background: #89e8e8;
+  margin-right: 4px;
+}
+jmnodes.theme-shikkya jmnode.c_4 > i {
+  background: #8dd06c;
+  margin-right: 4px;
+}
+jmnodes.theme-shikkya jmnode.active > i {
+  background: #fff;
+}

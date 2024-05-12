@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>思维导图jsMind 进阶版</title>
+    <link rel="stylesheet" type="text/css" href="./plugins/jsmind.css" />
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="content">
+        <!-- left -->
+        <div class="left_box" id="jsMindBox">
+            <div id="jsMindContainer"></div>
+        </div>
+        <!-- right -->
+        <div class="right_box">
+            <!-- search -->
+            <div class="search_box">
+                <input type="text" id="searchVal" placeholder="请输入要搜索的节点名称" />
+                <span>
+                    <font id="curNum">0</font>/<font id="totalNum">0</font>
+                </span>
+                <i class="prev_btn" id="prevBtn"></i>
+                <i class="next_btn" id="nextBtn"></i>
+            </div>
+            <!-- result -->
+            <div class="result_box">
+                <ul id="resultList">
+                    <li class="no_data">暂无搜索结果</li>
+                </ul>
+            </div>
+            <!-- btn -->
+            <div class="btn_box">
+                <!-- <button class="btn" id="downLoadBtn">下载图片</button> -->
+                <button class="btn" id="zoomInBtn">放大</button>
+                <button class="btn" id="zoomOutBtn">缩小</button>
+                <button class="btn" id="expandAllBtn">展开全部</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./plugins/jsmind.js"></script>
+    <script type="text/javascript" src="./plugins/jsmind.screenshot.js"></script>
+    <script type="text/javascript" src="./script/index.js"></script>
+</body>
+
+</html>

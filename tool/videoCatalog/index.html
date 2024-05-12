@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SHIKKYA</title>
+    <link rel="stylesheet" href="../common/css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="header">
+        <!-- filter -->
+        <div class="filter_box" id="filterBox">
+            <div class="filter_item">
+                <label>分类：</label>
+                <ul id="typeList"></ul>
+            </div>
+            <div class="filter_item">
+                <label>搜索：</label>
+                <input type="text" id="keyWord" placeholder="请输入关键字" autocomplete="off" />
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- list -->
+        <div class="list_box" id="listBox"></div>
+    </div>
+
+    <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../common/js/noCopy.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

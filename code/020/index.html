@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>字符串对比</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="content">
+        <!-- 示例 -->
+        <div class="example_box" id="exampleBox"></div>
+        <!-- 文本 -->
+        <div class="text_box">
+            <div class="left">
+                <textarea placeholder="请输入对比文本" id="text_1"></textarea>
+            </div>
+            <div class="right">
+                <textarea placeholder="请输入对比文本" id="text_2"></textarea>
+            </div>
+        </div>
+        <!-- 按钮 -->
+        <div class="btn_box">
+            <button id="clearBtn">清空全部</button>
+            <button id="compareBtn">开始对比</button>
+        </div>
+        <!-- 结果 -->
+        <div class="text_box">
+            <div class="left" id="result_1">对比结果</div>
+            <div class="right" id="result_2">对比结果</div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./script/compareStr.js"></script>
+    <script type="text/javascript" src="./script/index.js"></script>
+</body>
+
+</html>

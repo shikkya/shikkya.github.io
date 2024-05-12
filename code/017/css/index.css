@@ -1,0 +1,71 @@
+﻿@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2020-12-16
+ * @version $Id$
+ */
+
+* {
+  cursor: default;
+}
+
+body {
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+  color: #333;
+}
+
+.box {
+  max-width: 320px;
+  margin: 20px auto;
+  background: #ddd;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.text_out {
+  margin: 5px 5px 3px;
+  background: #fff;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+.text_out > div {
+  text-align: right;
+  width: 100%;
+}
+
+.record_val {
+  font-size: 16px;
+  word-break: break-all;
+  min-height: 25px;
+}
+
+.input_val {
+  font-size: 26px;
+  font-weight: bold;
+  height: 38px;
+}
+
+table {
+  width: 100%;
+}
+
+table td {
+  width: 25%;
+}
+
+.cal_btn {
+  padding: 15px 0;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 3px;
+}
+
+.equal_btn {
+  background: #ffae35;
+  color: #fff;
+}

@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+.imgVer {
+  display: inline-block;
+}
+
+.imgVer * {
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.imgVer-hidden {
+  display: none !important;
+}
+
+/* imgVer-show */
+
+.imgVer-show {
+  position: relative;
+  padding: 16px 16px 32px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.imgVer-view {
+  position: relative;
+  overflow: hidden;
+}
+
+.imgVer-img {
+  position: relative;
+}
+
+.imgVer-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.imgVer-img canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 22;
+}
+
+.imgVer-puzzle {
+  position: absolute;
+  top: 0;
+  z-index: 111;
+}
+
+.imgVer-puzzle canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 33;
+}
+
+.imgVer-puzzle canvas:first-child {
+  z-index: 22;
+}
+
+.imgVer-tip {
+  width: 100%;
+  height: 22px;
+  line-height: 22px;
+  position: absolute;
+  left: 0;
+  bottom: -22px;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.9);
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+  margin: 0;
+  padding: 0 8px;
+  transition: all 0.4s;
+}
+
+.imgVer-tip.imgVer-active {
+  bottom: 0;
+}
+
+.imgVer-tip i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  vertical-align: top;
+  background: url("./img/failed.svg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.imgVer-tip-success i {
+  background: url("./img/success.svg") no-repeat;
+  background-size: 100% 100%;
+}
+
+.imgVer-tip font {
+  color: #f00;
+}
+
+.imgVer-tip-success font {
+  color: #42ca6b;
+}
+
+.imgVer-tip span {
+  margin-left: 4px;
+}
+
+.imgVer-reset-btn {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 12px;
+  bottom: 6px;
+  z-index: 1;
+  background: url("./img/refresh.svg") no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+/* imgVer-handle */
+
+.imgVer-handle {
+  position: relative;
+  margin: 25px auto 0;
+}
+
+.imgVer-slider-bg {
+  border: 1px solid #dcdcdc;
+  border-radius: 24px;
+  background: #ebebeb;
+  box-shadow: 0 0px 5px rgb(12, 10, 10, 7%) inset;
+  font-size: 12px;
+  color: #486c80;
+  line-height: 28px;
+}
+
+.imgVer-slider-bg p {
+  text-align: center;
+  margin: 0 0 0 36px;
+}
+
+.imgVer-slider-btn {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  left: 0;
+  top: -7px;
+  z-index: 12;
+  cursor: pointer;
+  background: url("./img/sprite.png") no-repeat;
+  background-position: 0 -84px;
+  transition: inherit;
+}

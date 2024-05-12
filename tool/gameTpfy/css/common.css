@@ -1,0 +1,164 @@
+@charset "UTF-8";
+
+/**
+ * map.html
+ * @authors shikkya
+ * @date 2022-03-19
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  font-size: 15px;
+  background: #fff;
+  text-align: center;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/******************** map_box ********************/
+
+.map_box {
+  background: #000;
+  padding: 30px 15px;
+}
+
+.map_box table {
+  margin: 0 auto;
+}
+
+.map_box td {
+  border: 1px solid #888;
+}
+
+.map_box td.no_border {
+  border: 0;
+}
+
+.map_box div {
+  width: 36px;
+  height: 36px;
+}
+
+/******************** skin ********************/
+
+.bed {
+  background: url("../images/bed.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.door_a {
+  background: url("../images/door_a.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.door_b {
+  background: url("../images/door_b.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.start {
+  background: url("../images/start.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.outdoor_01 {
+  background: url("../images/outdoor_01.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.outdoor_02 {
+  background: url("../images/outdoor_02.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.outdoor_03 {
+  background: url("../images/outdoor_03.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.outdoor_04 {
+  background: url("../images/outdoor_04.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.outdoor_05 {
+  background: url("../images/outdoor_05.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.outdoor_06 {
+  background: url("../images/outdoor_06.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.indoor_01 {
+  background: url("../images/indoor_01.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.indoor_02 {
+  background: url("../images/indoor_02.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.indoor_03 {
+  background: url("../images/indoor_03.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.indoor_04 {
+  background: url("../images/indoor_04.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.indoor_05 {
+  background: url("../images/indoor_05.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.indoor_06 {
+  background: url("../images/indoor_06.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.wall_01 {
+  background: url("../images/wall_01.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.wall_02 {
+  background: url("../images/wall_02.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.wall_03 {
+  background: url("../images/wall_03.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.wall_04 {
+  background: url("../images/wall_04.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.wall_05 {
+  background: url("../images/wall_05.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.wall_06 {
+  background: url("../images/wall_06.png") no-repeat;
+  background-size: 100% 100%;
+}

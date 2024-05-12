@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2024-02-28
+ * @version $Id$
+ */
+
+body,
+html {
+  background: #fff;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}

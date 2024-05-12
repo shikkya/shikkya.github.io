@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2024-02-26
+ * @version $Id$
+ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: PingFangSC-Regular, PingFang SC;
+}
+
+body,
+html {
+  padding: 0 50px;
+  min-height: 100vh;
+  background: #fff;
+}
+
+/* file_box */
+
+.file_box {
+  padding: 20px 0;
+}
+
+.file_box input[type="text"] {
+  width: 100%;
+  line-height: 34px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.file_box textarea {
+  width: 100%;
+  height: 300px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+/* handle_box */
+
+.handle_box {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.handle_box button {
+  width: 85px;
+  line-height: 32px;
+  background: #09f;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  margin: 0 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SHIKKYA</title>
+    <link rel="stylesheet" href="./common/css/common.css" />
+    <style>
+        .content {
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        .content p {
+            color: #00bc9c;
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .content input {
+            width: 240px;
+            line-height: 38px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            text-align: center;
+            padding: 0 12px;
+            font-size: 16px;
+        }
+
+        .content th,
+        .content td {
+            border: 1px solid #eee;
+            padding: 6px 8px;
+        }
+
+        .content th {
+            white-space: nowrap;
+        }
+
+        .content td:nth-child(2),
+        .content td:nth-child(3) {
+            text-align: left;
+        }
+
+        .content a {
+            color: #00bc9c;
+        }
+
+        .content i {
+            display: inline-block;
+            font-style: normal;
+            font-size: 12px;
+            background: #efefef;
+            color: #888;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            margin: 0 2px;
+            padding: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content" id="content">
+        <p>此页面仅限管理员查看</p>
+        <input type="password" id="userPass" placeholder="请输入管理员密码" autocomplete="off" />
+    </div>
+
+    <script src="./common/plugin/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="./common/js/noCopy.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var self = this;
+
+            $('#userPass').on('keyup', function (e) {
+                e = e ? e : window.event;
+                if (e.keyCode == 13) {
+                    self.checkPass();
+                }
+            }).on('input', function () {
+                self.checkPass();
+            })
+
+            // 校验密码
+            this.checkPass = function () {
+                var userPass = $('#userPass').val().trim();
+                // new Date().getFullYear() 
+                if (userPass == self.formatNum(new Date().getMonth() + 1) + self.formatNum(new Date().getDate())) {
+                    self.createListHtml();
+                }
+            }
+
+            // 创建列表结构
+            this.createListHtml = function () {
+                var data = [
+                    { tit: '咕咚排班表', type: 'Mobile', url: './schedule', date: '2023-06-04' },
+                    { tit: '影视目录查询', type: 'Mobile', url: './videoCatalog', date: '2023-07-11' },
+                    { tit: '开发笔记', type: 'PC', url: './codeNote', date: '2023-11-20' },
+                    { tit: '饥荒指令器', type: 'PC', url: './dontStarve', date: '2023-11-01' },
+                    { tit: '预产期计算器', type: 'Mobile', url: './birthDate', date: '2023-08-08' },
+                    { tit: '水雾魔珠设计器', type: 'Mobile', url: './designWaterBead', date: '2023-08-18' },
+                    { tit: '躺平发育地图还原器', type: 'PC', url: './gameTpfy', date: '2022-03-19' },
+                    { tit: '矩阵文字找不同', type: 'Mobile', url: './findWord', date: '2022-05-25' }
+                ];
+                var url = window.location.host;
+
+                var html = '<table>' +
+                    '<tr>' +
+                    '<th>序号</th>' +
+                    '<th>名称</th>' +
+                    '<th>适配端</th>' +
+                    '<th>日期</th>' +
+                    '</tr>';
+                for (var i in data) {
+                    html += '<tr>' +
+                        '<td>' + (parseInt(i) + 1) + '</td>' +
+                        '<td>' +
+                        '<a href="' + data[i].url + (url == '' ? '/index.html' : '') + '">' + data[i].tit + '</a>' +
+                        '</td>' +
+                        '<td>' +
+                        '<i data-t="' + data[i].type + '">' + data[i].type + '</i>' +
+                        '</td>' +
+                        '<td>' + data[i].date + '</td>' +
+                        '</tr>';
+                }
+                html += '</table>'
+                $('#content').html(html);
+            }
+
+            // 格式化数字
+            this.formatNum = function (num) {
+                if (parseInt(num) > 9) {
+                    return '' + num;
+                }
+                return '0' + num;
+            }
+        })
+    </script>
+</body>
+
+</html>

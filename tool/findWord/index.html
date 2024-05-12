@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SHIKKYA</title>
+    <link rel="stylesheet" href="../common/css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+
+    <div class="content">
+        <ul id="exampleList"></ul>
+        <textarea id="textVal"></textarea>
+        <button class="btn" id="subBtn">开始查找</button>
+        <div id="result"></div>
+    </div>
+
+    <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../common/js/noCopy.js"></script>
+    <script>
+
+        $(function () {
+
+            // 示例数据
+            var exampleData = [
+                '己己己己己己己己己己己己己\n己己己己己己已己己己己己己\n己己己己己己己己己己己己己\n己己己己己己己己己己己己己\n己己己己己己己己己己已己己\n己己己己己己己己己己己己己\n己己己己己己己己己己己己己',
+                '土土土土土土土土土土土土土\n土土土土土土土土土土土土土\n土土土土土土土土土土土土土\n土土土土土士土土土土土土土\n土土土土土土土土土土土土土\n土土土土土土土土土土土土土\n土土土土土土士土土土土土土',
+                '酒酒酒酒酒酒酒酒酒酒酒酒酒\n酒酒酒酒酒酒酒酒酒酒酒酒酒\n酒酒酒酒酒洒酒酒酒酒酒酒酒\n酒酒酒酒酒酒酒酒酒酒酒酒酒\n酒酒酒酒酒酒酒洒酒酒酒酒酒\n酒酒酒酒酒酒酒酒酒酒酒酒酒\n酒酒酒酒酒酒酒酒酒酒酒酒酒'
+            ];
+
+            // 初始化示例
+            for (var i in exampleData) {
+                $('#exampleList').append('<li class="btn">示例' + (parseInt(i) + 1) + '</li>')
+            }
+
+            // 点击示例
+            $('#exampleList').off('click').on('click', 'li', function () {
+                $('#textVal').val(exampleData[$(this).index()]);
+            })
+
+            // 开始查找
+            $('#subBtn').off('click').on('click', function () {
+                var textVal = $('#textVal').val().trim();
+                if (textVal == '') {
+                    $('#result').hide();
+                    return false;
+                }
+
+                var resultArr = [];
+                var x = 0;
+                var y = 0;
+                var flag = false;
+
+                for (var i = 0; i < textVal.length; i++) {
+                    if (textVal[i] == '\n') {
+                        x++;
+                        y = 0;
+                        continue;
+                    }
+
+                    flag = false;
+                    for (var j = 0; j < resultArr.length; j++) {
+                        if (textVal[i] == resultArr[j].word) {
+                            flag = true;
+                            resultArr[j].positon += '第' + (x + 1) + '行第' + (y + 1) + '个、';
+                            break;
+                        }
+                    }
+                    if (!flag) {
+                        resultArr.push({
+                            word: textVal[i],
+                            positon: '第' + (x + 1) + '行第' + (y + 1) + '个、'
+                        });
+                    }
+                    y++;
+                }
+
+                // console.log(resultArr);
+
+                $('#result').text(JSON.stringify(resultArr)).show();
+            })
+        })
+    </script>
+</body>
+
+</html>

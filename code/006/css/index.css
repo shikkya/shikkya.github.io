@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2019-08-15
+ * @version $Id$
+ */
+
+* {
+    margin: 0;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+body {
+    background: #333;
+}
+
+canvas {
+    background: #333;
+    width: 1000px;
+    height: 376px;
+    margin: 0 auto;
+    display: block;
+}

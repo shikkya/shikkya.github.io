@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SHIKKYA</title>
+    <link rel="stylesheet" href="../common/plugin/dcalendar/dcalendar.picker.css" />
+    <link rel="stylesheet" href="../common/css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="item">
+            <label>末次月经</label>
+            <input type="text" id="startDate" placeholder="请选择末次月经日期" value="" readonly />
+        </div>
+        <div class="item">
+            <label>孕期天数</label>
+            <span id="produceDay">280</span>天
+        </div>
+        <div class="item">
+            <label>预产期</label>
+            <input type="text" id="birthDate" placeholder="请选择预产期" value="" readonly />
+        </div>
+        <div class="item">
+            <label>产假天数</label>
+            <span id="restDay">180</span>天
+        </div>
+        <div class="item">
+            <label>产假结束</label>
+            <span id="workDate"></span>
+        </div>
+        <div class="btn_box">
+            <button class="btn" id="searchBirthDateBtn">计算预产期</button>
+            <button class="btn" id="searchWorkDateBtn">计算产假结束期</button>
+        </div>
+    </div>
+
+    <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../common/plugin/dcalendar/dcalendar.picker.js"></script>
+    <script src="../common/js/noCopy.js"></script>
+    <script src="../common/js/common.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>FileReader读取文件</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="handle_box">
+        <button id="openBtn">打开文件</button>
+        <input id="openFile" name="openFile" type="file" accept=".txt" />
+        <ul id="encodeList">
+            <li data-v="gb2312" class="active"><i></i>GB2312</li>
+            <li data-v="utf-8"><i></i>UTF-8</li>
+        </ul>
+    </div>
+    <div class="text_box">
+        <textarea id="showText"></textarea>
+    </div>
+
+    <script type="text/javascript" src="./script/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="./script/index.js"></script>
+</body>
+
+</html>

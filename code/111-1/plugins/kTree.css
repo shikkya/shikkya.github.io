@@ -1,0 +1,121 @@
+﻿@charset "UTF-8";
+
+/**
+ * kTree
+ * @authors shikkya
+ * @date    2021-04-26
+ * @version $Id$
+ */
+
+.kTree_box {
+  background: #fff;
+  color: #333;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block;
+  text-align: left;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+}
+
+.kTree_box * {
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kTree_box ul,
+.kTree_box li {
+  list-style: none;
+}
+
+.kTree_box .kTree_hide {
+  display: none;
+}
+
+/******************** kTree_load ********************/
+
+.kTree_load {
+  text-align: center;
+  min-width: 150px;
+  padding: 30px 0;
+}
+
+.kTree_load i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("./icon/load.gif") no-repeat;
+}
+
+/******************** kTree_search ********************/
+
+.kTree_search {
+  margin-bottom: 12px;
+}
+
+.kTree_search input {
+  border: 1px solid #e0e0e0;
+  padding: 6px 10px;
+  width: 200px;
+  font-size: 15px;
+  color: #333;
+}
+
+.kTree_nodata {
+  margin-top: 12px;
+  color: #888;
+}
+
+/******************** kTree_list ********************/
+
+.kTree_list {
+  height: 280px;
+  overflow: auto;
+}
+
+.kTree_list ul {
+  margin-left: 20px;
+}
+
+.kTree_list > ul {
+  margin: 0;
+}
+
+.kTree_list li {
+  padding: 3px 0;
+}
+
+.kTree_list i {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.kTree_list i.kTree_check {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #ddd;
+}
+
+.kTree_list i.kTree_active {
+  border: 1px solid #09f;
+  background: url("./icon/check.png") #09f;
+}
+
+.kTree_list i.kTree_add,
+.kTree_list i.kTree_sub {
+  width: 9px;
+  height: 9px;
+}
+
+.kTree_list i.kTree_add {
+  background: url("./icon/add.png");
+}
+
+.kTree_list i.kTree_sub {
+  background: url("./icon/sub.png");
+}

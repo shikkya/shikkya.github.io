@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date 2023-08-08
+ */
+
+body {
+  padding: 15px;
+}
+
+.content {
+  padding: 10px 15px;
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/******************** item ********************/
+
+.item {
+  padding: 5px 0 5px 80px;
+  color: #888;
+  position: relative;
+}
+
+.item label {
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 13px;
+}
+
+.item:nth-child(3) label {
+  letter-spacing: 7.5px;
+}
+
+.item input {
+  width: 100%;
+  line-height: 36px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 0 12px;
+}
+
+.item > span {
+  line-height: 36px;
+}
+
+/******************** btn_box ********************/
+
+.btn_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0 8px;
+}
+
+.btn {
+  width: calc(50% - 7.5px);
+}
+
+/******************** dcalendar ********************/

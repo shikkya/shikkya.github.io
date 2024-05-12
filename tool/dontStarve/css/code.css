@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/**
+ * code.html
+ * @authors shikkya
+ * @date 2023-11-01
+ */
+
+.code_box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  line-height: 24px;
+}
+
+.code_box .no_data {
+  width: 100%;
+  padding: 50px 0;
+  color: #999;
+}
+
+.code_box div:not(.no_data) {
+  width: 157.5px;
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.code_box div:not(.no_data):hover {
+  border-color: #00bc9c;
+  background: rgb(0, 188, 156, 0.05);
+}
+
+.code_box img {
+  width: 42px;
+  height: 42px;
+  margin: 5px 0;
+  background: #e3eaf2;
+  border-radius: 3px;
+}
+
+.code_box p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.code_box b {
+  margin-left: 5px;
+}
+
+.code_box b:first {
+  margin: 0;
+}

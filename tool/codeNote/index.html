@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SHIKKYA</title>
+    <link rel="stylesheet" href="../common/css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <div>
+            <ul id="typeList"></ul>
+            <div>
+                <input type="text" id="searchVal" placeholder="请输入关键词" autocomplete="off" />
+            </div>
+        </div>
+    </div>
+
+    <!-- content -->
+    <div class="content" id="content"></div>
+
+    <!-- catalog_modal -->
+    <div class="catalog_modal" id="catalogModal">
+        <div>
+            <div class="catalog_modal_header">
+                <b>目录</b>
+                <a id="catalogModalCloseBtn">&times;</a>
+            </div>
+            <div class="catalog_modal_content">
+                <div id="catalogModalList"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../common/js/noCopy.js"></script>
+    <script src="../common/js/common.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

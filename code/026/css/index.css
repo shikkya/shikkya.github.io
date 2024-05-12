@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date    2021-10-29
+ * @version $Id$
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  font-size: 15px;
+  background: #eee;
+}
+
+input {
+  background: #fff;
+  font-size: 14px;
+  color: #666;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/******************** content ********************/
+
+.content {
+  width: 600px;
+  margin: 80px auto 0;
+  padding: 30px 0;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.left_box,
+.right_box,
+.mid_box {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.left_box,
+.right_box {
+  width: calc(50% - 45px);
+  text-align: left;
+}
+
+.mid_box img {
+  width: 20px;
+  margin-top: 32px;
+}
+
+.search_box,
+.ztree_box,
+.list_box {
+  border: 1px solid #e0ebf8;
+  border-radius: 6px;
+}
+
+.ztree_box,
+.list_box {
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+/******************** search_box ********************/
+
+.search_box input {
+  border: 0;
+  padding: 8px 0;
+  vertical-align: middle;
+  width: calc(100% - 43px);
+  border-radius: 6px;
+}
+
+.search_box img {
+  height: 18px;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+/******************** ztree_box ********************/
+
+.ztree_box {
+  height: 360px;
+}
+
+.ztree * {
+  font-size: 14px;
+}
+
+.ztree li {
+  padding: 2px 0;
+}
+
+.ztree li a:hover {
+  text-decoration: none;
+}
+
+.ztree .checkbox_true_full + a,
+.ztree .checkbox_true_full_focus + a {
+  background: #e9f3ff;
+  border-radius: 2px;
+}
+
+.ztree li a.curSelectedNode {
+  border: 0;
+  background: #fff;
+  color: #333;
+  opacity: 1;
+  padding-top: 1px;
+}
+
+.ztree li span.button.chk {
+  margin: 0 5px;
+}
+
+.ztree li.hide_node {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+/******************** info_box ********************/
+
+.info_box {
+  color: #a4b5cb;
+  padding: 7px 0;
+  cursor: default;
+}
+
+.info_box font {
+  margin: 0 2px;
+}
+
+.info_box a {
+  color: #3c7fcd;
+}
+
+.info_box img {
+  height: 14px;
+  vertical-align: middle;
+  margin: -3px 2px 0 0;
+}
+
+/******************** list_box ********************/
+
+.list_box {
+  height: 350px;
+  padding-top: 10px;
+  cursor: default;
+}
+
+.list_box li {
+  display: inline-block;
+  color: #3c7fcd;
+  background: #e9f3ff;
+  padding: 1px 5px;
+  margin: 0 0 10px 10px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.list_box i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+  background: url("../images/index_04.png");
+  background-size: 100%;
+  margin: -2px 0 0 3px;
+  cursor: pointer;
+}

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date 2022-05-25
+ */
+
+.content {
+  padding: 30px;
+  text-align: center;
+}
+
+.content li {
+  display: inline-block;
+  width: 80px;
+  margin: 0 10px;
+}
+
+.content textarea {
+  width: 100%;
+  height: 35vh;
+  border: 0;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.content div {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  line-height: 25px;
+  display: none;
+}
