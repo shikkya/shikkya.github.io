@@ -24,15 +24,27 @@
     <!-- content -->
     <div class="content" id="content"></div>
 
+    <!-- catalog_drawer -->
+    <a class="catalog_drawer_show_btn" id="catalogDrawerShowBtn">目录</a>
+    <div class="catalog_drawer" id="catalogDrawer">
+        <div class="catalog_header">
+            <b>目录</b>
+            <a id="catalogDrawerCloseBtn">&times;</a>
+        </div>
+        <div class="catalog_content">
+            <div class="catalog_list" data-type="drawer"></div>
+        </div>
+    </div>
+
     <!-- catalog_modal -->
     <div class="catalog_modal" id="catalogModal">
         <div>
-            <div class="catalog_modal_header">
+            <div class="catalog_header">
                 <b>目录</b>
                 <a id="catalogModalCloseBtn">&times;</a>
             </div>
-            <div class="catalog_modal_content">
-                <div id="catalogModalList"></div>
+            <div class="catalog_content">
+                <div class="catalog_list" data-type="modal"></div>
             </div>
         </div>
     </div>

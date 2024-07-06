@@ -107,6 +107,208 @@ input[type="password"]::-ms-clear,
 input[type="password"]::-o-clear {
     display: none;
 }`
+    }, {
+        tit: 'css3 变量函数 var',
+        code: `
+<a>:root {
+    --color-theme: #00bc9c;
+    --wid-content: 1170px;
+}</a>
+
+div {
+    width: var(--wid-content);
+    color: var(--color-theme);
+    background: var(--color-bg, #eee);
+}
+
+// 设置变量
+<a>document.documentElement.style.setProperty('--color-theme', 'pink');</a>
+
+// 读取变量
+<a>document.documentElement.style.getPropertyValue('--color-theme').trim();</a>
+
+// 删除变量
+document.documentElement.style.removeProperty('--color-theme');`
+    }]
+}, {
+    type: 'CssIcon',
+    child: [{
+        tit: '箭头',
+        code: `
+.arrow {
+    display: inline-block;
+    width: 6px; /* 尺寸 */
+    height: 6px; /* 尺寸 */
+    border-left: 2px solid #aaa; /* 颜色 */
+    border-bottom: 2px solid #aaa; /* 颜色 */
+    position: relative;
+    cursor: pointer;
+}
+
+.arrow[data-t="up"] {
+    transform: rotate(135deg);
+}
+
+.arrow[data-t="down"] {
+    transform: rotate(-45deg);
+    top: -3px;
+}
+
+.arrow[data-t="left"] {
+    transform: rotate(45deg);
+    top: -1px;
+    left: 2px;
+}
+
+.arrow[data-t="right"] {
+    transform: rotate(-135deg);
+    top: -1px;
+    right: 1px;
+}`,
+        example: `
+<i class="arrow" data-t="up"></i>
+<i class="arrow" data-t="down"></i>
+<i class="arrow" data-t="left"></i>
+<i class="arrow" data-t="right"></i>`
+    }, {
+        tit: '单选 radio',
+        code: `
+.radio {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.radio::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.radio.active {
+    border-color: #00bc9c; /* 选中颜色 */
+}
+
+.radio.active::before {
+    background: #00bc9c; /* 选中颜色 */
+}`,
+        example: `
+<i class="radio"></i>
+<i class="radio active"></i>`
+    }, {
+        tit: '多选 check',
+        code: `
+.check {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px; /* 矩形3px 圆形50% */
+    position: relative;
+    cursor: pointer;
+}
+
+.check::before {
+    content: "";
+    width: 4px;
+    height: 8px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -70%) rotate(45deg);
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.check.active {
+    background: #00bc9c; /* 选中颜色 */
+    border-color: #00bc9c; /* 选中颜色 */
+}`,
+        example: `
+<i class="check"></i>
+<i class="check active"></i>`
+    }, {
+        tit: '心形（实心）',
+        code: `
+.heart {
+    width: 10px; /* 尺寸 */
+    height: 10px; /* 尺寸 */
+    background: pink; /* 颜色 */
+    transform: rotate(45deg);
+    position: relative;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.heart::before {
+    transform: translate(-50%, 0);
+}
+
+.heart::after {
+    transform: translate(0, -50%);
+}`,
+        example: `<div class="heart"></div>`
+    }, {
+        tit: '心形（空心）',
+        code: `
+.heart {
+    width: 10px; /* 尺寸 */
+    height: 10px; /* 尺寸 */
+    background: #fff;
+    color: #aaa; /* 颜色 */
+    border: 1px solid #aaa; /* 颜色 */
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg);
+    position: relative;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: inherit;
+    border-top: 1px solid currentColor;
+    border-radius: 50%;
+}
+
+.heart::before {
+    border-left: 1px solid currentColor;
+    transform: translate(-50%, 0) rotate(-45deg);
+}
+
+.heart::after {
+    border-right: 1px solid currentColor;
+    transform: translate(0, -50%) rotate(-45deg);
+}`,
+        example: `<div class="heart"></div>`
     }]
 }, {
     type: 'Js',
@@ -155,17 +357,162 @@ $('body, html').animate({
 // min[包含] 到 max[包含] 之间的 随机整数
 <a>Math.floor(Math.random() * (max - min + 1) + min);</a>`
     }, {
+        tit: '数字处理 取整 小数位数 Math',
+        code: `
+// 取整 去掉小数点及之后的部分
+<a>parseInt()</a>;
+parseInt('-1.4'); // -1
+parseInt(1.5); // 1
+
+// 取整 去掉小数点及之后的部分
+<a>Math.trunc()</a>;
+Math.trunc('-1.4'); // -1
+Math.trunc(1.5); // 1
+
+// 向下取整
+<a>Math.floor()</a>;
+Math.floor('-1.4'); // -2
+Math.floor(1.5); // 1
+
+// 向上取整
+<a>Math.ceil()</a>;
+Math.ceil('-1.4'); // -1
+Math.ceil(1.5); // 2
+
+// 取整 四舍五入
+<a>Math.round()</a>;
+Math.round('-1.4'); // -1
+Math.round(1.5); // 2
+
+// 保留小数 四舍五入 n为Number 不补零
+<a>n.toFixed(0)</a>;
+-1.45.toFixed(1); // '-1.5'
+1.54.toFixed(1); // '1.5'
+
+// 保留小数 非四舍五入 正数 不补零
+<a>Math.floor(n * 100) / 100</a>;
+Math.floor(1.45 * 10) / 10; // 1.4
+Math.floor(1.54 * 10) / 10; // 1.5
+
+// 保留小数 非四舍五入 负数 不补零
+<a>Math.ceil(n * 100) / 100</a>;
+Math.ceil(-1.45 * 10) / 10; // -1.4
+Math.ceil(-1.54 * 10) / 10; // -1.5
+
+// 取绝对值
+<a>Math.abs()</a>;
+Math.abs('-1.4'); // 1.4
+Math.abs(1.5); // 1.5
+Math.abs(0); // 0
+
+// x的y次幂
+<a>Math.pow(x, y)</a>;
+Math.pow('2', '2'); // 4
+Math.pow(2, 3); // 8
+
+// 最小值
+<a>Math.min()</a>;
+Math.min(-1, 3, 0, -1, 4); // -1
+
+// 最大值
+<a>Math.max()</a>;
+Math.max(-1, 3, 0, -1, 4); // 4`
+    }, {
+        tit: '数组常用操作',
+        code: `
+var arr = [2, 1, 3, 4, 1];
+
+// 添加数据 末尾 返回新数组长度 原数组改变
+arr.<a>push(10)</a>; // 6
+
+// 添加数据 头部 返回新数组长度 原数组改变
+arr.<a>unshift(10)</a>; // 6
+
+// 删除数据 末尾 返回删除项 原数组改变
+arr.<a>pop()</a>; // 1
+
+// 删除数据 头部 返回删除项 原数组改变
+arr.<a>shift()</a>; // 2
+
+// 删除数据 指定 返回删除项数组 原数组改变 (开始索引,删除个数) 
+arr.<a>splice(1, 2)</a>; // [1, 3] arr为[2, 4, 1]
+
+// 删除数据并插入 返回删除项数组 原数组改变 (开始索引,删除个数,插入项) 
+arr.splice(1, 2, 10); // [1, 3] arr为[2, 10, 4, 1]
+
+// 倒叙 返回新数组 原数组改变
+arr.<a>reverse()</a>; // [1, 4, 3, 1, 2]
+
+// 合并数组 返回新数组 原数组不变
+arr.<a>concat([10, 20])</a>; // [2, 1, 3, 4, 1, 10, 20]
+
+// 数组转字符串 原数组不变
+arr.<a>join()</a>; // '2,1,3,4,1'
+arr.join('-'); // '2-1-3-4-1'
+
+// 截取部分数据 返回截取数组 原数组不变 (开始索引,结束索引+1) 
+arr.<a>slice(1, 2)</a>; // [1]
+
+// 查询 返回从左到右第一次出现的索引 若无则-1 (要查询的数据)
+arr.<a>indexOf(1)</a>; // 1
+
+// 查询 返回从左到右指定位置起第一次出现的索引 若无则-1 (要查询的数据,开始索引)
+arr.indexOf(1, 2); // 4
+
+// 查询 返回从右到左第一次出现的索引 若无则-1 (要查询的数据)
+arr.<a>lastIndexOf(1)</a>; // 4
+
+// 查询 返回从右到左指定位置起第一次出现的索引 若无则-1 (要查询的数据,开始索引)
+arr.lastIndexOf(1, 2); // 1
+
+// 循环遍历 无返回值 (数组项,索引,原数组)
+arr.<a>forEach(function (item, index, arr) { })</a>
+
+// 映射 返回新数组 (数组项,索引,原数组)
+arr.<a>map(function (item, index, arr) {
+    return { k: index, v: item };
+})</a> // [{k:0,v:2},{k:1,v:1},{k:2,v:3},{k:3,v:4},{k:4,v:1}]
+
+// 过滤 返回新数组 (数组项,索引,原数组)
+arr.<a>filter(function (item, index, arr) {
+    return item < 2;
+})</a> // [1, 1]
+
+// 判断 所有项满足返回true 反之false (数组项,索引,原数组)
+arr.<a>every(function (item, index, arr) {
+    return item < 2;
+})</a> // false
+
+// 判断 一项以上满足返回true 反之false (数组项,索引,原数组)
+arr.<a>some(function (item, index, arr) {
+    return item < 2;
+})</a> // true
+
+// 查询 返回第一个满足的项 若无返回undefined (数组项,索引,原数组)
+arr.<a>find(function (item, index, arr) {
+    return item < 2;
+})</a> // 1
+
+// 累加 返回结果 (累加值,数组项,索引,原数组,初始值)
+arr.<a>reduce(function (prev, item, index, arr) {
+    return prev += 1;
+}, 0)</a> // 5`
+    }, {
         tit: '一维数组 排序',
         code: `
 // 升序
 arr.<a>sort()</a>;
 
+// 升序
+arr.sort(function (a,b) {return a-b});
+
 // 降序
-asc.<a>reverse()</a>;`,
+arr.<a>sort(function (a,b) {return b-a})</a>;`,
         example: `
 var arr = [3, 1, 5, 4, 2];
 arr.sort(); // [1, 2, 3, 4, 5]
-asc.reverse(); // [5, 4, 3, 2, 1]`
+arr.sort(function (a,b) {return a-b}); // 1, 2, 3, 4, 5]
+arr.sort(function (a,b) {return b-a}); // [5, 4, 3, 2, 1]`
     }, {
         tit: '一维数组 随机乱序',
         desc: '二维可用，但仅乱序一维',
@@ -244,7 +591,7 @@ $(dom).<a>outerWidth(true)</a>;
 // 高 包括内边距、边框、外边距 height() + padding * 2 + border * 2 + margin * 2
 $(dom).<a>outerHeight(true)</a>;`
     }, {
-        tit: '获取各种距离',
+        tit: '获取各种宽高距离',
         code: `
 // 浏览器可视区域 宽度/高度
 <a>$(window).width()</a>;
@@ -253,6 +600,11 @@ $(dom).<a>outerHeight(true)</a>;`
 // 页面文档 宽度/高度
 <a>$(document).width()</a>;
 <a>$(document).height()</a>;
+
+// 当前显示设备 宽度/高度/比例
+<a>window.screen.width</a>;
+<a>window.screen.height</a>;
+<a>window.devicePixelRatio</a>;
 
 // 滚动条滑块到顶部的高度 即网页被滚上去的高度
 <a>$(document).scrollTop()</a>;
@@ -264,6 +616,101 @@ $(dom).<a>offset().top</a>;
 // 元素左上角距离父级定位元素左上角的距离
 $(dom).<a>position().left</a>;
 $(dom).<a>position().top</a>;`
+    }, {
+        tit: '日期对象 Date',
+        code: `
+// 年
+<a>new Date().getFullYear()</a>;
+// 月 0-11
+<a>new Date().getMonth()</a>;
+// 日 1-31
+<a>new Date().getDate()</a>;
+// 星期 0-6
+<a>new Date().getDay()</a>;
+// 时 0-23
+<a>new Date().getHours()</a>;
+// 分 0-59
+<a>new Date().getMinutes()</a>;
+// 秒 0-59
+<a>new Date().getSeconds()</a>;
+// 毫秒 0-999
+new Date().getMilliseconds();
+
+// 年月日
+<a>new Date().toLocaleDateString()</a>; // '2020/1/3'
+// 时分秒
+<a>new Date().toLocaleTimeString()</a>; // '13:14:0'
+// 年月日时分秒
+<a>new Date().toLocaleString()</a>; // '2020/1/3 13:14:0'
+
+// 时间戳 1970年1月1日至date的毫秒数
+<a>new Date().getTime()</a>;
+// 时间戳 1970年1月1日至今的毫秒数
+<a>Date.now()</a>;
+
+// 设置指定年月日
+new Date('2020-1-3');
+<a>new Date('2020-01-03')</a>;
+new Date('2020/1/3');
+new Date('2020/01/03');
+new Date('2020,1,3');
+new Date('2020,01,03');
+new Date(2020, 0, 3);
+
+// 设置指定年月日时分秒
+<a>new Date('2020-01-03 13:14:00')</a>;
+new Date('2020/01/03 13:14:0');
+new Date('2020,1,3 13:14');
+new Date(2020, 0, 3, 13, 14, 0);
+new Date(2020, 0, 3, 13, 14);
+
+// 设置一个月的某一天 (0上个月的最后一天 1本月第一天)
+data.setDate(0);`,
+        example: `
+var date = new Date();
+
+date.getFullYear() + '-' + formatNum(date.getMonth() + 1) + '-' + formatNum(date.getDate()); // '2020-01-03'
+
+var week = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+week[date.getDay()]; // '星期五'
+
+formatNum(date.getHours()) + ':' + formatNum(date.getMinutes()) + ':' + formatNum(date.getSeconds()); // '13:14:00'
+
+function formatNum(num) {
+    return (parseInt(num) > 9 ? '' : '0') + parseInt(num);
+}
+
+// 2020年1月3日往前10天
+var date = new Date('2020-01-03');
+date.setDate(date.getDate() - 10);
+date.toLocaleDateString(); // '2019/12/24'`
+    }, {
+        tit: '页面缩放 zoom',
+        code: `<a>document.body.style.zoom</a> = 1;`,
+        example: `
+// 获取当前页面的缩放比例
+function getZoom() {
+    return parseFloat(document.body.style.zoom) || 1;
+}
+
+// 设置页面的缩放比例
+function setZoom(zoom) {
+    document.body.style.zoom = zoom;
+}
+
+// 页面放大
+function zoomIn() {
+    var zoom = getZoom();
+    setZoom(zoom + 0.1);
+}
+
+// 页面缩小
+function zoomOut() {
+    var zoom = getZoom();
+    if (zoom > 0.2) {
+        setZoom(zoom - 0.1);
+    }
+}`
     }, {
         tit: '字符 Unicode编码 转换',
         code: `
@@ -500,6 +947,46 @@ function copyText(text) {
         example: `
 copyText('测试文本');
 copyText('测 试\\n文     本');`
+    }, {
+        tit: '两位整数格式化（个位数补零）',
+        code: `
+/**
+* 两位整数格式化（个位数补零）
+* @author shikkya
+* @param {String/Number} num 数字
+* @return {String}
+*/
+function formatNum(num) {
+    return (parseInt(num) > 9 ? '' : '0') + parseInt(num);
+}`,
+        example: `
+formatNum(1); // '01'
+formatNum(10); // '10'
+formatNum('01'); // '01'`
+    }, {
+        tit: '数字格式化（强制两位小数 非四舍五入 补零）',
+        code: `
+/**
+* 数字格式化（强制两位小数 非四舍五入 补零）
+* @author shikkya
+* @param {String/Number} num 数字
+* @return {String}
+*/
+function formatNum(num) {
+    num += '';
+    if (num.indexOf('.') == -1) {
+        return num + '.00';
+    }
+    var numArr = num.split('.');
+    if (numArr[1].length < 2) {
+        numArr[1] += '00';
+    }
+    return numArr[0] + '.' + numArr[1].substring(0, 2);
+}`,
+        example: `
+formatNum(0); // '0.00'
+formatNum(1.3); // '1.30'
+formatNum(-1.314); // '-1.31'`
     }, {
         tit: '数字格式化（加千分位, 强制两位小数）',
         code: `

@@ -62,6 +62,18 @@ $(function () {
             self.copyText(text);
         })
 
+        // drawer 显示
+        $('#catalogDrawerShowBtn').on('click', function () {
+            $(this).hide();
+            $('#catalogDrawer').show();
+        })
+
+        // drawer 关闭
+        $('#catalogDrawerCloseBtn').on('click', function () {
+            $('#catalogDrawerShowBtn').show();
+            $('#catalogDrawer').hide();
+        })
+
         // modal 关闭
         $('#catalogModalCloseBtn').on('click', function () {
             $('body').removeClass('unscroll');
@@ -69,14 +81,16 @@ $(function () {
         })
 
         // modal 点击项
-        $('#catalogModalList').on('click', 'a', function () {
+        $('.catalog_list').on('click', 'a', function () {
             var x = $(this).closest('ul').index();
             var y = $(this).closest('li').index() - 1;
             var top = $('.list_box').eq(x).find('.item').eq(y).offset().top - 80;
             $('body,html').animate({
                 scrollTop: top
             }, 200);
-            $('#catalogModalCloseBtn').click();
+            if ($(this).closest('.catalog_list').attr('data-type') == 'modal') {
+                $('#catalogModalCloseBtn').click();
+            }
         })
     }
 
@@ -125,7 +139,7 @@ $(function () {
             }
             html += '</ul>';
         }
-        $('#catalogModalList').html(html);
+        $('.catalog_list').html(html);
     }
 
     // 创建列表Html结构
@@ -140,10 +154,14 @@ $(function () {
                     '<div>' +
                     '<button>复制</button>' +
                     '<pre>' + self.codeStrFormat(noteData[i].child[j].code) + '</pre>' +
-                    '</div>' +
-                    ((noteData[i].child[j].example && noteData[i].child[j].example != '') ?
-                        '<pre>' + self.codeStrFormat(noteData[i].child[j].example) + '</pre>' : '') +
                     '</div>';
+                if (noteData[i].child[j].example && noteData[i].child[j].example != '') {
+                    html += '<div>' +
+                        '<button>复制</button>' +
+                        '<pre>' + self.codeStrFormat(noteData[i].child[j].example) + '</pre>' +
+                        '</div>';
+                }
+                html += '</div>';
             }
             html += '</div>';
         }
