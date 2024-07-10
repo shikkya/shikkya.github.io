@@ -66,13 +66,13 @@
 .plan_box li.active,
 .filter_box li:hover,
 .filter_box li.active {
-  background: #00bc9c;
+  background: var(--color-theme);
   color: #fff;
 }
 
 .plan_box input,
 .filter_box input {
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-border);
   border-radius: 5px;
   line-height: 28px;
 }

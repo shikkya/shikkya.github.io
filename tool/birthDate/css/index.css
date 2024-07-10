@@ -30,10 +30,14 @@
   top: 13px;
 }
 
+.item .datepicker {
+  width: 100%;
+}
+
 .item input {
   width: 100%;
   line-height: 36px;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border);
   border-radius: 5px;
   padding: 0 12px;
 }

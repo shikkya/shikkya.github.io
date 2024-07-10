@@ -31,7 +31,7 @@ input {
 }
 
 .btn {
-  border: 0.1rem solid #00bc9c;
+  border: 0.1rem solid var(--color-theme);
   line-height: 3.2rem;
   border-radius: 0.5rem;
   padding: 0 1.2rem;
@@ -77,7 +77,7 @@ input {
 }
 
 .filter_item span.active {
-  background: #00bc9c;
+  background: var(--color-theme);
   text-align: right;
 }
 
@@ -121,7 +121,7 @@ input {
 
 .tab_box li.active {
   background: #fff;
-  color: #00bc9c;
+  color: var(--color-theme);
 }
 
 .tab_box li span {
@@ -132,7 +132,7 @@ input {
 }
 
 .tab_box li.active span {
-  border-color: #00bc9c;
+  border-color: var(--color-theme);
 }
 
 /******************** content_box ********************/
@@ -228,5 +228,69 @@ input {
 }
 
 .list_box .td i[data-v="休"] {
+  background: rgba(255, 47, 0, 0.3);
+}
+
+/* plan_modal */
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal_dialog {
+  width: 20rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 3.5rem;
+  border-bottom: 0.1rem solid var(--color-border);
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.modal_content {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.modal_content ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0 0.6rem;
+}
+
+.modal_content li {
+  font-style: normal;
+  font-size: 1.3rem;
+  padding: 0 0.8rem;
+  background: #ddd;
+  color: #fff;
+  border-radius: 1rem;
+  margin: 0 1rem;
+}
+
+.modal_content li[data-v="住"] {
+  background: rgba(0, 188, 156, 0.4);
+}
+
+.modal_content li[data-v="休"] {
   background: rgba(255, 47, 0, 0.3);
 }

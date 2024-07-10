@@ -31,7 +31,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  background: #506a85;
+  background: var(--color-primary);
   color: #fff;
 }
 
@@ -103,7 +103,7 @@
 
 .list_box i {
   display: inline-block;
-  background: #00bc9c;
+  background: var(--color-theme);
   color: #fff;
   border-radius: 3px;
   line-height: 18px;
@@ -125,7 +125,7 @@
   z-index: 1;
   line-height: 28px;
   padding: 0 12px;
-  background: #00bc9c;
+  background: var(--color-theme);
   border: 0;
   color: #fff;
   font-size: 14px;
@@ -135,7 +135,7 @@
 
 .list_box pre {
   background: #eee;
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-border);
   border-radius: 5px;
   padding: 15px;
   margin-top: 15px;
@@ -165,7 +165,7 @@
   line-height: 45px;
   position: relative;
   font-size: 16px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .catalog_header a {
@@ -204,7 +204,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #00bc9c;
+  background: var(--color-theme);
   margin: 0 15px 0 3px;
 }
 
@@ -216,7 +216,7 @@
 }
 
 .catalog_list a:hover {
-  color: #00bc9c;
+  color: var(--color-theme);
 }
 
 /* catalog_drawer */
@@ -227,7 +227,7 @@
   top: 50%;
   z-index: 100;
   transform: translate(0, -50%);
-  background: #00bc9c;
+  background: var(--color-theme);
   color: #fff;
   writing-mode: vertical-rl;
   border-radius: 0 8px 8px 0;

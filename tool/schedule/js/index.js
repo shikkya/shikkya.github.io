@@ -173,6 +173,26 @@ $(function () {
 
             self.createCalendarHtml(yy, mm);
         })
+
+        // list 点击日期
+        $('.list_box').off('click').on('click', '.td', function () {
+            $(this).addClass('active');
+            $('#planModal p').html($(this).attr('title'));
+            $('#planModal').show();
+        })
+
+        // modal 关闭
+        $('#planModal').off('click').on('click', '.modal_close', function () {
+            $('.list_box .td').removeClass('active');
+            $('#planModal').hide();
+        })
+
+        // modal 选择
+        $('#planModalList').off('click').on('click', 'li', function () {
+            var val = $(this).attr('data-v');
+            $('.list_box .td.active i').attr('data-v', val).html(val);
+            $('#planModal .modal_close').click();
+        })
     }
 
     // 本地缓存 保存设置

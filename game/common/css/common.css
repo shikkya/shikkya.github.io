@@ -3,7 +3,7 @@
 /**
  * common
  * @authors shikkya
- * @date 2023-06-14
+ * @date 2024-07-08
  */
 
 :root {
@@ -27,11 +27,15 @@ body {
   min-height: 100%;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   background: var(--color-bg);
   color: #333;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 1.6rem;
   font-family: "微软雅黑", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   cursor: default;
 }
@@ -61,7 +65,7 @@ textarea,
 select {
   background: #fff;
   color: #666;
-  font-size: 15px;
+  font-size: 1.6rem;
 }
 
 input::-ms-clear {
@@ -92,11 +96,11 @@ table {
   display: inline-block;
   background: var(--color-theme);
   color: #fff;
-  border: 1px solid var(--color-theme);
-  line-height: 32px;
-  border-radius: 5px;
-  padding: 0 12px;
-  font-size: 15px;
+  border: 0.1rem solid var(--color-theme);
+  line-height: 4rem;
+  border-radius: 0.8rem;
+  padding: 0 1.5rem;
+  font-size: 1.8rem;
   text-align: center;
   cursor: pointer;
 }
@@ -104,17 +108,17 @@ table {
 /******************** scroll ********************/
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
+  border-radius: 1rem;
   background: rgba(0, 0, 0, 0.2);
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 10px;
+  border-radius: 1rem;
   background: rgba(255, 255, 255, 0);
 }
 
@@ -132,17 +136,17 @@ table {
 .msgBox span {
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
-  padding: 5px 12px;
-  border-radius: 5px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.8rem;
 }
 
 /******************** versionBox ********************/
 
 .versionBox {
   position: fixed;
-  bottom: 2px;
-  right: 15px;
+  bottom: 0.5rem;
+  right: 0.5rem;
   z-index: 999;
-  font-size: 10px;
+  font-size: 1rem;
   color: rgba(0, 0, 0, 0.3);
 }

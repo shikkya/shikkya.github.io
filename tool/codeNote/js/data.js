@@ -117,7 +117,7 @@ input[type="password"]::-o-clear {
 
 div {
     width: var(--wid-content);
-    color: var(--color-theme);
+    color: <a>var(--color-theme)</a>;
     background: var(--color-bg, #eee);
 }
 

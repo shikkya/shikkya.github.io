@@ -39,7 +39,7 @@
 }
 
 .color_box i.active {
-  box-shadow: 0 0 0 4px #00bc9c;
+  box-shadow: 0 0 0 4px var(--color-theme);
 }
 
 /******************** map_box ********************/
@@ -162,7 +162,7 @@
 }
 
 .modal_header {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--color-border);
   text-align: center;
   line-height: 40px;
   position: relative;
@@ -191,7 +191,7 @@
   line-height: 20px;
   color: #666;
   border-radius: 8px;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border);
 }
 
 .load_modal .modal_content .btn {

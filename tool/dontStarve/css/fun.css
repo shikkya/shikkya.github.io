@@ -16,7 +16,7 @@
 
 .fun_box a {
   display: block;
-  color: #00bc9c;
+  color: var(--color-theme);
 }
 
 .fun_box a:hover {
