@@ -6,6 +6,10 @@
 
 $(function () {
 
+    // 弹窗 关闭
+    $('.modal').off('click').on('click', '.close_modal', function () {
+        $(this).closest('.modal').hide();
+    })
 })
 
 // Pc兼容移动端宽度

@@ -122,6 +122,58 @@ table {
   background: rgba(255, 255, 255, 0);
 }
 
+/******************** modal ********************/
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal_dialog {
+  width: calc(100% - 4rem);
+  background: #fff;
+  border-radius: 0.8rem;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.modal_header {
+  line-height: 5rem;
+  padding: 0 2rem;
+  border-bottom: 0.1rem solid var(--color-border);
+}
+
+.modal_content {
+  padding: 2rem;
+}
+
+.modal_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0 2rem 2rem;
+}
+
+.modal_footer .btn {
+  width: calc(50% - 1rem);
+  line-height: 3.6rem;
+  font-size: 1.6rem;
+}
+
+.modal_footer .btn:last-child {
+  background: #fff;
+  color: var(--color-theme);
+}
+
 /******************** msgBox ********************/
 
 .msgBox {

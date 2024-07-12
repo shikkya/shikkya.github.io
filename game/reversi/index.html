@@ -58,12 +58,7 @@
             </div>
 
             <!-- map_box -->
-            <div class="map_box">
-                <div class="map_tab" id="mapTab" data-isClue="1"></div>
-                <div class="map_result" id="mapResult">
-                    <p>除非是</p>
-                </div>
-            </div>
+            <div class="map_box" id="mapBox" data-isClue="1"></div>
 
             <!-- handle_box -->
             <div class="handle_box">
@@ -73,13 +68,24 @@
         </div>
     </div>
 
-    <!-- modal -->
-    <div class="modal" id="confirmModal">
+    <!-- confirm_modal -->
+    <div class="modal confirm_modal" id="confirmModal">
         <div class="modal_dialog">
             <div class="modal_content"></div>
             <div class="modal_footer">
-                <button class="btn" id="modalSubBtn" data-t="">确定</button>
-                <button class="btn" id="modalCloseBtn">取消</button>
+                <button class="btn" id="confirmModalSubBtn" data-t="">确定</button>
+                <button class="btn close_modal">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- result_modal -->
+    <div class="modal result_modal" id="resultModal">
+        <div class="modal_dialog">
+            <div class="modal_content"></div>
+            <div class="modal_footer">
+                <button class="btn" id="resultModalSubBtn">再来一局</button>
+                <button class="btn close_modal">关闭</button>
             </div>
         </div>
     </div>
@@ -88,7 +94,7 @@
     <div class="versionBox">V.2024071001</div>
 
     <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
-    <script src="../common/js/noCopy.js"></script>
+    <!-- <script src="../common/js/noCopy.js"></script> -->
     <script src="../common/js/common.js"></script>
     <script src="./js/index.js"></script>
 </body>

@@ -11,6 +11,15 @@ $(function () {
     // 是否结束
     isEnd = false;
 
+    // 动画新增时间 css同步
+    timeAdd = 300;
+
+    // 动画更新时间 css同步
+    timeChange = 600;
+
+    // 步骤间隔时间
+    timeResult = 500;
+
     this.createEvent = function () {
 
         // option_box 选项
@@ -30,7 +39,7 @@ $(function () {
         $('#startBtn').off('click').on('click', function () {
 
             // 保存设置 落子提示
-            $('#mapTab').attr('data-isClue', $('#optionBox span').hasClass('active') ? 1 : 0);
+            $('#mapBox').attr('data-isClue', $('#optionBox span').hasClass('active') ? 1 : 0);
 
             // 初始化
             self.initGame();
@@ -51,7 +60,7 @@ $(function () {
                 self.searchHandle();
             }
             else {
-                $('#modalSubBtn').attr('data-t', 'restart');
+                $('#confirmModalSubBtn').attr('data-t', 'restart');
                 $('#confirmModal .modal_content').html('游戏进度不会被保存<br/>确定重新开始？');
                 $('#confirmModal').show();
             }
@@ -64,42 +73,43 @@ $(function () {
                 $('.step[data-n="1"]').addClass('active');
             }
             else {
-                $('#modalSubBtn').attr('data-t', 'back');
+                $('#confirmModalSubBtn').attr('data-t', 'back');
                 $('#confirmModal .modal_content').html('游戏进度不会被保存<br/>确定离开？');
                 $('#confirmModal').show();
             }
         })
 
         // map_box 玩家落子
-        $('#mapTab').off('click').on('click', '.td', function () {
+        $('#mapBox').off('click').on('click', '.td', function () {
+
             var type = $(this).attr('data-t');
+
             if (isEnd || type != 'handle') {
-                // showMsg('请选择正确的位置');
                 return false;
             }
 
             // 玩家落子
-            $('#mapTab .td[data-t="handle"]').attr('data-t', 'null');
+            $('#mapBox .td[data-t="handle"]').attr('data-t', 'null');
             var x = parseInt($(this).attr('data-i').split('_')[0]);
             var y = parseInt($(this).attr('data-i').split('_')[1]);
-            self.tryHandle(x, y, 'black', 2);
+            self.searchPlan(x, y, 'black', 2);
 
             // 检查当前状态
             if (!self.checkState()) {
                 return false;
             }
 
-            setTimeout(function () {
+            setTimeout(() => {
                 // 电脑落子
                 var maxObj = {
                     total: 0,
                     x: 0,
                     y: 0
                 };
-                $('#mapTab .td[data-t="null"]').each(function () {
+                $('#mapBox .td[data-t="null"]').each(function () {
                     var x = parseInt($(this).attr('data-i').split('_')[0]);
                     var y = parseInt($(this).attr('data-i').split('_')[1]);
-                    var n = self.tryHandle(x, y, 'white', 1);
+                    var n = self.searchPlan(x, y, 'white', 1);
                     if (n > maxObj.total) {
                         maxObj.total = n;
                         maxObj.x = x;
@@ -107,7 +117,7 @@ $(function () {
                     }
                 })
                 if (maxObj.total > 0) {
-                    self.tryHandle(maxObj.x, maxObj.y, 'white', 2);
+                    self.searchPlan(maxObj.x, maxObj.y, 'white', 2);
                 }
                 else {
                     isEnd = true;
@@ -119,20 +129,23 @@ $(function () {
                 }
 
                 // 标记所有玩家可操作
-                self.searchHandle();
-            }, 500)
+                setTimeout(() => {
+                    self.searchHandle();
+                }, timeResult * 2)
+            }, timeResult * 3)
         })
 
-        // modal 确认
-        $('#modalSubBtn').off('click').on('click', function () {
+        // confirm_modal 确定
+        $('#confirmModalSubBtn').off('click').on('click', function () {
             isEnd = true;
             $('#confirmModal').hide();
             $('#' + $(this).attr('data-t') + 'Btn').click();
         })
 
-        // modal 关闭
-        $('#modalCloseBtn').off('click').on('click', function () {
-            $('#confirmModal').hide();
+        // result_modal 再来一局
+        $('#resultModalSubBtn').off('click').on('click', function () {
+            $(this).siblings('.btn').click();
+            $('#restartBtn').click();
         })
     }
 
@@ -160,43 +173,42 @@ $(function () {
             }
             html += '</div>';
         }
-        $('#mapTab').html(html);
-        console.log($('#mapTab .td').eq(0).width())
-        $('#mapTab .td').css({
-            'height': $('#mapTab .td').eq(0).width() / 10 + 'rem'
+        $('#mapBox').html(html);
+        $('#mapBox .td').css({
+            'height': $('#mapBox .td').eq(0).width() / 10 + 'rem'
         });
     }
 
     // 标记所有玩家可操作
     this.searchHandle = function () {
-        $('#mapTab .td[data-t="handle"]').attr('data-t', 'null');
-        $('#mapTab .td[data-t="null"]').each(function () {
+        $('#mapBox .td[data-t="handle"]').attr('data-t', 'null');
+        $('#mapBox .td[data-t="null"]').each(function () {
             var x = parseInt($(this).attr('data-i').split('_')[0]);
             var y = parseInt($(this).attr('data-i').split('_')[1]);
-            if (self.tryHandle(x, y, 'black', 1) > 0) {
+            if (self.searchPlan(x, y, 'black', 1) > 0) {
                 $(this).attr('data-t', 'handle');
             }
         })
-        if ($('#mapTab .td[data-t="handle"]').length == 0) {
+        if ($('#mapBox .td[data-t="handle"]').length == 0) {
             self.endGame();
         }
     }
 
-    // 模拟操作 1计算 2执行
-    this.tryHandle = function (x, y, cur, type) {
+    // 寻找方案 1计算 2执行
+    this.searchPlan = function (x, y, cur, type) {
 
         var total = 0;
 
         // 执行
         if (type == 2) {
-            $('#mapTab .td[data-i="' + x + '_' + y + '"]').attr('data-t', cur);
+            self.addAnimation(x, y, cur);
         }
 
         // 上
         if (x > 1) {
             var n = x - 1;
             for (var i = x - 1; i >= 0; i--) {
-                var t = $('#mapTab .td[data-i="' + i + '_' + y + '"]').attr('data-t');
+                var t = $('#mapBox .td[data-i="' + i + '_' + y + '"]').attr('data-t');
                 if (t == 'null' || t == 'handle') {
                     break;
                 }
@@ -210,7 +222,9 @@ $(function () {
                 // 执行
                 if (type == 2) {
                     for (var i = x - 1; i > n; i--) {
-                        $('#mapTab .td[data-i="' + i + '_' + y + '"]').attr('data-t', cur);
+                        if ($('#mapBox .td[data-i="' + i + '_' + y + '"]').attr('data-t') != cur) {
+                            self.changeAnimation(i, y);
+                        }
                     }
                 }
             }
@@ -220,7 +234,7 @@ $(function () {
         if (x < 6) {
             var n = x + 1;
             for (var i = x + 1; i < 8; i++) {
-                var t = $('#mapTab .td[data-i="' + i + '_' + y + '"]').attr('data-t');
+                var t = $('#mapBox .td[data-i="' + i + '_' + y + '"]').attr('data-t');
                 if (t == 'null' || t == 'handle') {
                     break;
                 }
@@ -234,7 +248,9 @@ $(function () {
                 // 执行
                 if (type == 2) {
                     for (var i = x + 1; i < n; i++) {
-                        $('#mapTab .td[data-i="' + i + '_' + y + '"]').attr('data-t', cur);
+                        if ($('#mapBox .td[data-i="' + i + '_' + y + '"]').attr('data-t') != cur) {
+                            self.changeAnimation(i, y);
+                        }
                     }
                 }
             }
@@ -244,7 +260,7 @@ $(function () {
         if (y > 1) {
             var n = y - 1;
             for (var i = y - 1; i >= 0; i--) {
-                var t = $('#mapTab .td[data-i="' + x + '_' + i + '"]').attr('data-t');
+                var t = $('#mapBox .td[data-i="' + x + '_' + i + '"]').attr('data-t');
                 if (t == 'null' || t == 'handle') {
                     break;
                 }
@@ -258,7 +274,9 @@ $(function () {
                 // 执行
                 if (type == 2) {
                     for (var i = y - 1; i > n; i--) {
-                        $('#mapTab .td[data-i="' + x + '_' + i + '"]').attr('data-t', cur);
+                        if ($('#mapBox .td[data-i="' + x + '_' + i + '"]').attr('data-t') != cur) {
+                            self.changeAnimation(x, i);
+                        }
                     }
                 }
             }
@@ -268,7 +286,7 @@ $(function () {
         if (y < 6) {
             var n = y + 1;
             for (var i = y + 1; i < 8; i++) {
-                var t = $('#mapTab .td[data-i="' + x + '_' + i + '"]').attr('data-t');
+                var t = $('#mapBox .td[data-i="' + x + '_' + i + '"]').attr('data-t');
                 if (t == 'null' || t == 'handle') {
                     break;
                 }
@@ -282,7 +300,9 @@ $(function () {
                 // 执行
                 if (type == 2) {
                     for (var i = y + 1; i < n; i++) {
-                        $('#mapTab .td[data-i="' + x + '_' + i + '"]').attr('data-t', cur);
+                        if ($('#mapBox .td[data-i="' + x + '_' + i + '"]').attr('data-t') != cur) {
+                            self.changeAnimation(x, i);
+                        }
                     }
                 }
             }
@@ -292,7 +312,7 @@ $(function () {
         if (x > 1 && y > 1) {
             var n = x - 1;
             for (var i = x - 1, j = y - 1; i >= 0 && j >= 0; i--, j--) {
-                var t = $('#mapTab .td[data-i="' + i + '_' + j + '"]').attr('data-t');
+                var t = $('#mapBox .td[data-i="' + i + '_' + j + '"]').attr('data-t');
                 if (t == 'null' || t == 'handle') {
                     break;
                 }
@@ -306,7 +326,9 @@ $(function () {
                 // 执行
                 if (type == 2) {
                     for (var i = x - 1, j = y - 1; i > n; i--, j--) {
-                        $('#mapTab .td[data-i="' + i + '_' + j + '"]').attr('data-t', cur);
+                        if ($('#mapBox .td[data-i="' + i + '_' + j + '"]').attr('data-t') != cur) {
+                            self.changeAnimation(i, j);
+                        }
                     }
                 }
             }
@@ -316,7 +338,7 @@ $(function () {
         if (x > 1 && y < 6) {
             var n = x - 1;
             for (var i = x - 1, j = y + 1; i >= 0 && j < 8; i--, j++) {
-                var t = $('#mapTab .td[data-i="' + i + '_' + j + '"]').attr('data-t');
+                var t = $('#mapBox .td[data-i="' + i + '_' + j + '"]').attr('data-t');
                 if (t == 'null' || t == 'handle') {
                     break;
                 }
@@ -330,7 +352,9 @@ $(function () {
                 // 执行
                 if (type == 2) {
                     for (var i = x - 1, j = y + 1; i > n; i--, j++) {
-                        $('#mapTab .td[data-i="' + i + '_' + j + '"]').attr('data-t', cur);
+                        if ($('#mapBox .td[data-i="' + i + '_' + j + '"]').attr('data-t') != cur) {
+                            self.changeAnimation(i, j);
+                        }
                     }
                 }
             }
@@ -340,7 +364,7 @@ $(function () {
         if (x < 6 && y > 1) {
             var n = x + 1;
             for (var i = x + 1, j = y - 1; i < 8 && j >= 0; i++, j--) {
-                var t = $('#mapTab .td[data-i="' + i + '_' + j + '"]').attr('data-t');
+                var t = $('#mapBox .td[data-i="' + i + '_' + j + '"]').attr('data-t');
                 if (t == 'null' || t == 'handle') {
                     break;
                 }
@@ -354,7 +378,9 @@ $(function () {
                 // 执行
                 if (type == 2) {
                     for (var i = x + 1, j = y - 1; i < n; i++, j--) {
-                        $('#mapTab .td[data-i="' + i + '_' + j + '"]').attr('data-t', cur);
+                        if ($('#mapBox .td[data-i="' + i + '_' + j + '"]').attr('data-t') != cur) {
+                            self.changeAnimation(i, j);
+                        }
                     }
                 }
             }
@@ -364,7 +390,7 @@ $(function () {
         if (x < 6 && y < 6) {
             var n = x + 1;
             for (var i = x + 1, j = y + 1; i < 8 && j < 8; i++, j++) {
-                var t = $('#mapTab .td[data-i="' + i + '_' + j + '"]').attr('data-t');
+                var t = $('#mapBox .td[data-i="' + i + '_' + j + '"]').attr('data-t');
                 if (t == 'null' || t == 'handle') {
                     break;
                 }
@@ -378,7 +404,9 @@ $(function () {
                 // 执行
                 if (type == 2) {
                     for (var i = x + 1, j = y + 1; i < n; i++, j--) {
-                        $('#mapTab .td[data-i="' + i + '_' + j + '"]').attr('data-t', cur);
+                        if ($('#mapBox .td[data-i="' + i + '_' + j + '"]').attr('data-t') != cur) {
+                            self.changeAnimation(i, j);
+                        }
                     }
                 }
             }
@@ -387,18 +415,49 @@ $(function () {
         return total;
     }
 
+    // 动画效果 新增
+    this.addAnimation = function (x, y, type) {
+        var dom = $('#mapBox .td[data-i="' + x + '_' + y + '"]');
+        if (type != 'black' && type != 'white') {
+            return false;
+        }
+        $(dom).attr('data-t', type);
+        $(dom).addClass('add');
+        setTimeout(() => {
+            $(dom).removeClass('add');
+        }, timeAdd);
+    }
+
+    // 动画效果 更改
+    this.changeAnimation = function (x, y) {
+        var dom = $('#mapBox .td[data-i="' + x + '_' + y + '"]');
+        var type = $(dom).attr('data-t');
+        if (type != 'black' && type != 'white') {
+            return false;
+        }
+        setTimeout(() => {
+            $(dom).addClass('change');
+            setTimeout(() => {
+                $(dom).attr('data-t', type == 'black' ? 'white' : 'black');
+            }, timeChange / 2);
+            setTimeout(() => {
+                $(dom).removeClass('change');
+            }, timeChange);
+        }, timeResult);
+    }
+
     // 检查当前状态
     this.checkState = function () {
         // 比分
         $('#statisticBox b[data-t="black"]').html(
-            self.formatNum($('#mapTab .td[data-t="black"]').length)
+            self.formatNum($('#mapBox .td[data-t="black"]').length)
         );
         $('#statisticBox b[data-t="white"]').html(
-            self.formatNum($('#mapTab .td[data-t="white"]').length)
+            self.formatNum($('#mapBox .td[data-t="white"]').length)
         );
 
         // 结束
-        if (isEnd || $('#mapTab .td[data-t="null"]').length == 0) {
+        if (isEnd || $('#mapBox .td[data-t="null"]').length == 0) {
             self.endGame();
             return false;
         }
@@ -410,22 +469,25 @@ $(function () {
     this.endGame = function () {
         var black = parseInt($('#statisticBox b[data-t="black"]').text().trim());
         var white = parseInt($('#statisticBox b[data-t="white"]').text().trim());
+        isEnd = true;
         // win
         if (black > white) {
-            $('#mapResult p').html('你赢啦');
+            $('#resultModal .modal_content').html('恭喜！你赢啦！');
+            $('#resultModal').show();
             $('#stateBox').attr('data-t', 2);
         }
         // lost
         else if (black < white) {
-            $('#mapResult p').html('你输了');
+            $('#resultModal .modal_content').html('可惜！你输喽！');
+            $('#resultModal').show();
             $('#stateBox').attr('data-t', 3);
         }
         // balance
         else {
-            $('#mapResult p').html('平局');
+            $('#resultModal .modal_content').html('呜呼！平局啦！');
+            $('#resultModal').show();
             $('#stateBox').attr('data-t', 1);
         }
-        $('#mapResult').show();
     }
 
     // 格式化数字
@@ -436,6 +498,7 @@ $(function () {
     this.init = function () {
         self.createEvent();
         mobileWid();
+        $('#startBtn').click();
     }
 
     self.init();
