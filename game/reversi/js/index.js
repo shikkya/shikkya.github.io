@@ -498,7 +498,6 @@ $(function () {
     this.init = function () {
         self.createEvent();
         mobileWid();
-        $('#startBtn').click();
     }
 
     self.init();
