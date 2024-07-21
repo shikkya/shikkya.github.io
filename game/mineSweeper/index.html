@@ -16,7 +16,7 @@
         <div class="step active" data-n="1">
             <!-- tit_box -->
             <div class="tit_box">
-                <b>可可の黑白棋</b>
+                <b>可可の扫雷</b>
             </div>
 
             <!-- option_box -->
@@ -24,7 +24,7 @@
                 <div class="option_item">
                     <label>游戏模式</label>
                     <ul>
-                        <li class="active">人机对战</li>
+                        <li class="active">初级</li>
                         <li class="unable">双人对战</li>
                     </ul>
                 </div>
@@ -43,10 +43,10 @@
         <!-- step 2 -->
         <div class="step" data-n="2">
             <!-- state_box -->
-            <div class="state_box" id="stateBox" data-t="1"></div>
+            <!-- <div class="state_box" id="stateBox" data-t="1"></div> -->
 
             <!-- statistic_box -->
-            <div class="statistic_box" id="statisticBox">
+            <!-- <div class="statistic_box" id="statisticBox">
                 <i data-t="black"></i>
                 <span data-t="black">玩家</span>
                 <div>
@@ -55,7 +55,7 @@
                 </div>
                 <span data-t="white">电脑</span>
                 <i data-t="white"></i>
-            </div>
+            </div> -->
 
             <!-- map_box -->
             <div class="map_box" id="mapBox" data-isClue="1"></div>
@@ -91,10 +91,30 @@
     </div>
 
     <!-- version -->
-    <div class="versionBox">V.2024072101</div>
+    <div class="versionBox">V.2024071301</div>
+
+
+
+
+
+    <div class="top">
+        size:<input type="text" value="5" id="mapSize" />
+        <br />
+        num:<input type="text" value="5" id="bombNum" />
+        <br />
+        <button id="giveUp">give up</button>
+        <button id="restart">restart</button>
+    </div>
+    <div class="tab_out">
+        <table id="tab" class="tab"></table>
+    </div>
+
+
+
+
 
     <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
-    <script src="../common/js/noCopy.js"></script>
+    <!-- <script src="../common/js/noCopy.js"></script> -->
     <script src="../common/js/common.js"></script>
     <script src="./js/index.js"></script>
 </body>

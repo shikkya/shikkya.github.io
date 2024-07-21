@@ -24,7 +24,7 @@ function mobileWid() {
 function setContentWid() {
     var wid = $(window).width();
     var hei = $(window).height();
-    if (wid > hei / 2) {
+    if (wid / hei > 0.6) {
         $('.content').css({
             'width': 1080 / 1920 * hei / 10 + 'rem',
             'margin': '0 auto'
@@ -39,8 +39,14 @@ function setContentWid() {
 
 // 信息提示
 function showMsg(str) {
+    $('.msgBox').hide().remove();
     $('body').append('<div class="msgBox"><span>' + str + '</span></div>').show();
     setTimeout(function () {
         $('.msgBox').hide().remove();
     }, 2000);
+}
+
+// 延时
+function delayFun(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
 }

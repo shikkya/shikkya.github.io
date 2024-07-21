@@ -1,12 +1,32 @@
 ﻿/**
- * 
+ * index.html
  * @authors shikkya
- * @date    2019-10-14
- * @version $Id$
+ * @date 2024-07-13
  */
 
 $(function () {
     var self = this;
+
+    levelArr = [
+        {
+            name: '初级',
+            mapWid: 9,
+            mapHei: 9,
+            bombNum: 10
+        },
+        {
+            name: '中级',
+            mapWid: 16,
+            mapHei: 16,
+            bombNum: 40
+        },
+        {
+            name: '高级',
+            mapWid: 30,
+            mapHei: 16,
+            bombNum: 99
+        }
+    ]
 
     // 地图尺寸
     this.mapSize = 0;
@@ -26,8 +46,7 @@ $(function () {
     // 地图-游戏 -4亡 -3旗 -2未 -1空 数
     this.arrGame = new Array();
 
-    // 事件绑定
-    this.createEventer = function () {
+    this.createEvent = function () {
 
         // 屏蔽页面右键
         document.oncontextmenu = function () {
@@ -347,28 +366,27 @@ $(function () {
         self.debugShowArrMap();
     }
 
-    // 初始化
     this.init = function () {
-        // 事件绑定
-        self.createEventer();
+
+        self.createEvent();
 
         // 获取设置参数
-        self.getSet();
+        // self.getSet();
 
         // 初始化页面网格
-        self.initTab();
+        // self.initTab();
 
         // 初始化数组
-        self.initArr();
+        // self.initArr();
 
         // 初始化雷的位置
-        self.initBomb();
+        // self.initBomb();
 
         // 初始化数字位置
-        self.initNum();
+        // self.initNum();
 
         // 后台打印arrMap
-        self.debugShowArrMap();
+        // self.debugShowArrMap();
     }
 
     self.init();

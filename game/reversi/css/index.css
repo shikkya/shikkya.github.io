@@ -1,14 +1,14 @@
 ﻿@charset "UTF-8";
 
 /**
- * 
+ * index.html
  * @authors shikkya
- * @date    2019-10-14
- * @version $Id$
+ * @date 2024-07-08
  */
 
 .content {
   min-height: 100vh;
+  min-width: 32rem;
   position: relative;
 }
 
@@ -177,17 +177,17 @@
   width: 3.6rem;
   height: 3.6rem;
   margin: 1.5rem auto 0.8rem;
-  background: url("../img/state_1.png") no-repeat;
+  background: url("../../common/img/state_01.png") no-repeat;
   background-size: 100% 100%;
 }
 
 .state_box[data-t="2"] {
-  background: url("../img/state_2.png") no-repeat;
+  background: url("../../common/img/state_02.png") no-repeat;
   background-size: 100% 100%;
 }
 
 .state_box[data-t="3"] {
-  background: url("../img/state_3.png") no-repeat;
+  background: url("../../common/img/state_03.png") no-repeat;
   background-size: 100% 100%;
 }
 
@@ -203,13 +203,29 @@
 .statistic_box i {
   width: 2.5rem;
   height: 2.5rem;
-  background: url("../img/01.png") no-repeat;
-  background-size: 100% 100%;
+  position: relative;
 }
 
-.statistic_box i[data-t="white"] {
-  background: url("../img/02.png") no-repeat;
-  background-size: 100% 100%;
+.statistic_box i::before {
+  content: "";
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  left: calc(20% - 0.1rem);
+  top: calc(20% - 0.1rem);
+  z-index: 1;
+  border-radius: 50%;
+  border: 0.1rem solid transparent;
+}
+
+.statistic_box i[data-t="black"]::before {
+  background: #333;
+  border-color: #333;
+}
+
+.statistic_box i[data-t="white"]::before {
+  background: #fff;
+  border-color: var(--color-border);
 }
 
 .statistic_box span {
@@ -296,12 +312,12 @@
   border-color: var(--color-border);
 }
 
-.map_box .td[data-t="handle"]::before {
+.map_box[data-isClue="1"] .td[data-t="handle"]::before {
   background: var(--color-border);
   border-color: var(--color-border);
 }
 
-.map_box .td[data-t="handle"]::after {
+.map_box[data-isClue="1"] .td[data-t="handle"]::after {
   content: "";
   width: calc(60% + 0.4rem);
   height: calc(60% + 0.4rem);

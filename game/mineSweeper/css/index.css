@@ -1,0 +1,44 @@
+﻿@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date 2024-07-13
+ */
+
+html,
+body {
+  min-width: 1000px;
+}
+
+/*************** common ***************/
+
+.tab_out {
+  text-align: center;
+}
+
+.tab td {
+  width: 12px;
+  height: 12px;
+  border: 1px solid #eee;
+  position: relative;
+  color: #aaa;
+  font-size: 10px;
+  overflow: hidden;
+  text-align: center;
+  line-height: 10px;
+  background: #f5f5f5;
+}
+
+.tab td.handle {
+  cursor: pointer;
+  background: #fff;
+}
+
+.tab img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
