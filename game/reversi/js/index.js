@@ -473,19 +473,19 @@ $(function () {
         isEnd = true;
         // win
         if (black > white) {
-            $('#resultModal .modal_content').html('恭喜恭喜<br/>你赢啦！');
+            $('#resultModal .modal_content').html('恭喜恭喜，你赢啦！');
             $('#resultModal').show();
             $('#stateBox').attr('data-t', 2);
         }
         // lost
         else if (black < white) {
-            $('#resultModal .modal_content').html('好可惜<br/>你输喽！');
+            $('#resultModal .modal_content').html('好可惜，你输喽！');
             $('#resultModal').show();
             $('#stateBox').attr('data-t', 3);
         }
         // balance
         else {
-            $('#resultModal .modal_content').html('呜呼<br/>平局啦！');
+            $('#resultModal .modal_content').html('平局啦！');
             $('#resultModal').show();
             $('#stateBox').attr('data-t', 1);
         }
