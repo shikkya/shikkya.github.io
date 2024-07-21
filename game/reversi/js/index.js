@@ -17,7 +17,7 @@ $(function () {
     timeChange = 600;
 
     // 步骤间隔时间
-    timeResult = 400;
+    timeResult = 300;
 
     this.createEvent = function () {
 
