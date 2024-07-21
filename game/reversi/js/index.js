@@ -130,6 +130,7 @@ $(function () {
 
             // 判断是否继续
             if (isEnd) {
+                self.endGame();
                 return false;
             }
 
