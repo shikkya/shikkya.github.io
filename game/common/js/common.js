@@ -24,6 +24,7 @@ function mobileWid() {
 function setContentWid() {
     var wid = $(window).width();
     var hei = $(window).height();
+    alert(wid, hei)
     if (wid / hei > 0.6) {
         $('.content').css({
             'width': 1080 / 1920 * hei / 10 + 'rem',
