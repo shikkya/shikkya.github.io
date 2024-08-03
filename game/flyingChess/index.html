@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SHIKKYA</title>
+    <link rel="stylesheet" href="../common/css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <div class="content">
+        <!-- step 1 -->
+        <div class="step active" data-n="1">
+            <!-- tit_box -->
+            <div class="tit_box">
+                <b>可可の飞行棋</b>
+            </div>
+
+            <!-- option_box -->
+            <div class="option_box" id="optionBox">
+                <div class="option_item">
+                    <label>游戏模式</label>
+                    <ul data-n="2">
+                        <li class="active">随机匹配</li>
+                        <li>超强人机</li>
+                    </ul>
+                </div>
+                <div class="option_item">
+                    <label>起飞号码</label>
+                    <ul data-n="3">
+                        <li>2,4,6</li>
+                        <li class="active">5,6</li>
+                        <li>6</li>
+                    </ul>
+                </div>
+                <div class="option_item">
+                    <label>我方颜色</label>
+                    <ul data-n="5">
+                        <li class="active">随机</li>
+                        <li>红</li>
+                        <li>黄</li>
+                        <li>蓝</li>
+                        <li>绿</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- handle_box -->
+            <div class="handle_box">
+                <button class="btn" id="startBtn">开始游戏</button>
+            </div>
+        </div>
+
+        <!-- step 2 -->
+        <div class="step" data-n="2">
+            <!-- state_box -->
+            <!-- <div class="state_box" id="stateBox" data-t="1"></div> -->
+
+            <!-- statistic_box -->
+            <!-- <div class="statistic_box" id="statisticBox">
+                <i data-t="black"></i>
+                <span data-t="black">玩家</span>
+                <div>
+                    <b data-t="black"></b>
+                    <b data-t="white"></b>
+                </div>
+                <span data-t="white">电脑</span>
+                <i data-t="white"></i>
+            </div> -->
+
+            <!-- map_box -->
+            <div class="map_box" id="mapBox"></div>
+
+            <!-- handle_box -->
+            <!-- <div class="handle_box">
+                <button class="btn" id="restartBtn">重新开始</button>
+                <button class="btn" id="backBtn">离开游戏</button>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- confirm_modal -->
+    <div class="modal confirm_modal" id="confirmModal">
+        <div class="modal_dialog">
+            <div class="modal_content"></div>
+            <div class="modal_footer">
+                <button class="btn" id="confirmModalSubBtn" data-t="">确定</button>
+                <button class="btn close_modal">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- result_modal -->
+    <div class="modal result_modal" id="resultModal">
+        <div class="modal_dialog">
+            <div class="modal_content"></div>
+            <div class="modal_footer">
+                <button class="btn" id="resultModalSubBtn">再来一局</button>
+                <button class="btn close_modal">关闭</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- version -->
+    <div class="versionBox">V.2024071301</div>
+
+    <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../common/js/noCopy.js"></script>
+    <script src="../common/js/common.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

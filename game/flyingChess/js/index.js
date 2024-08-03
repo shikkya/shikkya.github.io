@@ -17,7 +17,7 @@ $(function () {
     timeChange = 600;
 
     // 步骤间隔时间
-    timeResult = 300;
+    timeResult = 400;
 
     this.createEvent = function () {
 
@@ -130,7 +130,6 @@ $(function () {
 
             // 判断是否继续
             if (isEnd) {
-                self.endGame('白棋无处落子');
                 return false;
             }
 
@@ -196,7 +195,7 @@ $(function () {
             }
         })
         if ($('#mapBox .td[data-t="handle"]').length == 0) {
-            self.endGame('黑棋无处落子');
+            self.endGame();
         }
     }
 
@@ -459,7 +458,7 @@ $(function () {
 
         // 结束
         if (isEnd || $('#mapBox .td[data-t="null"]').length == 0) {
-            self.endGame('无处落子');
+            self.endGame();
             return false;
         }
 
@@ -473,19 +472,19 @@ $(function () {
         isEnd = true;
         // win
         if (black > white) {
-            $('#resultModal .modal_content').html('恭喜恭喜，你赢啦！');
+            $('#resultModal .modal_content').html('恭喜恭喜<br/>你赢啦！');
             $('#resultModal').show();
             $('#stateBox').attr('data-t', 2);
         }
         // lost
         else if (black < white) {
-            $('#resultModal .modal_content').html('好可惜，你输喽！');
+            $('#resultModal .modal_content').html('好可惜<br/>你输喽！');
             $('#resultModal').show();
             $('#stateBox').attr('data-t', 3);
         }
         // balance
         else {
-            $('#resultModal .modal_content').html('平局啦！');
+            $('#resultModal .modal_content').html('呜呼<br/>平局啦！');
             $('#resultModal').show();
             $('#stateBox').attr('data-t', 1);
         }

@@ -17,7 +17,7 @@ $(function () {
     timeChange = 600;
 
     // 步骤间隔时间
-    timeResult = 300;
+    timeResult = 500;
 
     this.createEvent = function () {
 
@@ -79,7 +79,7 @@ $(function () {
         })
 
         // map_box 玩家落子
-        $('#mapBox').off('click').on('click', '.td', async function () {
+        $('#mapBox').off('click').on('click', '.td', function () {
 
             var type = $(this).attr('data-t');
 
@@ -91,54 +91,47 @@ $(function () {
             $('#mapBox .td[data-t="handle"]').attr('data-t', 'null');
             var x = parseInt($(this).attr('data-i').split('_')[0]);
             var y = parseInt($(this).attr('data-i').split('_')[1]);
-            self.addAnimation(x, y, 'black'); // 落子
-            await delayFun(timeResult); // 延时
-            self.searchPlan(x, y, 'black', 2);  // 翻棋
+            self.searchPlan(x, y, 'black', 2);
 
             // 判断是否继续
             if (isEnd) {
                 return false;
             }
 
-            // 延时
-            await delayFun(timeResult + timeChange);
-
-            // 电脑落子
-            var maxObj = {
-                total: 0,
-                x: 0,
-                y: 0
-            };
-            $('#mapBox .td[data-t="null"]').each(function () {
-                var x = parseInt($(this).attr('data-i').split('_')[0]);
-                var y = parseInt($(this).attr('data-i').split('_')[1]);
-                var n = self.searchPlan(x, y, 'white', 1);
-                if (n > maxObj.total) {
-                    maxObj.total = n;
-                    maxObj.x = x;
-                    maxObj.y = y;
+            setTimeout(() => {
+                // 电脑落子
+                var maxObj = {
+                    total: 0,
+                    x: 0,
+                    y: 0
+                };
+                $('#mapBox .td[data-t="null"]').each(function () {
+                    var x = parseInt($(this).attr('data-i').split('_')[0]);
+                    var y = parseInt($(this).attr('data-i').split('_')[1]);
+                    var n = self.searchPlan(x, y, 'white', 1);
+                    if (n > maxObj.total) {
+                        maxObj.total = n;
+                        maxObj.x = x;
+                        maxObj.y = y;
+                    }
+                })
+                if (maxObj.total > 0) {
+                    self.searchPlan(maxObj.x, maxObj.y, 'white', 2);
                 }
-            })
-            if (maxObj.total > 0) {
-                self.addAnimation(maxObj.x, maxObj.y, 'white'); // 落子
-                await delayFun(timeResult); // 延时
-                self.searchPlan(maxObj.x, maxObj.y, 'white', 2); // 翻棋
-            }
-            else {
-                isEnd = true;
-            }
+                else {
+                    isEnd = true;
+                }
 
-            // 判断是否继续
-            if (isEnd) {
-                self.endGame('白棋无处落子');
-                return false;
-            }
+                // 判断是否继续
+                if (isEnd) {
+                    return false;
+                }
 
-            // 延时
-            await delayFun(timeResult + timeChange);
-
-            // 标记所有玩家可操作
-            self.searchHandle();
+                // 标记所有玩家可操作
+                setTimeout(() => {
+                    self.searchHandle();
+                }, timeResult * 2)
+            }, timeResult * 3)
         })
 
         // confirm_modal 确定
@@ -196,7 +189,7 @@ $(function () {
             }
         })
         if ($('#mapBox .td[data-t="handle"]').length == 0) {
-            self.endGame('黑棋无处落子');
+            self.endGame();
         }
     }
 
@@ -204,6 +197,11 @@ $(function () {
     this.searchPlan = function (x, y, cur, type) {
 
         var total = 0;
+
+        // 执行
+        if (type == 2) {
+            self.addAnimation(x, y, cur);
+        }
 
         // 上
         if (x > 1) {
@@ -437,14 +435,16 @@ $(function () {
         if (type != 'black' && type != 'white') {
             return false;
         }
-        $(dom).addClass('change');
         setTimeout(() => {
-            $(dom).attr('data-t', type == 'black' ? 'white' : 'black');
-            self.checkState();
-        }, timeChange / 2);
-        setTimeout(() => {
-            $(dom).removeClass('change');
-        }, timeChange);
+            $(dom).addClass('change');
+            setTimeout(() => {
+                $(dom).attr('data-t', type == 'black' ? 'white' : 'black');
+                self.checkState();
+            }, timeChange / 2);
+            setTimeout(() => {
+                $(dom).removeClass('change');
+            }, timeChange);
+        }, timeResult);
     }
 
     // 检查当前状态
@@ -459,7 +459,7 @@ $(function () {
 
         // 结束
         if (isEnd || $('#mapBox .td[data-t="null"]').length == 0) {
-            self.endGame('无处落子');
+            self.endGame();
             return false;
         }
 
@@ -473,19 +473,19 @@ $(function () {
         isEnd = true;
         // win
         if (black > white) {
-            $('#resultModal .modal_content').html('恭喜恭喜，你赢啦！');
+            $('#resultModal .modal_content').html('恭喜恭喜<br/>你赢啦！');
             $('#resultModal').show();
             $('#stateBox').attr('data-t', 2);
         }
         // lost
         else if (black < white) {
-            $('#resultModal .modal_content').html('好可惜，你输喽！');
+            $('#resultModal .modal_content').html('好可惜<br/>你输喽！');
             $('#resultModal').show();
             $('#stateBox').attr('data-t', 3);
         }
         // balance
         else {
-            $('#resultModal .modal_content').html('平局啦！');
+            $('#resultModal .modal_content').html('呜呼<br/>平局啦！');
             $('#resultModal').show();
             $('#stateBox').attr('data-t', 1);
         }
