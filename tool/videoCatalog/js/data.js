@@ -71,7 +71,7 @@ var catalogData = [{
 }, {
     name: '短剧',
     child: [
-        '双面美人'
+        '双面美人.mp4'
     ]
 }, {
     name: '电影',
