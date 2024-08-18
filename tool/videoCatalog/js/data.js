@@ -69,6 +69,11 @@ var catalogData = [{
         '延禧攻略【70全】'
     ]
 }, {
+    name: '短剧',
+    child: [
+        '双面美人'
+    ]
+}, {
     name: '电影',
     child: [
         '[CLTG]',
@@ -169,8 +174,5 @@ var catalogData = [{
         '数码宝贝 第一部 国语版【54+55全】',
         '口袋妖怪解说 Chimera君.mp4'
     ]
-}, {
-    name: '其他',
-    child: []
 }]
 
