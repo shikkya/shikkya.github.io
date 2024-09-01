@@ -12,26 +12,24 @@
 
 <body>
 
+    <!-- catalog -->
+    <div class="catalog_box" id="catalogBox"></div>
+
     <!-- filter -->
     <div class="filter_box" id="filterBox">
         <div class="filter_item" data-t="">
             <label>周期规律</label>
-            <input type="text" id="planVal" placeholder="示例：住副休" value="住副休副副副" />
+            <input type="text" id="planVal" placeholder="1234567" value="1352467" />
         </div>
         <div class="filter_item" data-t="">
             <label>起始日期</label>
-            <input type="text" id="planStart" placeholder="示例：2020-01-03" value="2024-08-30" />
+            <input type="text" id="planStart" placeholder="示例：2020-01-03" value="2024-08-19" />
         </div>
         <div class="filter_item" data-t="week">
             <label>生成周数</label>
-            <input type="text" id="weeklySize" placeholder="示例：4" value="4" />
+            <input type="text" id="weeklySize" placeholder="示例：4" value="2" />
         </div>
-        <div class="filter_item" data-t="">
-            <label>周末休息</label>
-            <span id="isRest" class="active"><i></i></span>
-            <font>（周六周日副班休息）</font>
-        </div>
-        <button class="btn" id="subBtn">开始排班</button>
+        <button class="btn" id="subBtn">开始计算</button>
     </div>
 
     <!-- tab -->
@@ -62,26 +60,8 @@
         <div class="list_box" data-t="month"></div>
     </div>
 
-    <!-- modal -->
-    <div class="modal" id="planModal">
-        <div class="modal_dialog">
-            <div class="modal_header">
-                <span>请选择</span>
-                <a class="modal_close">×</a>
-            </div>
-            <div class="modal_content">
-                <p></p>
-                <ul id="planModalList">
-                    <li data-v="住">住</li>
-                    <li data-v="副">副</li>
-                    <li data-v="休">休</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
     <!-- version -->
-    <div class="versionBox">V.2024071201</div>
+    <div class="versionBox">V.2024090101</div>
 
     <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
     <script src="../common/js/noCopy.js"></script>

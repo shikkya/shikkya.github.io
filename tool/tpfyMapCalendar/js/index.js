@@ -1,12 +1,29 @@
 /**
  * index.html
  * @authors shikkya
- * @date 2023-06-04
+ * @date 2024-09-01
  */
 
 $(function () {
 
     var self = this;
+
+    // 地图列表
+    var mapList = [{
+        name: '经典地图'
+    }, {
+        name: '秘密房间'
+    }, {
+        name: '冰雪地图'
+    }, {
+        name: '御敌千里'
+    }, {
+        name: '苔藓密室'
+    }, {
+        name: '强行变卖'
+    }, {
+        name: '帮你花钱'
+    }];
 
     // 星期几
     var weekArr = ['一', '二', '三', '四', '五', '六', '日'];
@@ -21,17 +38,9 @@ $(function () {
     // 生成周数
     var weeklySize = 0;
 
-    // 本地缓存 版本号
-    var version = '20230708';
-
     this.createEvent = function () {
 
-        // filter 周末双休
-        $('#isRest').off('click').on('click', function () {
-            $(this).toggleClass('active');
-        })
-
-        // filter 开始排班
+        // filter 开始计算
         $('#subBtn').off('click').on('click', function () {
 
             try {
@@ -51,12 +60,9 @@ $(function () {
                     $('.handle_box[data-t="month"] span').eq(1).html(self.formatNum(new Date().getMonth() + 1));
                     self.createCalendarHtml(new Date().getFullYear(), new Date().getMonth() + 1);
 
-                    // 本地缓存 保存设置
-                    self.saveLocalData();
-
                     $('#tabBox').show();
                     $('#tabBox li.active').click();
-                    showMsg('排班成功');
+                    showMsg('计算成功');
                 }
             } catch (error) {
                 alert('生成失败，请检查设置项格式是否正确，如有疑问请联系开发者~');
@@ -73,10 +79,6 @@ $(function () {
 
             $('.content_box').removeClass('active');
             $('.content_box[data-t="' + type + '"]').addClass('active');
-
-            // $('#filterBox .filter_item').hide();
-            // $('#filterBox .filter_item[data-t=""]').show();
-            // $('#filterBox .filter_item[data-t="' + type + '"]').show();
         })
 
         // month handle 增减年月
@@ -113,71 +115,6 @@ $(function () {
 
             self.createCalendarHtml(yy, mm);
         })
-
-        // list 点击日期
-        $('.list_box').off('click').on('click', '.td', function () {
-            $(this).addClass('active');
-            $('#planModal p').html($(this).attr('title'));
-            $('#planModal').show();
-        })
-
-        // modal 关闭
-        $('#planModal').off('click').on('click', '.modal_close', function () {
-            $('.list_box .td').removeClass('active');
-            $('#planModal').hide();
-        })
-
-        // modal 选择
-        $('#planModalList').off('click').on('click', 'li', function () {
-            var val = $(this).attr('data-v');
-            $('.list_box .td.active i').attr('data-v', val).html(val);
-            $('#planModal .modal_close').click();
-        })
-    }
-
-    // 本地缓存 保存设置
-    this.saveLocalData = function () {
-        var data = {
-            version: version, // 版本号
-            planVal: $('#planVal').val().trim(), // 周期规律
-            planStart: planStart, // 起始日期
-            weeklySize: weeklySize, // 生成周数
-            isRest: $('#isRest').hasClass('active') // 周末休息
-        }
-        localStorage.setItem('shikkya_tool_schedule', JSON.stringify(data));
-    }
-
-    // 本地缓存 读取设置
-    this.loadLocalData = function () {
-        var data = localStorage.getItem('shikkya_tool_schedule');
-
-        if (!data || data == '') {
-            return false;
-        }
-
-        data = JSON.parse(data);
-
-        if (data.version != version) {
-            localStorage.removeItem('shikkya_tool_schedule');
-            return false;
-        }
-
-        // 周期规律
-        $('#planVal').val(data.planVal);
-
-        // 起始日期
-        $('#planStart').val(data.planStart);
-
-        // 生成周数
-        $('#weeklySize').val(data.weeklySize);
-
-        // 周末休息
-        if (data.isRest) {
-            $('#isRest').addClass('active');
-        }
-        else {
-            $('#isRest').removeClass('active');
-        }
     }
 
     // 校验设置项
@@ -261,14 +198,9 @@ $(function () {
                 dayNum = dayNum < 0 ? dayNum + planArr.length : dayNum;
 
                 html += '<div class="td" data-t="' + isRelax + '" title="' + dateObj.getFullYear() + '-' + self.formatNum(dateObj.getMonth() + 1) + '-' + self.formatNum(dateObj.getDate()) + '">' +
-                    '<p>' + self.formatNum(dateObj.getDate()) + '</p>';
-                if ($('#isRest').hasClass('active') && j > weekArr.length - 3 && planArr[dayNum] != '住') {
-                    html += '<i data-v="休">休</i>';
-                }
-                else {
-                    html += '<i data-v="' + planArr[dayNum] + '">' + planArr[dayNum] + '</i>';
-                }
-                html += '</div>';
+                    '<p>' + self.formatNum(dateObj.getDate()) + '</p>' +
+                    '<i data-v="' + planArr[dayNum] + '">' + planArr[dayNum] + '</i>' +
+                    '</div>';
                 dateObj = new Date(dateObj.setDate(dateObj.getDate() + 1));
             }
             html += '</div>';
@@ -318,14 +250,9 @@ $(function () {
                 dayNum = dayNum < 0 ? dayNum + planArr.length : dayNum;
 
                 html += '<div class="td" data-t="' + isRelax + '" title="' + curYear + '-' + self.formatNum(curMonth) + '-' + self.formatNum(curDay) + '">' +
-                    '<p>' + self.formatNum(curDay) + '</p>';
-                if ($('#isRest').hasClass('active') && j > weekArr.length - 3 && planArr[dayNum] != '住') {
-                    html += '<i data-v="休">休</i>';
-                }
-                else {
-                    html += '<i data-v="' + planArr[dayNum] + '">' + planArr[dayNum] + '</i>';
-                }
-                html += '</div>';
+                    '<p>' + self.formatNum(curDay) + '</p>' +
+                    '<i data-v="' + planArr[dayNum] + '">' + planArr[dayNum] + '</i>' +
+                    '</div>';
 
                 curDay++;
             }
@@ -346,9 +273,21 @@ $(function () {
         return '0' + num;
     }
 
+    // 初始化地图信息
+    this.initMapListInfo = function () {
+        for (var i in mapList) {
+            $('#catalogBox').append(
+                '<div>' +
+                '<i data-v="' + (parseInt(i) + 1) + '">' + (parseInt(i) + 1) + '</i>' +
+                '<span>' + mapList[i].name + '</span>' +
+                '</div>'
+            );
+        }
+    }
+
     this.init = function () {
         self.createEvent();
-        self.loadLocalData();
+        self.initMapListInfo();
         $('#subBtn').click();
     }
 

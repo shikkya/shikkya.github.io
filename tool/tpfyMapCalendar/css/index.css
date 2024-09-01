@@ -1,0 +1,244 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date 2024-09-01
+ */
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea,
+select {
+  font-size: 1.5rem;
+}
+
+input {
+  border: 0.1rem solid #eee;
+  border-radius: 0.5rem;
+  line-height: 3rem;
+  padding: 0 1.2rem;
+}
+
+.btn {
+  border: 0.1rem solid var(--color-theme);
+  line-height: 3.2rem;
+  border-radius: 0.5rem;
+  padding: 0 1.2rem;
+  font-size: 1.5rem;
+}
+
+i {
+  font-style: normal;
+  font-size: 1.3rem;
+  padding: 0 0.8rem;
+  border-radius: 1rem;
+  background: #ddd;
+  color: #fff;
+}
+
+i[data-v="1"] {
+  background: #7792a1;
+}
+
+i[data-v="2"] {
+  background: #945974;
+}
+
+i[data-v="3"] {
+  background: #61c2ff;
+}
+
+i[data-v="4"] {
+  background: #5edde7;
+}
+
+i[data-v="5"] {
+  background: #0da039;
+}
+
+i[data-v="6"] {
+  background: #0da039;
+}
+
+i[data-v="7"] {
+  background: #94d555;
+}
+
+/******************** catalog_box ********************/
+
+.catalog_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-radius: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.catalog_box div {
+  width: 33.3%;
+  text-align: center;
+  padding: 0.2rem 0;
+}
+
+.catalog_box i {
+  margin-right: 0.5rem;
+}
+
+/******************** filter_box ********************/
+
+.filter_box {
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-radius: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter_item {
+  padding: 0.5rem 0 0.5rem 7rem;
+  position: relative;
+}
+
+.filter_item label {
+  position: absolute;
+  left: 0;
+  top: 1.2rem;
+}
+
+.filter_item:nth-child(4) label {
+  top: 0.6rem;
+}
+
+.filter_item input {
+  width: 100%;
+}
+
+.filter_box .btn {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+/******************** tab_box ********************/
+
+.tab_box {
+  font-size: 0;
+}
+
+.tab_box li {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.6rem;
+  border-radius: 0.8rem 0.8rem 0 0;
+  font-weight: bold;
+  padding: 0 1.5rem;
+}
+
+.tab_box li.active {
+  background: #fff;
+  color: var(--color-theme);
+}
+
+.tab_box li span {
+  display: block;
+  line-height: 4rem;
+  margin: 0 auto;
+  border-bottom: 0.3rem solid transparent;
+}
+
+.tab_box li.active span {
+  border-color: var(--color-theme);
+}
+
+/******************** content_box ********************/
+
+.content_box {
+  display: none;
+  padding: 0 1.5rem;
+  background: #fff;
+  border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.content_box.active {
+  display: block;
+}
+
+/******************** handle_box ********************/
+
+.handle_box {
+  padding-top: 2rem;
+  text-align: center;
+  position: relative;
+  line-height: 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.handle_box .btn {
+  position: absolute;
+  width: 3.2rem;
+  line-height: 2.8rem;
+  font-weight: bold;
+  padding: 0;
+}
+
+.handle_box .btn:nth-of-type(1) {
+  left: 0;
+}
+
+.handle_box .btn:nth-of-type(2) {
+  left: 4rem;
+}
+
+.handle_box .btn:nth-of-type(3) {
+  right: 4rem;
+}
+
+.handle_box .btn:nth-of-type(4) {
+  right: 0;
+}
+
+/******************** list_box ********************/
+
+.list_box {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.list_box .tr {
+  border-top: 0.1rem solid #eee;
+}
+
+.list_box .th,
+.list_box .td {
+  display: inline-block;
+  width: calc(100% / 7);
+  text-align: center;
+}
+
+.list_box .th {
+  background: #eee;
+  line-height: 3rem;
+}
+
+.list_box .td {
+  font-size: 2rem;
+  padding: 1.2rem 0;
+}
+
+.list_box .td[data-t="relax"] {
+  color: #ff2f00;
+}
