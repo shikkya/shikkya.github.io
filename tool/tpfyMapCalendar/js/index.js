@@ -40,6 +40,12 @@ $(function () {
 
     this.createEvent = function () {
 
+        // catalog 查看地图
+        $('#catalogBox').off('click').on('click', 'div', function () {
+            sessionStorage.setItem('mapPic', $(this).attr('data-n'));
+            window.location.href = './mapPic.html';
+        })
+
         // filter 开始计算
         $('#subBtn').off('click').on('click', function () {
 
@@ -277,7 +283,7 @@ $(function () {
     this.initMapListInfo = function () {
         for (var i in mapList) {
             $('#catalogBox').append(
-                '<div>' +
+                '<div data-n="' + (parseInt(i) + 1) + '">' +
                 '<i data-v="' + (parseInt(i) + 1) + '">' + (parseInt(i) + 1) + '</i>' +
                 '<span>' + mapList[i].name + '</span>' +
                 '</div>'
