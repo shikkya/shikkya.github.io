@@ -86,7 +86,7 @@
                 { tit: '饥荒指令器', type: 'PC', url: './dontStarve', date: '2023-11-01' },
                 { tit: '预产期计算器', type: 'Mobile', url: './birthDate', date: '2023-08-08' },
                 { tit: '水雾魔珠设计器', type: 'Mobile', url: './designWaterBead', date: '2023-08-18' },
-                { tit: '躺平发育地图还原器', type: 'PC', url: './gameTpfy', date: '2022-03-19' },
+                { tit: '躺平发育地图还原器', type: 'PC', url: './tpfyMap', date: '2022-03-19' },
                 { tit: '矩阵文字找不同', type: 'Mobile', url: './findWord', date: '2022-05-25' }
             ];
 
@@ -103,6 +103,7 @@
             this.checkPass = function () {
                 var userPass = $('#userPass').val().trim();
                 if (userPass == self.formatNum(new Date().getMonth() + 1) + self.formatNum(new Date().getDate())) {
+                    sessionStorage.setItem('shikkya', 'lucky');
                     self.createListHtml(listData);
                 }
             }
@@ -141,6 +142,10 @@
                     return '' + num;
                 }
                 return '0' + num;
+            }
+
+            if (sessionStorage.getItem('shikkya') == 'lucky') {
+                self.createListHtml(listData);
             }
         })
     </script>
