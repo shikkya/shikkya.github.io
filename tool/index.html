@@ -104,7 +104,7 @@
             this.checkPass = function () {
                 var userPass = $('#userPass').val().trim();
                 if (userPass == self.formatNum(new Date().getMonth() + 1) + self.formatNum(new Date().getDate())) {
-                    sessionStorage.setItem('shikkya', 'lucky');
+                    localStorage.setItem('shikkya', new Date().toLocaleDateString());
                     self.createListHtml(listData);
                 }
             }
@@ -145,7 +145,7 @@
                 return '0' + num;
             }
 
-            if (sessionStorage.getItem('shikkya') == 'lucky') {
+            if (localStorage.getItem('shikkya') == new Date().toLocaleDateString()) {
                 self.createListHtml(listData);
             }
         })

@@ -14,29 +14,34 @@
     <div class="content">
         <!-- step 1 -->
         <div class="step active" data-n="1">
-            <!-- tit_box -->
-            <div class="tit_box">
+            <!-- tit -->
+            <div class="c-tit">
                 <b>可可の黑白棋</b>
             </div>
 
-            <!-- option_box -->
-            <div class="option_box" id="optionBox">
-                <div class="option_item">
+            <!-- option -->
+            <div class="c-option">
+                <div class="c-option-item">
                     <label>游戏模式</label>
-                    <ul>
+                    <ul class="c-option-radio" data-n="2">
                         <li class="active">人机对战</li>
                         <li class="unable">双人对战</li>
                     </ul>
                 </div>
-                <div class="option_item">
+                <div class="c-option-item">
                     <label>落子提示</label>
-                    <span class="active"></span>
+                    <div class="c-option-switch active"></div>
+                </div>
+                <div class="c-option-item">
+                    <label>规则说明</label>
+                    <div class="c-option-rule"></div>
                 </div>
             </div>
 
-            <!-- handle_box -->
-            <div class="handle_box">
+            <!-- handle -->
+            <div class="c-handle" data-n="2">
                 <button class="btn" id="startBtn">开始游戏</button>
+                <button class="btn" id="homeBtn">返回首页</button>
             </div>
         </div>
 
@@ -60,10 +65,30 @@
             <!-- map_box -->
             <div class="map_box" id="mapBox" data-isClue="1"></div>
 
-            <!-- handle_box -->
-            <div class="handle_box">
+            <!-- handle -->
+            <div class="c-handle" data-n="2">
                 <button class="btn" id="restartBtn">重新开始</button>
                 <button class="btn" id="backBtn">离开游戏</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- rule_modal -->
+    <div class="modal rule_modal" id="ruleModal">
+        <div class="modal_dialog">
+            <div class="modal_header">
+                <b>规则说明</b>
+                <a class="close_modal"></a>
+            </div>
+            <div class="modal_content">
+                <h3>基本规则</h3>
+                <p>1、棋盘尺寸为8*8的方格，开局时棋盘正中有两黑两白4个棋子交叉放置</p>
+                <p>2、黑棋先下，双方轮换，每回合下一子</p>
+                <p>3、当自己放下的棋子在横竖斜8个方向内有1个自己的棋子，则被夹在中间的对方棋子全部翻转成为我方棋子</p>
+                <p>4、如果一方无棋可下，则跳过本回合进入对方回合</p>
+                <h3>胜利条件</h3>
+                <p>1、当双方都无处落子时，棋子多的一方获胜</p>
+                <p>2、当一方棋子数量为0时，对方获胜</p>
             </div>
         </div>
     </div>
@@ -94,7 +119,7 @@
     <div class="versionBox">V.2024080301</div>
 
     <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
-    <script src="../common/js/noCopy.js"></script>
+    <!-- <script src="../common/js/noCopy.js"></script> -->
     <script src="../common/js/common.js"></script>
     <script src="./js/index.js"></script>
 </body>

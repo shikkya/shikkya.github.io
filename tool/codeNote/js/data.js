@@ -133,44 +133,6 @@ document.documentElement.style.removeProperty('--color-theme');`
 }, {
     type: 'CssIcon',
     child: [{
-        tit: '箭头',
-        code: `
-.arrow {
-    display: inline-block;
-    width: 6px; /* 尺寸 */
-    height: 6px; /* 尺寸 */
-    border-left: 2px solid #aaa; /* 颜色 */
-    border-bottom: 2px solid #aaa; /* 颜色 */
-    position: relative;
-    cursor: pointer;
-}
-
-.arrow[data-t="up"] {
-    transform: rotate(135deg);
-}
-
-.arrow[data-t="down"] {
-    transform: rotate(-45deg);
-    top: -3px;
-}
-
-.arrow[data-t="left"] {
-    transform: rotate(45deg);
-    top: -1px;
-    left: 2px;
-}
-
-.arrow[data-t="right"] {
-    transform: rotate(-135deg);
-    top: -1px;
-    right: 1px;
-}`,
-        example: `
-<i class="arrow" data-t="up"></i>
-<i class="arrow" data-t="down"></i>
-<i class="arrow" data-t="left"></i>
-<i class="arrow" data-t="right"></i>`
-    }, {
         tit: '单选 radio',
         code: `
 .radio {
@@ -240,6 +202,88 @@ document.documentElement.style.removeProperty('--color-theme');`
         example: `
 <i class="check"></i>
 <i class="check active"></i>`
+    }, {
+        tit: '箭头（展开收起、前进返回）',
+        code: `
+.arrow {
+    display: inline-block;
+    width: 6px; /* 尺寸 */
+    height: 6px; /* 尺寸 */
+    border-left: 2px solid #aaa; /* 颜色 */
+    border-bottom: 2px solid #aaa; /* 颜色 */
+    position: relative;
+    cursor: pointer;
+}
+
+.arrow[data-t="up"] {
+    transform: rotate(135deg);
+}
+
+.arrow[data-t="down"] {
+    transform: rotate(-45deg);
+    top: -3px;
+}
+
+.arrow[data-t="left"] {
+    transform: rotate(45deg);
+    top: -1px;
+    left: 2px;
+}
+
+.arrow[data-t="right"] {
+    transform: rotate(-135deg);
+    top: -1px;
+    right: 1px;
+}`,
+        example: `
+<i class="arrow" data-t="up"></i>
+<i class="arrow" data-t="down"></i>
+<i class="arrow" data-t="left"></i>
+<i class="arrow" data-t="right"></i>`
+    }, {
+        tit: '排序',
+        code: `
+.sort {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    cursor: pointer;
+}
+
+.sort::before,
+.sort::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, 0);
+    border: 6px solid transparent; /* 尺寸 */
+}
+
+.sort::before {
+    top: -50%;
+    margin-top: -1px;
+    border-bottom-color: #ccc; /* 默认颜色 */
+}
+
+.sort::after {
+    bottom: -50%;
+    margin-bottom: -1px;
+    border-top-color: #ccc; /* 默认颜色 */
+}
+
+.sort[data-t="asc"]::before {
+    border-bottom-color: #00bc9c; /* 选中颜色 */
+}
+
+.sort[data-t="desc"]::after {
+    border-top-color: #00bc9c; /* 选中颜色 */
+}`,
+        example: `
+<i class="sort"></i>
+<i class="sort" data-t="asc"></i> <!-- 升序 -->
+<i class="sort" data-t="desc"></i> <!-- 降序 -->`
     }, {
         tit: '心形（实心）',
         code: `
@@ -773,6 +817,17 @@ window.location.search // '?id=1&type=0'
 
 // 锚点
 window.location.hash // '#name'`
+    }, {
+        tit: '监听dom变化 MutationObserver',
+        code: `
+var targetNode = $('body')[0];
+var config = { attributes: true, childList: true, subtree: true };
+var observer = new MutationObserver(function (mutations, observer) {
+    observer.disconnect(); // 停止
+    // 操作 ...
+    observer.observe(targetNode, config); // 开始
+});
+observer.observe(targetNode, config); // 开始`
     }]
 }, {
     type: 'Event',

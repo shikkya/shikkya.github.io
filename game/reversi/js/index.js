@@ -10,6 +10,9 @@ $(function () {
     // 是否结束
     isEnd = false;
 
+    // 玩家是否可操作
+    isHandle = false;
+
     // 动画新增时间 css同步
     timeAdd = 300;
 
@@ -21,24 +24,11 @@ $(function () {
 
     this.createEvent = function () {
 
-        // option_box 选项
-        // $('#optionBox').off('click').on('click', 'li', function () {
-        //     if ($(this).hasClass('unable')) {
-        //         return false;
-        //     }
-        //     $(this).addClass('active').siblings('li').removeClass('active');
-        // })
-
-        // option_box 开关
-        $('#optionBox').off('click').on('click', 'span', function () {
-            $(this).toggleClass('active')
-        })
-
         // handle_box 开始游戏
         $('#startBtn').off('click').on('click', function () {
 
             // 保存设置 落子提示
-            $('#mapBox').attr('data-isClue', $('#optionBox span').hasClass('active') ? 1 : 0);
+            $('#mapBox').attr('data-isClue', $('.c-option-switch').hasClass('active') ? 1 : 0);
 
             // 初始化
             self.initGame();
@@ -158,6 +148,7 @@ $(function () {
     // 初始化
     this.initGame = function () {
         isEnd = false;
+        isHandle = false;
         $('#stateBox').attr('data-t', 1);
         $('#statisticBox b').html('02');
         var html = '';
@@ -196,7 +187,7 @@ $(function () {
             }
         })
         if ($('#mapBox .td[data-t="handle"]').length == 0) {
-            self.endGame('黑棋无处落子');
+            // self.endGame('黑棋无处落子');
         }
     }
 

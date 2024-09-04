@@ -75,29 +75,6 @@ i[data-v="7"] {
   background: #94d555;
 }
 
-/******************** catalog_box ********************/
-
-.catalog_box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  padding: 1rem 1.5rem;
-  background: #fff;
-  border-radius: 0.8rem;
-  margin-bottom: 1.5rem;
-}
-
-.catalog_box div {
-  width: 33.3%;
-  text-align: center;
-  padding: 0.5rem 0;
-}
-
-.catalog_box i {
-  margin-right: 0.5rem;
-}
-
 /******************** filter_box ********************/
 
 .filter_box {
@@ -129,6 +106,29 @@ i[data-v="7"] {
 .filter_box .btn {
   width: 100%;
   margin: 0.5rem 0;
+}
+
+/******************** catalog_box ********************/
+
+.catalog_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-radius: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.catalog_box div {
+  width: 33.3%;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.catalog_box i {
+  margin-right: 0.5rem;
 }
 
 /******************** tab_box ********************/

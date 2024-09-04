@@ -6,6 +6,29 @@
 
 $(function () {
 
+    // c-option-radio 选择
+    $('.c-option-radio').off('click').on('click', 'li', function () {
+        if ($(this).hasClass('unable')) {
+            return false;
+        }
+        $(this).addClass('active').siblings('li').removeClass('active');
+    })
+
+    // c-option-switch 开关
+    $('.c-option-switch').off('click').on('click', function () {
+        $(this).toggleClass('active');
+    })
+
+    // c-option-rule 规则说明
+    $('.c-option-rule').off('click').on('click', function () {
+        $('#ruleModal').show();
+    })
+
+    // homeBtn 返回首页
+    $('#homeBtn').off('click').on('click', function () {
+        window.history.back();
+    })
+
     // 弹窗 关闭
     $('.modal').off('click').on('click', '.close_modal', function () {
         $(this).closest('.modal').hide();

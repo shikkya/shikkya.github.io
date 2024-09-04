@@ -67,10 +67,7 @@
 </head>
 
 <body>
-    <div class="content" id="content">
-        <p>此页面仅限管理员查看</p>
-        <input type="password" id="userPass" placeholder="请输入管理员密码" autocomplete="off" />
-    </div>
+    <div class="content" id="content"></div>
 
     <script src="./common/plugin/jQuery/jquery-1.10.2.min.js"></script>
     <script src="./common/js/noCopy.js"></script>
@@ -83,23 +80,6 @@
                 { tit: '扫雷', type: 'PC', url: './mineSweeper', date: '2024-07-13' },
                 { tit: '黑白棋', type: 'Mobile', url: './reversi', date: '2024-07-08' }
             ];
-
-            $('#userPass').on('keyup', function (e) {
-                e = e ? e : window.event;
-                if (e.keyCode == 13) {
-                    self.checkPass();
-                }
-            }).on('input', function () {
-                self.checkPass();
-            })
-
-            // 校验密码
-            this.checkPass = function () {
-                var userPass = $('#userPass').val().trim();
-                if (userPass == self.formatNum(new Date().getMonth() + 1) + self.formatNum(new Date().getDate())) {
-                    self.createListHtml(listData);
-                }
-            }
 
             // 创建列表结构
             this.createListHtml = function (data) {
@@ -129,13 +109,7 @@
                 $('#content').html(html);
             }
 
-            // 格式化数字
-            this.formatNum = function (num) {
-                if (parseInt(num) > 9) {
-                    return '' + num;
-                }
-                return '0' + num;
-            }
+            self.createListHtml(listData);
         })
     </script>
 </body>

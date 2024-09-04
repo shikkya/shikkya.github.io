@@ -14,29 +14,27 @@
     <div class="content">
         <!-- step 1 -->
         <div class="step active" data-n="1">
-            <!-- tit_box -->
-            <div class="tit_box">
+            <!-- tit -->
+            <div class="c-tit">
                 <b>可可の扫雷</b>
             </div>
 
-            <!-- option_box -->
-            <div class="option_box" id="optionBox">
-                <div class="option_item">
+            <!-- option -->
+            <div class="c-option" id="optionBox">
+                <div class="c-option-item">
                     <label>游戏模式</label>
-                    <ul>
+                    <ul class="c-option-radio" data-n="3">
                         <li class="active">初级</li>
-                        <li class="unable">双人对战</li>
+                        <li>中级</li>
+                        <li>高级</li>
                     </ul>
-                </div>
-                <div class="option_item">
-                    <label>落子提示</label>
-                    <span class="active"></span>
                 </div>
             </div>
 
-            <!-- handle_box -->
-            <div class="handle_box">
+            <!-- handle -->
+            <div class="c-handle" data-n="2">
                 <button class="btn" id="startBtn">开始游戏</button>
+                <button class="btn" id="homeBtn">返回首页</button>
             </div>
         </div>
 
@@ -60,8 +58,8 @@
             <!-- map_box -->
             <div class="map_box" id="mapBox" data-isClue="1"></div>
 
-            <!-- handle_box -->
-            <div class="handle_box">
+            <!-- handle -->
+            <div class="c-handle" data-n="2">
                 <button class="btn" id="restartBtn">重新开始</button>
                 <button class="btn" id="backBtn">离开游戏</button>
             </div>
