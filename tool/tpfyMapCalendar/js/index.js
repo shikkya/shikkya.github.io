@@ -28,9 +28,6 @@ $(function () {
     // 星期几
     var weekArr = ['一', '二', '三', '四', '五', '六', '日'];
 
-    // 月天数
-    var monthNumArr = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
     // 周期规律
     var planArr = [];
     // 起始日期
@@ -40,28 +37,16 @@ $(function () {
 
     this.createEvent = function () {
 
+        // filter 显示日期
+        $('#isDate').off('click').on('click', function () {
+            $(this).toggleClass('active');
+        })
+
         // filter 开始计算
         $('#subBtn').off('click').on('click', function () {
-
             try {
-                // 设置有误
-                if (!self.checkFilter()) {
-                    $('#tabBox').hide();
-                    $('.content_box').removeClass('active');
-                }
-                // 设置正确
-                else {
-
-                    // 周历
+                if (self.checkFilter()) {
                     self.createWeeklyHtml();
-
-                    // 月历
-                    $('.handle_box[data-t="month"] span').eq(0).html(new Date().getFullYear());
-                    $('.handle_box[data-t="month"] span').eq(1).html(self.formatNum(new Date().getMonth() + 1));
-                    self.createCalendarHtml(new Date().getFullYear(), new Date().getMonth() + 1);
-
-                    $('#tabBox').show();
-                    $('#tabBox li.active').click();
                     showMsg('计算成功');
                 }
             } catch (error) {
@@ -74,56 +59,9 @@ $(function () {
             sessionStorage.setItem('mapPic', $(this).attr('data-n'));
             window.location.href = './mapPic.html';
         })
-
-        // tab 切换
-        $('#tabBox').off('click').on('click', 'li', function () {
-
-            var type = $(this).attr('data-t');
-
-            $(this).siblings().removeClass('active');
-            $(this).addClass('active');
-
-            $('.content_box').removeClass('active');
-            $('.content_box[data-t="' + type + '"]').addClass('active');
-        })
-
-        // month handle 增减年月
-        $('.handle_box').off('click').on('click', '.btn', function () {
-
-            var yy = parseInt($('.handle_box[data-t="month"] span').eq(0).text());
-            var mm = parseInt($('.handle_box[data-t="month"] span').eq(1).text());
-
-            switch ($(this).attr('data-t')) {
-                case 'y-':
-                    yy--;
-                    break;
-                case 'y+':
-                    yy++;
-                    break;
-                case 'm-':
-                    mm--;
-                    if (mm < 1) {
-                        yy--;
-                        mm = 12;
-                    }
-                    break;
-                case 'm+':
-                    mm++;
-                    if (mm > 12) {
-                        yy++;
-                        mm = 1;
-                    }
-                    break;
-            }
-
-            $('.handle_box[data-t="month"] span').eq(0).html(yy);
-            $('.handle_box[data-t="month"] span').eq(1).html(self.formatNum(mm));
-
-            self.createCalendarHtml(yy, mm);
-        })
     }
 
-    // 校验设置项
+    // filter 校验设置项
     this.checkFilter = function () {
 
         // 周期规律
@@ -204,71 +142,14 @@ $(function () {
                 dayNum = dayNum < 0 ? dayNum + planArr.length : dayNum;
 
                 html += '<div class="td" data-t="' + isRelax + '" title="' + dateObj.getFullYear() + '-' + self.formatNum(dateObj.getMonth() + 1) + '-' + self.formatNum(dateObj.getDate()) + '">' +
-                    '<p>' + self.formatNum(dateObj.getDate()) + '</p>' +
+                    ($('#isDate').hasClass('active') ? ('<p>' + self.formatNum(dateObj.getDate()) + '</p>') : '') +
                     '<i data-v="' + planArr[dayNum] + '">' + planArr[dayNum] + '</i>' +
                     '</div>';
                 dateObj = new Date(dateObj.setDate(dateObj.getDate() + 1));
             }
             html += '</div>';
         }
-        $('.list_box[data-t="week"]').html(html);
-    }
-
-    // month 创建月历结构
-    this.createCalendarHtml = function (curYear, curMonth) {
-
-        // 2月天数判断
-        if (curMonth == 2) {
-            monthNumArr[curMonth] = curYear % 4 == 0 ? 29 : 28;
-        }
-
-        var dateObj = new Date(curYear + '-' + self.formatNum(curMonth) + '-01');
-        var wSize = Math.ceil(monthNumArr[curMonth] - (dateObj.getDay() == 0 ? 1 : 8 - dateObj.getDay()) / 7) + 1;
-        var curDay = 1;
-        var isRelax = '';
-        var dayNum = 0;
-
-        var html = '<div class="tr">';
-        for (var i in weekArr) {
-            html += '<div class="th">' + weekArr[i] + '</div>';
-        }
-        html += '</div>';
-        for (var i = 0; i < wSize; i++) {
-            html += '<div class="tr">';
-            for (var j = 0; j < weekArr.length; j++) {
-
-                if ((i == 0 && j < (dateObj.getDay() == 0 ? 6 : dateObj.getDay() - 1)) || curDay > monthNumArr[curMonth]) {
-                    html += '<div class="td">&nbsp;</div>';
-                    continue;
-                }
-
-                isRelax = j < weekArr.length - 2 ? '' : 'relax';
-                if (specialDate[curYear] && specialDate[curYear][self.formatNum(curMonth)]) {
-                    if (specialDate[curYear][self.formatNum(curMonth)].relax.indexOf(curDay) > -1) {
-                        isRelax = 'relax';
-                    }
-                    if (specialDate[curYear][self.formatNum(curMonth)].work.indexOf(curDay) > -1) {
-                        isRelax = '';
-                    }
-                }
-
-                dayNum = ((new Date(curYear + '-' + self.formatNum(curMonth) + '-' + self.formatNum(curDay)).getTime() - new Date(planStart).getTime()) / 1000 / 60 / 60 / 24) % planArr.length;
-                dayNum = dayNum < 0 ? dayNum + planArr.length : dayNum;
-
-                html += '<div class="td" data-t="' + isRelax + '" title="' + curYear + '-' + self.formatNum(curMonth) + '-' + self.formatNum(curDay) + '">' +
-                    '<p>' + self.formatNum(curDay) + '</p>' +
-                    '<i data-v="' + planArr[dayNum] + '">' + planArr[dayNum] + '</i>' +
-                    '</div>';
-
-                curDay++;
-            }
-            html += '</div>';
-
-            if (curDay > monthNumArr[curMonth]) {
-                break;
-            }
-        }
-        $('.list_box[data-t="month"]').html(html);
+        $('#weekBox').html(html);
     }
 
     // 格式化数字

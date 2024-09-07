@@ -14,17 +14,21 @@
 
     <!-- filter -->
     <div class="filter_box" id="filterBox">
-        <div class="filter_item" data-t="">
+        <div class="filter_item">
             <label>周期规律</label>
             <input type="text" id="planVal" placeholder="1234567" value="1352467" />
         </div>
-        <div class="filter_item" data-t="">
+        <div class="filter_item">
             <label>起始日期</label>
             <input type="text" id="planStart" placeholder="示例：2020-01-03" value="2024-08-19" />
         </div>
-        <div class="filter_item" data-t="week">
+        <div class="filter_item">
             <label>生成周数</label>
-            <input type="text" id="weeklySize" placeholder="示例：4" value="1" />
+            <input type="text" id="weeklySize" placeholder="示例：4" value="2" />
+        </div>
+        <div class="filter_item">
+            <label>显示日期</label>
+            <span id="isDate" class="active"></span>
         </div>
         <button class="btn" id="subBtn">开始计算</button>
     </div>
@@ -32,36 +36,11 @@
     <!-- catalog -->
     <div class="catalog_box" id="catalogBox"></div>
 
-    <!-- tab -->
-    <ul class="tab_box" id="tabBox">
-        <li data-t="week" class="active">
-            <span>周历</span>
-        </li>
-        <li data-t="month">
-            <span>月历</span>
-        </li>
-    </ul>
-
     <!-- week -->
-    <div class="content_box active" data-t="week">
-        <div class="list_box" data-t="week"></div>
-    </div>
-
-    <!-- month -->
-    <div class="content_box" data-t="month">
-        <div class="handle_box" data-t="month">
-            <button class="btn" data-t="y-">&lt;&lt;</button>
-            <button class="btn" data-t="m-">&lt;</button>
-            <span></span>年
-            <span></span>月
-            <button class="btn" data-t="m+">&gt;</button>
-            <button class="btn" data-t="y+">&gt;&gt;</button>
-        </div>
-        <div class="list_box" data-t="month"></div>
-    </div>
+    <div class="week_box" id="weekBox"></div>
 
     <!-- version -->
-    <div class="versionBox">V.2024090401</div>
+    <div class="versionBox">V.2024090701</div>
 
     <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
     <script src="../common/js/noCopy.js"></script>

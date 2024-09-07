@@ -103,6 +103,38 @@ i[data-v="7"] {
   width: 100%;
 }
 
+.filter_item span {
+  display: inline-block;
+  width: 3.6rem;
+  height: 2rem;
+  border-radius: 5rem;
+  background: #ddd;
+  vertical-align: middle;
+  position: relative;
+}
+
+.filter_item span:after {
+  content: "";
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  left: 0.2rem;
+  top: 0.2rem;
+  z-index: 1;
+}
+
+.filter_item span.active {
+  background: var(--color-theme);
+  text-align: right;
+}
+
+.filter_item span.active:after {
+  left: initial;
+  right: 0.2rem;
+}
+
 .filter_box .btn {
   width: 100%;
   margin: 0.5rem 0;
@@ -131,114 +163,35 @@ i[data-v="7"] {
   margin-right: 0.5rem;
 }
 
-/******************** tab_box ********************/
+/******************** week_box ********************/
 
-.tab_box {
-  font-size: 0;
-}
-
-.tab_box li {
-  width: 50%;
-  display: inline-block;
-  text-align: center;
-  cursor: pointer;
-  font-size: 1.6rem;
-  border-radius: 0.8rem 0.8rem 0 0;
-  font-weight: bold;
-  padding: 0 1.5rem;
-}
-
-.tab_box li.active {
+.week_box {
+  padding: 2.5rem 1.5rem 1.5rem;
   background: #fff;
-  color: var(--color-theme);
+  border-radius: 0.8rem;
 }
 
-.tab_box li span {
-  display: block;
-  line-height: 4rem;
-  margin: 0 auto;
-  border-bottom: 0.3rem solid transparent;
-}
-
-.tab_box li.active span {
-  border-color: var(--color-theme);
-}
-
-/******************** content_box ********************/
-
-.content_box {
-  display: none;
-  padding: 0 1.5rem;
-  background: #fff;
-  border-radius: 0 0 0.8rem 0.8rem;
-}
-
-.content_box.active {
-  display: block;
-}
-
-/******************** handle_box ********************/
-
-.handle_box {
-  padding-top: 2rem;
-  text-align: center;
-  position: relative;
-  line-height: 3rem;
-  font-size: 1.6rem;
-  font-weight: bold;
-}
-
-.handle_box .btn {
-  position: absolute;
-  width: 3.2rem;
-  line-height: 2.8rem;
-  font-weight: bold;
-  padding: 0;
-}
-
-.handle_box .btn:nth-of-type(1) {
-  left: 0;
-}
-
-.handle_box .btn:nth-of-type(2) {
-  left: 4rem;
-}
-
-.handle_box .btn:nth-of-type(3) {
-  right: 4rem;
-}
-
-.handle_box .btn:nth-of-type(4) {
-  right: 0;
-}
-
-/******************** list_box ********************/
-
-.list_box {
-  padding: 2.5rem 0 1.5rem;
-}
-
-.list_box .tr {
+.week_box .tr {
   border-top: 0.1rem solid #eee;
 }
 
-.list_box .th,
-.list_box .td {
+.week_box .th,
+.week_box .td {
   display: inline-block;
   width: calc(100% / 7);
   text-align: center;
 }
 
-.list_box .th {
+.week_box .th {
   background: #eee;
   line-height: 3rem;
 }
 
-.list_box .td {
+.week_box .td {
   font-size: 2rem;
   padding: 1.2rem 0;
 }
 
-.list_box .td[data-t="relax"] {
+.week_box .td[data-t="relax"] {
   color: #ff2f00;
 }
