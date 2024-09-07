@@ -40,6 +40,7 @@
   border: 1px solid var(--color-border);
   border-radius: 5px;
   padding: 0 12px;
+  cursor: pointer;
 }
 
 .item > span {

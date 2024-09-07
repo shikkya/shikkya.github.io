@@ -53,6 +53,7 @@ body {
   border-radius: 5px;
   padding: 4px 6px;
   margin-left: 3px;
+  cursor: pointer;
 }
 
 .filter_item li:first-child {
@@ -93,6 +94,7 @@ body {
   padding: 5px 10px;
   margin: 10px 0;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .list_box i {

@@ -74,6 +74,7 @@ input {
   background: #ddd;
   vertical-align: middle;
   position: relative;
+  cursor: pointer;
 }
 
 .filter_item span:after {
@@ -114,7 +115,6 @@ input {
 
 .tab_box {
   font-size: 0;
-  /* display: none; */
 }
 
 .tab_box li {
@@ -217,10 +217,15 @@ input {
 .list_box .td {
   font-size: 2rem;
   padding: 1.2rem 0;
+  cursor: pointer;
 }
 
 .list_box .td[data-t="relax"] {
   color: #ff2f00;
+}
+
+.list_box .td[title=""] {
+  cursor: default;
 }
 
 .list_box .td i {

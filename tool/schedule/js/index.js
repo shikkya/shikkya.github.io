@@ -73,10 +73,6 @@ $(function () {
 
             $('.content_box').removeClass('active');
             $('.content_box[data-t="' + type + '"]').addClass('active');
-
-            // $('#filterBox .filter_item').hide();
-            // $('#filterBox .filter_item[data-t=""]').show();
-            // $('#filterBox .filter_item[data-t="' + type + '"]').show();
         })
 
         // month handle 增减年月
@@ -116,6 +112,9 @@ $(function () {
 
         // list 点击日期
         $('.list_box').off('click').on('click', '.td', function () {
+            if ($(this).attr('title') == '') {
+                return false;
+            }
             $(this).addClass('active');
             $('#planModal p').html($(this).attr('title'));
             $('#planModal').show();
@@ -300,7 +299,7 @@ $(function () {
             for (var j = 0; j < weekArr.length; j++) {
 
                 if ((i == 0 && j < (dateObj.getDay() == 0 ? 6 : dateObj.getDay() - 1)) || curDay > monthNumArr[curMonth]) {
-                    html += '<div class="td">&nbsp;</div>';
+                    html += '<div class="td" title="">&nbsp;</div>';
                     continue;
                 }
 
