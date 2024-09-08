@@ -64,7 +64,7 @@ $(function () {
         })
 
         // tab 切换
-        $('#tabBox').off('click').on('click', 'li', function () {
+        $('#tabBox').off('click', 'li').on('click', 'li', function () {
 
             var type = $(this).attr('data-t');
 
@@ -76,7 +76,7 @@ $(function () {
         })
 
         // month handle 增减年月
-        $('.handle_box').off('click').on('click', '.btn', function () {
+        $('.handle_box').off('click', '.btn').on('click', '.btn', function () {
 
             var yy = parseInt($('.handle_box[data-t="month"] span').eq(0).text());
             var mm = parseInt($('.handle_box[data-t="month"] span').eq(1).text());
@@ -111,7 +111,7 @@ $(function () {
         })
 
         // list 点击日期
-        $('.list_box').off('click').on('click', '.td', function () {
+        $('.list_box').off('click', '.td').on('click', '.td', function () {
             if ($(this).attr('title') == '') {
                 return false;
             }
@@ -121,13 +121,13 @@ $(function () {
         })
 
         // modal 关闭
-        $('#planModal').off('click').on('click', '.modal_close', function () {
+        $('#planModal').off('click', '.modal_close').on('click', '.modal_close', function () {
             $('.list_box .td').removeClass('active');
             $('#planModal').hide();
         })
 
         // modal 选择
-        $('#planModalList').off('click').on('click', 'li', function () {
+        $('#planModalList').off('click', 'li').on('click', 'li', function () {
             var val = $(this).attr('data-v');
             $('.list_box .td.active i').attr('data-v', val).html(val);
             $('#planModal .modal_close').click();

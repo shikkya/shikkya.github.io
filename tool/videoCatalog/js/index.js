@@ -11,28 +11,28 @@ $(function () {
     this.createEvent = function () {
 
         // filter 分类 切换
-        $('#typeList').off('click').on('click', 'li', function () {
+        $('#typeList').off('click', 'li').on('click', 'li', function () {
             $(this).siblings().removeClass('active');
             $(this).addClass('active');
             self.createListHtml();
         })
 
         // filter 搜索
-        $('#filterBox').off('compositionstart').on('compositionstart', '#keyWord', function () {
+        $('#filterBox').off('compositionstart', '#keyWord').on('compositionstart', '#keyWord', function () {
             $(this).addClass('unable');
         })
-        $('#filterBox').off('compositionend').on('compositionend', '#keyWord', function () {
+        $('#filterBox').off('compositionend', '#keyWord').on('compositionend', '#keyWord', function () {
             $(this).removeClass('unable');
             self.createListHtml();
         })
-        $('#filterBox').off('input').on('input', '#keyWord', function () {
+        $('#filterBox').off('input', '#keyWord').on('input', '#keyWord', function () {
             if (!$(this).hasClass('unable')) {
                 self.createListHtml();
             }
         })
 
         // list 展开收起
-        $('#listBox').off('click').on('click', 'div', function () {
+        $('#listBox').off('click', 'div').on('click', 'div', function () {
             $(this).toggleClass('active');
             $(this).next().slideToggle();
         })

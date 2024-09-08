@@ -55,7 +55,7 @@ $(function () {
         })
 
         // catalog 查看地图
-        $('#catalogBox').off('click').on('click', 'div', function () {
+        $('#catalogBox').off('click', 'div').on('click', 'div', function () {
             sessionStorage.setItem('mapPic', $(this).attr('data-n'));
             window.location.href = './mapPic.html';
         })

@@ -80,10 +80,12 @@
             var self = this;
 
             var listData = [
+                { tit: '厨神菜单', type: 'Mobile', url: './cookMenu', date: '2024-09-07' },
                 { tit: '咕咚排班表', type: 'Mobile', url: './schedule', date: '2023-06-04' },
                 { tit: '影视目录查询', type: 'Mobile', url: './videoCatalog', date: '2023-07-11' },
-                { tit: '预产期计算器', type: 'Mobile', url: './birthDate', date: '2023-08-08' },
                 { tit: '开发笔记', type: 'PC', url: './codeNote', date: '2023-11-20' },
+                { tit: '倒计时提醒', type: 'PC', url: './countdown', date: '-' },
+                { tit: '预产期计算器', type: 'Mobile', url: './birthDate', date: '2023-08-08' },
                 { tit: '饥荒指令器', type: 'PC', url: './dontStarve', date: '2023-11-01' },
                 { tit: '躺平发育-地图日历', type: 'Mobile', url: './tpfyMapCalendar', date: '2024-09-01' },
                 { tit: '躺平发育-地图还原器', type: 'PC', url: './tpfyMapEdit', date: '2022-03-19' },
@@ -103,15 +105,15 @@
             // 校验密码
             this.checkPass = function () {
                 var userPass = $('#userPass').val().trim();
-                if (userPass == self.formatNum(new Date().getMonth() + 1) + self.formatNum(new Date().getDate())) {
-                    localStorage.setItem('shikkya', new Date().toLocaleDateString());
-                    self.createListHtml(listData);
+                if (userPass == new Date().getFullYear() + self.formatNum(new Date().getMonth() + 1) + self.formatNum(new Date().getDate())) {
+                    localStorage.setItem('shikkya', new Date().getFullYear() + new Date().getMonth());
+                    self.createListHtml();
                 }
             }
 
             // 创建列表结构
-            this.createListHtml = function (data) {
-
+            this.createListHtml = function () {
+                var data = listData;
                 var url = window.location.host;
 
                 var html = '<table>' +
@@ -145,8 +147,8 @@
                 return '0' + num;
             }
 
-            if (localStorage.getItem('shikkya') == new Date().toLocaleDateString()) {
-                self.createListHtml(listData);
+            if (localStorage.getItem('shikkya') == new Date().getFullYear() + new Date().getMonth()) {
+                self.createListHtml();
             }
         })
     </script>

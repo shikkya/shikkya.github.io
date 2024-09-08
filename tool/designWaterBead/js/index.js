@@ -40,14 +40,14 @@ $(function () {
     this.createEvent = function () {
 
         // color 图形 切换
-        $('#colorBox').off('click').on('click', 'i', function () {
+        $('#colorBox').off('click', 'i').on('click', 'i', function () {
             $(this).siblings().removeClass('active');
             $(this).addClass('active');
             curColor = $(this).attr('data-c');
         })
 
         // map 点击
-        $('#mapBox').off('click').on('click', 'span', function () {
+        $('#mapBox').off('click', 'span').on('click', 'span', function () {
             $(this).attr('data-c', curColor).css({
                 'background': curColor == '' ? '' : curColor
             })
@@ -127,7 +127,7 @@ $(function () {
         })
 
         // modal 关闭
-        $('.modal').off('click').on('click', '.close_modal_btn', function () {
+        $('.modal').off('click', '.close_modal_btn').on('click', '.close_modal_btn', function () {
             $(this).closest('.modal').hide();
         })
 

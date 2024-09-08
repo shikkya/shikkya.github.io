@@ -38,7 +38,7 @@
             }
 
             // 点击示例
-            $('#exampleList').off('click').on('click', 'li', function () {
+            $('#exampleList').off('click', 'li').on('click', 'li', function () {
                 $('#textVal').val(exampleData[$(this).index()]);
             })
 

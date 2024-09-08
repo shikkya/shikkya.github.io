@@ -14,7 +14,7 @@ $(function () {
     this.createEvent = function () {
 
         // 计算预产期
-        $('#calcBirthDateBtn').on('click', function () {
+        $('#calcBirthDateBtn').off('click').on('click', function () {
             if ($('#lastDate').val().trim() == '') {
                 showMsg('请选择末次月经日期');
                 return false;
@@ -23,7 +23,7 @@ $(function () {
         })
 
         // 计算产假结束期
-        $('#calcEndDateBtn').on('click', function () {
+        $('#calcEndDateBtn').off('click').on('click', function () {
             if ($('#startDate').val().trim() == '') {
                 showMsg('请选择预产期');
                 return false;
