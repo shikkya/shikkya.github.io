@@ -1,0 +1,273 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date 2024-09-07
+ */
+
+body {
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.header,
+.footer {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  padding: 15px;
+}
+
+.header {
+  top: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  bottom: 0;
+}
+
+.footer .btn {
+  width: calc(50% - 7.5px);
+  line-height: 28px;
+}
+
+.footer .btn:last-child {
+  background: #fff;
+  color: var(--color-theme);
+}
+
+.footer font {
+  margin: 0 3px;
+}
+
+.content {
+  padding: 60px 0;
+}
+
+/******************** header ********************/
+
+.header {
+  display: flex;
+  align-items: stretch;
+  font-size: 14px;
+}
+
+.header div {
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.header div.active {
+  background: var(--color-theme);
+  color: #fff;
+}
+
+/******************** list_box ********************/
+
+.list_box .item {
+  background: #fff;
+  border-radius: 8px;
+  margin: 15px 15px 0;
+}
+
+.list_box .item:first-child {
+  margin-top: 0;
+}
+
+.list_box .item.typeHide,
+.list_box .item.filterHide {
+  display: none;
+}
+
+.list_box h3 {
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 32px;
+  border-bottom: 1px dashed var(--color-bg);
+  position: relative;
+}
+
+.list_box h3:before,
+.list_box h3:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  position: absolute;
+  bottom: -6px;
+  z-index: 1;
+}
+
+.list_box h3:before {
+  left: -6px;
+}
+
+.list_box h3:after {
+  right: -6px;
+}
+
+.list_box .item div {
+  line-height: 28px;
+  padding: 5px 15px;
+}
+
+.list_box p i {
+  display: inline-block;
+  background: #ddd;
+  color: #fff;
+  font-size: 12px;
+  line-height: 18px;
+  border-radius: 8px;
+  padding: 0 5px;
+  margin-right: 10px;
+}
+
+.list_box p[data-t="must"] {
+  color: var(--color-theme);
+}
+
+.list_box p[data-t="must"] i {
+  background: var(--color-theme);
+}
+
+.list_box p[data-t="extra"] i {
+  background: var(--color-theme);
+  opacity: 0.5;
+}
+
+.list_box p[data-t="info"] {
+  color: #aaa;
+}
+
+.list_box span[data-id=""] {
+  cursor: pointer;
+}
+
+.list_box span.hide {
+  display: none;
+}
+
+/******************** modal ********************/
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal_dialog {
+  width: calc(100% - 30px);
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.modal_header {
+  line-height: 50px;
+  padding: 0 15px;
+  border-bottom: 1px solid var(--color-border);
+  color: #333;
+  position: relative;
+}
+
+.modal_header .modal_close {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  z-index: 1;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+.modal_header .modal_close::after {
+  content: "×";
+  font-size: 20px;
+  color: #999;
+}
+.filter_modal_list {
+  max-height: calc(100vh - 200px);
+  line-height: 28px;
+  overflow: auto;
+  margin: 15px 0;
+}
+
+.filter_modal_list div {
+  color: var(--color-theme);
+  font-weight: bold;
+  margin: 5px 15px;
+}
+
+.filter_modal_list div:first-child {
+  margin-top: 0;
+}
+
+.filter_modal_list ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 0 15px;
+}
+
+.filter_modal_list li {
+  display: flex;
+  align-items: center;
+  width: 33.3%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 22px;
+  position: relative;
+  cursor: pointer;
+}
+
+.filter_modal_list .check {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+
+.filter_modal_list .check::before {
+  content: "";
+  width: 4px;
+  height: 8px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -70%) rotate(45deg);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.filter_modal_list .check.active {
+  background: var(--color-theme);
+  border-color: var(--color-theme);
+}
