@@ -733,7 +733,7 @@ var foodData = [{
     ]
 }];
 
-// 属性
+// 物品
 var attrData = {
     type: {
         water: { name: '防水', type: 'percent' },
@@ -969,7 +969,7 @@ var attrData = {
     }]
 };
 
-// 功能
+// 指令
 var funData = [{
     tit: '删除你鼠标所在位置的物体',
     version: '1,2',
