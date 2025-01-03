@@ -261,7 +261,7 @@ $(function () {
 
                 html += '<div class="td" data-t="' + isRelax + '" title="' + dateObj.getFullYear() + '-' + self.formatNum(dateObj.getMonth() + 1) + '-' + self.formatNum(dateObj.getDate()) + '">' +
                     '<p>' + self.formatNum(dateObj.getDate()) + '</p>';
-                if ($('#isRest').hasClass('active') && j > weekArr.length - 3 && planArr[dayNum] != '住') {
+                if ($('#isRest').hasClass('active') && j > weekArr.length - 3 && planArr[dayNum] == '副') {
                     html += '<i data-v="休">休</i>';
                 }
                 else {
@@ -318,7 +318,7 @@ $(function () {
 
                 html += '<div class="td" data-t="' + isRelax + '" title="' + curYear + '-' + self.formatNum(curMonth) + '-' + self.formatNum(curDay) + '">' +
                     '<p>' + self.formatNum(curDay) + '</p>';
-                if ($('#isRest').hasClass('active') && j > weekArr.length - 3 && planArr[dayNum] != '住') {
+                if ($('#isRest').hasClass('active') && j > weekArr.length - 3 && planArr[dayNum] == '副') {
                     html += '<i data-v="休">休</i>';
                 }
                 else {
