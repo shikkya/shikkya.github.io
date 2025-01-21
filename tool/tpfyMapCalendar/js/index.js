@@ -12,13 +12,13 @@ $(function () {
     var mapList = [{
         name: '经典地图'
     }, {
-        name: '秘密房间'
-    }, {
         name: '冰雪地图'
     }, {
-        name: '御敌千里'
-    }, {
         name: '苔藓密室'
+    }, {
+        name: '秘密房间'
+    }, {
+        name: '御敌千里'
     }, {
         name: '强行变卖'
     }, {

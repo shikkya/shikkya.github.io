@@ -52,19 +52,19 @@ i[data-v="1"] {
 }
 
 i[data-v="2"] {
-  background: #945974;
-}
-
-i[data-v="3"] {
   background: #61c2ff;
 }
 
+i[data-v="3"] {
+  background: #0da039;
+}
+
 i[data-v="4"] {
-  background: #5edde7;
+  background: #945974;
 }
 
 i[data-v="5"] {
-  background: #0da039;
+  background: #5edde7;
 }
 
 i[data-v="6"] {
