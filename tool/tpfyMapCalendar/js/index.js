@@ -142,7 +142,7 @@ $(function () {
                 dayNum = dayNum < 0 ? dayNum + planArr.length : dayNum;
 
                 html += '<div class="td" data-t="' + isRelax + '" title="' + dateObj.getFullYear() + '-' + self.formatNum(dateObj.getMonth() + 1) + '-' + self.formatNum(dateObj.getDate()) + '">' +
-                    ($('#isDate').hasClass('active') ? ('<p>' + self.formatNum(dateObj.getDate()) + '</p>') : '') +
+                    ($('#isDate').hasClass('active') ? ('<p>' + (dateObj.getDate() == new Date().getDate() ? '今' : self.formatNum(dateObj.getDate())) + '</p>') : '') +
                     '<i data-v="' + planArr[dayNum] + '">' + planArr[dayNum] + '</i>' +
                     '</div>';
                 dateObj = new Date(dateObj.setDate(dateObj.getDate() + 1));
