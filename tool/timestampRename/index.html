@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SHIKKYA</title>
+    <link rel="stylesheet" href="../common/css/common.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+
+    <div class="content">
+        <div>
+            <div class="item">
+                <input type="text" id="timestampStr" placeholder="请输入时间戳" value="" />
+            </div>
+            <div class="item_btn">
+                <button class="btn" id="reNameBtn">生成文件名</button>
+            </div>
+        </div>
+        <div>
+            <div class="item item_result">
+                <input type="text" id="imgName" placeholder="IMG_xxxxxxxx_xxxxxx" value="" readonly />
+                <span>.jpg</span>
+                <button class="btn copy_btn">复制</button>
+            </div>
+            <div class="item item_result">
+                <input type="text" id="vidName" placeholder="VID_xxxxxxxx_xxxxxx" value="" readonly />
+                <span>.mp4</span>
+                <button class="btn copy_btn">复制</button>
+            </div>
+            <div class="item item_result">
+                <input type="text" id="picName" placeholder="Screenshot_xxxxxxxx_xxxxxx" value="" readonly />
+                <span>.jpg</span>
+                <button class="btn copy_btn">复制</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- version -->
+    <div class="versionBox">V.2026012101</div>
+
+    <script src="../common/plugin/jQuery/jquery-1.10.2.min.js"></script>
+    <script src="../common/js/noCopy.js"></script>
+    <script src="../common/js/common.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

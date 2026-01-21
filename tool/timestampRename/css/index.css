@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+/**
+ * index.html
+ * @authors shikkya
+ * @date 2023-08-08
+ */
+
+.content {
+  padding: 0 15px 15px;
+}
+
+.content > div {
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.item {
+  padding: 5px 0;
+  color: #888;
+  position: relative;
+}
+
+.item input {
+  width: 100%;
+  line-height: 36px;
+  text-align: center;
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.item > span {
+  width: 80px;
+  margin-left: 10px;
+}
+
+.item_btn {
+  padding: 5px 0;
+}
+
+.item_btn .btn {
+  width: 100%;
+}
+
+.item_result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item_result * {
+  white-space: nowrap;
+}
+
+.item_result input {
+  text-align: left;
+}
